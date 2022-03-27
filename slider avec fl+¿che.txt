@@ -1,0 +1,120 @@
+<section>
+        <article id="slider">
+          <!-- <img src="images/slide/slide11.jpg" id="slide1">
+          <img src="images/slide/slide22.jpg" id="slide2">
+          <img src="images/slide/slide33.jpg" id="slide3">
+          <img src="images/slide/slide44.jpg" id="slide4">
+          <img src="images/slide/slide55.jpg" id="slide5"> -->
+          <div id="precedent"><</div>
+          <div id="suivant">></div>
+        </article>
+
+      </section>
+
+
+
+
+let numero = 1;
+let animation = false;
+const duree = 1000;
+const nombreSlides = 5;
+
+function chnageSlide() { // changer le slide automatiquement
+
+
+  if (animation) {
+    return;
+  }
+  animation = true;
+  // On fait disparaitre le slide actuel
+  $("#slide" + numero).fadeOut(duree, function()
+  {
+  // On fait apparaitre le slide suivant (numero + 1)
+  numero = numero + 1;
+  // Si le numéro est supérieur au nombre de slides alors le numéro est égal à 1
+  if (numero > nombreSlides) {
+      numero = 1;
+  }
+  $("#slide" + numero).fadeIn(duree, function() {
+    animation = false;
+  });
+});
+
+}
+
+// Si on clique sur la flèche "suivant"
+$("#suivant").click(chnageSlide);
+setInterval(chnageSlide, 4000); // changer le slide chaque 4s
+
+// Si on clique sur la flèche "precedent"
+$("#precedent").click(function () {
+
+   if (animation) { // si l'animation est en cours, alors on bloque le clique
+     return;
+   }
+   animation = true;
+   // On fait disparaitre le slide actuel
+    $("#slide" + numero).fadeOut(duree, function()
+      {
+      // On fait apparaitre le slide précédent (numero - 1)
+      numero = numero - 1;
+      // Si le numéro est inférieur à 0 alors le numéro est égal au nombre de slide
+      if (numero < 1) {
+          numero = nombreSlides;
+      }
+      $("#slide" + numero).fadeIn(duree, function () {
+        animation = false
+      });
+    });
+});
+
+
+
+
+
+#slider {
+    width: 100%;
+    position: relative;
+    height: 80vh;
+}
+
+#slide1, #slide2, #slide3, #slide4, #slide5 {
+    width: 100%;
+    height: 80vh;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    /* object-fit: cover; */
+}
+
+#slide2, #slide3, #slide4, #slide5 {
+    display: none;
+}
+
+#precedent, #suivant {
+    z-index: 1;
+    transition: opacity 0.5s ease;
+    font-size: 4.7rem;
+    font-weight: 100;
+    position: absolute;
+    top: 10rem;
+    /* width: 100px;
+    height: 100px; */
+    background-color: rgba(0, 0, 0, 0.6);
+    color: rgb(220, 220, 220, 0.6);
+    opacity: 0;
+    cursor: pointer;
+}
+
+#precedent {
+    left: 0;
+}
+
+#suivant {
+    right: 0;
+}
+
+#slider:hover #precedent, #slider:hover #suivant {
+    opacity: 1;
+}
+
