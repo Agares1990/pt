@@ -29,6 +29,11 @@
   font-family:$fontRaelway;
   font-weight: bold;
 }
+@mixin h3{ /* style générale des h2 */
+  font-size: 1.2rem;
+  font-family:$fontRaelway;
+  font-weight: 500;
+}
 @mixin backgroundImageEach($urls){ /* pour les images des catégories de chambre de la page d'accueil */
   @each $url in $urls{
     ##{$url} {

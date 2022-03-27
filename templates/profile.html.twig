@@ -17,15 +17,19 @@
     </thead>
     <tbody>
         {% for reservation in reservations %}
-          <tr>
-              <td>{{reservation.nomCategorie}}</td>
-              <td>{{reservation.dateArriver}}</td>
-              <td>{{reservation.dateDepart}}</td>
-              <td>{{reservation.nbPerson}}</td>
-              <td>{{reservation.nbChild}}</td>
-              <td><i class="fa-solid fa-xmark"></i></td>
-          </tr>
+          <form class="" action="profile.php" method="post">
+            <tr>
+                <td>{{reservation.nomCategorie}}</td>
+                <td>{{reservation.dateArriver}}</td>
+                <td>{{reservation.dateDepart}}</td>
+                <td>{{reservation.nbPerson}}</td>
+                <td>{{reservation.nbChild}}</td>
+                <td> <input type="submit" name="delete" value="Annuler"></td>
+                <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
+            </tr>
+          </form>
         {% endfor %}
     </tbody>
 </table>
+<h2>{{messageSucces}}</h2>
 {% endblock %}
