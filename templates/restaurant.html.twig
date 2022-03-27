@@ -1,0 +1,46 @@
+{% extends "headerFooter.html.twig" %}
+{% block contenu %}
+  <section>
+    <h2>Réserver une table au restaurant</h2>
+    <article id="restaurant">
+      <div id="img"></div>
+      <p>Notre Chef 4 Etoiles, Cindy Gomes a résolument fait d’Epicure le bastion par excellence de la gastronomie française.</p>
+      <p>Certains viennent à Nice juste pour goûter sa cuisine: ses macaronis farcis, truffe noire, artichaut et foie gras de canard reflètent tout le génie et la passion de celui qui figure parmi les plus grands.</p>
+      <ul>
+        <li> <span>Petit Déjeuner:</span> De 7h00 à 10h00 </li>
+        <li> <span>Déjouner:</span> De 11h30 à 14h00</li>
+        <li> <span>Diner</span> De 19h00 à 22h00</li>
+      </ul>
+    </article>
+    <h3>Formulaire de réservation</h3>
+    <form>
+
+         <input type="text" name="nom" id="nom" placeholder="Votre nom:">
+         <span id="errorNom"></span>
+         <input type="number" name="person" id="person" value="" placeholder="Nombre de personne">
+         <span id="errorPerson"></span>
+
+         <input type="date" name="date" id="date" placeholder="Choisissez une date:">
+         <span id="errorDate"></span>
+         <select name="" id="repas">
+           <option value="">--Choisissez quel repas--</option>
+           <option class="option" value="1">Petir déjeuner</option>
+           <option class="option" value="2">Déjeuner</option>
+           <option class="option" value="3">Diner</option>
+         </select>
+         <span id="errorRepas"></span>
+
+         <input type="text" name="mail" id="mail" placeholder="Votre email" maxlength="100">
+         <span id="errorMail"></span>
+
+         <input type="tel" name="tel" id="tel" placeholder="Votre numéro de téléphone">
+         <span id="errorTel"></span>
+
+         <textarea name="message" id="message" placeholder="Requête spéciale" rows="8" cols="40"></textarea>
+         <span id="errorMessage"></span>
+
+         <input type="submit" name="send" class="button" value="Réserver">
+
+    </form>
+  </section>
+{% endblock %}
