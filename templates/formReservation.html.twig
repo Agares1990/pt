@@ -1,0 +1,65 @@
+{% extends "headerFooter.html.twig" %}
+{% block contenu %}
+<main>
+  <section>
+    <h2>Remplir le formulaire de réservation</h2>
+
+    <article>
+      <h3>catégorie de chambre choisie</h3>
+      <span>Votre séjour:</span>
+      <span>Modifier</span>
+      <ul>
+        <li>Arrivé le: <span>{{fromDate}}</span></li>
+        <li>Déparet le: <span>{{toDate}}</span></li>
+        <li>Totale Nuités: <span>{{nbDay}}</span></li>
+        <li>Totale à payer: <span>{{totalToPay}}</span></li>
+      </ul>
+    </article>
+    <form class="" action="recapReservation.php" method="post">
+      <!-- <select class="" name="" value="Vue de la chambre">
+        <option value="1">Normal</option>
+        <option value="2">Vue jardin</option>
+        <option value="3">Vue mer</option>
+      </select> -->
+         <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
+         <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
+         <input type="hidden" id="nbDay" name="nbDay" value="{{nbDay}}">
+         <input type="hidden" id="roomType" name="roomType" value="{{roomType}}">
+         <input type="hidden" id="idChambre" name="idChambre" value="{{idRoom}}">
+         <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
+
+
+         <input type="text" name="nom" id="nom" placeholder="Votre nom:">
+         <span id="errorNom"></span>
+
+         <input type="text" name="prenom" id="prenom" placeholder="Votre prénom:">
+         <span id="errorPrenom"></span>
+
+         <input type="text" name="mail" id="mail" placeholder="Votre email" maxlength="100">
+         <span id="errorMail"></span>
+
+         <input type="text" name="mdp" id="mdp" placeholder="Votre mot de passe:">
+         <span id="errorPass"></span>
+
+         <input type="tel" name="tel" id="tel" placeholder="Votre numéro de téléphone">
+         <span id="errorTel"></span>
+
+         <input type="text" name="pays" id="pays" placeholder="Votre pays:">
+         <span id="errorPays"></span>
+
+          <textarea name="message" id="message" placeholder="Requête spéciale" rows="8" cols="40"></textarea>
+          <span id="errorMessage"></span>
+
+         <!-- <p>Souhaitez-vous réserver un petit-déjouner ?  (+15€)</p>
+         <label for="breakfast">Oui</label>
+         <input type="radio" name="breakfast" value="Oui">
+         <label for="breakfast">Non</label>
+         <input type="radio" name="breakfast" value="Non"> -->
+
+        <input type="reset" value="Annuler">
+        <input type="submit" name="submit" class="button" value="Réserver">
+
+    </form>
+  </section>
+</main>
+{% endblock %}

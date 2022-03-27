@@ -1,0 +1,38 @@
+<article id="checkIn">
+    <!-- formulaire de recherche de chambre dispo -->
+    <h2 onclick="cacherFormCheck()";>Réserver une <span>chambre</span></h2>
+  <form id="formChek" action="formCheckInPage.php" method="POST">
+      <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
+
+      <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
+
+     <select name="nbPerson" id="nbPerson">
+       <option value="">--Nombre de personne--</option>
+       <option class="option" value="1">1</option>
+       <option class="option" value="2">2</option>
+       <option class="option" value="3">3</option>
+       <option class="option" value="4">4</option>
+       <option class="option" value="5">5</option>
+     </select>
+
+     <select name="nbChild" id="nbChild">
+       <option value="">--Nombre d'enfant--</option>
+       <option class="option" value="1">1</option>
+       <option class="option" value="2">2</option>
+       <option class="option" value="3">3</option>
+       <option class="option" value="4">4</option>
+       <option class="option" value="5">5</option>
+     </select>
+
+     <select name="roomType" id="roomType">
+       <option value="">--Choix de Chambre--</option>
+       <option class="option" value="1">Chambre Standard</option>
+       <option class="option" value="2">Chambre Familiale</option>
+       <option class="option" value="3">Suite Senior</option>
+     </select>
+
+
+        <input type="submit" name="submit" value="Vérifie disponibilité">
+
+  </form>
+</article>

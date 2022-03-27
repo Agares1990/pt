@@ -1,0 +1,28 @@
+{% extends "headerFooter.html.twig" %}
+{% block contenu %}
+  <section>
+    <article class="contact">
+      <form name="formContact" id="contact" action="form.php?lang={{lang}}" method="post" onsubmit="return valider()">
+
+             <input type="text" name="name" id="name" placeholder="{{name}}">
+             <span id="errorName"></span>
+
+             <input type="text" name="mail" id="mail" placeholder="{{mail}}" maxlength="100">
+             <span id="errorMail"></span>
+
+             <input type="text" name="subject" id="subject" placeholder="{{subject}}">
+             <span id="errorSubject"></span>
+
+              <textarea name="message" id="message" placeholder="Message" rows="8" cols="40"></textarea>
+              <span id="errorMessage"></span>
+
+            <input type="submit" name="send" class="button" value="{{submit}}">
+
+       </form>
+    </article>
+
+    <article class="contact">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.850211200948!2d7.236411415192269!3d43.69287735788269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd04f3dd1ff25%3A0xe3363bc88f21e4e!2sCampus%20Carlone!5e0!3m2!1sfr!2sfr!4v1647359378853!5m2!1sfr!2sfr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </article>
+  </section>
+{% endblock %}

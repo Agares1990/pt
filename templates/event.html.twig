@@ -1,0 +1,40 @@
+{% extends "headerFooter.html.twig" %}
+{% block contenu %}
+<section>
+  <h2>Réserver la salle d'évènement</h2>
+  <article id="event">
+    <div id="img"></div>
+    <p>Nice One vous accueille avec toute la technologie, le soin et le confort nécessaires à votre journée d’étude pour vos comités de direction, séminaires, réunions et conférences. Salles de sous-commissions, visioconférence, accès wifi, offrez-vous des équipements de pointe, les services d’un grand hôtel en plus.</p>
+  </article>
+    <h2>Formulaire de réservation</h2>
+
+  <form class="" action="" method="post">
+    <select class="" name="" value="">
+      <option value="1">Réunion</option>
+      <option value="2">Séminaire</option>
+      <option value="3">Mariage</option>
+    </select>
+
+       <input type="text" name="nom" id="nom" placeholder="Votre nom:">
+       <span id="errorNom"></span>
+
+      <input type="number" name="person" value="" id="person" placeholder="Nombre de personne">
+      <span id="errorPerson"></span>
+
+       <input type="text" name="mail" id="mail" placeholder="Votre email" maxlength="100">
+       <span id="errorMail"></span>
+
+       <input type="text" name="mdp" id="mdp" placeholder="Votre mot de passe:">
+       <span id="errorPass"></span>
+
+       <input type="tel" name="tel" id="tel" placeholder="Votre numéro de téléphone">
+       <span id="errorTel"></span>
+
+        <textarea name="message" id="message" placeholder="Requête spéciale" rows="8" cols="40"></textarea>
+        <span id="errorMessage"></span>
+
+      <input type="submit" name="send" class="button" value="Réserver">
+
+  </form>
+</section>
+{% endblock %}

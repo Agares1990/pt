@@ -1,0 +1,199 @@
+{% extends "headerFooter.html.twig" %}
+{% block contenu %}
+
+      <section id="section1">
+        <h1>Nice ONE Resort & SPA <span>Nice, France</span></h1>
+        <article id="slider">
+            <p class="mySlides slide1"></p>
+            <p class="mySlides slide2"></p>
+            <p class="mySlides slide3"></p>
+            <p class="mySlides slide4"></p>
+            <p class="mySlides slide5"></p>
+        </article>
+
+      </section>
+      <!-- Formulaire de check-in -->
+      {{include ("checkIn.html.twig")}}
+
+      <!-- Description de l'hôtel -->
+    <section class="descHotel">
+      <article>
+        <div class="hotelImage"></div>
+        <h2>Bienvenue dans <span>Nice ONE</span></h2>
+        <p>A world of luxury and new discoveries await you at Nice ONE Resort & Spa. Blending timeless elegance and colonial style design set against the backdrop of Galle Beach and the surrounding area, we provide the perfect coastal escape for romance and adventure. Our world class service, indulgent comforts and eco experiences, make us truly stand out amongst Galle hotels.</p>
+        <ul>
+          <li> <span>A:</span> Carlone - Nice </li>
+          <li> <span>E:</span> info@niceone.com</li>
+          <li> <span>T:</span> +33 6 00 00 00 00</li>
+        </ul>
+        <ul>
+          <li> <span>HEURE LOCALE: </span>{{date}}</li>
+          <li> <span>TEMPERATURE:</span>{{temperature}}</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Les différentes chambres de l'hôtel -->
+    <section class="theContainer">
+        <section>
+          <article class="container">
+            <div class="img" id="standardRoom"></div>
+            <div class="overlay border-or">
+              <h4 class="text">
+                Chambre Standard
+              </h4>
+            </div>
+          </article>
+          <article class="blocDessous">
+            <ul>
+                <li>
+                    <img src="images/icones/bed.png" alt="icone Lit">Bed
+                </li>
+                <li>
+                    <img src="images/icones/air-conditioner.png" alt="icone Climatisation">
+                    AC
+                </li>
+                <li>
+                    <img src="images/icones/tv.png" alt="Television">TV
+                </li>
+              </ul>
+              <ul>
+                <li>
+                    <img src="images/icones/gym.png" alt="Gym">GYM
+                </li>
+                <li>
+                    <img src="images/icones/wifi.png" alt="Wifi">Wi-fi
+                </li>
+                <li>
+                    <img src="images/icones/parking.png" alt="Parking">Parking
+                </li>
+            </ul>
+          </article>
+        </section>
+        <section>
+          <article class="container">
+            <div class="img" id="familyRoom"></div>
+            <div class="overlay border border-or">
+              <h4 class="text">
+                Chambre Familiale
+              </h4>
+            </div>
+          </article>
+          <article class="blocDessous">
+            <ul>
+                <li>
+                    <img src="images/icones/bed.png" alt="icone Lit">
+                    <img src="images/icones/bed.png" alt="icone Lit">Bed
+                </li>
+                <li>
+                    <img src="images/icones/air-conditioner.png" alt="icone Climatisation">
+                    AC
+                </li>
+                <li>
+                    <img src="images/icones/tv.png" alt="Television">TV
+                </li>
+              </ul>
+              <ul>
+                <li>
+                    <img src="images/icones/gym.png" alt="Gym">GYM
+                </li>
+                <li>
+                    <img src="images/icones/wifi.png" alt="Wifi">Wi-fi
+                </li>
+                <li>
+                    <img src="images/icones/parking.png" alt="Parking">Parking
+                </li>
+            </ul>
+          </article>
+        </section>
+
+        <section>
+          <article class="container">
+            <div class="img" id="luxuryRoom"></div>
+            <div class="overlay border border-or">
+              <h4 class="text">
+                Chambre de Luxe
+              </h4>
+            </div>
+          </article>
+          <article class="blocDessous">
+            <ul>
+                <li>
+                    <img src="images/icones/bed.png" alt="icone Lit">Bed
+                </li>
+                <li>
+                    <img src="images/icones/air-conditioner.png" alt="icone Climatisation">
+                    AC
+                </li>
+                <li>
+                    <img src="images/icones/tv.png" alt="Television">TV
+                </li>
+              </ul>
+              <ul>
+                <li>
+                    <img src="images/icones/gym.png" alt="Gym">GYM
+                </li>
+                <li>
+                    <img src="images/icones/wifi.png" alt="Wifi">Wi-fi
+                </li>
+                <li>
+                    <img src="images/icones/parking.png" alt="Parking">Parking
+                </li>
+            </ul>
+          </article>
+        </section>
+        <section>
+          <article class="container">
+            <div class="img" id="suite"></div>
+            <div class="overlay border border-or">
+              <h4 class="text">
+                Suite
+              </h4>
+            </div>
+          </article>
+          <article class="blocDessous">
+            <ul>
+                <li>
+                    <img src="images/icones/bed.png" alt="icone Lit">Bed
+                </li>
+                <li>
+                    <img src="images/icones/air-conditioner.png" alt="icone Climatisation">
+                    AC
+                </li>
+                <li>
+                    <img src="images/icones/tv.png" alt="Television">TV
+                </li>
+              </ul>
+              <ul>
+                <li>
+                    <img src="images/icones/gym.png" alt="Gym">GYM
+                </li>
+                <li>
+                    <img src="images/icones/wifi.png" alt="Wifi">Wi-fi
+                </li>
+                <li>
+                    <img src="images/icones/parking.png" alt="Parking">Parking
+                </li>
+            </ul>
+          </article>
+        </section>
+
+
+    </section>
+
+    <!-- Section présentation du Restaurant et de la Salle d'évenement -->
+    <section id="restauEvent">
+      <article class="restauEvent">
+        <div id="restaurant">
+        </div>
+        <h2>Restaurant</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#">En savoir plus</a></p>
+      </article>
+      <article class="restauEvent">
+        <div id="salleEvent">
+        </div>
+        <h2>Salle d'évènement</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#">En savoir plus</a></p>
+      </article>
+    </section>
+{% endblock %}

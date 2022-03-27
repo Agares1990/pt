@@ -1,0 +1,89 @@
+{% extends "headerFooter.html.twig" %}
+{% block contenu %}
+<article id="checkIn">
+    <!-- formulaire de recherche de chambre dispo -->
+    <h2 onclick="cacherFormCheck()";>Réserver une <span>chambre</span></h2>
+    <form id="formChek" action="formCheckInPage.php" method="POST">
+        <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
+
+        <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
+
+       <select name="nbPerson" id="nbPerson">
+         <option value="">--Nombre de personne--</option>
+         <option class="option" value="1">1</option>
+         <option class="option" value="2">2</option>
+         <option class="option" value="3">3</option>
+         <option class="option" value="4">4</option>
+         <option class="option" value="5">5</option>
+       </select>
+
+       <select name="nbChild" id="nbChild">
+         <option value="">--Nombre d'enfant--</option>
+         <option class="option" value="1">1</option>
+         <option class="option" value="2">2</option>
+         <option class="option" value="3">3</option>
+         <option class="option" value="4">4</option>
+         <option class="option" value="5">5</option>
+       </select>
+
+       <select name="roomType" id="roomType">
+         <option value="0">--Choix de Chambre--</option>
+         <option class="option" value="1">Chambre Standard</option>
+         <option class="option" value="2">Chambre Familiale</option>
+         <option class="option" value="3">Suite Senior</option>
+       </select>
+
+
+          <input type="submit" name="submit" value="Vérifie disponibilité">
+
+    </form>
+</article>
+
+<section>
+
+    {% for room in rooms %}
+          <article>
+            <img class="imageChambre" src="{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
+            <article class="desc">
+              <form class="" action="formReservation.php" method="post">
+
+                <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
+                <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
+                <input type="hidden" name="nbDay" value="{{nbDay}}">
+                <!-- <label for="nomCategorie">{{room.nomCategorie}}</label> -->
+                <input type="hidden" id="roomType" name="roomType" value="{{room.nomCategorie}}">
+                <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{room.idCategorieChambre}}">
+                <!-- <label for="nbPerson">{{nbPerson}}</label> -->
+                <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
+                <!-- <label for="nbChild">{{nbChild}}</label> -->
+                <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
+                <input type="hidden" id="idChambre" name="idChambre" value="{{room.idChambre}}">
+                <input type="submit" name="submit" value="{{room.tarifCategorieChambre * nbDay}} €">
+              </form>
+
+              <h2>{{room.nomCategorie}}</h2>
+              <p><span>{{nbPerson}}</span>personne(s)</p>
+              <p><span>{{nbChild}}</span>enfant(s)</p>
+              <p>{{room.description}}</p>
+              <ul>
+                <li>{{room.caracterestique1}}</li>
+                <li>{{room.caracterestique2}}</li>
+                <li>{{room.caracterestique3}}</li>
+              </ul>
+
+              <!--
+                    <input type="submit" name="submit" value="{{room.tarifCategorieChambre * nbDay}} €">
+              <a href="formReservation.php?fromDate=$fromDate&toDatetoDate=$toDate&nbPerson=$nbPerson&nbChild=$nbChild&roomType=$roomType"></a> -->
+
+
+
+            </article>
+            <div>
+
+            </div>
+          </article>
+
+    {% endfor %}
+
+</section>
+{% endblock %}
