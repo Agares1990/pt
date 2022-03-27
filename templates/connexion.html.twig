@@ -4,15 +4,15 @@
   <h2>Connexion</h2>
   <hr>
   <article>
-            <h3>Bienvenue</h3>
-            <form>
-              <label for="login"><i class="bi bi-person-fill"></i> Login :</label>
-              <input type="text" id="login" name="login">
-              <label for="mdp"><i class="bi bi-lock-fill"></i> Mot de passe :</label>
-              <input type="password" id="mdp" name="mdp">
-              <hr>
-                <input type="submit" value="Se Connecter">
-    </form>
+      <h3>Bienvenue</h3>
+      <form action="profile.php" method="post">
+        <label for="login"><i class="bi bi-person-fill"></i> Login :</label>
+        <input type="text" id="login" name="login">
+        <label for="mdp"><i class="bi bi-lock-fill"></i> Mot de passe :</label>
+        <input type="password" id="mdp" name="mdp">
+        <hr>
+        <input type="submit" value="Se Connecter">
+      </form>
   </article>
 </section>
 {% endblock %}
