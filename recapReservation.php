@@ -11,6 +11,8 @@ if(isset($_POST['submit'])){
   $idCategorieChambre = $_POST["idCategorieChambre"];
   $idRoom = $_POST["idChambre"];
   $roomType = $_POST["roomType"];
+  $nbPerson = $_POST["nbPerson"];
+  $nbChild = $_POST["nbChild"];
 
   $nom = $_POST["nom"];
   $prenom = $_POST["prenom"];
@@ -32,13 +34,15 @@ if(isset($_POST['submit'])){
     $client->execute();
     $idClient = $pdo->lastInsertId();
 
-    $reservation = $pdo->prepare("INSERT INTO reservation_chambre(chambreId, categorieChambreId, clientId, dateArriver, dateDepart, requeteSpeciale) VALUES(?, ?, ?, ?, ?, ?)");
+    $reservation = $pdo->prepare("INSERT INTO reservation_chambre(chambreId, categorieChambreId, clientId, dateArriver, dateDepart, nbPerson, nbChild, requeteSpeciale) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
     $reservation->bindParam(1, $idRoom, PDO::PARAM_STR);
     $reservation->bindParam(2, $idCategorieChambre, PDO::PARAM_STR);
     $reservation->bindParam(3, $idClient, PDO::PARAM_STR);
     $reservation->bindParam(4, $fromDate, PDO::PARAM_STR);
     $reservation->bindParam(5, $toDate, PDO::PARAM_STR);
-    $reservation->bindParam(6, $message, PDO::PARAM_STR);
+    $reservation->bindParam(6, $nbPerson, PDO::PARAM_STR);
+    $reservation->bindParam(7, $nbChild, PDO::PARAM_STR);
+    $reservation->bindParam(8, $message, PDO::PARAM_STR);
     $reservation->execute();
   }
 }
