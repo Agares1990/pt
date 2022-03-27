@@ -1,0 +1,225 @@
+@import"headerFooter";
+#section1{
+  position: relative;
+  h1{ /* titre principale de la page (sur le caroussel) */
+    @include h1;/* style général h1 */
+    position: absolute;
+    right: 0;
+    bottom: 5rem;
+    left: 0;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.78);
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 10;
+    span{ /* 2ème ligne du titre principale */
+      @include h2; /* style général h2 */
+      display: block;
+      text-align: center;
+    }
+  }
+}
+#checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
+  position: fixed;
+  top: 20vh;
+  right: 2rem;
+  width: 25%;
+  z-index: 10;
+  h2{ /* titre du formulaire */
+    margin-top: 1.5rem;
+    text-align: center;
+    background-color: rgba(191, 10, 53, .9);
+    border-radius: .5rem .5rem 0 0;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    @include h2;
+    span{ /* coleur dorée */
+      color: #BCA474;
+    }
+  }
+  form{
+    @include form(2rem 3rem); /* style général du formulaire */
+    input, select{ /* style général des inputs et des selects */
+      @include inputForm(90%);
+    }
+    select{ /* style spécial pour les selects */
+        @include inputSelectForm(102%);
+        text-indent: -2px;
+        option:hover{
+          background-color: #BCA474;
+        }
+    }
+    input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
+      width: 102%;
+      @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763); /* style général des Bouttons */
+      }
+  }
+}
+
+/* SECTION DESCRIPTION DE L'HOTEL */
+.descHotel{ /* Conteneur des élémenets de la section description */
+  margin: 4em 13% 12em 13%;
+  .hotelImage{ /* l'image de l'hôtel */
+    @include backgroundImage(url("../../images/hotel.jpg"), 45%, 50vh);
+    float: left;
+    margin-right: 2rem;
+  }
+  h2{ /* titre de la section description */
+    @include h2;
+    margin-bottom: 1rem;
+    span{
+      color: $colorOr;
+    }
+  }
+  p{
+    font-size: 1rem;
+    font-family: $fontPoppins;
+    margin-bottom: 1rem
+  }
+  ul li{ /* infos et cordonnées de l'hôtel */
+    display: inline-block;
+    margin:0 1rem 1rem 0;
+    font-size: 1.1rem;
+    span{
+      color: $colorOr;
+    }
+  }
+}
+
+/* Section catégories chambres */
+.theContainer{ /* Les différentes chambres de l'hôtel */
+  clear: both;
+  section{ /* Style du bloc qui contient tous les élément de chaque type de chambres */
+    margin: 3rem 0 4em 3.5rem;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    width:20%;
+    border: 1px solid $colorOr;
+    // margin-left: ;
+    display: inline-block;
+    .container {/* Conteneur de l'image et du titre de chaque catégorie de chambre */
+      position: relative;
+      overflow: hidden;
+      /* Les images dess chambres */
+      @include backgroundImageEach((standardRoom, familyRoom, luxuryRoom, suite)){
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 35vh;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      // #standardRoom{
+      //   @include backgroundImage(url("../../images/standard/room1.jpg"), 100%, 35vh);
+      // }
+      // #familyRoom{
+      //   @include backgroundImage(url("../../images/familyRoom/familyRoom1.jpg"), 100%, 35vh);
+      // }
+      // #luxuryRoom{
+      //   @include backgroundImage(url("../../images/luxuryRoom/luxury1.jpg"), 100%, 35vh);
+      // }
+      // #suite{
+      //   @include backgroundImage(url("../../images/suite/suite1.jpg"), 100%, 35vh);
+      // }
+      .img{ /* Style et Annimation des images */
+        transition: all 3s ease-in-out;
+        overflow: hidden;
+        border-style: none;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.4, 1.4);
+        }
+      }
+      div+div{ /* div conteneur du h4 */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+      }
+      .border-or{ /* Bordure qui aaparait lors de l'animation au triangle qui contient le titre */
+        border-top: 1px solid $colorOr !important;
+      }
+    }
+  }
+}
+
+.container:hover .overlay {/* Faire apparaitre la rotation du titre */
+  @include rotation;
+}
+
+.container:hover .text { /* transition */
+  @include transition;
+}
+
+.text { /* rotation du titre*/
+  transform: rotate(-9deg);
+  color: black;
+  font-size: .625rem;
+  position: absolute;
+  overflow: hidden;
+  top: 22%;
+  left: 5%;
+  transition: all 3s cubic-bezier(0.6,.1,.3,.8);
+}
+
+
+.blocDessous{ /*Bloc qui contient les icones*/
+  /* color: #fff !important;*/
+  border: 1px solid $colorOr;
+  background-color: white;
+  ul{
+    padding: 1rem;
+    text-align: center;
+    li{
+     display: inline-block;
+     margin-right: 1.5rem;
+     img{
+       font-size: 1rem;
+       margin-right: 3px;
+     }
+  }
+ }
+}
+/*Fin de la partie catégorie des chambres*/
+
+/* Section Restaurant et Evènement*/
+#restauEvent{ /* Bloc parent */
+  margin: 4em 20% 8em 20%;
+  border: 1px solid $colorOr;
+  height: 50vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  .restauEvent{ /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
+    height: 50%;
+    overflow: hidden;
+    #restaurant{/* L'image du Restaurant */
+      @include backgroundImage(url("../../images/restaurant/restau1.jpg"), 50%, 100%);
+      float: left;
+      margin-right: 1.5rem;
+      transition: all 3s ease-in-out;
+      &:hover{
+      transform: scale(1.4, 1.4);
+      }
+    }
+    #salleEvent{ /* L'image de la salle d'évènement */
+      @include backgroundImage(url("../../images/event/salleEvent1.jpg"), 50%, 100%);
+      float: right;
+    }
+    h2{ // Titre de chaque bloc
+      @include h2;
+      padding: 1rem;
+    }
+    p{ // Description
+      margin-left: 1rem;
+      a{// Lien en savoir plus
+        margin-top: 1rem;
+        display: block;
+      }
+    }
+  }
+}

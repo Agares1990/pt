@@ -1,0 +1,522 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+html {
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+body {
+  background-color: #F0F0F0;
+  font-family: "Poppins", Arial, sans-serif;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+header {
+  background-color: #fff;
+  padding: 1rem 1rem 0 1rem;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+
+header div .logo {
+  width: 10rem;
+  height: 7.3rem;
+  float: left;
+  margin-right: 2rem;
+}
+
+header div a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+header div a img {
+  margin-right: .2rem;
+}
+
+header div .connexion {
+  height: 1.2rem;
+  padding: .5rem 1rem;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+header div .connexion:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+nav {
+  clear: both;
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+nav ul {
+  margin-top: -3rem;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 0px 1.1rem;
+  font-size: 1.1rem;
+  margin: 0px;
+  line-height: 2.25;
+  -webkit-transition: .5s;
+  color: #202020;
+  z-index: 0;
+}
+
+nav ul li a:hover {
+  color: #BCA474;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer ul {
+  margin: 2rem 0;
+}
+
+footer ul li {
+  margin-bottom: 1rem;
+}
+
+footer ul li span {
+  color: #BCA474;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul ul li {
+  display: inline-block;
+}
+
+footer ul ul li .carre {
+  font-size: 1.4rem;
+  padding: .1rem 0.4rem;
+  margin: 0 2rem 0 0;
+  box-shadow: 0 0 0 3px #BCA474;
+  transition: all 500ms ease;
+}
+
+footer ul ul li .carre:hover {
+  background-color: #BCA474;
+  color: black;
+  box-shadow: 0 0 0 3px #af9654;
+  transition: all 500ms ease;
+}
+
+footer ul ul li .carre i {
+  color: white;
+}
+
+footer ul ul li .carre i:hover {
+  color: black;
+}
+
+#section1 {
+  position: relative;
+}
+
+#section1 h1 {
+  /* titre principale de la page (sur le caroussel) */
+  /* style générale des h1 */
+  font-size: 3.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  /* style général h1 */
+  position: absolute;
+  right: 0;
+  bottom: 5rem;
+  left: 0;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.78);
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+#section1 h1 span {
+  /* 2ème ligne du titre principale */
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  /* style général h2 */
+  display: block;
+  text-align: center;
+}
+
+#checkIn {
+  /* Le bloc conteneur du formulaire de check-in et son titre */
+  position: fixed;
+  top: 20vh;
+  right: 2rem;
+  width: 25%;
+  z-index: 10;
+}
+
+#checkIn h2 {
+  /* titre du formulaire */
+  margin-top: 1.5rem;
+  text-align: center;
+  background-color: rgba(191, 10, 53, 0.9);
+  border-radius: .5rem .5rem 0 0;
+  color: white;
+  padding: 1rem;
+  cursor: pointer;
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+#checkIn h2 span {
+  /* coleur dorée */
+  color: #BCA474;
+}
+
+#checkIn form {
+  /* style générale du formulaire*/
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem 3rem;
+  border-radius: 0 0 .5rem .5rem;
+  /* style général du formulaire */
+}
+
+#checkIn form input, #checkIn form select {
+  /* style général des inputs et des selects */
+  /* style spécial des élémets input du formulaire*/
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #eef1f6;
+  font-size: 1rem;
+  color: #495057;
+  width: 90%;
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+#checkIn form select {
+  /* style spécial pour les selects */
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #eef1f6;
+  font-size: 1rem;
+  color: #495057;
+  width: 102%;
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  text-indent: -2px;
+}
+
+#checkIn form select option:hover {
+  background-color: #BCA474;
+}
+
+#checkIn form input[type="submit"] {
+  /* Boutton vérifier disponibilité du formulaire de check-in */
+  width: 102%;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: rgba(191, 10, 53, 0.9);
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+  /* style général des Bouttons */
+}
+
+#checkIn form input[type="submit"]:hover {
+  background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+  background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+  background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+}
+
+/* SECTION DESCRIPTION DE L'HOTEL */
+.descHotel {
+  /* Conteneur des élémenets de la section description */
+  margin: 4em 13% 12em 13%;
+}
+
+.descHotel .hotelImage {
+  /* l'image de l'hôtel */
+  /* pour défirnir une image en background */
+  background-image: url("../../images/hotel.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 45%;
+  height: 50vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  float: left;
+  margin-right: 2rem;
+}
+
+.descHotel h2 {
+  /* titre de la section description */
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.descHotel h2 span {
+  color: #BCA474;
+}
+
+.descHotel p {
+  font-size: 1rem;
+  font-family: "Poppins", Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+
+.descHotel ul li {
+  /* infos et cordonnées de l'hôtel */
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  font-size: 1.1rem;
+}
+
+.descHotel ul li span {
+  color: #BCA474;
+}
+
+/* Section catégories chambres */
+.theContainer {
+  /* Les différentes chambres de l'hôtel */
+  clear: both;
+}
+
+.theContainer section {
+  /* Style du bloc qui contient tous les élément de chaque type de chambres */
+  margin: 3rem 0 4em 3.5rem;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 20%;
+  border: 1px solid #BCA474;
+  display: inline-block;
+}
+
+.theContainer section .container {
+  /* Conteneur de l'image et du titre de chaque catégorie de chambre */
+  position: relative;
+  overflow: hidden;
+  /* Les images dess chambres */
+  /* pour les images des catégories de chambre de la page d'accueil */
+}
+
+.theContainer section .container #standardRoom {
+  background-image: url("../../images/index/standardRoom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.theContainer section .container #familyRoom {
+  background-image: url("../../images/index/familyRoom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.theContainer section .container #luxuryRoom {
+  background-image: url("../../images/index/luxuryRoom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.theContainer section .container #suite {
+  background-image: url("../../images/index/suite.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.theContainer section .container .img {
+  /* Style et Annimation des images */
+  transition: all 3s ease-in-out;
+  overflow: hidden;
+  border-style: none;
+}
+
+.theContainer section .container .img:hover {
+  cursor: pointer;
+  transform: scale(1.4, 1.4);
+}
+
+.theContainer section .container div + div {
+  /* div conteneur du h4 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.theContainer section .container .border-or {
+  /* Bordure qui aaparait lors de l'animation au triangle qui contient le titre */
+  border-top: 1px solid #BCA474 !important;
+}
+
+.container:hover .overlay {
+  /* Faire apparaitre la rotation du titre */
+  /* animation rotation */
+  height: 25%;
+  bottom: -13%;
+  left: -5%;
+  transform: rotate(10deg);
+  width: 120%;
+}
+
+.container:hover .text {
+  /* transition */
+  /* la transition des animations */
+  left: 8%;
+  font-size: 20px;
+  transition-delay: .3s;
+}
+
+.text {
+  /* rotation du titre*/
+  transform: rotate(-9deg);
+  color: black;
+  font-size: .625rem;
+  position: absolute;
+  overflow: hidden;
+  top: 22%;
+  left: 5%;
+  transition: all 3s cubic-bezier(0.6, 0.1, 0.3, 0.8);
+}
+
+.blocDessous {
+  /*Bloc qui contient les icones*/
+  /* color: #fff !important;*/
+  border: 1px solid #BCA474;
+  background-color: white;
+}
+
+.blocDessous ul {
+  padding: 1rem;
+  text-align: center;
+}
+
+.blocDessous ul li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+.blocDessous ul li img {
+  font-size: 1rem;
+  margin-right: 3px;
+}
+
+/*Fin de la partie catégorie des chambres*/
+/* Section Restaurant et Evènement*/
+#restauEvent {
+  /* Bloc parent */
+  margin: 4em 20% 8em 20%;
+  border: 1px solid #BCA474;
+  height: 50vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#restauEvent .restauEvent {
+  /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
+  height: 50%;
+  overflow: hidden;
+}
+
+#restauEvent .restauEvent #restaurant {
+  /* L'image du Restaurant */
+  /* pour défirnir une image en background */
+  background-image: url("../../images/restaurant/restau1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  float: left;
+  margin-right: 1.5rem;
+  transition: all 3s ease-in-out;
+}
+
+#restauEvent .restauEvent #restaurant:hover {
+  transform: scale(1.4, 1.4);
+}
+
+#restauEvent .restauEvent #salleEvent {
+  /* L'image de la salle d'évènement */
+  /* pour défirnir une image en background */
+  background-image: url("../../images/event/salleEvent1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  float: right;
+}
+
+#restauEvent .restauEvent h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+#restauEvent .restauEvent p {
+  margin-left: 1rem;
+}
+
+#restauEvent .restauEvent p a {
+  margin-top: 1rem;
+  display: block;
+}

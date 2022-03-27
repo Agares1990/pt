@@ -1,0 +1,425 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+html {
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+body {
+  background-color: #F0F0F0;
+  font-family: "Poppins", Arial, sans-serif;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+header {
+  background-color: #fff;
+  padding: 1rem 1rem 0 1rem;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+
+header div .logo {
+  width: 10rem;
+  height: 7.3rem;
+  float: left;
+  margin-right: 2rem;
+}
+
+header div a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+header div a img {
+  margin-right: .2rem;
+}
+
+header div .connexion {
+  height: 1.2rem;
+  padding: .5rem 1rem;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+header div .connexion:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+nav {
+  clear: both;
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+nav ul {
+  margin-top: -3rem;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 0px 1.1rem;
+  font-size: 1.1rem;
+  margin: 0px;
+  line-height: 2.25;
+  -webkit-transition: .5s;
+  color: #202020;
+  z-index: 0;
+}
+
+nav ul li a:hover {
+  color: #BCA474;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer ul {
+  margin: 2rem 0;
+}
+
+footer ul li {
+  margin-bottom: 1rem;
+}
+
+footer ul li span {
+  color: #BCA474;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul ul li {
+  display: inline-block;
+}
+
+footer ul ul li .carre {
+  font-size: 1.4rem;
+  padding: .1rem 0.4rem;
+  margin: 0 2rem 0 0;
+  box-shadow: 0 0 0 3px #BCA474;
+  transition: all 500ms ease;
+}
+
+footer ul ul li .carre:hover {
+  background-color: #BCA474;
+  color: black;
+  box-shadow: 0 0 0 3px #af9654;
+  transition: all 500ms ease;
+}
+
+footer ul ul li .carre i {
+  color: white;
+}
+
+footer ul ul li .carre i:hover {
+  color: black;
+}
+
+html {
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+body {
+  background-color: #F0F0F0;
+  font-family: "Poppins", Arial, sans-serif;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+header {
+  background-color: #fff;
+  padding: 1rem 1rem 0 1rem;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+
+header div .logo {
+  width: 10rem;
+  height: 7.3rem;
+  float: left;
+  margin-right: 2rem;
+}
+
+header div a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+header div a img {
+  margin-right: .2rem;
+}
+
+header div .connexion {
+  height: 1.2rem;
+  padding: .5rem 1rem;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+header div .connexion:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+nav {
+  clear: both;
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+nav ul {
+  margin-top: -3rem;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 0px 1.1rem;
+  font-size: 1.1rem;
+  margin: 0px;
+  line-height: 2.25;
+  -webkit-transition: .5s;
+  color: #202020;
+  z-index: 0;
+}
+
+nav ul li a:hover {
+  color: #BCA474;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer ul {
+  margin: 2rem 0;
+}
+
+footer ul li {
+  margin-bottom: 1rem;
+}
+
+footer ul li span {
+  color: #BCA474;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+footer ul ul li {
+  display: inline-block;
+}
+
+footer ul ul li .carre {
+  font-size: 1.4rem;
+  padding: .1rem 0.4rem;
+  margin: 0 2rem 0 0;
+  box-shadow: 0 0 0 3px #BCA474;
+  transition: all 500ms ease;
+}
+
+footer ul ul li .carre:hover {
+  background-color: #BCA474;
+  color: black;
+  box-shadow: 0 0 0 3px #af9654;
+  transition: all 500ms ease;
+}
+
+footer ul ul li .carre i {
+  color: white;
+}
+
+footer ul ul li .carre i:hover {
+  color: black;
+}
+
+#checkIn {
+  /* style générale du formulaire*/
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 0 0 .5rem .5rem;
+  width: 55%;
+  margin: 2rem auto;
+}
+
+#checkIn h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#checkIn h2 span {
+  color: #BCA474;
+}
+
+#checkIn form input {
+  /* style spécial des élémets input du formulaire*/
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #eef1f6;
+  font-size: 1rem;
+  color: #495057;
+  width: calc(90%/2);
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  margin-bottom: 10px;
+  width: calc(90%/2);
+}
+
+#checkIn form select {
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #eef1f6;
+  font-size: 1rem;
+  color: #495057;
+  width: calc((100% - 1.3rem)/3);
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  text-align: center;
+}
+
+#checkIn form select option:hover {
+  background-color: #BCA474;
+}
+
+#checkIn form input[type="submit"] {
+  /* Style général des bouttons */
+  padding: 0.63rem 0;
+  border-radius: .25rem;
+  width: calc((100% - 1rem)/3);
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: rgba(191, 10, 53, 0.9);
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+#checkIn form input[type="submit"]:hover {
+  background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+  background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+  background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+}
+
+section {
+  width: 70%;
+  margin: 1rem auto;
+}
+
+section article {
+  height: 35vh;
+  margin-bottom: 4rem;
+}
+
+section article .imageChambre {
+  max-width: 384px;
+  max-height: 257px;
+  float: left;
+  margin-right: 1rem;
+}
+
+section article article {
+  position: relative;
+}
+
+section article article h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+section article article p span {
+  color: #BCA474;
+}
+
+section article article p:nth-child(3) {
+  margin-bottom: 2rem;
+}
+
+section article article input[type='submit'] {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* Style général des bouttons */
+  padding: 0.63rem 0;
+  border-radius: .25rem;
+  width: 10rem;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+section article article input[type='submit']:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+section article div {
+  clear: both;
+}

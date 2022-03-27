@@ -1,0 +1,61 @@
+@import"headerFooter";
+section{
+  width: 60%;
+  margin: 1rem auto;
+  h2{
+    @include h2;
+    width: 50%;
+    margin: 1rem auto 3rem auto;
+  }
+  article{
+    width: 50%;
+    margin: 1rem auto;
+    h3{
+      margin: 1rem auto;
+      font-size: 1.2rem;
+      font-family:$fontRaelway;
+      font-weight: 600;;
+    }
+
+    ul{
+      margin: 1rem auto;
+      border: 1px solid $colorOr;
+      text-align: center;
+      li{
+        margin: 1rem 1rem .5rem auto;
+        display: inline-block;
+        span{
+          color: $colorOr;
+          font-weight: bold;
+          margin-left: .5rem;
+        }
+
+      }
+    }
+  }
+  form{
+    @include form(2rem 3rem);
+    width: 60%;
+    margin: 0 auto;
+    input, textarea{
+      @include inputForm(90%);
+
+    }
+    input[type='radio']{
+    width: 30%;
+    margin: 1rem auto 3rem auto;
+    }
+    input[type='submit']{
+
+      @include button(45%, .5rem 0);
+      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+      display: inline-block;
+    }
+    input[type='reset']{
+
+      @include button(45%, .5rem 0);
+      @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+      display: inline-block;
+    }
+  }
+}
