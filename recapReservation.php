@@ -23,12 +23,12 @@ if(isset($_POST['submit'])){
   if (!empty($nom) && !empty($prenom) && !empty($mail) && !empty($mdp) && !empty($tel) && !empty($pays)) {
 
     $client = $pdo->prepare("INSERT INTO client(nom, prenom, email, mdp, tel, pays ) VALUES(?, ?, ?, ?, ?, ?)");
-    $client->bindParam(1, $nom, PDO::PARAM_STR);
-    $client->bindParam(2, $prenom, PDO::PARAM_STR);
-    $client->bindParam(3, $mail, PDO::PARAM_STR);
-    $client->bindParam(4, $mdp, PDO::PARAM_STR);
-    $client->bindParam(5, $tel, PDO::PARAM_STR);
-    $client->bindParam(6, $pays, PDO::PARAM_STR);
+    $client->bindValue(1, $nom, PDO::PARAM_STR);
+    $client->bindValue(2, $prenom, PDO::PARAM_STR);
+    $client->bindValue(3, $mail, PDO::PARAM_STR);
+    $client->bindValue(4, password_hash($mdp, PASSWORD_DEFAULT), PDO::PARAM_STR);
+    $client->bindValue(5, $tel, PDO::PARAM_STR);
+    $client->bindValue(6, $pays, PDO::PARAM_STR);
     $client->execute();
     $idClient = $pdo->lastInsertId();
 
