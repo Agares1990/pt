@@ -2,10 +2,13 @@
 require "include/init_twig.php";
 require_once ("include/_connexion.php");
 include("include/_traduction.php");
+require_once "include/_functions.php";
+
 session_start();
 $css = "styleProfile";
 $pdo = getPDO();
 
+$connection = getConnectionText();
 $email = $_SESSION['email'];
 @$idReservation = $_POST['idReservation'];
 
@@ -33,10 +36,13 @@ if(isset($_POST['delete'])){
   $messageSucces = "Votre réservation a bien été annuler";
 }
 
+
+
 echo $twig->render('profile.html.twig',
   	  array('css' => $css,
             'reservations'=> $reservations,
             'client' => $client,
-            'messageSucces' => @$messageSucces
+            'messageSucces' => @$messageSucces,
+            'connection' => $connection
   				));
 ?>
