@@ -2,7 +2,7 @@
 {% block contenu %}
   <section>
     <article class="contact">
-      <form name="formContact" id="contact" action="form.php?lang={{lang}}" method="post" onsubmit="return valider()">
+      <form id="contact">
 
              <input type="text" name="name" id="name" placeholder="{{name}}">
              <span id="errorName"></span>
@@ -19,6 +19,12 @@
             <input type="submit" name="send" class="button" value="{{submit}}">
 
        </form>
+       <!-- <form class="" action="contact.php" method="post">
+         <input type="hidden" name="name" id="name" value="{{name}}">
+         <input type="hidden" name="mail" id="mail" value="{{mail}}">
+         <input type="hidden" name="subject" id="subject" value="{{subject}}">
+         <input type="hidden" name="message" id="message" value="{{message}}">
+       </form> -->
     </article>
 
     <article class="contact">
