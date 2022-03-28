@@ -7,7 +7,7 @@ $css = "styleProfile";
 $pdo = getPDO();
 
 $email = $_SESSION['email'];
-$idReservation = $_POST['idReservation'];
+@$idReservation = $_POST['idReservation'];
 
 // Récupérer le prenom du client pour afficher un message de Bienvenue
 $client = $pdo->query("SELECT prenom FROM client WHERE email =  '$email'")->fetch();
@@ -37,6 +37,6 @@ echo $twig->render('profile.html.twig',
   	  array('css' => $css,
             'reservations'=> $reservations,
             'client' => $client,
-            'messageSucces' => $messageSucces
+            'messageSucces' => @$messageSucces
   				));
 ?>

@@ -2,6 +2,7 @@
   session_start();
   require "include/init_twig.php";
   $css = "style";
+  $script = "script";
   date_default_timezone_set('Europe/Paris');
   $date = date("H:i");
   $localite = 'https://www.prevision-meteo.ch/services/json/NICE';
@@ -13,7 +14,8 @@
   echo $twig->render('index.html.twig',
     	  array('css' => $css,
     	  			'date' => $date,
-              'temperature' => " $temperature °C"
+              'temperature' => " $temperature °C",
+              'script' => $script
 
     				));
 

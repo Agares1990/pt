@@ -10,17 +10,19 @@
         list($user, $domain) = explode('@', $mail);
         return checkdnsrr($domain, $record);
     }
-if (isset($_POST['send'])) {
+  //  $test = $_POST['test'] ??'';
+  //var_dump($_POST);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {// S'execute uniquement lors d'une requete ajax
   $name = $_POST['name'];
   $mail = $_POST['mail'];
   $subject = $_POST['subject'];
   $message = htmlspecialchars($_POST['message']);
 
-  if (domain_exists($mail)) {
-    $stmt = $pdo->prepare("INSERT INTO `message`(`nom`,`email`,`sujet`,`message`) VALUES (?,?,?,?)");
-    $stmt->execute([$name,$mail,$subject,$message]);
+
+if (domain_exists($mail)) {
+    $msg = $pdo->prepare("INSERT INTO message(nom, email, sujet, message) VALUES (?,?,?,?)");
+    $msg->execute([$name, $mail, $subject, $message]);
       echo "Passed";
-      var_dump($stmt);
   }
   else
       echo "Failed";
