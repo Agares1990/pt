@@ -1,5 +1,5 @@
 <?php
-	$traductions = [1=>["nav1" => "A propos de moi",
+	$traductions = ['fr'=>["nav1" => "A propos de moi",
 					"nav2" => "Formations",
 					"nav3" => "Experiences professionnelles",
 					"nav4" => "Portfolio",
@@ -25,7 +25,7 @@
 					"jeSuis" => "Je suis Brahim LAMJARAD",
 					"droit1" => "Tous Droits Réservés",
 					"droit2" => "Conçu par"],
-					2=>["nav1" => "About me",
+					'en'=>["nav1" => "About me",
 					"nav2" => "Studies",
 					"nav3" => "Experiences",
 					"nav4" => "Portfolio",
