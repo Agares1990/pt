@@ -1,4 +1,5 @@
 @import"headerFooter";
+@import"formCheckIn";
 table, td, th{
   border: 1px solid $colorOr;
 }
@@ -30,4 +31,43 @@ h2{
   @include h3;
   text-align: center;
   margin-bottom: 3rem;
+}
+#room{
+  width: 70%;
+  margin: 1rem auto;
+  article{
+    height: 35vh;
+    margin-bottom: 4rem;
+    .imageChambre{
+      max-width: 384px;
+      max-height: 257px;
+      float: left;
+      margin-right: 1rem;
+      }
+      article{
+        position: relative;
+        h2{
+          @include h2;
+          margin-bottom: 1rem;
+        }
+        p{
+          span{
+            color: $colorOr;
+          }
+        }
+        p:nth-child(3){
+          margin-bottom: 2rem;
+        }
+        input[type='submit']{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          @include button(10rem, .63rem 0);
+          @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+        }
+      }
+      div{
+      clear: both;
+      }
+  }
 }

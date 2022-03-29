@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
      }
      $where .= " && capaciteAdulte >= " .$nbPerson;
      $where .= " && capaciteEnfant >= " . $nbChild ;
-     $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN ".$fromDate ." AND " . $toDate ." or dateDepart BETWEEN " .$fromDate ." AND " . $toDate. ")";
+     $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
 
       $query = "SELECT * FROM chambre
       LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
@@ -49,7 +49,7 @@ if(isset($_POST['submit'])){
       $rooms = $pdo->query($query);
     }
   }
-
+      print_r($rooms);
 echo $twig->render('formCheckInPage.html.twig',
   	  array('css' => $css,
             'rooms' => $rooms,

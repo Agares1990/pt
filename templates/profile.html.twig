@@ -4,7 +4,7 @@
   <table>
     <thead>
         <tr>
-            <th colspan="6">Votre (vos) réservation(s)</th>
+            <th colspan="7">Votre (vos) réservation(s)</th>
         </tr>
         <tr>
             <th>Chambre</th>
@@ -12,6 +12,7 @@
             <th>Daté de départ</th>
             <th>Nombre de personnes</th>
             <th>Nombre d'enfants</th>
+            <th>Modifier la réservation</th>
             <th>Annuler la réservation</th>
         </tr>
     </thead>
@@ -24,6 +25,7 @@
                 <td>{{reservation.dateDepart}}</td>
                 <td>{{reservation.nbPerson}}</td>
                 <td>{{reservation.nbChild}}</td>
+                <td> <button type="button" id="update" name="update">Modifier</buton></td>
                 <td> <input type="submit" name="delete" value="Annuler" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
                 <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
             </tr>
@@ -32,4 +34,85 @@
     </tbody>
 </table>
 <h2>{{messageSucces}}</h2>
+<!-- Formulaire de check-in -->
+<section>
+  <article id="checkIn">
+      <!-- formulaire de recherche de chambre dispo -->
+      <h2>Modifier votre <span>réservation</span></h2>
+    <form id="formChek" action="profile.php" method="POST">
+        <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
+
+        <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
+
+       <select name="nbPerson" id="nbPerson">
+         <option value="">--Nombre de personne--</option>
+         <option class="option" value="1">1</option>
+         <option class="option" value="2">2</option>
+         <option class="option" value="3">3</option>
+         <option class="option" value="4">4</option>
+         <option class="option" value="5">5</option>
+       </select>
+
+       <select name="nbChild" id="nbChild">
+         <option value="">--Nombre d'enfant--</option>
+         <option class="option" value="1">1</option>
+         <option class="option" value="2">2</option>
+         <option class="option" value="3">3</option>
+         <option class="option" value="4">4</option>
+         <option class="option" value="5">5</option>
+       </select>
+
+       <select name="roomType" id="roomType">
+         <option value="">--Choix de Chambre--</option>
+         <option class="option" value="1">Chambre Standard</option>
+         <option class="option" value="2">Chambre Familiale</option>
+         <option class="option" value="3">Suite Senior</option>
+       </select>
+
+
+          <input type="submit" name="verify" value="Vérifie disponibilité">
+
+    </form>
+  </article>
+</section>
+
+<section id="room">
+  {% for room in rooms %}
+        <article>
+          <img class="imageChambre" src="{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
+          <article class="desc">
+            <form class="" action="profile.php" method="post">
+
+              <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
+              <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
+              <input type="hidden" name="nbDay" value="{{nbDay}}">
+              <!-- <label for="nomCategorie">{{room.nomCategorie}}</label> -->
+              <input type="hidden" id="roomType" name="roomType" value="{{room.nomCategorie}}">
+              <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{room.idCategorieChambre}}">
+              <!-- <label for="nbPerson">{{nbPerson}}</label> -->
+              <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
+              <!-- <label for="nbChild">{{nbChild}}</label> -->
+              <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
+              <input type="hidden" id="idChambre" name="idChambre" value="{{room.idChambre}}">
+              <input type="hidden" id="idClient" name="idClient" value="{{room.clientId}}">
+              <input type="submit" name="updateResa" value="{{room.tarifCategorieChambre * nbDay}} €">
+            </form>
+
+            <h2>{{room.nomCategorie}}</h2>
+            <p><span>{{nbPerson}}</span>personne(s)</p>
+            <p><span>{{nbChild}}</span>enfant(s)</p>
+            <p>{{room.description}}</p>
+            <ul>
+              <li>{{room.caracterestique1}}</li>
+              <li>{{room.caracterestique2}}</li>
+              <li>{{room.caracterestique3}}</li>
+            </ul>
+          </article>
+          <div>
+
+          </div>
+        </article>
+        <h2>{{message}}</h2>
+  {% endfor %}
+</section>
 {% endblock %}
