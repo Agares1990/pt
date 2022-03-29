@@ -2,9 +2,13 @@
   require "include/init_twig.php";
   include_once("include/_traduction.php");
   include_once("include/_connexion.php");
+  require_once "include/_functions.php";
+  session_start();
   $css = "styleContact";
   $script = "contactForm";
   $pdo = getPDO();
+
+  $connection = getConnectionText();
 
   function domain_exists($mail, $record = 'MX'){
         list($user, $domain) = explode('@', $mail);
@@ -36,6 +40,7 @@ if (domain_exists($mail)) {
               'mail' => $traductions[$lang]["inputMail"],
               'subject' => $traductions[$lang]["inputSubject"],
               'submit' => $traductions[$lang]["inputSubmit"],
-              'script' => $script
+              'script' => $script,
+              'connection' => $connection
     				));
 ?>

@@ -3,10 +3,12 @@ session_start();
 require "include/init_twig.php";
 include("include/_connexion.php");
 include("include/_traduction.php");
+require_once "include/_functions.php";
+
 $css = "styleFormCheckInPage";
 
 $pdo = getPDO();
-
+$connection = getConnectionText();
 //$rooms = '';
 if(isset($_POST['submit'])){
 
@@ -55,6 +57,7 @@ echo $twig->render('formCheckInPage.html.twig',
             'nbChild' => $nbChild,
             'nbDay' => $nbDay,
             'fromDate' => $fromDate,
-            'toDate' => $toDate
+            'toDate' => $toDate,
+            'connection' => $connection
   				));
 ?>

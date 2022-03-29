@@ -2,8 +2,12 @@
 require "include/init_twig.php";
 require "include/_connexion.php";
 include("include/_traduction.php");
+require_once "include/_functions.php";
+session_start();
 $css = "recapReservation";
 $pdo = getPDO();
+
+$connection = getConnectionText();
 if(isset($_POST['submit'])){
 
   $fromDate = $_POST["CheckIn"];
@@ -48,5 +52,6 @@ if(isset($_POST['submit'])){
 }
 echo $twig->render('recapReservation.html.twig',
   	  array('css' => $css,
+            'connection' => $connection
   				));
 ?>

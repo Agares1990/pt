@@ -17,22 +17,18 @@ $client = $pdo->query("SELECT prenom FROM client WHERE email =  '$email'")->fetc
 //$client = $client->fetch();
 
 // Afficher les réservation d'un client donné
-$reservations = $pdo->query("SELECT * FROM reservation_chambre
-                  LEFT JOIN nom_categorie_chambre ON reservation_chambre.categorieChambreId = nom_categorie_chambre.categorieChambreId
-                  LEFT JOIN client ON reservation_chambre.clientId = client.idClient
-                  WHERE email = '$email' && langueId = '$lang'");
+$reservations = afficherReservationClient($pdo, $email, $lang);
+
+//si on clique sur le bouton annuler
 if(isset($_POST['delete'])){
 
-  //Requête pour supprimer une réservation
-  $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
-                  WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_chambre) AS reserv INNER JOIN client ON reservation_chambre.clientId = client.idClient
-                  WHERE email = '$email' && idReservationChambre = '$idReservation')");
+  //On annule la réservation
+  annulerReservation($pdo, $email, $idReservation);
 
-// Actualiser la page après suppression d'une réservation
-  $reservations = $pdo->query("SELECT * FROM reservation_chambre
-                    LEFT JOIN nom_categorie_chambre ON reservation_chambre.categorieChambreId = nom_categorie_chambre.categorieChambreId
-                    LEFT JOIN client ON reservation_chambre.clientId = client.idClient
-                    WHERE email = '$email' && langueId = '$lang'");
+// Actualiser la page après annulation d'une réservation
+  $reservations = afficherReservationClient($pdo, $email, $lang);
+
+  // Afficher un message de success d'annulation réservation
   $messageSucces = "Votre réservation a bien été annuler";
 }
 
