@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 html {
   min-height: 100%;
@@ -36,8 +37,21 @@ header div a {
   color: black;
 }
 
-header div a img {
+header div a .iconeLangue {
   margin-right: .2rem;
+  margin-top: .6rem;
+}
+
+header div a i {
+  font-size: 2rem;
+  color: #BCA474;
+}
+
+header div .profile {
+  /* style générale des h2 */
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
 }
 
 header div .connexion {
