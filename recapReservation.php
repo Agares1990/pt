@@ -7,7 +7,8 @@ session_start();
 $css = "recapReservation";
 $pdo = getPDO();
 
-$connection = getConnectionText();
+
+
 if(isset($_POST['submit'])){
 
   $fromDate = $_POST["CheckIn"];
@@ -20,18 +21,18 @@ if(isset($_POST['submit'])){
 
   $nom = $_POST["nom"];
   $prenom = $_POST["prenom"];
-  $mail = $_POST["mail"];
+  $email = $_POST["email"];
   $mdp = $_POST["mdp"];
   $tel = $_POST["tel"];
   $pays = $_POST["pays"];
   $message = $_POST["message"];
 
-  if (!empty($nom) && !empty($prenom) && !empty($mail) && !empty($mdp) && !empty($tel) && !empty($pays)) {
+  if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($mdp) && !empty($tel) && !empty($pays)) {
 
     $client = $pdo->prepare("INSERT INTO client(nom, prenom, email, mdp, tel, pays ) VALUES(?, ?, ?, ?, ?, ?)");
     $client->bindValue(1, $nom, PDO::PARAM_STR);
     $client->bindValue(2, $prenom, PDO::PARAM_STR);
-    $client->bindValue(3, $mail, PDO::PARAM_STR);
+    $client->bindValue(3, $email, PDO::PARAM_STR);
     $client->bindValue(4, password_hash($mdp, PASSWORD_DEFAULT), PDO::PARAM_STR);
     $client->bindValue(5, $tel, PDO::PARAM_STR);
     $client->bindValue(6, $pays, PDO::PARAM_STR);
@@ -48,8 +49,12 @@ if(isset($_POST['submit'])){
     $reservation->bindParam(7, $nbChild, PDO::PARAM_STR);
     $reservation->bindParam(8, $message, PDO::PARAM_STR);
     $reservation->execute();
+
+    $_SESSION["email"] = $email;
+
   }
 }
+  $connection = getConnectionText();
 echo $twig->render('recapReservation.html.twig',
   	  array('css' => $css,
             'connection' => $connection
