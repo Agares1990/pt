@@ -62,7 +62,7 @@
         <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
         <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
         <input type="hidden" name="idReservation" value="{{idReservation}}">
-        
+        <input type="hidden" name="idChambre" value="{{roomsCheck.idChambre}}">
         <input type="hidden" name="verify" value="1">
         <input type="submit" value="Vérifie disponibilité">
 
@@ -73,6 +73,7 @@
 {% if verify == 1 %}
 <section id="room">
         <article>
+          {% if roomsCheck.tarifCategorieChambre * nbDay != 0 %}
             <table>
               <thead>
                   <tr>
@@ -102,10 +103,12 @@
                             </form>
                           </td>
                       </tr>
-
-
               </tbody>
           </table>
+          {% endif %}
+          {% if roomsCheck.tarifCategorieChambre * nbDay == 0 %}
+            <h3>Désolé, nous n'avons pas de disponibilité pendant ces dates</h3>
+          {% endif %}
         </article>
         <h2>{{message}}</h2>
 

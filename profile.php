@@ -51,7 +51,10 @@ $email = $_SESSION['email'];
         $roomsCheck = $pdo->query($query)->fetch();
 
       }
-      print_r($roomsCheck);
+    else {
+      $errorMessage = "Veuillez entrez la date d'arriver et la date de départ svp";
+    }
+      var_dump($roomsCheck);
   }
 
   if (isset($_POST['updateResa'])) {
