@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
   <h1>Bienvenue <span>{{client.prenom}}<span></h1>
+    <form class="" action="profile.php" method="post">
   <table>
     <thead>
         <tr>
@@ -18,23 +19,38 @@
     </thead>
     <tbody>
         {% for reservation in reservations %}
-          <form class="" action="profile.php" method="post">
+
             <tr>
                 <td>{{reservation.nomCategorie}}</td>
                 <td>{{reservation.dateArriver}}</td>
                 <td>{{reservation.dateDepart}}</td>
                 <td>{{reservation.nbPerson}}</td>
                 <td>{{reservation.nbChild}}</td>
-                <td> <button type="submit" id="update" name="update">Modifier</buton></td>
-                <td> <input type="submit" name="delete" value="Annuler" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
-                <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
-                <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                <td>
+                  <form class="" action="profile.php#formChek" method="post">
+                    <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
+                    <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                    <input type="hidden" name="modification" value="1">
+                    <input type="submit" id="update" value="Modifier la date">
+                  </form>
+                </td>
+                <td>
+                  <form class="" action="profile.php" method="post">
+                    <input type="submit" name="delete" value="Annuler" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                    <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
+                    <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                    <input type="hidden" name="delete" value="1">
+                  </form>
             </tr>
-          </form>
+
         {% endfor %}
     </tbody>
 </table>
+</form>
 <h2>{{messageSucces}}</h2>
+
+
+{% if modification == 1 %}
 <!-- Formulaire de check-in -->
 <section>
   <article id="checkIn">
@@ -45,12 +61,14 @@
         <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
         <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
         <input type="hidden" name="idReservation" value="{{idReservation}}">
-        <input type="submit" name="verify" value="Vérifie disponibilité">
+        <input type="hidden" name="verify" value="1">
+        <input type="submit" value="Vérifie disponibilité">
 
     </form>
   </article>
 </section>
-
+{% endif %}
+{% if verify == 1 %}
 <section id="room">
         <article>
             <table>
@@ -67,14 +85,21 @@
               </thead>
               <tbody>
 
-                    <form class="" action="profile.php" method="post">
                       <tr>
                           <td>{{dateArriver}}</td>
                           <td>{{dateDepart}}</td>
                           <td>{{roomsCheck.tarifCategorieChambre * nbDay}}</td>
-                          <td> <button type="button" id="update" name="update">Modifier</buton></td>
+                          <td>
+                            <form class="" action="profile.php" method="post">
+                              <input type="hidden" name="fromDate" value="{{dateArriver}}">
+                              <input type="hidden" name="toDate" value="{{dateDepart}}">
+                              <input type="hidden" name="idReservation" value="{{idReservation}}">
+                              <input type="hidden" name="updateResa" value="1">
+                              <input type="submit" id="update" value="Valider la modification">
+                            </form>
+                          </td>
                       </tr>
-                    </form>
+
 
               </tbody>
           </table>
@@ -82,4 +107,5 @@
         <h2>{{message}}</h2>
 
 </section>
+{% endif %}
 {% endblock %}

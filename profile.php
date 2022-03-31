@@ -13,7 +13,8 @@ $connection = getConnectionText();
 $email = $_SESSION['email'];
 @$idReservation = $_POST['idReservation'];
 @$idCategorieChambre = $_POST['idCategorieChambre'];
-
+@$chambreId = $_POST['chambreId'];
+@$modification = $_POST['modification'];
   // Récupérer le prenom du client pour afficher un message de Bienvenue
   $client = $pdo->query("SELECT * FROM client WHERE email =  '$email'")->fetch();
   //$client = $client->fetch();
@@ -63,15 +64,13 @@ $email = $_SESSION['email'];
       // print_r($tarifCategorieChambre);
   }
 //   var_dump($query);
-  // if (isset($_POST['updateResa'])) {
-  // join client.idClient = reservation_chambre.clientId WHERE email = '$email'
-  // }
-  //
+  
 
+  $reservationsClient = afficherReservationClient($pdo, $email, $lang);
 
-var_dump($idReservation);
-var_dump($idCategorieChambre);
-
+// var_dump($idReservation);
+// var_dump($idCategorieChambre);
+var_dump($_POST);
 echo $twig->render('profile.html.twig',
   	  array('css' => $css,
             'script' => $script,
@@ -82,7 +81,9 @@ echo $twig->render('profile.html.twig',
             'roomsCheck' => $roomsCheck,
             'idCategorieChambre' => $idCategorieChambre,
             'idReservation' => $idReservation,
-
+            'chambreId' => $chambreId,
+            'modification' => $modification,
+            'verify' => $_POST['verify'],
             // 'nbPerson' => $nbPerson,
             // 'nbChild' => $nbChild,
             'nbDay' => $nbDay,
