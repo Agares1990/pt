@@ -13,22 +13,15 @@ $connection = getConnectionText();
 $email = $_SESSION['email'];
 @$idReservation = $_POST['idReservation'];
 @$idCategorieChambre = $_POST['idCategorieChambre'];
-@$chambreId = $_POST['chambreId'];
 @$modification = $_POST['modification'];
   // Récupérer le prenom du client pour afficher un message de Bienvenue
   $client = $pdo->query("SELECT * FROM client WHERE email =  '$email'")->fetch();
-  //$client = $client->fetch();
-
-
 
   //si on clique sur le bouton annuler
   if(isset($_POST['delete'])){
 
     //On annule la réservation
     annulerReservation($pdo, $email, $idReservation);
-
-  // // Actualiser la page après annulation d'une réservation
-  //   $reservations = afficherReservationClient($pdo, $email, $lang);
 
     // Afficher un message de success d'annulation réservation
     $messageSucces = "Votre réservation a bien été annuler";
@@ -41,7 +34,6 @@ $email = $_SESSION['email'];
     $fromDate = $_POST["CheckIn"];
     $toDate = $_POST["CheckOut"];
     $idCategorieChambre = $_POST["idCategorieChambre"];
-    //var_dump($_POST);
 
     // Pour caculer le nombre de jours réservés
     $fromDate = new DateTime($fromDate);
@@ -51,7 +43,6 @@ $email = $_SESSION['email'];
 
     $fromDate = $fromDate->format('Y-m-d');
     $toDate = $toDate->format('Y-m-d');
-    // echo $nbDay;
 
     if (!empty($fromDate) && !empty($toDate)) {
         $query = "SELECT * FROM chambre
@@ -60,17 +51,22 @@ $email = $_SESSION['email'];
         $roomsCheck = $pdo->query($query)->fetch();
 
       }
-      // $tarifCategorieChambre = $roomsCheck['tarifCategorieChambre'];
-      // print_r($tarifCategorieChambre);
+      print_r($roomsCheck);
   }
-//   var_dump($query);
-  
+
+  if (isset($_POST['updateResa'])) {
+    $idChambre = $_POST['idChambre'];
+    $CheckIn = $_POST['CheckIn'];
+    $CheckOut = $_POST['CheckOut'];
+    $req = $pdo->prepare("UPDATE reservation_chambre SET chambreId = :chambreId, dateArriver = :dateArriver, dateDepart = :dateDepart WHERE idReservationChambre = $idReservation");
+    $req->bindParam(':chambreId', $idChambre, PDO::PARAM_INT);
+    $req->bindParam(':dateArriver', $CheckIn, PDO::PARAM_INT);
+    $req->bindParam(':dateDepart', $CheckOut, PDO::PARAM_INT);
+    $req->execute();
+  //join client.idClient = reservation_chambre.clientId WHERE email = '$email'
+  }
 
   $reservationsClient = afficherReservationClient($pdo, $email, $lang);
-
-// var_dump($idReservation);
-// var_dump($idCategorieChambre);
-var_dump($_POST);
 echo $twig->render('profile.html.twig',
   	  array('css' => $css,
             'script' => $script,
@@ -78,18 +74,13 @@ echo $twig->render('profile.html.twig',
             'client' => $client,
             'messageSucces' => @$messageSucces,
             'connection' => $connection,
-            'roomsCheck' => $roomsCheck,
+            'roomsCheck' => @$roomsCheck,
             'idCategorieChambre' => $idCategorieChambre,
             'idReservation' => $idReservation,
-            'chambreId' => $chambreId,
             'modification' => $modification,
-            'verify' => $_POST['verify'],
-            // 'nbPerson' => $nbPerson,
-            // 'nbChild' => $nbChild,
-            'nbDay' => $nbDay,
-
-
-            'dateArriver' => $fromDate,
-            'dateDepart' => $toDate
+            'verify' => @$_POST['verify'],
+            'nbDay' => @$nbDay,
+            'dateArriver' => @$fromDate,
+            'dateDepart' => @$toDate
   				));
 ?>

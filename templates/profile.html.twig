@@ -30,6 +30,7 @@
                   <form class="" action="profile.php#formChek" method="post">
                     <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
                     <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                    <input type="hidden" name="chambreId" value="{{reservation.chambreId}}">
                     <input type="hidden" name="modification" value="1">
                     <input type="submit" id="update" value="Modifier la date">
                   </form>
@@ -61,6 +62,7 @@
         <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
         <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
         <input type="hidden" name="idReservation" value="{{idReservation}}">
+        
         <input type="hidden" name="verify" value="1">
         <input type="submit" value="Vérifie disponibilité">
 
@@ -91,9 +93,10 @@
                           <td>{{roomsCheck.tarifCategorieChambre * nbDay}}</td>
                           <td>
                             <form class="" action="profile.php" method="post">
-                              <input type="hidden" name="fromDate" value="{{dateArriver}}">
-                              <input type="hidden" name="toDate" value="{{dateDepart}}">
+                              <input type="hidden" name="CheckIn" value="{{dateArriver}}">
+                              <input type="hidden" name="CheckOut" value="{{dateDepart}}">
                               <input type="hidden" name="idReservation" value="{{idReservation}}">
+                              <input type="hidden" name="idChambre" value="{{roomsCheck.idChambre}}">
                               <input type="hidden" name="updateResa" value="1">
                               <input type="submit" id="update" value="Valider la modification">
                             </form>
