@@ -71,22 +71,34 @@ h2{
 
 section{
   width: 80%;
-  margin: 1rem auto;
-  @include form(2rem 2rem);
+  margin: 2rem auto;
+  @include form(2rem 0);
   h2{
     @include h2;
   }
     #comments{
-      width: 50%;
+      width: 55%;
       margin-left: auto;
       margin-right: auto;
-      input, textarea{
-        @include inputForm(100%);
+      input{
+        @include inputForm(calc((100% - 6.5rem)/2));
 
       }
+      input[name="title"]{
+        margin-right: 2rem;
+      }
+      textarea{
+        @include inputForm(calc(100% - 2rem));
+      }
       button{
-        @include button(45%, .7rem 0);
+        @include button(35%, .7rem 0);
         @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+      }
+      #success{
+        @include success;
+        #closebtn{
+          @include closebtn;
+        }
       }
     }
 }

@@ -7,7 +7,7 @@ $( document ).ready( function ()
 		const regex2 = /^(([^<>()\[\]\\.,;:\s@"]+( \.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\.[0-9]{1, 3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 		// si le formulaire est correct, retourne 'true'
-		// sinon affiche le message adéquat 
+		// sinon affiche le message adéquat
 		function checkForm()
 		{
 			// Vérification des champs formulaires
