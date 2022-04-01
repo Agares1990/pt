@@ -492,6 +492,60 @@ h2 {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-#room article div {
-  clear: both;
+section {
+  width: 80%;
+  margin: 1rem auto;
+  /* style générale du formulaire*/
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem 2rem;
+  border-radius: 0 0 .5rem .5rem;
+}
+
+section h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+section #comments {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section #comments input, section #comments textarea {
+  /* style spécial des élémets input du formulaire*/
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #eef1f6;
+  font-size: 1rem;
+  color: #495057;
+  width: 100%;
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+section #comments button {
+  /* Style général des bouttons */
+  padding: 0.7rem 0;
+  border-radius: .25rem;
+  width: 45%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+section #comments button:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }

@@ -66,8 +66,27 @@ h2{
           @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
         }
       }
-      div{
-      clear: both;
-      }
   }
+}
+
+section{
+  width: 80%;
+  margin: 1rem auto;
+  @include form(2rem 2rem);
+  h2{
+    @include h2;
+  }
+    #comments{
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      input, textarea{
+        @include inputForm(100%);
+
+      }
+      button{
+        @include button(45%, .7rem 0);
+        @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+      }
+    }
 }
