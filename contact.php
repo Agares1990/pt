@@ -14,12 +14,11 @@
         list($user, $domain) = explode('@', $mail);
         return checkdnsrr($domain, $record);
     }
-  //  $test = $_POST['test'] ??'';
-  //var_dump($_POST);
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {// S'execute uniquement lors d'une requete ajax
-  $name = $_POST['name'];
+  $name = htmlspecialchars($_POST['name']);
   $mail = $_POST['mail'];
-  $subject = $_POST['subject'];
+  $subject = htmlspecialchars($_POST['subject']);
   $message = htmlspecialchars($_POST['message']);
 
 

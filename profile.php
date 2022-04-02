@@ -76,8 +76,20 @@ else {
   $reservationsClient = afficherReservationClient($pdo, $email, $lang);
 if (isset($_POST['verify']) && $_POST['verify'] == 1) {
   echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
-  exit(); // Arrêter l'execution de la scripte 
+  exit(); // Arrêter l'execution de la scripte
 
+}
+/////////////////////////////////
+//Ajouter un Commentaire
+$title = htmlspecialchars($_POST['title']);
+$note = htmlspecialchars($_POST['note']);
+$comment = htmlspecialchars($_POST['comment']);
+$dateComment = date('d-m-y');;
+
+if ($_POST['comment']) {
+
+    leaveComment($pdo, $client['idClient'], $note, $title, $comment, $dateComment);
+    //var_dump($cltId);
 }
 
 
@@ -95,7 +107,8 @@ if (isset($_POST['verify']) && $_POST['verify'] == 1) {
               'verify' => @$_POST['verify'],
               'nbDay' => @$nbDay,
               'dateArriver' => @$fromDate,
-              'dateDepart' => @$toDate
+              'dateDepart' => @$toDate,
+              'dateComment' => $dateComment
             ));
 
 

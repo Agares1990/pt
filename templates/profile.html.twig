@@ -100,16 +100,17 @@
            <span id="successMessage"></span>
            <i id="closebtn">x</i>
          </div>
+         <input type="hidden" name="dateComment" value="{{dateComment}}">
          <input type="text" name="title" id="title" placeholder="Titre">
          <span id="errorTitle"></span>
 
-         <input type="number" name="note" id="note" placeholder="Note">
+         <input type="number" name="note" id="note" placeholder="Note" min="1" max="5">
          <span id="errorNote"></span>
 
          <textarea name="comment" id="comment" placeholder="Commentaire" rows="8" cols="40"></textarea>
          <span id="errorComment"></span>
 
-        <button id="publish ">Publier votre commentaire</button>
+         <button id="publish">Publier votre commentaire</button>
 
    </form>
 </section>

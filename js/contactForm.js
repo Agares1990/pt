@@ -1,6 +1,6 @@
 $( document ).ready( function ()
 	{
-		// Expression régulière des deux premiers champs (prénom/nom).
+		// Expression régulière des deux premiers champs (nom/sujet/message).
 		const regex1 = /^[a-zA-Z ]{2,30}$/;
 
 		// Expression régulière du dernier champ (email).

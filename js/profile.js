@@ -57,7 +57,84 @@ $(document).ready(function(){
    				});
 
    	};
-      $('#verifier').click(sendVerif);
+    $('#verifier').click(sendVerif);
 
+      // Insérer Commentaire
+      // Expression régulière des deux premiers champs (titre/commentaire).
+  		const regex1 = /^[a-zA-Z ]{2,30}$/;
 
+  		// si le formulaire est correct, retourne 'true'
+  		// sinon affiche le message adéquat
+  		function checkForm()
+  		{
+  			// Vérification des champs formulaires
+  			const title = $( "input[name = 'title']" );
+  		  const comment = $( "input[name = 'comment']" );
+  		  const note = $( "input[name = 'note']" );
+        console.log(title);
+
+  			if ( !regex1.test( title.val() ))
+  			{
+  				$("#errorTitle").text("Le titre est invalide ou laissé vide");
+  				return false;
+  			}
+  			if ( isNaN( note.val() ))
+  			{
+  				$("#errorTitle").text("");
+  				$("#errorNote").text("Veuillez saisir une note comprise entre 1 et 5");
+  				return false;
+  			}
+  			if ( !regex1.test( comment.val() ))
+  			{
+  				$("#errorNote").text("");
+  				$("#errorComment").text("Veuillez donnez votre avis");
+  				return false;
+  			}
+
+  			else {
+  				$("span").text("")
+  				$("#success").css("visibility", "visible");
+  				$("#successMessage").text("Le message a été envoyé avec succès !");
+  				return true;
+  			}
+
+  		}
+  		// réinitialise le formulaire
+  		function clearForm()
+  		{
+  			$( "textarea" ).val( "" );
+  			$( "input[type = \"text\"]" ).val( "" );
+  		}
+
+  		// si les données du formulaire sont correctes
+  		$( "#publish" ).click( function(e)
+  		{
+  	      e.preventDefault();
+  				if ( checkForm() )
+  				{
+  					// On envoie les données du formulaire via une
+  					//	requête de type POST.
+  					$.post( "profile.php",
+  						{
+  							// Titre
+  							title: $( "input[name = 'title']" ).val(),
+
+  							// Note
+  							note: $( "input[name = 'note']" ).val(),
+
+  							// Commentaire
+  							comment: $( "textarea[name = 'comment']" ).val(),
+
+  						});
+
+  					// On supprime les données du formulaire seulement
+  					//	si toutes les données ont été validées.
+  					clearForm();
+  				}
+  		} );
+  		// cacher le message du succès lorsqu'on clique sur X (#closebtn)
+  		$("#closebtn").click(function cacherMessage()
+  		{
+    		$("#success").hide();
+  		});
 });
