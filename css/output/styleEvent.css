@@ -224,7 +224,7 @@ section form input, section form textarea {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
-  border: solid 1px #eef1f6;
+  border: solid 1px #BCA474;
   font-size: 1rem;
   color: #495057;
   width: 90%;
@@ -238,7 +238,7 @@ section form select {
   /* style spécial pour les selects */
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
-  border: solid 1px #eef1f6;
+  border: solid 1px #BCA474;
   font-size: 1rem;
   color: #495057;
   width: 95%;

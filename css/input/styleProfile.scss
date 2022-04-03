@@ -1,5 +1,4 @@
 @import"base";
-@import"formCheckIn";
 table, td, th{
   border: 1px solid $colorOr;
 }
@@ -32,24 +31,44 @@ h2{
   text-align: center;
   margin-bottom: 3rem;
 }
+
+/* Formulaire de modification de la date */
+#checkIn{
+  @include form(1rem 2rem);
+  width: 50%;
+  margin: 2rem auto;
+  h2{
+    @include h2;
+    text-align: center;
+    margin-bottom: 2rem;
+    span{
+      color: #BCA474;
+    }
+  }
+  form{
+    input{
+      @include inputForm(calc(80%/2));
+    }
+    input:first-child{
+      margin-right: 2rem;
+    }
+    button{
+      @include button(calc((100% - 1rem)/3), .63rem 0);
+      @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+      margin-top: 1rem;
+      }
+  }
+}
+
+
+/* Formulaire des commentaires */
+
 #room{
   width: 70%;
   margin: 1rem auto;
   article{
     height: 35vh;
     margin-bottom: 4rem;
-    .imageChambre{
-      max-width: 384px;
-      max-height: 257px;
-      float: left;
-      margin-right: 1rem;
-      }
-      article{
-        position: relative;
-        h2{
-          @include h2;
-          margin-bottom: 1rem;
-        }
         p{
           span{
             color: $colorOr;
@@ -58,14 +77,14 @@ h2{
         p:nth-child(3){
           margin-bottom: 2rem;
         }
-        input[type='submit']{
+        button{
           position: absolute;
           bottom: 0;
           right: 0;
           @include button(10rem, .63rem 0);
           @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
         }
-      }
+
   }
 }
 

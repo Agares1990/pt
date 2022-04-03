@@ -335,7 +335,7 @@ footer ul ul li .carre i:hover {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
-  border: solid 1px #eef1f6;
+  border: solid 1px #BCA474;
   font-size: 1rem;
   color: #495057;
   width: calc(90%/2);
@@ -348,7 +348,7 @@ footer ul ul li .carre i:hover {
 #checkIn form select {
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
-  border: solid 1px #eef1f6;
+  border: solid 1px #BCA474;
   font-size: 1rem;
   color: #495057;
   width: calc((100% - 1.3rem)/3);

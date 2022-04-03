@@ -8,11 +8,13 @@
     <h2>Avis clients</h2>
     <h3>UN HÔTEL UNIQUE À DÉCOUVRIR</h3>
     <hr></hr>
-    <p>Nos clients sont les mieux placés pour vous parler de leur expérience au Nice Excelsior Hôtel.<br>
+    <p>Nos clients sont les mieux placés pour vous parler de leur expérience au Nice ONE.<br>
       Découvrez leur avis et leurs commentaires au cours de leur séjour à Nice.</p>
-    <article>
-      <span>XX/XX/XXXX</span> - <span>Brahim L.</span><span>xxxxx</span>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </article>
+    {% for comment in comments %}
+      <article>
+        <span>{{comment['dateComment']}}</span> - <span>{{comment['prenom']}}</span> <span>{{comment['note']}}</span>
+        <p>{{comment['commentaire']}}</p>
+      </article>
+    {% endfor %}
   </section>
 {% endblock %}

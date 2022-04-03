@@ -5,7 +5,7 @@
 }
 @mixin inputSelectForm($width){ /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
-  border: solid 1px #eef1f6;
+  border: solid 1px $colorOr;
   font-size: 1rem;
   color: #495057;
   width: $width;

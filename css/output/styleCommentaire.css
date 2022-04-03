@@ -234,5 +234,6 @@ section > p {
 section article {
   text-align: left;
   border: 1px solid #BCA474;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  margin-bottom: 2rem;
 }

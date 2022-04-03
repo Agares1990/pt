@@ -79,10 +79,10 @@ if (isset($_POST['verify']) && $_POST['verify'] == 1) {
   exit(); // Arrêter l'execution de la scripte
 
 }
+
+
 /////////////////////////////////
 //Ajouter un Commentaire
-
-
 if (isset($_POST['comment'])) {
   if (!empty($_POST['title']) && !empty($_POST['note']) && !empty($_POST['comment'])) {
     $title = htmlspecialchars($_POST['title']);
