@@ -5,6 +5,7 @@ include("include/_traduction.php");
 require_once "include/_functions.php";
 session_start();
 $css = "styleFormReservation";
+$script = "formReservation";
 $connection = getConnectionText();
 
 if(isset($_POST['submit'])){
@@ -21,6 +22,7 @@ if(isset($_POST['submit'])){
 }
 echo $twig->render('formReservation.html.twig',
   	  array('css' => $css,
+            'script' => $script,
             'fromDate' => $fromDate,
             'toDate' => $toDate,
             'nbPerson' => $nbPerson,

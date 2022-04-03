@@ -1,0 +1,10 @@
+@import"base";
+section{
+  width: 60%;
+  margin: 1rem auto;
+  h2{
+    @include h2;
+    width: 50%;
+    margin: 1rem auto 3rem auto;
+  }
+}

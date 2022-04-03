@@ -39,7 +39,10 @@ section{
     margin: 0 auto;
     input, textarea{
       @include inputForm(90%);
-
+    }
+    select{
+      @include inputSelectForm(96%);
+      margin-bottom: 10px;
     }
     input[type='radio']{
     width: 30%;

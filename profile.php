@@ -83,13 +83,24 @@ if (isset($_POST['verify']) && $_POST['verify'] == 1) {
 
 /////////////////////////////////
 //Ajouter un Commentaire
+$clientId = $client['idClient'];
 if (isset($_POST['comment'])) {
-  if (!empty($_POST['title']) && !empty($_POST['note']) && !empty($_POST['comment'])) {
-    $title = htmlspecialchars($_POST['title']);
-    $note = htmlspecialchars($_POST['note']);
-    $comment = htmlspecialchars($_POST['comment']);
-    $dateComment = date('Y-m-d');;
-    leaveComment($pdo, $client['idClient'], $note, $title, $comment, $dateComment);
+  if (!empty($_POST['title']) && !empty($_POST['note']) && !empty($_POST['comment'])) {// si les champnes ne sont pas vides
+    // On va chercher les commentaires de l'utilisateur actuel
+    $req = $pdo->prepare("SELECT * FROM commentaire WHERE clientId = :clientId");
+    $req->bindParam(':clientId', $clientId, PDO::PARAM_INT);
+    $req->execute();
+    if (count($req->fetchAll())>0) {// On test si l'utilisateur a déjà poster un commentaire
+      $messageComment = "Vous avez déja poster un commentaire";
+    }
+    else{
+      $title = htmlspecialchars($_POST['title']);
+      $note = htmlspecialchars($_POST['note']);
+      $comment = htmlspecialchars($_POST['comment']);
+      $dateComment = date('Y-m-d');;
+      leaveComment($pdo, $clientId, $note, $title, $comment, $dateComment);
+    }
+
   }
 }
 
@@ -109,7 +120,8 @@ if (isset($_POST['comment'])) {
               'nbDay' => @$nbDay,
               'dateArriver' => @$fromDate,
               'dateDepart' => @$toDate,
-              'dateComment' => @$dateComment
+              'dateComment' => @$dateComment,
+              'messageComment' => $messageComment
             ));
 
 

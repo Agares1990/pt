@@ -12,7 +12,7 @@
       Découvrez leur avis et leurs commentaires au cours de leur séjour à Nice.</p>
     {% for comment in comments %}
       <article>
-        <span>{{comment['dateComment']}}</span> - <span>{{comment['prenom']}}</span> <span>{{comment['note']}}</span>
+        <span>{{comment['dateComment']}}</span> - <span>{{comment['prenom']}}</span> <span>{{comment[star['note']]}}</span>
         <p>{{comment['commentaire']}}</p>
       </article>
     {% endfor %}
