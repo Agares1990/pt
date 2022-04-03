@@ -11,29 +11,29 @@ $( document ).ready( function ()
 		function checkForm()
 		{
 			// Vérification des champs formulaires
-			const name = $( "input[name = 'name']" );
-		  const mail = $( "input[name = 'mail']" );
-		  const subject = $( "input[name = 'subject']" );
-		  const message = $( "textarea[name = 'message']" );
+			const name = $( "input[name = 'name']" ).val();
+		  const mail = $( "input[name = 'mail']" ).val();
+		  const subject = $( "input[name = 'subject']" ).val();
+		  const message = $( "textarea[name = 'message']" ).val();
 
-			if ( !regex1.test( name.val() ))
+			if ( !regex1.test( name ) || name.trim().length == 0)
 			{
 				$("#errorName").text("Votre nom est invalide ou laissé vide");
 				return false;
 			}
-			if ( !regex2.test( mail.val() ))
+			if ( !regex2.test( mail))
 			{
 				$("#errorName").text("");
 				$("#errorMail").text("Adresse mail invalide ou laissé vide");
 				return false;
 			}
-			if ( !regex1.test( subject.val() ))
+			if ( !regex1.test( subject ) || subject.trim().length == 0)
 			{
 				$("#errorMail").text("");
 				$("#errorSubject").text("Votre sujet est invalide ou laissé vide");
 				return false;
 			}
-			if ( !regex1.test( message.val() ))
+			if ( !regex1.test( message ) || message.trim().length == 0)
 			{
 				$("#errorSubject").text("");
 				$("#errorMessage").text("Veuillez écrire votre message");

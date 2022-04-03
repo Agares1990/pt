@@ -210,6 +210,10 @@ section article form input[type='submit']:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
+section article form input + span, section article form textarea + span {
+  color: red;
+}
+
 #success {
   position: fixed;
   top: 50vh;

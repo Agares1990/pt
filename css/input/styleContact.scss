@@ -19,6 +19,9 @@ section{
         @include button(45%, .7rem 0);
         @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
       }
+      input+span, textarea+span{
+        color: red;
+      }
     }
   }
 }

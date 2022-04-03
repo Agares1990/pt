@@ -521,11 +521,11 @@ section #comments input {
   border: solid 1px #eef1f6;
   font-size: 1rem;
   color: #495057;
-  width: calc((100% - 4.5rem)/2);
+  width: calc((100% - 6.5rem)/2);
   border-radius: .25rem;
   padding: .7rem 1rem;
   margin-bottom: 10px;
-  width: calc((100% - 4.5rem)/2);
+  width: calc((100% - 6.5rem)/2);
 }
 
 section #comments input[name="title"] {
@@ -594,4 +594,8 @@ section #comments #success #closebtn {
 
 section #comments #success #closebtn:hover {
   color: black;
+}
+
+input + span, textarea + span {
+  color: red;
 }

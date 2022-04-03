@@ -81,15 +81,16 @@ if (isset($_POST['verify']) && $_POST['verify'] == 1) {
 }
 /////////////////////////////////
 //Ajouter un Commentaire
-$title = htmlspecialchars($_POST['title']);
-$note = htmlspecialchars($_POST['note']);
-$comment = htmlspecialchars($_POST['comment']);
-$dateComment = date('d-m-y');;
 
-if ($_POST['comment']) {
 
+if (isset($_POST['comment'])) {
+  if (!empty($_POST['title']) && !empty($_POST['note']) && !empty($_POST['comment'])) {
+    $title = htmlspecialchars($_POST['title']);
+    $note = htmlspecialchars($_POST['note']);
+    $comment = htmlspecialchars($_POST['comment']);
+    $dateComment = date('Y-m-d');;
     leaveComment($pdo, $client['idClient'], $note, $title, $comment, $dateComment);
-    //var_dump($cltId);
+  }
 }
 
 
@@ -108,7 +109,7 @@ if ($_POST['comment']) {
               'nbDay' => @$nbDay,
               'dateArriver' => @$fromDate,
               'dateDepart' => @$toDate,
-              'dateComment' => $dateComment
+              'dateComment' => @$dateComment
             ));
 
 

@@ -68,23 +68,22 @@ $(document).ready(function(){
   		function checkForm()
   		{
   			// Vérification des champs formulaires
-  			const title = $( "input[name = 'title']" );
-  		  const comment = $( "input[name = 'comment']" );
-  		  const note = $( "input[name = 'note']" );
-        console.log(title);
+  			const title = $( "input[name = 'title']" ).val();
+  		  const comment = $( "textarea[name = 'comment']" ).val();
+  		  const note = $( "input[name = 'note']" ).val();
 
-  			if ( !regex1.test( title.val() ))
+  			if ( !regex1.test( title) || title.trim().length == 0)
   			{
   				$("#errorTitle").text("Le titre est invalide ou laissé vide");
   				return false;
   			}
-  			if ( isNaN( note.val() ))
+  			if ( isNaN( note ))
   			{
   				$("#errorTitle").text("");
   				$("#errorNote").text("Veuillez saisir une note comprise entre 1 et 5");
   				return false;
   			}
-  			if ( !regex1.test( comment.val() ))
+  			if ( !regex1.test( comment ) || comment.trim().length == 0)
   			{
   				$("#errorNote").text("");
   				$("#errorComment").text("Veuillez donnez votre avis");
@@ -94,7 +93,7 @@ $(document).ready(function(){
   			else {
   				$("span").text("")
   				$("#success").css("visibility", "visible");
-  				$("#successMessage").text("Le message a été envoyé avec succès !");
+  				$("#successMessage").text("Votre commentaire a été ajouter avec succès !");
   				return true;
   			}
 
