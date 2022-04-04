@@ -114,11 +114,11 @@ section{
         @include button(35%, .7rem 0);
         @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
       }
-      .messagePositive{
+      .messagePositive{/* message de succès d'ajout d'un commentaire générer par jquery*/
         color: green;
         text-align: center;
       }
-      .messageNegative{
+      .messageNegative{/* message d'echec d'ajout d'un commentaire générer par jquery*/
         color: red;
         text-align: center;
       }

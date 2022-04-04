@@ -282,3 +282,8 @@ section form input[type='reset']:hover {
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
+
+section form span {
+  /* Les message d'erreurs declanché par js */
+  color: red;
+}

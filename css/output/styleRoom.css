@@ -384,6 +384,13 @@ footer ul ul li .carre i:hover {
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
+#checkIn #erreur {
+  /* Message d'erreur dans le formulaire de la page formCheckInPage */
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 /* La section chambres de l'hôtel */
 #rooms {
   width: 70%;

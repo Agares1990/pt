@@ -386,11 +386,13 @@ section #comments button:hover {
 }
 
 section #comments .messagePositive {
+  /* message de succès d'ajout d'un commentaire générer par jquery*/
   color: green;
   text-align: center;
 }
 
 section #comments .messageNegative {
+  /* message d'echec d'ajout d'un commentaire générer par jquery*/
   color: red;
   text-align: center;
 }

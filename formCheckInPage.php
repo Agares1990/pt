@@ -6,6 +6,7 @@ include("include/_traduction.php");
 require_once "include/_functions.php";
 
 $css = "styleFormCheckInPage";
+$script = "formCheckInPage";
 
 $pdo = getPDO();
 $connection = getConnectionText();
@@ -63,6 +64,7 @@ if(isset($_POST['submit'])){
       //print_r($count);
 echo $twig->render('formCheckInPage.html.twig',
   	  array('css' => $css,
+            'script' => $script,
             'rooms' => $rooms,
             'nbPerson' => $nbPerson,
             'nbChild' => $nbChild,
