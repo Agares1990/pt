@@ -384,6 +384,11 @@ footer ul ul li .carre i:hover {
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
+#complete {
+  text-align: center;
+  color: red;
+}
+
 section {
   width: 70%;
   margin: 1rem auto;

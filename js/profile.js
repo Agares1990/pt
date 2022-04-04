@@ -90,12 +90,8 @@ $(document).ready(function(){
   				return false;
   			}
 
-  			else {
-  				$("span").text("")
-  				$("#success").css("visibility", "visible");
-  				$("#successMessage").text("Votre commentaire a été ajouter avec succès !");
-  				return true;
-  			}
+      return true;
+
 
   		}
   		// réinitialise le formulaire
@@ -111,6 +107,7 @@ $(document).ready(function(){
   	      e.preventDefault();
   				if ( checkForm() )
   				{
+            //alert("Ok");
   					// On envoie les données du formulaire via une
   					//	requête de type POST.
   					$.post( "profile.php",
@@ -124,12 +121,20 @@ $(document).ready(function(){
   							// Commentaire
   							comment: $( "textarea[name = 'comment']" ).val(),
 
-  						});
-
+  						},
+              function(data, status) {
+                let info = JSON.parse(data)
+                $( "#publish" ).replaceWith( // on remplace le button avec un paragraphe
+                //  console.log(info)
+                   `<p class = '${info.messageStyle}'>${info.messageComment}</p>`
+                )
+              }
+            )
   					// On supprime les données du formulaire seulement
   					//	si toutes les données ont été validées.
   					clearForm();
   				}
+
   		} );
   		// cacher le message du succès lorsqu'on clique sur X (#closebtn)
   		$("#closebtn").click(function cacherMessage()

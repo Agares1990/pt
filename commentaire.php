@@ -10,11 +10,10 @@ $pdo = getPDO();
 $connection = getConnectionText();
 
 $comments = getComments($pdo);
-$star = GenerateStars();
+// $star = GenerateStars($comments['note']);
 echo $twig->render('commentaire.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
-            'comments' => $comments,
-            'star' => $star
+            'comments' => $comments
   				));
 ?>

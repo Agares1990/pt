@@ -90,15 +90,21 @@ if (isset($_POST['comment'])) {
     $req = $pdo->prepare("SELECT * FROM commentaire WHERE clientId = :clientId");
     $req->bindParam(':clientId', $clientId, PDO::PARAM_INT);
     $req->execute();
-    if (count($req->fetchAll())>0) {// On test si l'utilisateur a déjà poster un commentaire
-      $messageComment = "Vous avez déja poster un commentaire";
+    if (count($req->fetchAll())>0) {
+      // On test si l'utilisateur a déjà poster un commentaire
+      // Si oui on affiche un message 'messageComment'
+      echo json_encode(['messageComment' => "Vous avez déja posté un commentaire", 'messageStyle' => 'messageNegative']);
+      exit();
     }
     else{
+      // Si non on poste le commentaire
       $title = htmlspecialchars($_POST['title']);
       $note = htmlspecialchars($_POST['note']);
       $comment = htmlspecialchars($_POST['comment']);
       $dateComment = date('Y-m-d');;
       leaveComment($pdo, $clientId, $note, $title, $comment, $dateComment);
+      echo json_encode(['messageComment' => "Votre commentaire a été bien ajouté", 'messageStyle' => 'messagePositive']);
+      exit();
     }
 
   }
@@ -120,8 +126,7 @@ if (isset($_POST['comment'])) {
               'nbDay' => @$nbDay,
               'dateArriver' => @$fromDate,
               'dateDepart' => @$toDate,
-              'dateComment' => @$dateComment,
-              'messageComment' => $messageComment
+              'dateComment' => @$dateComment
             ));
 
 

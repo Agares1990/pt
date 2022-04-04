@@ -47,9 +47,20 @@ if(isset($_POST['submit'])){
       LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
       WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
       $rooms = $pdo->query($query);
+
+
+    }
+    // $count = $rooms->fetch();
+    // var_dump($count);
+    //$count = $rooms->fetch();
+    //$count = $rooms->fetchColumn();
+    //$rq = $rooms->rowCount();
+    if ($rooms->rowCount() == 0) {
+      $messageCheck = "Désolé, il n'y a pas de disponibilité selon vos critères";
     }
   }
-      print_r($rooms);
+//  var_dump($rooms);
+      //print_r($count);
 echo $twig->render('formCheckInPage.html.twig',
   	  array('css' => $css,
             'rooms' => $rooms,
@@ -58,6 +69,7 @@ echo $twig->render('formCheckInPage.html.twig',
             'nbDay' => $nbDay,
             'fromDate' => $fromDate,
             'toDate' => $toDate,
-            'connection' => $connection
+            'connection' => $connection,
+            'messageCheck' => @$messageCheck
   				));
 ?>

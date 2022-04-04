@@ -385,31 +385,14 @@ section #comments button:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-section #comments #success {
-  position: fixed;
-  top: 50vh;
-  right: calc(50% - 155px);
-  padding: 20px;
-  background-color: #f44336;
-  color: white;
-  opacity: 1;
-  transition: opacity 0.6s;
-  background-color: #4CAF50;
-  visibility: hidden;
+section #comments .messagePositive {
+  color: green;
+  text-align: center;
 }
 
-section #comments #success #closebtn {
-  margin-left: 15px;
-  color: white;
-  font-weight: bold;
-  float: right;
-  font-size: 22px;
-  line-height: 20px;
-  cursor: pointer;
-}
-
-section #comments #success #closebtn:hover {
-  color: black;
+section #comments .messageNegative {
+  color: red;
+  text-align: center;
 }
 
 input + span, textarea + span {

@@ -19,7 +19,7 @@ function checkForm()
   const tel = $( "input[name = 'tel']" ).val();
   const pays = $( "select[name = 'pays']" ).val();
   const message = $( "textarea[name = 'message']" ).val();
-
+	$( "#formReservation" ).prop( "disabled", true );
   if ( !regex1.test( nom ) || nom.trim().length == 0)
   {
     $("#errorNom").text("Votre nom est invalide ou laissé vide");
@@ -58,8 +58,10 @@ function checkForm()
     return false;
   }
   }
-  $( "input[name = 'submit']" ).click( function()
+	$( "#formReservation" ).prop( "disabled", false );
+  $( ".submit" ).submit( function()
   {
+			 // e.preventDefault();
        checkForm();
   } );
 });

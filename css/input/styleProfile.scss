@@ -114,11 +114,13 @@ section{
         @include button(35%, .7rem 0);
         @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
       }
-      #success{
-        @include success;
-        #closebtn{
-          @include closebtn;
-        }
+      .messagePositive{
+        color: green;
+        text-align: center;
+      }
+      .messageNegative{
+        color: red;
+        text-align: center;
       }
     }
 }
