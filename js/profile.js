@@ -91,9 +91,9 @@ $(document).ready(function(){
   			}
 
         else {
-          $("#errorComment").text("");
-          return true;
-        }
+            $("#errorComment").text("");
+            return true;
+          }
 
 
   		}
@@ -105,9 +105,9 @@ $(document).ready(function(){
   		}
 
   		// si les données du formulaire sont correctes
-  		$( "#publish" ).click( function()
+  		$( "#publish" ).click( function(e)
   		{
-  	      // e.preventDefault();
+  	      e.preventDefault();
   				if ( checkForm() )
   				{
             //alert("Ok");
