@@ -33,6 +33,11 @@ section{
       }
     }
   }
+  p{// message d'erreur php
+    color: red;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
   form{
     @include form(2rem 3rem);
     width: 60%;

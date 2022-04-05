@@ -197,6 +197,12 @@ section article ul li span {
   margin-left: .5rem;
 }
 
+section p {
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 section form {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);

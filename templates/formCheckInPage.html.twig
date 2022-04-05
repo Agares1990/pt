@@ -59,6 +59,7 @@
                 <!-- <label for="nbChild">{{nbChild}}</label> -->
                 <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
                 <input type="hidden" id="idChambre" name="idChambre" value="{{room.idChambre}}">
+                <input type="hidden" name="totalToPay" value="{{room.tarifCategorieChambre * nbDay}} €">
                 <input type="submit" name="submit" value="{{room.tarifCategorieChambre * nbDay}} €">
               </form>
 

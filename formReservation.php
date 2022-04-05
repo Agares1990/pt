@@ -37,18 +37,49 @@ if(isset($_POST['submit'])){
     header("Location: profile.php");
   }
 }
+else if (isset($_SESSION['erreur'])){// S'il y a des erreurs
+  //on récupère les données de la session qui viennent du traitement de formulaire dans la page recapReservation
+
+  $fromDate = $_SESSION['erreur']["CheckIn"];
+  $toDate = $_SESSION['erreur']["CheckOut"];
+  $roomType = $_SESSION['erreur']["roomType"];
+  $idRoom = $_SESSION['erreur']["idChambre"];
+  $idCategorieChambre = $_SESSION['erreur']["idCategorieChambre"];
+  $nbPerson = $_SESSION['erreur']["nbPerson"];
+  $nbChild = $_SESSION['erreur']["nbChild"];
+  $nbDay = $_SESSION['erreur']["nbDay"];
+  $totalToPay = $_SESSION['erreur']["totalToPay"];
+
+  unset($_SESSION['erreur']); // on vide la session
+}
+
+if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en javascript
+    $fieldError =  "{$_GET['message']}";
+    $nom =  "{$_GET['nom']}";
+    $prenom =  "{$_GET['prenom']}";
+    $email =  "{$_GET['email']}";
+    $tel =  "{$_GET['tel']}";
+    $pays =  "{$_GET['pays']}";
+}
+
 echo $twig->render('formReservation.html.twig',
   	  array('css' => $css,
             'script' => $script,
-            'fromDate' => $fromDate,
-            'toDate' => $toDate,
-            'nbPerson' => $nbPerson,
-            'nbChild' => $nbChild,
-            'roomType' => $roomType,
-            'idRoom' => $idRoom,
-            'idCategorieChambre' => $idCategorieChambre,
-            'nbDay' => $nbDay,
-            'totalToPay' => $totalToPay,
-            'connection' => $connection
+            'fromDate' => @$fromDate,
+            'toDate' => @$toDate,
+            'nbPerson' => @$nbPerson,
+            'nbChild' => @$nbChild,
+            'roomType' => @$roomType,
+            'idRoom' => @$idRoom,
+            'idCategorieChambre' => @$idCategorieChambre,
+            'nbDay' => @$nbDay,
+            'totalToPay' => @$totalToPay,
+            'connection' => $connection,
+            'fieldError' => @$fieldError,
+            'nom' => @$nom,
+            'prenom' => @$prenom,
+            'email' => @$email,
+            'tel' => @$tel
   				));
+
 ?>
