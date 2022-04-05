@@ -274,6 +274,10 @@ footer ul ul li .carre i:hover {
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
+#checkIn form span {
+  color: red;
+}
+
 /* SECTION DESCRIPTION DE L'HOTEL */
 .descHotel {
   /* Conteneur des élémenets de la section description */

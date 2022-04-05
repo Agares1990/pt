@@ -4,7 +4,7 @@ require "include/_connexion.php";
 include("include/_traduction.php");
 require_once "include/_functions.php";
 session_start();
-$css = "recapReservation";
+$css = "styleRecapReservation";
 $pdo = getPDO();
 
 
@@ -18,6 +18,9 @@ if(isset($_POST['submit'])){
   $roomType = $_POST["roomType"];
   $nbPerson = $_POST["nbPerson"];
   $nbChild = $_POST["nbChild"];
+  $totalToPay = $_POST["totalToPay"];
+  $nbDay = $_POST["nbDay"];
+  @$dateCancel = date('Y-m-d', strtotime($toDate. ' - 1 day'));
 
   $nom = $_POST["nom"];
   $prenom = $_POST["prenom"];
@@ -57,6 +60,15 @@ if(isset($_POST['submit'])){
   $connection = getConnectionText();
 echo $twig->render('recapReservation.html.twig',
   	  array('css' => $css,
-            'connection' => $connection
+            'connection' => $connection,
+            'prenom' => $prenom,
+            'fromDate' => $fromDate,
+            'toDate' => $toDate,
+            'roomType' => $roomType,
+            'nbPerson' => $nbPerson,
+            'nbChild' => $nbChild,
+            'nbDay' => $nbDay,
+            'totalToPay' => $totalToPay,
+            'dateCancel' => $dateCancel
   				));
 ?>

@@ -57,7 +57,7 @@ if(isset($_POST['submit'])){
     //$count = $rooms->fetchColumn();
     //$rq = $rooms->rowCount();
     if ($rooms->rowCount() == 0) {
-      $messageCheck = "Désolé, il n'y a pas de disponibilité selon vos critères";
+      $messageCheck = "Désolé, il n'y a pas de disponibilité pour cette date";
     }
   }
 //  var_dump($rooms);

@@ -27,33 +27,33 @@ $( "input[name= 'submit']" ).click( function()
 	  }
 	  if ( !regex1.test( prenom ) || prenom.trim().length == 0)
 	  {
-	    $("#errorNom").text("");
+	    $("input+span").text("");
 	    $("#errorPrenom").text("Votre prenom est invalide ou laissé vide");
 	    return false;
 	  }
 	  if ( !regex2.test( email))
 	  {
-	    $("#errorPrenom").text("");
+	    $("input+span").text("");
 	    $("#errorMail").text("Adresse mail invalide ou laissé vide");
 	    return false;
 	  }
 
 	  if ( mdp.trim().length == 0)
 	  {
-	    $("#errorMail").text("");
+	    $("input+span").text("");
 	    $("#errorPass").text("Veuillez entrer un mot de passe svp");
 	    return false;
 	  }
 
 	  if ( !regex3.test( tel ) || tel.trim().length == 0)
 	  {
-	    $("#errorPass").text("");
+	    $("input+span").text("");
 	    $("#errorTel").text("Veuillez saisir un numéro de téléphone valide svp");
 	    return false;
 	  }
 	  if (pays.trim().length == 0)
 	  {
-	    $("#errorTel").text("");
+	    $("input+span").text("");
 	    $("#errorPays").text("Veuillez choisir votre pays svp");
 	    return false;
 	  }

@@ -1,10 +1,42 @@
 @import"base";
 section{
-  width: 60%;
+  width: 80%;
   margin: 1rem auto;
   h2{
     @include h2;
-    width: 50%;
+    width: 30%;
     margin: 1rem auto 3rem auto;
+    span{
+      color: $colorOr;
+    }
+  }
+  article{
+    background-color: rgba(255, 255, 255, .9);
+    border: 1px solid $colorOr;
+    width: 60%;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    >span{
+      @include h2;
+
+    }
+    ul{
+      margin: 1rem auto;
+
+      li{
+        margin: 1rem 1rem 1.5rem auto;
+        span{
+          color: $colorOr;
+          font-weight: bold;
+          margin-left: .5rem;
+        }
+
+      }
+    }
+  }
+  button{
+    @include button(10rem, .63rem 0);
+    @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
   }
 }

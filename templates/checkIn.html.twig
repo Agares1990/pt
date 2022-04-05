@@ -23,20 +23,21 @@ $( "#submit" ).click( function()
     }
     if ( !regex1.test( toDate ) || toDate.trim().length == 0)
     {
-      $("#erreurFromDate").text("");
+      $("input+span").text("");
       $("#erreurToDate").text("Veuillez entrer une date de départ valide (année-mois-jour)");
       return false;
     }
     if ($("#nbPerson option:selected").index() == 0)
     {
-      $("#erreurToDate").text("");
+      $("input+span").text("");
       $("#erreurNbPerson").text("Veuillez choisir le nombre d'adulte svp");
       return false;
     }
 
     if ($("#nbChild option:selected").index() == 0)
     {
-      $("#erreurNbPerson").text("");
+      $("select+span").text("");
+      $("input+span").text("");
       $("#erreurNbChild").text("Veuillez choisir le nombre d'enfant svp");
       return false;
     }

@@ -155,7 +155,7 @@ footer ul ul li .carre i:hover {
 }
 
 section {
-  width: 60%;
+  width: 80%;
   margin: 1rem auto;
 }
 
@@ -164,6 +164,62 @@ section h2 {
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-  width: 50%;
+  width: 30%;
   margin: 1rem auto 3rem auto;
+}
+
+section h2 span {
+  color: #BCA474;
+}
+
+section article {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #BCA474;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+section article > span {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+section article ul {
+  margin: 1rem auto;
+}
+
+section article ul li {
+  margin: 1rem 1rem 1.5rem auto;
+}
+
+section article ul li span {
+  color: #BCA474;
+  font-weight: bold;
+  margin-left: .5rem;
+}
+
+section button {
+  /* Style général des bouttons */
+  padding: 0.63rem 0;
+  border-radius: .25rem;
+  width: 10rem;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+section button:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }

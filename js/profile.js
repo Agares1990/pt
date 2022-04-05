@@ -90,7 +90,10 @@ $(document).ready(function(){
   				return false;
   			}
 
-      return true;
+        else {
+          $("#errorComment").text("");
+          return true;
+        }
 
 
   		}
@@ -102,9 +105,9 @@ $(document).ready(function(){
   		}
 
   		// si les données du formulaire sont correctes
-  		$( "#publish" ).click( function(e)
+  		$( "#publish" ).click( function()
   		{
-  	      e.preventDefault();
+  	      // e.preventDefault();
   				if ( checkForm() )
   				{
             //alert("Ok");

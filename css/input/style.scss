@@ -54,6 +54,9 @@
       width: 102%;
       @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763); /* style général des Bouttons */
       }
+    span{
+      color: red;
+    }
   }
 }
 
