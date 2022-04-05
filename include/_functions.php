@@ -53,7 +53,7 @@ function getComments($pdo){
 
 		for ($indice = 1; $indice <= $count; $indice++)
 		{
-			$html .= "<img class='star $active' src='../images/star.png' alt='Étoile' width='16' height='16' />";
+			$html .= "<img class='star' src='../images/star.png' alt='Étoile' width='16' height='16' />";
 		}
 
 		return $html;
