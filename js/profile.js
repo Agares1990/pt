@@ -77,7 +77,7 @@ $(document).ready(function(){
   				$("#errorTitle").text("Le titre est invalide ou laissé vide");
   				return false;
   			}
-  			if ( isNaN( note ))
+  			if ( isNaN( note ) || note>5)
   			{
   				$("#errorTitle").text("");
   				$("#errorNote").text("Veuillez saisir une note comprise entre 1 et 5");

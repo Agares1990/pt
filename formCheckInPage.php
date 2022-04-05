@@ -28,40 +28,52 @@ if(isset($_POST['submit'])){
 
   $fromDate = $fromDate->format('Y-m-d');
   $toDate = $toDate->format('Y-m-d');
-  // echo $nbDay;
 
-  if (!empty($fromDate) && !empty($toDate) && !empty($nbPerson) && !empty($nbChild)) {
-     $where = "1 ";
-     if ($roomType != 0) {// si on choisit une catégorie de chambre dans le formulaire
-       $where = "";
-       $where .= "chambre.categorieChambreId = ".$roomType;
+
+  // if (!empty($fromDate) && !empty($toDate) && !empty($nbPerson) && !empty($nbChild)) {
+    if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $fromDate)) {
+      $errorCheck = "Veuillez entrer une date d'arrivé valide (année-mois-jour)";
+    }
+    elseif (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $toDate)) {
+      $errorCheck = "Veuillez entrer une date de départ valide (année-mois-jour)";
+    }
+    elseif (!$nbPerson) {
+      $errorCheck = "Veuillez choisir le nombre d'adulte";
+    }
+    elseif (!$nbChild) {
+      $errorCheck = "Veuillez choisir le nombre d'enfant";
+    }else {
+      $where = "1 ";
+      if ($roomType != 0) {// si on choisit une catégorie de chambre dans le formulaire
+        $where = "";
+        $where .= "chambre.categorieChambreId = ".$roomType;
+      }
+      $where .= " && capaciteAdulte >= " .$nbPerson;
+      $where .= " && capaciteEnfant >= " . $nbChild ;
+      $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
+
+       $query = "SELECT * FROM chambre
+       LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
+       LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
+       && nom_categorie_chambre.langueId = '$lang'
+       LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
+       LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
+       WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
+       $rooms = $pdo->query($query);
+
+       if ($rooms->rowCount() == 0) {
+         $messageCheck = "Désolé, il n'y a pas de disponibilité pour cette date";
+       }
      }
-     $where .= " && capaciteAdulte >= " .$nbPerson;
-     $where .= " && capaciteEnfant >= " . $nbChild ;
-     $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
-
-      $query = "SELECT * FROM chambre
-      LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-      LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-      && nom_categorie_chambre.langueId = '$lang'
-      LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
-      LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
-      WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
-      $rooms = $pdo->query($query);
+    // }
 
 
-    }
-    // $count = $rooms->fetch();
-    // var_dump($count);
-    //$count = $rooms->fetch();
-    //$count = $rooms->fetchColumn();
-    //$rq = $rooms->rowCount();
-    if ($rooms->rowCount() == 0) {
-      $messageCheck = "Désolé, il n'y a pas de disponibilité pour cette date";
-    }
   }
-//  var_dump($rooms);
-      //print_r($count);
+  if (isset($errorCheck)) {
+    $_SESSION['erreur'] = $_POST; //on ouvre la session pour sauvegarder les données en cas d'erreur et les afficher dans la page formCheckInPage
+    header("Location: index.php?message=$errorCheck"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire et garder les champs remplis
+  }
+
 echo $twig->render('formCheckInPage.html.twig',
   	  array('css' => $css,
             'script' => $script,
@@ -73,5 +85,6 @@ echo $twig->render('formCheckInPage.html.twig',
             'toDate' => $toDate,
             'connection' => $connection,
             'messageCheck' => @$messageCheck
+
   				));
 ?>

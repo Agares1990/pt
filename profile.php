@@ -85,30 +85,39 @@ if (isset($_POST['verify']) && $_POST['verify'] == 1) {
 //Ajouter un Commentaire
 $clientId = $client['idClient'];
 if (isset($_POST['comment'])) {
-  if (!empty($_POST['title']) && !empty($_POST['note']) && !empty($_POST['comment'])) {// si les champnes ne sont pas vides
+  //if (!empty($_POST['title']) && !empty($_POST['note']) && !empty($_POST['comment'])) {// si les champnes ne sont pas vides
     // On va chercher les commentaires de l'utilisateur actuel
-    $req = $pdo->prepare("SELECT * FROM commentaire WHERE clientId = :clientId");
-    $req->bindParam(':clientId', $clientId, PDO::PARAM_INT);
-    $req->execute();
-    if (count($req->fetchAll())>0) {
-      // On test si l'utilisateur a déjà poster un commentaire
-      // Si oui on affiche un message 'messageComment'
-      echo json_encode(['messageComment' => "Vous avez déja posté un commentaire", 'messageStyle' => 'messageNegative']);
-      exit();
+    if(!preg_match("/^([a-zA-Z' ]+)$/",$_POST['title']) || empty(trim($_POST['title']))){
+      $fieldError = 'Le titre est invalide';
     }
-    else{
-      // Si non on poste le commentaire
-      $title = htmlspecialchars($_POST['title']);
-      $note = htmlspecialchars($_POST['note']);
-      $comment = htmlspecialchars($_POST['comment']);
-      $dateComment = date('Y-m-d');;
-      leaveComment($pdo, $clientId, $note, $title, $comment, $dateComment);
-      echo json_encode(['messageComment' => "Votre commentaire a été bien ajouté", 'messageStyle' => 'messagePositive']);
-      exit();
+    elseif(is_int($_POST['note']) && $_POST['note'] > 5){
+      $fieldError = 'Veuillez entrer une note comprise entre 1 et 5';
+    }elseif (empty(trim($_POST['comment']))) {
+      $fieldError = 'Veuillez donner votre avis svp';
     }
-
-  }
+    else {
+      $req = $pdo->prepare("SELECT * FROM commentaire WHERE clientId = :clientId");
+      $req->bindParam(':clientId', $clientId, PDO::PARAM_INT);
+      $req->execute();
+      if (count($req->fetchAll())>0) {
+        // On test si l'utilisateur a déjà poster un commentaire
+        // Si oui on affiche un message 'messageComment'
+        echo json_encode(['messageComment' => "Vous avez déja posté un commentaire", 'messageStyle' => 'messageNegative']);
+        exit();
+      }
+      else{
+        // Si non on poste le commentaire
+        $title = htmlspecialchars($_POST['title']);
+        $note = htmlspecialchars($_POST['note']);
+        $comment = htmlspecialchars($_POST['comment']);
+        $dateComment = date('Y-m-d');;
+        leaveComment($pdo, $clientId, $note, $title, $comment, $dateComment);
+        echo json_encode(['messageComment' => "Votre commentaire a été bien ajouté", 'messageStyle' => 'messagePositive']);
+        exit();
+      }
+    }
 }
+
 
 
   echo $twig->render('profile.html.twig',

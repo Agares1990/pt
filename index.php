@@ -15,13 +15,18 @@
   $json = json_decode($json);
   $temperature =  $json->current_condition->tmp;
 
+  if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en javascript
+      $errorCheck =  "{$_GET['message']}";
+  }
 
   echo $twig->render('index.html.twig',
     	  array('css' => $css,
     	  			'date' => $date,
               'temperature' => " $temperature °C",
               'script' => $script,
-              'connection' => $connection
+              'connection' => $connection,
+              'errorCheck' => @$errorCheck
+
     				));
 
 ?>

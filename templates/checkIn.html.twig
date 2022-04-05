@@ -48,8 +48,10 @@ $( "#submit" ).click( function()
 </script>
 
 <article id="checkIn">
+
     <!-- formulaire de recherche de chambre dispo -->
     <h2 onclick="cacherFormCheck()";>Réserver une <span>chambre</span></h2>
+    <p>{{errorCheck}}</p>
   <form id="formChek" action="formCheckInPage.php" method="POST">
       <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
       <span id="erreurFromDate"></span>
