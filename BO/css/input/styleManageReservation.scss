@@ -1,4 +1,37 @@
 @import"baseBO";
-main{
-  padding: 1rem;
+body{
+  // display: grid;
+  // grid-template-columns: 5, 1fr;
+  // grid-template-rows: 5, 1fr;
+  // grid-column-gap: 0px;
+  // grid-row-gap: 0px;
+  // padding: 1rem;
+  // nav:first-child{
+  //   grid-area: 1 / 1 / 2 / 6;
+  // }
+  // nav:last-child{
+  //   grid-area: 2 / 1 / 6 / 2;
+  // }
+  main{
+    //grid-area: 2 / 2 / 6 / 6;
+    table, td, th{
+      border: 1px solid $colorOr;
+    }
+    table{
+      width: 70%;
+      margin: 3rem auto;
+      thead{
+        font-weight: bold;
+      }
+      th, td{
+        padding: .5rem 1rem;
+        text-align: center;
+        vertical-align: middle;
+        i{
+          font-size: 2rem;
+          color: red;
+        }
+      }
+    }
+  }
 }

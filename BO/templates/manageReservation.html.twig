@@ -1,6 +1,50 @@
 {% extends "baseBO.html.twig" %}
 {% block contenu %}
 <main>
-  
+  <table>
+    <thead>
+        <tr>
+            <th colspan="7">Réservations Chambre</th>
+        </tr>
+        <tr>
+            <th>Chambre</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date d'arrivée</th>
+            <th>Daté de départ</th>
+            <th>Modifier la réservation</th>
+            <th>Annuler la réservation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for reservation in reservations %}
+
+            <tr>
+                <td>{{reservation.nomCategorie}}</td>
+                <td>{{reservation.nom}}</td>
+                <td>{{reservation.prenom}}</td>
+                <td>{{reservation.dateArriver}}</td>
+                <td>{{reservation.dateDepart}}</td>
+                <td>
+                  <form class="" action="manageReservation" method="post">
+                    <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
+                    <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                    <input type="hidden" name="chambreId" value="{{reservation.chambreId}}">
+                    <input type="hidden" name="modification" value="1">
+                    <input type="submit" id="update" value="Modifier la date">
+                  </form>
+                </td>
+                <td>
+                  <form class="" action="manageReservation" method="post">
+                    <input type="submit" name="delete" value="Annuler" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                    <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
+                    <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                    <input type="hidden" name="delete" value="1">
+                  </form>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
 </main>
 {% endblock %}

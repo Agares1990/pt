@@ -59,9 +59,33 @@ body header nav:last-child ul li a:active {
   color: black;
 }
 
-/* line 2, ../css/input/styleManageReservation.scss */
-main {
-  padding: 1rem;
+/* line 17, ../css/input/styleManageReservation.scss */
+body main table, body main td, body main th {
+  border: 1px solid #BCA474;
+}
+
+/* line 20, ../css/input/styleManageReservation.scss */
+body main table {
+  width: 70%;
+  margin: 3rem auto;
+}
+
+/* line 23, ../css/input/styleManageReservation.scss */
+body main table thead {
+  font-weight: bold;
+}
+
+/* line 26, ../css/input/styleManageReservation.scss */
+body main table th, body main table td {
+  padding: .5rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 30, ../css/input/styleManageReservation.scss */
+body main table th i, body main table td i {
+  font-size: 2rem;
+  color: red;
 }
 
 /*# sourceMappingURL=styleManageReservation.css.map */
