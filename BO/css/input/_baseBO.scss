@@ -1,0 +1,37 @@
+@import "valeurs-globales";
+@import "mixin";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+a{
+  text-decoration: none;
+}
+body{
+  header{
+    nav:first-child{
+      display: flex;
+      justify-content: space-between;
+      background-color: black;
+      padding: 2rem;
+      p, a{
+        color: white;
+        @include h3;
+      }
+    }
+    nav ul{
+      height: calc(100vh - 11rem);
+      padding: 3rem 1rem;
+      background-color: #DCDCDC;
+      width: 20%;
+      color: blue;
+      display: flex;
+      //flex-flow: column wrap;
+      flex-direction: column;
+      li{
+        margin-bottom: 2.5rem;
+        a{
+          @include h3;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

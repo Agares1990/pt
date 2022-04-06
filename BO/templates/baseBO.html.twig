@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/output/{{css}}.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/datePicker.js" defer></script>
+    <script src="js/{{script}}.js" defer></script>
+    <script src="https://kit.fontawesome.com/18ee91faff.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/leemark/embed360/20dac87eea4d7fc0f8a368519fc6c3b3a208f492/embed360.js"></script>
+
+    <title>Espace Personnel</title>
+  </head>
+  <body>
+    <header>
+      <nav id="connection">
+        <p>Bonjour</p>
+        <a class="profile" href="profile.php"><i class="fa-solid fa-user"></i>Profile</a>
+        <a class="connexion" href="connexionBO.php">Déconnexion</a>
+      </nav>
+
+
+
+      <!-- Menu de navigation -->
+      <nav>
+        <ul >
+            <li><a href="resaRoom.php">RESERVER CHAMBRE</a></li>
+            <li><a href="resaRestaurant.php">RESERVER RESTAURANT</a></li>
+            <li><a href="resaEvent.php">RESERVER EVENEMENT</a></li>
+            <li><a href="manageReservation.php">GERER RESERVATION</a></li>
+            <li><a href="manageRoom.php">GERER CHAMBRE</a></li>
+            <li><a href="manageComment.php">GERER AVIS</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    {% block contenu %}
+  	{% endblock %}
+
+    <footer>
+
+    </footer>
+  </body>
+</html>
