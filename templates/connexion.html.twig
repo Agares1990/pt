@@ -3,8 +3,9 @@
 <section>
   <h2>Connexion</h2>
   <hr>
-  <article>
       <h3>Bienvenue</h3>
+      <!-- Message d'erreur en cas d'echec de connexion -->
+      <p>{{verifyConnection}}</p>
       <form action="connexion.php" method="post">
         <label for="email"><i class="bi bi-person-fill"></i> Email :</label>
         <input type="text" id="email" name="email">
@@ -13,6 +14,5 @@
         <hr>
         <input type="submit" value="Se Connecter">
       </form>
-  </article>
 </section>
 {% endblock %}

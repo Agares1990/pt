@@ -47,16 +47,93 @@ function getComments($pdo){
 }
 
 // Génération des étoiles.
-	function GenerateStars(int $count)
-	{
-		$html = "";
+	// function GenerateStars(int $count)
+	// {
+	// 	$html = "";
+  //
+	// 	for ($indice = 1; $indice <= $count; $indice++)
+	// 	{
+	// 		$html .= "<img class='star' src='../images/star.png' alt='Étoile' width='16' height='16' />";
+	// 	}
+  //
+	// 	return $html;
+	// }
 
-		for ($indice = 1; $indice <= $count; $indice++)
-		{
-			$html .= "<img class='star' src='../images/star.png' alt='Étoile' width='16' height='16' />";
-		}
+  function isValidTelephoneNumber(string $telephone, int $minDigits = 9, int $maxDigits = 14): bool {
+    if (preg_match('/^[+][0-9]/', $telephone)) { //is the first character + followed by a digit
+        $count = 1;
+        $telephone = str_replace(['+'], '', $telephone, $count); //remove +
+    }
 
-		return $html;
-	}
+    //remove white space, dots, hyphens and brackets
+    $telephone = str_replace([' ', '.', '-', '(', ')'], '', $telephone);
 
+    //are we left with digits only?
+    return isDigits($telephone, $minDigits, $maxDigits);
+}
+
+function normalizeTelephoneNumber(string $telephone): string {
+    //remove white space, dots, hyphens and brackets
+    $telephone = str_replace([' ', '.', '-', '(', ')'], '', $telephone);
+    return $telephone;
+}
+
+
+
+function verifyConnection($pdo, $table, $page){
+  if(!empty($_POST)){
+    // Une fois on rempli et envoyé la formulaire, $_POST contient les information saisie sous forme d'un tableau associatif
+    // Le formulaire à été envoyé
+    // On vérifie que tous les champs requis sont remplis
+
+    if (isset($_POST["email"], $_POST["mdp"]) && !empty($_POST["email"]) && !empty($_POST["mdp"])) {
+      // On vérifie que c'est un email
+      if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $errorConnection = "L'adresse mail est incorrecte";
+      }
+      $email = strip_tags($_POST['email']);
+      $mdp =   strip_tags($_POST['mdp']);
+
+      // On se connecte à la bdd
+    //  $userExist = $db->query("SELECT * FROM users WHERE email =  '$email'")->fetch();
+
+      $userExist = $pdo->prepare("SELECT * FROM $table WHERE email = :email");
+      $userExist->bindValue(":email", $email, PDO::PARAM_STR);
+      $userExist->execute();
+      $user = $userExist->fetch();
+      // Si l'utilisateur n'existe pas
+      if (!$user) {
+        $errorConnection = "L'utilisateur et/ou le mot de passe est incorrect";
+      }
+
+      else{
+        if(!password_verify($mdp, $user['mdp'])){
+
+          $errorConnection = "L'utilisateur et/ou le mot de passe est incorrect";
+        }
+
+        else {
+
+          // Ici l'utilisateur et le mot de passe sont corrects
+          // On va pouvoir connecter l'utilisateur
+          // On démarre la session PHP
+          session_start();
+          // On stock dans $_SESSION les information de l'utilisateur
+          // $_SESSION["client"] = [ // à la place de client on peut mettre n'importe de quoi
+            $_SESSION["email"] = $email;
+          // ];
+           // var_dump($_SESSION);
+          // On redirige vers la page de profile
+          header("Location: $page");
+        }
+      }
+
+      // Ici on a un user existant, on vérifie son mote de passe
+      // if(!password_verify($mdp, $userExist['pass'])){
+      //   die ("Florian et Cindy sont passés par là");
+       }
+
+  }
+  return @$errorConnection;
+}
 ?>

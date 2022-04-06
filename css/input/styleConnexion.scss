@@ -20,26 +20,28 @@ section{
         margin-bottom: 1.5rem;
         text-align: center;
       }
-    article{
-      h3{
-        text-align: center;
-      }
-      input[type=text], input[type=password] {
-          width: 100%;
-          padding: 1rem 0 1rem;
-          margin: .35rem 0 1.4rem 0;
-          border: none;
-          background: #f1f1f1;
-          &:focus{
-            background-color: #ddd;
-            outline: inherit;
-          }
-        }
-
-        input[type=submit] {
-          @include button(45%, .7rem 1.1rem)
-          @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
-        }
-
+    h3{
+      text-align: center;
     }
+    p{ /* Message d'erreur de connexion */
+      color: red;
+      font-size: 1.1rem;
+    }
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 1rem 0 1rem;
+        margin: .35rem 0 1.4rem 0;
+        border: none;
+        background: #f1f1f1;
+        &:focus{
+          background-color: #ddd;
+          outline: inherit;
+        }
+      }
+
+      input[type=submit] {
+        @include button(45%, .7rem 1.1rem)
+        @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+      }
+
 }

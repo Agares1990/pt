@@ -23,33 +23,45 @@ body header nav:first-child p, body header nav:first-child a {
 }
 
 /* line 19, ../css/input/_baseBO.scss */
-body header nav ul {
+body header nav:last-child {
   height: calc(100vh - 11rem);
   padding: 3rem 1rem;
   background-color: #DCDCDC;
   width: 20%;
   color: blue;
+  margin-right: 1rem;
+  float: left;
+}
+
+/* line 27, ../css/input/_baseBO.scss */
+body header nav:last-child ul {
   display: flex;
   flex-direction: column;
 }
 
-/* line 28, ../css/input/_baseBO.scss */
-body header nav ul li {
+/* line 30, ../css/input/_baseBO.scss */
+body header nav:last-child ul li {
   margin-bottom: 2.5rem;
 }
 
-/* line 30, ../css/input/_baseBO.scss */
-body header nav ul li a {
+/* line 32, ../css/input/_baseBO.scss */
+body header nav:last-child ul li a {
   /* style générale des h2 */
   font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   font-weight: 600;
+  color: #0066CC;
 }
 
-/* line 2, ../css/input/styleIndexBO.scss */
+/* line 36, ../css/input/_baseBO.scss */
+body header nav:last-child ul li a:active {
+  color: black;
+}
+
+/* line 2, ../css/input/styleManageComment.scss */
 p {
   color: green;
 }
 
-/*# sourceMappingURL=styleIndexBO.css.map */
+/*# sourceMappingURL=styleManageComment.css.map */

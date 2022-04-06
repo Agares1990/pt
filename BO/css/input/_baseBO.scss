@@ -16,20 +16,27 @@ body{
         @include h3;
       }
     }
-    nav ul{
+    nav:last-child{
       height: calc(100vh - 11rem);
       padding: 3rem 1rem;
       background-color: #DCDCDC;
       width: 20%;
       color: blue;
-      display: flex;
-      //flex-flow: column wrap;
-      flex-direction: column;
-      li{
-        margin-bottom: 2.5rem;
-        a{
-          @include h3;
-          font-weight: 600;
+      margin-right: 1rem;
+      float: left;
+      ul{
+        display: flex;
+        flex-direction: column;
+        li{
+          margin-bottom: 2.5rem;
+          a{
+            @include h3;
+            font-weight: 600;
+            color: #0066CC;
+            &:active{
+              color: black;
+            }
+          }
         }
       }
     }
