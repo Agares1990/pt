@@ -73,7 +73,7 @@ else {
     //join client.idClient = reservation_chambre.clientId WHERE email = '$email'
     }
 }
-  $reservationsClient = afficherReservationClient($pdo, $email, $lang);
+
 if (isset($_POST['verify']) && $_POST['verify'] == 1) {
   echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
   exit(); // Arrêter l'execution de la scripte
@@ -118,7 +118,7 @@ if (isset($_POST['comment'])) {
     }
 }
 
-
+$reservationsClient = afficherReservationClient($pdo, $email, $lang);
 
   echo $twig->render('profile.html.twig',
         array('css' => $css,

@@ -13,6 +13,7 @@ body{
   //   grid-area: 2 / 1 / 6 / 2;
   // }
   main{
+
     //grid-area: 2 / 2 / 6 / 6;
     table, td, th{
       border: 1px solid $colorOr;
@@ -31,6 +32,33 @@ body{
           font-size: 2rem;
           color: red;
         }
+      }
+    }
+
+    #checkIn{
+      @include form(1rem 2rem);
+      width: 50%;
+      margin: 2rem auto;
+      h2{
+        @include h2;
+        text-align: center;
+        margin-bottom: 2rem;
+        span{
+          color: #BCA474;
+        }
+      }
+      form{
+        input{
+          @include inputForm(calc(80%/2));
+        }
+        input:first-child{
+          margin-right: 2rem;
+        }
+        button{
+          @include button(calc((100% - 1rem)/3), .63rem 0);
+          @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+          margin-top: 1rem;
+          }
       }
     }
   }

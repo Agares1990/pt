@@ -1,6 +1,43 @@
 {% extends "baseBO.html.twig" %}
 {% block contenu %}
 <main>
+  {% if modification == 1 %}
+  <article id="checkIn">
+      <!-- formulaire de recherche de chambre dispo -->
+      <h2>Modifier votre <span>réservation</span></h2>
+    <!-- <form id="formChek" action="profile.php" method="POST"> -->
+    <form id="formChek" action="" method="post">
+        <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
+        <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
+        <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
+        <input type="hidden" id="idReservation" name="idReservation" value="{{idReservation}}">
+        <input type="hidden" id="idChambre" name="idChambre" value="{{roomsCheck.idChambre}}">
+        <input type="hidden" id="verify" name="verify" value="1">
+        <button id="verifier" value="">Vérifie disponibilité</button>
+
+    </form>
+  </article>
+  {% endif %}
+  <article id="room">
+              <table>
+                <thead>
+                    <tr>
+                        <th colspan="5">Confirmer votre modification</th>
+                    </tr>
+                    <tr>
+                        <th>Date d'arrivée</th>
+                        <th>Daté de départ</th>
+                        <th>Total à payer</th>
+                        <th>Modifier la réservation</th>
+                    </tr>
+                </thead>
+                <tbody id="tabBody">
+                </tbody>
+            </table>
+            <h3>Désolé, nous n'avons pas de disponibilité pendant ces dates</h3>
+    </article>
+    <p>{{message}}</p>
+
   <table>
     <thead>
         <tr>
@@ -26,12 +63,12 @@
                 <td>{{reservation.dateArriver}}</td>
                 <td>{{reservation.dateDepart}}</td>
                 <td>
-                  <form class="" action="manageReservation" method="post">
+                  <form class="" action="manageReservation.php" method="post">
                     <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
                     <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
                     <input type="hidden" name="chambreId" value="{{reservation.chambreId}}">
                     <input type="hidden" name="modification" value="1">
-                    <input type="submit" id="update" value="Modifier la date">
+                    <input type="submit" value="Modifier la date">
                   </form>
                 </td>
                 <td>
