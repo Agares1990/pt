@@ -40,8 +40,9 @@ function updateResa($pdo, $idReservation){
     $req->bindParam(':dateArriver', $CheckIn, PDO::PARAM_INT);
     $req->bindParam(':dateDepart', $CheckOut, PDO::PARAM_INT);
     $req->execute();
-
+    $updateResaSuccess = "La réservation à été modifier avec succès";
   }
+  return @$updateResaSuccess;
 }
 
 // insérer commentaire

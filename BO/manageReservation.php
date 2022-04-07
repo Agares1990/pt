@@ -52,19 +52,21 @@ if (isset($_POST['verify'])) {
   else {
     $errorMessage = "Veuillez entrez la date d'arriver et la date de départ svp";
   }
-    //var_dump($roomsCheck);
-}
-  // Fonction pour modifier reservation
-  updateResa($pdo, $idReservation);
-  if (updateResa($pdo, $idReservation)) {
-    $updateResaSuccess = "La réservation à été midifier avec succès";
-  }
-}
-if (isset($_POST['verify']) && $_POST['verify'] == 1) {
   echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
   exit(); // Arrêter l'execution de la scripte
 
 }
+  // Fonction pour modifier reservation
+  $updateResa = updateResa($pdo, $idReservation);
+  // if (updateResa($pdo, $idReservation)) {
+  //   $updateResaSuccess = "La réservation à été midifier avec succès";
+  // }
+}
+// if (isset($_POST['verify']) && $_POST['verify'] == 1) {
+//   echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
+//   exit(); // Arrêter l'execution de la scripte
+//
+// }
 $reservations = getClientResaBO($pdo);
 $connection = getConnectionText();
 echo $twig->render('manageReservation.html.twig',
@@ -83,6 +85,8 @@ echo $twig->render('manageReservation.html.twig',
             'nbDay' => @$nbDay,
             'dateArriver' => @$fromDate,
             'dateDepart' => @$toDate,
-            'updateResaSuccess' => @$updateResaSuccess
+            'updateResa' => @$updateResa,
+            'errorMessage' => @$errorMessage,
+
   				));
 ?>
