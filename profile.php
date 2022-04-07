@@ -26,15 +26,15 @@ else {
     if(isset($_POST['delete'])){
 
       //On annule la réservation
-      annulerReservation($pdo, $email, $idReservation);
+      cancelResa($pdo, $email, $idReservation);
 
       // Afficher un message de success d'annulation réservation
       $messageSucces = "Votre réservation a bien été annuler";
     }
     // Afficher les réservation d'un client donné
-    $reservationsClient = afficherReservationClient($pdo, $email, $lang);
+    $reservationsClient = getClientResa($pdo, $email, $lang);
 
-
+    // Vérifier la disponibilité quand on veut modifier une réservation
     if (isset($_POST['verify'])) {
       $fromDate = $_POST["CheckIn"];
       $toDate = $_POST["CheckOut"];
@@ -61,17 +61,8 @@ else {
         //var_dump($roomsCheck);
     }
 
-    if (isset($_POST['updateResa'])) {
-      $idChambre = $_POST['idChambre'];
-      $CheckIn = $_POST['CheckIn'];
-      $CheckOut = $_POST['CheckOut'];
-      $req = $pdo->prepare("UPDATE reservation_chambre SET chambreId = :chambreId, dateArriver = :dateArriver, dateDepart = :dateDepart WHERE idReservationChambre = $idReservation");
-      $req->bindParam(':chambreId', $idChambre, PDO::PARAM_INT);
-      $req->bindParam(':dateArriver', $CheckIn, PDO::PARAM_INT);
-      $req->bindParam(':dateDepart', $CheckOut, PDO::PARAM_INT);
-      $req->execute();
-    //join client.idClient = reservation_chambre.clientId WHERE email = '$email'
-    }
+    // Fonction pour modifier reservation
+    updateResa($pdo, $idReservation);
 }
 
 if (isset($_POST['verify']) && $_POST['verify'] == 1) {
@@ -118,7 +109,7 @@ if (isset($_POST['comment'])) {
     }
 }
 
-$reservationsClient = afficherReservationClient($pdo, $email, $lang);
+$reservationsClient = getClientResa($pdo, $email, $lang);
 
   echo $twig->render('profile.html.twig',
         array('css' => $css,
