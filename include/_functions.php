@@ -11,7 +11,7 @@ function getConnectionText(){
 }
 
 // Fonction pour afficher les réservations dans l'espace client
-function afficherReservationClient($pdo, $email, $lang){
+function getClientResa($pdo, $email, $lang){
   $reservations = $pdo->query("SELECT * FROM reservation_chambre
                     LEFT JOIN nom_categorie_chambre ON reservation_chambre.categorieChambreId = nom_categorie_chambre.categorieChambreId
                     LEFT JOIN client ON reservation_chambre.clientId = client.idClient
@@ -19,14 +19,30 @@ function afficherReservationClient($pdo, $email, $lang){
   return $reservations;
 }
 
-// Annuler une réservation
-function annulerReservation($pdo, $email, $idReservation){
+// Fonction pour Annuler une réservation
+function cancelResa($pdo, $email, $idReservation){
   $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
                   WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_chambre) AS reserv INNER JOIN client ON reservation_chambre.clientId = client.idClient
                   WHERE email = '$email' && idReservationChambre = '$idReservation')");
   return $annulerReservation;
 }
 
+
+
+// Fonction pour modifer réservation chambre
+function updateResa($pdo, $idReservation){
+  if (isset($_POST['updateResa'])) {
+    $idChambre = $_POST['idChambre'];
+    $CheckIn = $_POST['CheckIn'];
+    $CheckOut = $_POST['CheckOut'];
+    $req = $pdo->prepare("UPDATE reservation_chambre SET chambreId = :chambreId, dateArriver = :dateArriver, dateDepart = :dateDepart WHERE idReservationChambre = $idReservation");
+    $req->bindParam(':chambreId', $idChambre, PDO::PARAM_INT);
+    $req->bindParam(':dateArriver', $CheckIn, PDO::PARAM_INT);
+    $req->bindParam(':dateDepart', $CheckOut, PDO::PARAM_INT);
+    $req->execute();
+
+  }
+}
 
 // insérer commentaire
 function leaveComment($pdo, $cltId, $note, $title, $comment, $dateComment){
@@ -107,21 +123,18 @@ function verifyConnection($pdo, $table, $page){
       }
 
       else{
-        if(!password_verify($mdp, $user['mdp'])){
+        if(!password_verify($mdp, $user['mdp']) || empty(trim($mdp))){
 
           $errorConnection = "L'utilisateur et/ou le mot de passe est incorrect";
         }
-
         else {
 
           // Ici l'utilisateur et le mot de passe sont corrects
           // On va pouvoir connecter l'utilisateur
-          // On démarre la session PHP
+          // On démarre la session
           session_start();
           // On stock dans $_SESSION les information de l'utilisateur
-          // $_SESSION["client"] = [ // à la place de client on peut mettre n'importe de quoi
             $_SESSION["email"] = $email;
-          // ];
            // var_dump($_SESSION);
           // On redirige vers la page de profile
           header("Location: $page");

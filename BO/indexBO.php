@@ -10,7 +10,7 @@ session_destroy();
 $verifyConnection = verifyConnection($pdo, 'user', "manageReservation.php");
 
 //$connection = getConnectionText();
-echo $twig->render('connexionBO.html.twig',
+echo $twig->render('indexBO.html.twig',
   	  array('verifyConnection' => @$verifyConnection,
   				));
 ?>
