@@ -2,9 +2,15 @@
 {% block contenu %}
 <main>
   {% if modification == 1 %}
+  <!-- message d'erreur avec js -->
+  <p id="errorDate"></p>
+  <!-- message d'erreur avec js -->
+  <p>{{errorMessage}}</p>
   <article id="checkIn">
+
       <!-- formulaire de recherche de chambre dispo -->
       <h2>Modifier votre <span>réservation</span></h2>
+      <h3></h3>
     <!-- <form id="formChek" action="profile.php" method="POST"> -->
     <form id="formChek" action="" method="post">
         <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
@@ -19,6 +25,7 @@
   </article>
   {% endif %}
   <article id="room">
+
               <table>
                 <thead>
                     <tr>
@@ -34,10 +41,10 @@
                 <tbody id="tabBody">
                 </tbody>
             </table>
-            <h3>Désolé, nous n'avons pas de disponibilité pendant ces dates</h3>
+
     </article>
     <p>{{message}}</p>
-    <p>{{updateResaSuccess}}</p>
+    <p id="updateResa">{{updateResa}}</p>
   <table>
     <thead>
         <tr>

@@ -58,18 +58,19 @@ else {
       else {
         $errorMessage = "Veuillez entrez la date d'arriver et la date de départ svp";
       }
-        //var_dump($roomsCheck);
+      echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
+      exit(); // Arrêter l'execution de la scripte
     }
 
     // Fonction pour modifier reservation
-    updateResa($pdo, $idReservation);
+    $updateResa = updateResa($pdo, $idReservation);
 }
 
-if (isset($_POST['verify']) && $_POST['verify'] == 1) {
-  echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
-  exit(); // Arrêter l'execution de la scripte
-
-}
+// if (isset($_POST['verify']) && $_POST['verify'] == 1) {
+//   echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
+//   exit(); // Arrêter l'execution de la scripte
+//
+// }
 
 
 /////////////////////////////////
@@ -126,7 +127,9 @@ $reservationsClient = getClientResa($pdo, $email, $lang);
               'nbDay' => @$nbDay,
               'dateArriver' => @$fromDate,
               'dateDepart' => @$toDate,
-              'dateComment' => @$dateComment
+              'dateComment' => @$dateComment,
+              'errorMessage' => @$errorMessage,
+              'updateResa' => @$updateResa
             ));
 
 

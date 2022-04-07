@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
   <h1>Bienvenue <span>{{client.prenom}}<span></h1>
-
+  <p id="updateResa">{{updateResa}}</p>
   <table>
     <thead>
         <tr>
@@ -52,10 +52,16 @@
 
 {% if modification == 1 %}
 <!-- Formulaire de check-in -->
+<!-- message d'erreur avec js -->
+<p id="errorDate"></p>
+<!-- message d'erreur avec js -->
+<p>{{errorMessage}}</p>
 <section id="sectCheckIn">
   <article id="checkIn">
+
       <!-- formulaire de recherche de chambre dispo -->
       <h2>Modifier votre <span>réservation</span></h2>
+      <h3></h3>
     <!-- <form id="formChek" action="profile.php" method="POST"> -->
     <form id="formChek" action="" method="post">
         <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
@@ -87,7 +93,7 @@
               <tbody id="tabBody">
               </tbody>
           </table>
-          <h3>Désolé, nous n'avons pas de disponibilité pendant ces dates</h3>
+
         </article>
         <p>{{message}}</p>
 

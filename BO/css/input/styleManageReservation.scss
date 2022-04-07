@@ -47,6 +47,11 @@ body{
           color: #BCA474;
         }
       }
+      h3{
+        color: red;
+        text-align: center;
+        margin-bottom: 1rem
+      }
       form{
         input{
           @include inputForm(calc(80%/2));
@@ -60,6 +65,10 @@ body{
           margin-top: 1rem;
           }
       }
+    }
+    #updateResa{/* Message de succès après modification d'une réservation */
+      color: green;
+      text-align: center;
     }
   }
 }

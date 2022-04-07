@@ -2,6 +2,11 @@
 table, td, th{
   border: 1px solid $colorOr;
 }
+#updateResa{ /* Message de succès après modification d'une réservation */
+  color: green;
+  text-align: center;
+  margin-top: 1rem;
+}
 h1{
   margin-top: 3rem;
   text-align: center;
@@ -44,6 +49,11 @@ h2{
     span{
       color: #BCA474;
     }
+  }
+  h3{
+    color: red;
+    text-align: center;
+    margin-bottom: 1rem
   }
   form{
     input{

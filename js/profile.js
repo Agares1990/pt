@@ -1,9 +1,13 @@
 $(document).ready(function(){
+  // TABLEAU MODIFICATION RESERVATION CHAMBRE
     // On cache par défaut la section ainsi que la table
     //  des résultats tant que la requête AJAX n'a pas été
     //  accomplie.
+    //$("#checkIn h3").hide();
     $("#room").hide();
     $("#room table").hide();
+    const checkIn = $( "input[name = 'CheckIn']" ).val();
+    const checkOut = $( "input[name = 'CheckOut']" ).val();
 
     function sendVerif(e) {
         e.preventDefault();
@@ -23,18 +27,31 @@ $(document).ready(function(){
 
                      // Dès l'arrivée d'un résultat, on affiche la section
                      //   mais pas la table des résultats.
-                     $("#room").show();
 
-                     if (json.price > 0)
+
+                     // Si la date d'arrivée et/ou date de départ n'est pas remplis
+                     // alors on affiche une message d'erreur
+                     if ( checkIn.trim().length == 0 || checkOut.trim().length == 0)
                      {
+                       $("#checkIn h3").text("Veuillez entrez la date d'arrivée et la date de départ svp");
+                     }
+
+                     if (json.price < 0)
+                     {
+                       $("#room table").hide()
+                       $("#checkIn h3").text("Désolé, nous n'avons pas de disponibilité pendant ces dates")
+
+                     }
+                     else if (json.price > 0){
                        // Si dans les données JSON, il est indiqué que le prix
                        //   n'est pas nulle, alors on cache le message indiquant
                        //   qu'aucune réservation n'est disponible et on afficher
                        //   la table des réservations disponibles.
+                       //$("#room").show();
+                       $("#room").show()
                        $("#room table").show()
                        $("#room h3").hide()
                      }
-
                      // On contruit enfin le corps du tableau avec les données
                      //   de la réservation.
                      $("#tabBody").html(
@@ -54,9 +71,9 @@ $(document).ready(function(){
                            </td>
                        </tr>`)
 
-   				});
+          });
 
-   	};
+    };
     $('#verifier').click(sendVerif);
 
       // Insérer Commentaire
