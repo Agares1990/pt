@@ -34,12 +34,20 @@
          <option class="option" value="3">Suite Senior</option>
        </select>
 
-
-          <input id="submit" type="submit" name="submit" value="Vérifie disponibilité">
+       <input id="submit" type="submit" name="submit" value="Vérifie disponibilité">
 
     </form>
 </article>
+  <!-- Message d'erreur s'il n'y a pas de chambre disponible dans une date précise  -->
   <p id="complete">{{messageCheck}}</p>
+
+  <!-- Message d'erreur s'il n'y pas d'autres chambres disponible en cliquant sur le button afficher d'autres chambre... -->
+  <p id="errorOtherRooms">{{messageOtherRooms}}</p>
+  {% if messageOtherRooms|trim is not null %}
+    <script>
+      $("input[name='otherRoom']").hide();
+    </script>
+  {% endif %}
 <section>
 
     {% for room in rooms %}

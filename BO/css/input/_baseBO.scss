@@ -5,40 +5,50 @@ a{
   text-decoration: none;
 }
 body{
+  display: grid;
+  grid-template-columns: 1.5fr 5fr;
+  grid-template-rows: 0.7fr 5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100vh;
   header{
-    nav:first-child{
+    grid-area: 1 / 1 / 2 / 6;
+    background-color: black;
+    nav{
       display: flex;
       justify-content: space-between;
-      background-color: black;
       padding: 2rem;
       p, a{
         color: white;
         @include h3;
       }
     }
-    nav:last-child{
-      height: calc(100vh - 11rem);
-      padding: 3rem 1rem;
-      background-color: #DCDCDC;
-      width: 20%;
-      color: blue;
-      margin-right: 1rem;
-      float: left;
-      ul{
-        display: flex;
-        flex-direction: column;
-        li{
-          margin-bottom: 2.5rem;
-          a{
-            @include h3;
-            font-weight: 600;
-            color: #0066CC;
-            &:active{
-              color: black;
-            }
-          }
-        }
-      }
-    }
+  }
+  #mainMenu{
+    grid-area:  2 / 1 / 7 / 2;
+    background-color: #DCDCDC;
+    padding: 3rem 1rem;
+   ul{
+     display: flex;
+     flex-direction: column;
+     li{
+       margin-bottom: 2.5rem;
+       a{
+         @include h3;
+         font-weight: 600;
+         color: #0066CC;
+         &:active{
+           color: black;
+         }
+         &:hover{
+           color: $colorOr;
+         }
+       }
+     }
+   }
+  }
+  main{
+    padding: 2rem 1rem;
+    grid-area: 2 / 2 / 7 / 6;
   }
 }

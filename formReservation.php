@@ -13,6 +13,7 @@ $connection = getConnectionText();
 //récupérer l'utilisateur actuel s'il est  déjà connecté
 $client = $pdo->query("SELECT * FROM client WHERE email =  '$email'")->fetch();
 $clientId = $client['idClient'];
+var_dump($email);
 if(isset($_POST['submit'])){
   $fromDate = $_POST["CheckIn"];
   $toDate = $_POST["CheckOut"];

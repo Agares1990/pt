@@ -5,16 +5,31 @@ a {
   text-decoration: none;
 }
 
-/* line 9, ../css/input/_baseBO.scss */
-body header nav:first-child {
-  display: flex;
-  justify-content: space-between;
-  background-color: black;
-  padding: 2rem;
+/* line 7, ../css/input/_baseBO.scss */
+body {
+  display: grid;
+  grid-template-columns: 1.5fr 5fr;
+  grid-template-rows: 0.7fr 5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100vh;
 }
 
 /* line 14, ../css/input/_baseBO.scss */
-body header nav:first-child p, body header nav:first-child a {
+body header {
+  grid-area: 1 / 1 / 2 / 6;
+  background-color: black;
+}
+
+/* line 17, ../css/input/_baseBO.scss */
+body header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+/* line 21, ../css/input/_baseBO.scss */
+body header nav p, body header nav a {
   color: white;
   /* style générale des h2 */
   font-size: 1.2rem;
@@ -22,30 +37,26 @@ body header nav:first-child p, body header nav:first-child a {
   font-weight: 500;
 }
 
-/* line 19, ../css/input/_baseBO.scss */
-body header nav:last-child {
-  height: calc(100vh - 11rem);
-  padding: 3rem 1rem;
+/* line 27, ../css/input/_baseBO.scss */
+body #mainMenu {
+  grid-area: 2 / 1 / 7 / 2;
   background-color: #DCDCDC;
-  width: 20%;
-  color: blue;
-  margin-right: 1rem;
-  float: left;
+  padding: 3rem 1rem;
 }
 
-/* line 27, ../css/input/_baseBO.scss */
-body header nav:last-child ul {
+/* line 31, ../css/input/_baseBO.scss */
+body #mainMenu ul {
   display: flex;
   flex-direction: column;
 }
 
-/* line 30, ../css/input/_baseBO.scss */
-body header nav:last-child ul li {
+/* line 34, ../css/input/_baseBO.scss */
+body #mainMenu ul li {
   margin-bottom: 2.5rem;
 }
 
-/* line 32, ../css/input/_baseBO.scss */
-body header nav:last-child ul li a {
+/* line 36, ../css/input/_baseBO.scss */
+body #mainMenu ul li a {
   /* style générale des h2 */
   font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
@@ -54,9 +65,20 @@ body header nav:last-child ul li a {
   color: #0066CC;
 }
 
-/* line 36, ../css/input/_baseBO.scss */
-body header nav:last-child ul li a:active {
+/* line 40, ../css/input/_baseBO.scss */
+body #mainMenu ul li a:active {
   color: black;
+}
+
+/* line 43, ../css/input/_baseBO.scss */
+body #mainMenu ul li a:hover {
+  color: #BCA474;
+}
+
+/* line 50, ../css/input/_baseBO.scss */
+body main {
+  padding: 2rem 1rem;
+  grid-area: 2 / 2 / 7 / 6;
 }
 
 /* line 2, ../css/input/styleManageComment.scss */

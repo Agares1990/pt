@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
   $nbPerson = $_POST["nbPerson"];
   $nbChild = $_POST["nbChild"];
   $roomType = $_POST["roomType"];
-  $idCategorieChambre = $_POST["idCategorieChambre"];
+  //$idCategorieChambre = $_POST["idCategorieChambre"];
 
   // Pour caculer le nombre de jours réservés
   $fromDate = new DateTime($fromDate);
@@ -71,8 +71,8 @@ if(isset($_POST['submit'])){
     $toDate = $_POST["CheckOut"];
     $nbPerson = $_POST["nbPerson"];
     $nbChild = $_POST["nbChild"];
-    $roomType = $_POST["roomType"];
-    $idCategorieChambre = $_POST["idCategorieChambre"];
+    @$roomType = $_POST["roomType"];
+    @$idCategorieChambre = $_POST["idCategorieChambre"];
     $checkRoom = $_POST["checkRoom"]; // Vérifier si le formulaire renvoi 1 ou pas
     // $idCategorieChambre = $_POST["idCategorieChambre"];
 
@@ -84,19 +84,27 @@ if(isset($_POST['submit'])){
 
     $fromDate = $fromDate->format('Y-m-d');
     $toDate = $toDate->format('Y-m-d');
-    $where = "chambre.categorieChambreId != " .$idCategorieChambre;
-    $where .= " && capaciteAdulte >= " .$nbPerson;
-    $where .= " && capaciteEnfant >= " . $nbChild ;
-    $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
 
-     $query = "SELECT * FROM chambre
-     LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-     LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-     && nom_categorie_chambre.langueId = '$lang'
-     LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
-     LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
-     WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
-     $otherRooms = $pdo->query($query);
+    if ($roomType != 0) {// si on choisit une catégorie de chambre dans le formulaire
+      //On affiche les autres chambres dispo
+      $where = "chambre.categorieChambreId != " .$idCategorieChambre;
+      $where .= " && capaciteAdulte >= " .$nbPerson;
+      $where .= " && capaciteEnfant >= " . $nbChild ;
+      $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
+
+       $query = "SELECT * FROM chambre
+       LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
+       LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
+       && nom_categorie_chambre.langueId = '$lang'
+       LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
+       LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
+       WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
+       $otherRooms = $pdo->query($query);
+    }
+    else {
+      $messageOtherRooms = "Désolé, il n'y a pas d'autres chambres disponible dans ces dates, veuillez choisir une autre date";
+    }
+
   }
 
   if (isset($errorCheck)) {
@@ -107,7 +115,7 @@ if(isset($_POST['submit'])){
 echo $twig->render('formCheckInPage.html.twig',
   	  array('css' => $css,
             'script' => $script,
-            'rooms' => $rooms,
+            'rooms' => @$rooms,
             'nbPerson' => $nbPerson,
             'nbChild' => $nbChild,
             'nbDay' => $nbDay,
@@ -115,9 +123,10 @@ echo $twig->render('formCheckInPage.html.twig',
             'toDate' => $toDate,
             'connection' => $connection,
             'messageCheck' => @$messageCheck,
-            'otherRooms' => $otherRooms,
-            'roomType' => $roomType,
-            'checkRoom' =>$checkRoom
+            'otherRooms' => @$otherRooms,
+            'roomType' => @$roomType,
+            'checkRoom' =>@$checkRoom,
+            'messageOtherRooms' => @$messageOtherRooms
 
   				));
 ?>

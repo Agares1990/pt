@@ -25,8 +25,6 @@ $(document).ready(function(){
                   //   en objet JSON.
                    let json = JSON.parse(data);
 
-                   // Dès l'arrivée d'un résultat, on affiche la section
-                   //   mais pas la table des résultats.
 
 
                    // Si la date d'arrivée et/ou date de départ n'est pas remplis

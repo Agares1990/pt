@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -19,31 +19,24 @@
   <body>
     <header>
       <nav id="connection">
-        <p>Bienvenue {{verifyConnection['prenom']}}</p>
+        <p>Bienvenue {{utilisateur}}</p>
         <a class="connexion" href="indexBO.php">Déconnexion</a>
       </nav>
-
-
-
-      <!-- Menu de navigation -->
-      <nav>
-        <ul >
-            <li><a href="resaRoom.php">RESERVER CHAMBRE</a></li>
-            <li><a href="resaRestaurant.php">RESERVER RESTAURANT</a></li>
-            <li><a href="resaEvent.php">RESERVER EVENEMENT</a></li>
-            <li><a href="manageReservation.php">GERER RESERVATION</a></li>
-            <li><a href="manageRoom.php">GERER CHAMBRE</a></li>
-            <li><a href="manageComment.php">GERER AVIS</a></li>
-        </ul>
-      </nav>
-
     </header>
-
-    {% block contenu %}
-  	{% endblock %}
-
-    <footer>
-
-    </footer>
+    <!-- Menu de navigation -->
+    <nav id="mainMenu">
+      <ul >
+          <li><a href="resaRoom.php">RESERVER CHAMBRE</a></li>
+          <li><a href="resaRestaurant.php">RESERVER RESTAURANT</a></li>
+          <li><a href="resaEvent.php">RESERVER EVENEMENT</a></li>
+          <li><a href="manageReservation.php">GERER RESERVATION</a></li>
+          <li><a href="manageRoom.php">GERER CHAMBRE</a></li>
+          <li><a href="manageComment.php">GERER AVIS</a></li>
+      </ul>
+    </nav>
+    <main>
+      {% block contenu %}
+    	{% endblock %}
+    </main>
   </body>
 </html>

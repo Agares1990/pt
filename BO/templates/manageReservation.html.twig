@@ -1,6 +1,5 @@
 {% extends "baseBO.html.twig" %}
 {% block contenu %}
-<main>
   {% if modification == 1 %}
   <!-- message d'erreur avec js -->
   <p id="errorDate"></p>
@@ -9,7 +8,8 @@
   <article id="checkIn">
 
       <!-- formulaire de recherche de chambre dispo -->
-      <h2>Modifier votre <span>réservation</span></h2>
+      <h2>Modifier les <span>réservations</span></h2>
+      <!-- h3 sert pour afficher un eventuel message d'erreur lié aux dates -->
       <h3></h3>
     <!-- <form id="formChek" action="profile.php" method="POST"> -->
     <form id="formChek" action="" method="post">
@@ -90,5 +90,5 @@
         {% endfor %}
     </tbody>
 </table>
-</main>
+
 {% endblock %}
