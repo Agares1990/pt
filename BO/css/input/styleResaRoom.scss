@@ -1,0 +1,36 @@
+@import"baseBO";
+@import "formCheckIn";
+section{
+  width: 70%;
+  margin: 1rem auto;
+  article{
+    //height: 35vh;
+    margin-bottom: 8rem;
+    .imageChambre{
+      max-width: 384px;
+      max-height: 257px;
+      float: left;
+      margin-right: 1rem;
+      }
+      article{
+        position: relative;
+        h2{
+          @include h2;
+          margin-bottom: 1rem;
+        }
+        p{
+          margin-bottom: 1rem;
+          span{
+            color: $colorOr;
+          }
+        }
+        input[type='submit']{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          @include button(10rem, .63rem 0);
+          @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+        }
+      }
+  }
+}
