@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
 
 
   // if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($mdp) && !empty($tel) && !empty($pays)) {
-    $checkMail = $pdo->query("SELECT email FROM client")->fetchAll();// Pour vérifier si l'utilisateur existe déjà
+    $checkMail = $pdo->query("SELECT * FROM client WHERE email = '$email'")->fetch();// Pour vérifier si l'utilisateur existe déjà
     //Le nom ne doit pas etre vide et doit contenir que des alphabet muniscule et majiscule
     if(!preg_match("/^([a-zA-Z' ]+)$/",$nom) || empty(trim($nom))){
       $fieldError = 'Le Nom invalide';
@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
     elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) || empty(trim($email))) {
       $fieldError = "L'email entré est invalide";
     }
-    elseif($email == @$checkMail['email']){
+    elseif($checkMail){
       $fieldError = "L'email saisi existe déjà";
     }
     elseif (empty(trim($mdp))) {
@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
 
     }
   }
-
+var_dump($checkMail);
   // else {
   //   $fieldErreur = "il manque des infos";
   // }

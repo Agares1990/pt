@@ -1,4 +1,5 @@
-$( "#submit" ).click( function()
+$(document).ready(function(){
+  $( "#submit" ).click( function()
 {
 // Expression régulière les champs de dates.
   const regex1 = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
@@ -35,4 +36,12 @@ $( "#submit" ).click( function()
       return false;
     }
 
+    });
+
+    // $("#otherRoom").hide();
+    // $("input[name='otherRoom']").click(function() {
+    //   // e.preventDefault();
+    //   $("#otherRoom").show();
+    //   $(this).hide();
+    // })
   });

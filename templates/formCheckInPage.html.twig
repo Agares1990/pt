@@ -51,12 +51,9 @@
                 <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
                 <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
                 <input type="hidden" name="nbDay" value="{{nbDay}}">
-                <!-- <label for="nomCategorie">{{room.nomCategorie}}</label> -->
                 <input type="hidden" id="roomType" name="roomType" value="{{room.nomCategorie}}">
                 <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{room.idCategorieChambre}}">
-                <!-- <label for="nbPerson">{{nbPerson}}</label> -->
                 <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
-                <!-- <label for="nbChild">{{nbChild}}</label> -->
                 <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
                 <input type="hidden" id="idChambre" name="idChambre" value="{{room.idChambre}}">
                 <input type="hidden" name="totalToPay" value="{{room.tarifCategorieChambre * nbDay}} €">
@@ -72,13 +69,6 @@
                 <li>{{room.caracterestique2}}</li>
                 <li>{{room.caracterestique3}}</li>
               </ul>
-
-              <!--
-                    <input type="submit" name="submit" value="{{room.tarifCategorieChambre * nbDay}} €">
-              <a href="formReservation.php?fromDate=$fromDate&toDatetoDate=$toDate&nbPerson=$nbPerson&nbChild=$nbChild&roomType=$roomType"></a> -->
-
-
-
             </article>
             <div>
 
@@ -87,5 +77,60 @@
           <h2>{{message}}</h2>
     {% endfor %}
 
+</section>
+  <form class="" action="formCheckInPage.php" method="post">
+    <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
+    <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
+    <input type="hidden" name="nbDay" value="{{nbDay}}">
+    <!-- <input type="hidden" id="roomType" name="roomType" value="{{rooms['nomCategorie']}}"> -->
+
+    <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{roomType}}">
+    <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
+    <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
+    <!-- <input type="hidden" id="idChambre" name="idChambre" value="{{rooms['idChambre']}}"> -->
+    <input type="submit" name="otherRoom" value="Afficher d'autres chambres disponible à cette date">
+    <input type="hidden" name="checkRoom" value="1">
+  </form>
+<section>
+  {% if checkRoom == 1 %}
+  {% for otherRoom in otherRooms %}
+  <script>
+    $("input[name='otherRoom']").hide();
+  </script>
+        <article>
+          <img class="imageChambre" src="{{otherRoom.image1}}" alt="{{'image ' ~ otherRoom.nomCategorie}}">
+          <article class="desc">
+            <form class="" action="formReservation.php" method="post">
+
+              <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
+              <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
+              <input type="hidden" name="nbDay" value="{{nbDay}}">
+              <input type="hidden" id="roomType" name="roomType" value="{{otherRoom.nomCategorie}}">
+              <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{otherRoom.idCategorieChambre}}">
+              <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
+              <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
+              <input type="hidden" id="idChambre" name="idChambre" value="{{otherRoom.idChambre}}">
+              <input type="hidden" name="totalToPay" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
+              <input type="submit" name="submit" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
+            </form>
+            <div id="otherRoomsAvailable">
+              <h2>{{otherRoom.nomCategorie}}</h2>
+              <p><span>{{nbPerson}}</span> personne(s)</p>
+              <p><span>{{nbChild}}</span> enfant(s)</p>
+              <p>{{otherRoom.description}}</p>
+              <ul>
+                <li>{{otherRoom.caracterestique1}}</li>
+                <li>{{otherRoom.caracterestique2}}</li>
+                <li>{{otherRoom.caracterestique3}}</li>
+              </ul>
+            </div>
+
+          </article>
+          <div>
+
+          </div>
+        </article>
+  {% endfor %}
+  {% endif %}
 </section>
 {% endblock %}
