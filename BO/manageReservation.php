@@ -8,6 +8,7 @@ $script = "manageReservation";
 $pdo = getPDO();
 session_start();
 $email = $_SESSION['email'];
+
 if (!isset($_SESSION['email'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
   header('Location: connexionBO.php');
 }
@@ -34,7 +35,6 @@ if (isset($_POST['verify'])) {
   $toDate = $_POST["CheckOut"];
   $idCategorieChambre = $_POST["idCategorieChambre"];
 
-  // Pour caculer le nombre de jours réservés
   $fromDate = new DateTime($fromDate);
   $toDate = new DateTime($toDate);
   $nbDay =  date_diff($fromDate, $toDate);
@@ -87,6 +87,7 @@ echo $twig->render('manageReservation.html.twig',
             'dateDepart' => @$toDate,
             'updateResa' => @$updateResa,
             'errorMessage' => @$errorMessage,
+            'utilisateur' => $utilisateur['prenom']
 
   				));
 ?>
