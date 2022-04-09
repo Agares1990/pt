@@ -5,6 +5,7 @@ include("include/_traduction.php");
 require_once "include/_functions.php";
 session_start();
 $css = "styleRecapReservation";
+$script = "recapReservation";
 $pdo = getPDO();
 
 
@@ -97,6 +98,7 @@ var_dump($checkMail);
 
 echo $twig->render('recapReservation.html.twig',
   	  array('css' => $css,
+            'script' => $script,
             'connection' => $connection,
             'prenom' => $prenom,
             'fromDate' => $fromDate,

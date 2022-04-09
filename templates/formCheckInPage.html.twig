@@ -43,16 +43,16 @@
 
   <!-- Message d'erreur s'il n'y pas d'autres chambres disponible en cliquant sur le button afficher d'autres chambre... -->
   <p id="errorOtherRooms">{{messageOtherRooms}}</p>
-  {% if messageOtherRooms|trim is not null %}
+  <!-- {% if messageOtherRooms|trim is not null %}
     <script>
       $("input[name='otherRoom']").hide();
     </script>
-  {% endif %}
+  {% endif %} -->
 <section>
 
     {% for room in rooms %}
           <article>
-            <img class="imageChambre" src="../{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
+            <img class="imageChambre" src="{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
             <article class="desc">
               <form class="" action="formReservation.php" method="post">
 
@@ -90,9 +90,9 @@
     <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
     <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
     <input type="hidden" name="nbDay" value="{{nbDay}}">
-    <!-- <input type="hidden" id="roomType" name="roomType" value="{{rooms['nomCategorie']}}"> -->
+    <input type="hidden" id="roomType" name="roomType" value="{{roomType}}">
 
-    <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{roomType}}">
+    <!-- <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{roomType}}"> -->
     <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
     <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
     <!-- <input type="hidden" id="idChambre" name="idChambre" value="{{rooms['idChambre']}}"> -->

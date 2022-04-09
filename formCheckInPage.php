@@ -72,7 +72,6 @@ if(isset($_POST['submit'])){
     $nbPerson = $_POST["nbPerson"];
     $nbChild = $_POST["nbChild"];
     @$roomType = $_POST["roomType"];
-    @$idCategorieChambre = $_POST["idCategorieChambre"];
     $checkRoom = $_POST["checkRoom"]; // Vérifier si le formulaire renvoi 1 ou pas
     // $idCategorieChambre = $_POST["idCategorieChambre"];
 
@@ -84,10 +83,10 @@ if(isset($_POST['submit'])){
 
     $fromDate = $fromDate->format('Y-m-d');
     $toDate = $toDate->format('Y-m-d');
-
+    var_dump($roomType);
     if ($roomType != 0) {// si on choisit une catégorie de chambre dans le formulaire
       //On affiche les autres chambres dispo
-      $where = "chambre.categorieChambreId != " .$idCategorieChambre;
+      $where = "chambre.categorieChambreId != " .$roomType;
       $where .= " && capaciteAdulte >= " .$nbPerson;
       $where .= " && capaciteEnfant >= " . $nbChild ;
       $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
