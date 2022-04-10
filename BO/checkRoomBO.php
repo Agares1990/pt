@@ -3,11 +3,11 @@ require "include/init_twig.php";
 require_once ("include/_connexion.php");
 require_once "../include/_functions.php";
 require_once "include/_functionsBO.php";
-$css = "styleResaRoom";
-$script = "resaRoom";
+$css = "styleCheckRoomBO";
+$script = "checkRoomBO";
 $pdo = getPDO();
 session_start();
-$prenom = $_SESSION["prenom"];
+@$prenom = $_SESSION["prenom"];
 
 if(isset($_POST['submit'])){
 
@@ -65,7 +65,7 @@ if(isset($_POST['submit'])){
      }
   }
 
-echo $twig->render('resaRoom.html.twig',
+echo $twig->render('checkRoomBO.html.twig',
   	  array('css' => $css,
             'script' => $script,
             'prenom' => $prenom,

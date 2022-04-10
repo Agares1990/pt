@@ -9,12 +9,10 @@ session_destroy();
 session_start();
 
 $verifyConnection = verifyConnection($pdo, 'user', "manageReservation.php");
-$email = $_SESSION["email"];
-var_dump($_SESSION);
+
 //$connection = getConnectionText();
 echo $twig->render('indexBO.html.twig',
-  	  array('verifyConnection' => @$verifyConnection,
-            'email' => $email
+  	  array('verifyConnection' => @$verifyConnection
 
   				));
 ?>

@@ -1,8 +1,8 @@
 {
 	"version": 3,
-	"file": "styleResaRoom.css",
+	"file": "styleCheckRoomBO.css",
 	"sources": [
-		"../input/styleResaRoom.scss",
+		"../input/styleCheckRoomBO.scss",
 		"../input/_baseBO.scss",
 		"../input/_valeurs-globales.scss",
 		"../input/_mixin.scss",
