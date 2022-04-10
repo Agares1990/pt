@@ -75,7 +75,6 @@ if(isset($_POST['submit'])){
     $checkRoom = $_POST["checkRoom"]; // Vérifier si le formulaire renvoi 1 ou pas
     // $idCategorieChambre = $_POST["idCategorieChambre"];
 
-    // Pour caculer le nombre de jours réservés
     $fromDate = new DateTime($fromDate);
     $toDate = new DateTime($toDate);
     $nbDay =  date_diff($fromDate, $toDate);

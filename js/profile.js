@@ -156,9 +156,9 @@ $(document).ready(function(){
   				}
 
   		} );
-  		// cacher le message du succès lorsqu'on clique sur X (#closebtn)
-  		$("#closebtn").click(function cacherMessage()
-  		{
-    		$("#success").hide();
-  		});
+  		// // cacher le message du succès lorsqu'on clique sur X (#closebtn)
+  		// $("#closebtn").click(function cacherMessage()
+  		// {
+    	// 	$("#success").hide();
+  		// });
 });

@@ -1,0 +1,21 @@
+@import"baseBO";
+section{
+  width: 90%;
+  margin: 1rem auto;
+  #recherch{
+    text-align: center;
+    label{
+      @include h3;
+    }
+    input{
+      margin-top: 1rem;
+      @include inputForm(30%);
+    }
+    input[type="submit"]{
+      text-align: center;
+      @include button(20%, .63rem 0);
+      @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+      margin-top: 1rem;
+    }
+  }
+}

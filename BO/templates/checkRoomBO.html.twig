@@ -9,9 +9,9 @@
 
   {% for room in rooms %}
         <article>
-          <img class="imageChambre" src="{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
+          <img class="imageChambre" src="../{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
           <article class="desc">
-            <form class="" action="resaRoom.php" method="post">
+            <form class="" action="resaRoomBO.php" method="post">
 
               <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
               <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">

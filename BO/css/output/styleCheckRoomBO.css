@@ -171,18 +171,18 @@ body main {
   margin-bottom: 1rem;
 }
 
-/* line 3, ../css/input/styleResaRoom.scss */
+/* line 3, ../css/input/styleCheckRoomBO.scss */
 section {
   width: 90%;
   margin: 1rem auto;
 }
 
-/* line 6, ../css/input/styleResaRoom.scss */
+/* line 6, ../css/input/styleCheckRoomBO.scss */
 section article {
   margin-bottom: 8rem;
 }
 
-/* line 9, ../css/input/styleResaRoom.scss */
+/* line 9, ../css/input/styleCheckRoomBO.scss */
 section article .imageChambre {
   max-width: 384px;
   max-height: 257px;
@@ -190,12 +190,12 @@ section article .imageChambre {
   margin-right: 1rem;
 }
 
-/* line 15, ../css/input/styleResaRoom.scss */
+/* line 15, ../css/input/styleCheckRoomBO.scss */
 section article article {
   position: relative;
 }
 
-/* line 17, ../css/input/styleResaRoom.scss */
+/* line 17, ../css/input/styleCheckRoomBO.scss */
 section article article h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -204,17 +204,17 @@ section article article h2 {
   margin-bottom: 1rem;
 }
 
-/* line 21, ../css/input/styleResaRoom.scss */
+/* line 21, ../css/input/styleCheckRoomBO.scss */
 section article article p {
   margin-bottom: 1rem;
 }
 
-/* line 23, ../css/input/styleResaRoom.scss */
+/* line 23, ../css/input/styleCheckRoomBO.scss */
 section article article p span {
   color: #BCA474;
 }
 
-/* line 27, ../css/input/styleResaRoom.scss */
+/* line 27, ../css/input/styleCheckRoomBO.scss */
 section article article input[type='submit'] {
   position: absolute;
   bottom: 0;
@@ -241,4 +241,4 @@ section article article input[type='submit']:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/*# sourceMappingURL=styleResaRoom.css.map */
+/*# sourceMappingURL=styleCheckRoomBO.css.map */
