@@ -8,7 +8,7 @@ $script = "manageReservation";
 $pdo = getPDO();
 session_start();
 $email = $_SESSION['email'];
-$prenom = $_SESSION["prenom"];
+@$prenomUser = $_SESSION["prenom"];
 if (!isset($_SESSION['email'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
   header('Location: connexionBO.php');
 }
@@ -87,7 +87,7 @@ echo $twig->render('manageReservation.html.twig',
             'dateDepart' => @$toDate,
             'updateResa' => @$updateResa,
             'errorMessage' => @$errorMessage,
-            'prenom' => $prenom
+            'prenomUser' => $prenomUser
 
   				));
 ?>

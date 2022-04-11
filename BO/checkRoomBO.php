@@ -7,7 +7,7 @@ $css = "styleCheckRoomBO";
 $script = "checkRoomBO";
 $pdo = getPDO();
 session_start();
-@$prenom = $_SESSION["prenom"];
+@$prenomUser = $_SESSION["prenom"];
 
 if(isset($_POST['submit'])){
 
@@ -68,7 +68,7 @@ if(isset($_POST['submit'])){
 echo $twig->render('checkRoomBO.html.twig',
   	  array('css' => $css,
             'script' => $script,
-            'prenom' => $prenom,
+            'prenomUser' => $prenomUser,
             'rooms' => @$rooms,
             'nbPerson' => @$nbPerson,
             'nbChild' => @$nbChild,

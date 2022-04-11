@@ -56,7 +56,7 @@ else {
           $roomsCheck = $pdo->query($query)->fetch();
         }
       else {
-        $errorMessage = "Veuillez entrez la date d'arriver et la date de départ svp";
+        $errorMessage = "Veuillez entrez la date d'arrivée et la date de départ svp";
       }
       echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
       exit(); // Arrêter l'execution de la scripte

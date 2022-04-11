@@ -5,37 +5,74 @@ section{
   #recherch{
     text-align: center;
     label{
-      @include h1;
+      @include h3;
     }
     input{
       margin-top: 1rem;
       @include inputForm(30%);
     }
-    input[type="submit"]{
+    input[name="search"]{
       text-align: center;
       @include button(20%, .63rem 0);
       @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
-      margin-top: 1rem;
+      margin: 1rem auto 2rem auto;
     }
   }
 }
+
 section{
-  article{
-    table, td, th{
-      border: 1px solid $colorOr;
-    }
-    table{
-      width: 90%;
-      margin: 3rem auto;
-      thead{
-        font-weight: bold;
-      }
-      th, td{
-        padding: .5rem 1rem;
-        text-align: center;
-        vertical-align: middle;
-      }
-    }
+  #success{ /* Message de succès de client trouvé */
+    text-align: center;
+    color: green;
+    margin-bottom: 1rem;
   }
 
+  /* styel tableau construit lorsqu'on trouve le client */
+  table, td, th{
+    border: 1px solid $colorOr;
+  }
+  table{
+    width: 70%;
+    margin: 0 auto 2rem auto;
+    thead{
+      font-weight: bold;
+    }
+    th, td{
+      padding: .5rem 1rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  input[type="submit"]{
+    text-align: center;
+    @include button(20%, .7rem 1.1rem)
+    @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+  }
+
+  /* styel formulaire de réservation construit lorsqu'on ne trouve pas le client */
+  p{/* message d'echec quand on trouve pas le client */
+    color: red;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  form#formReservation{
+    @include form(2rem 3rem);
+    width: 60%;
+    margin: 0 auto;
+    input, textarea{
+      @include inputForm(90%);
+    }
+    select{
+      @include inputSelectForm(96%);
+      margin-bottom: 10px;
+    }
+    input[type='submit']{
+      margin-top: 1rem;
+      @include button(45%, .5rem 0);
+      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+    }
+    span{ /* Les message d'erreurs declanché par js */
+      color: red;
+    }
+  }
 }

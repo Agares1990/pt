@@ -6,9 +6,11 @@ require_once "../include/_functions.php";
 
 $css = "styleResaRoomBO";
 $script = "resaRoomBO";
-
 $pdo = getPDO();
-if(isset($_POST['submit'])){
+@$prenomUser = $_SESSION["prenom"];
+
+if(isset($_POST['submit'])){ // si je clique sur le submite de formulaire de recherche de chambre
+  //Je récupère les données envoyès par le formulaire de recherch de chambre
   $fromDate = $_POST["CheckIn"];
   $toDate = $_POST["CheckOut"];
   $nbPerson = $_POST["nbPerson"];
@@ -18,12 +20,10 @@ if(isset($_POST['submit'])){
   $idCategorieChambre = $_POST["idCategorieChambre"];
   $nbDay = $_POST["nbDay"];
   $totalToPay = $_POST["totalToPay"];
-  var_dump($idCategorieChambre);
-  var_dump($idRoom);
 }
-if (isset($_POST['search'])) {
-  $email = $_POST['recherche'];
-
+if (isset($_POST['search'])) { // si je clique sur le submite de formulaire de recherche client (par email)
+  $email = $_POST['recherche']; // je récupère l'email saisi
+//Je récupère les données envoyès par le formulaire de recherch de client
   $fromDate = $_POST["CheckIn"];
   $toDate = $_POST["CheckOut"];
   $nbPerson = $_POST["nbPerson"];
@@ -34,8 +34,9 @@ if (isset($_POST['search'])) {
   $nbDay = $_POST["nbDay"];
   $totalToPay = $_POST["totalToPay"];
 
-  $searchClient = searchClientMail($pdo, $email);
+  $searchClient = searchClientMail($pdo, $email);// je vérifie si l'email existe dans la base de données
   // if ($searchClient) {
+    // s'il existe, je récupère les informations liées à ce client
     $idClient = $searchClient['idClient'];
     $nom = $searchClient['nom'];
     $prenom = $searchClient['prenom'];
@@ -52,10 +53,14 @@ if (isset($_POST['search'])) {
   //   exit;
   // }
 }
+if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en javascript
+    $fieldError =  "{$_GET['message']}";
+}
 // var_dump($otherRooms);
 echo $twig->render('resaRoomBO.html.twig',
   	  array('css' => $css,
             'script' => $script,
+            'prenomUser' => $prenomUser,
             'nbPerson' => @$nbPerson,
             'nbChild' => @$nbChild,
             'nbDay' => @$nbDay,
@@ -68,6 +73,7 @@ echo $twig->render('resaRoomBO.html.twig',
             'nom' => @$nom,
             'prenom' => @$prenom,
             'email' => @$email,
-            'tel' => @$tel
+            'tel' => @$tel,
+            'fieldError' => @$fieldError
   				));
 ?>

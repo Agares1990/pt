@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-/* line 4, ../css/input/_baseBO.scss */
+/* line 4, ../BO/css/input/_baseBO.scss */
 a {
   text-decoration: none;
 }
 
-/* line 7, ../css/input/_baseBO.scss */
+/* line 7, ../BO/css/input/_baseBO.scss */
 body {
   display: grid;
   grid-template-columns: 1.5fr 5fr;
@@ -15,20 +15,20 @@ body {
   height: 100vh;
 }
 
-/* line 14, ../css/input/_baseBO.scss */
+/* line 14, ../BO/css/input/_baseBO.scss */
 body header {
   grid-area: 1 / 1 / 2 / 6;
   background-color: black;
 }
 
-/* line 17, ../css/input/_baseBO.scss */
+/* line 17, ../BO/css/input/_baseBO.scss */
 body header nav {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
 }
 
-/* line 21, ../css/input/_baseBO.scss */
+/* line 21, ../BO/css/input/_baseBO.scss */
 body header nav p, body header nav a {
   color: white;
   /* style générale des h2 */
@@ -37,25 +37,25 @@ body header nav p, body header nav a {
   font-weight: 500;
 }
 
-/* line 27, ../css/input/_baseBO.scss */
+/* line 27, ../BO/css/input/_baseBO.scss */
 body #mainMenu {
   grid-area: 2 / 1 / 7 / 2;
   background-color: #DCDCDC;
   padding: 3rem 1rem;
 }
 
-/* line 31, ../css/input/_baseBO.scss */
+/* line 31, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul {
   display: flex;
   flex-direction: column;
 }
 
-/* line 34, ../css/input/_baseBO.scss */
+/* line 34, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li {
   margin-bottom: 2.5rem;
 }
 
-/* line 36, ../css/input/_baseBO.scss */
+/* line 36, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a {
   /* style générale des h2 */
   font-size: 1.2rem;
@@ -65,34 +65,34 @@ body #mainMenu ul li a {
   color: #0066CC;
 }
 
-/* line 40, ../css/input/_baseBO.scss */
+/* line 40, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:active {
   color: black;
 }
 
-/* line 43, ../css/input/_baseBO.scss */
+/* line 43, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:hover {
   color: #BCA474;
 }
 
-/* line 50, ../css/input/_baseBO.scss */
+/* line 50, ../BO/css/input/_baseBO.scss */
 body main {
   padding: 2rem 1rem;
   grid-area: 2 / 2 / 7 / 6;
 }
 
-/* line 2, ../css/input/styleResaRoomBO.scss */
+/* line 2, ../BO/css/input/styleResaRoomBO.scss */
 section {
   width: 90%;
   margin: 1rem auto;
 }
 
-/* line 5, ../css/input/styleResaRoomBO.scss */
+/* line 5, ../BO/css/input/styleResaRoomBO.scss */
 section #recherch {
   text-align: center;
 }
 
-/* line 7, ../css/input/styleResaRoomBO.scss */
+/* line 7, ../BO/css/input/styleResaRoomBO.scss */
 section #recherch label {
   /* style générale des h2 */
   font-size: 1.2rem;
@@ -100,7 +100,7 @@ section #recherch label {
   font-weight: 500;
 }
 
-/* line 10, ../css/input/styleResaRoomBO.scss */
+/* line 10, ../BO/css/input/styleResaRoomBO.scss */
 section #recherch input {
   margin-top: 1rem;
   /* style spécial des élémets input du formulaire*/
@@ -116,8 +116,8 @@ section #recherch input {
   width: 30%;
 }
 
-/* line 14, ../css/input/styleResaRoomBO.scss */
-section #recherch input[type="submit"] {
+/* line 14, ../BO/css/input/styleResaRoomBO.scss */
+section #recherch input[name="search"] {
   text-align: center;
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -132,14 +132,153 @@ section #recherch input[type="submit"] {
   border: solid 1px #BCA474;
   color: white;
   cursor: pointer;
-  margin-top: 1rem;
+  margin: 1rem auto 2rem auto;
 }
 
-/* line 75, ../css/input/_mixin.scss */
-section #recherch input[type="submit"]:hover {
+/* line 75, ../BO/css/input/_mixin.scss */
+section #recherch input[name="search"]:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+}
+
+/* line 23, ../BO/css/input/styleResaRoomBO.scss */
+section {
+  /* styel tableau construit lorsqu'on trouve le client */
+  /* styel formulaire de réservation construit lorsqu'on ne trouve pas le client */
+}
+
+/* line 24, ../BO/css/input/styleResaRoomBO.scss */
+section #success {
+  /* Message de succès de client trouvé */
+  text-align: center;
+  color: green;
+  margin-bottom: 1rem;
+}
+
+/* line 31, ../BO/css/input/styleResaRoomBO.scss */
+section table, section td, section th {
+  border: 1px solid #BCA474;
+}
+
+/* line 34, ../BO/css/input/styleResaRoomBO.scss */
+section table {
+  width: 70%;
+  margin: 0 auto 2rem auto;
+}
+
+/* line 37, ../BO/css/input/styleResaRoomBO.scss */
+section table thead {
+  font-weight: bold;
+}
+
+/* line 40, ../BO/css/input/styleResaRoomBO.scss */
+section table th, section table td {
+  padding: .5rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 46, ../BO/css/input/styleResaRoomBO.scss */
+section input[type="submit"] {
+  text-align: center;
+  /* Style général des bouttons */
+  padding: 0.7rem 1.1rem;
+  border-radius: .25rem;
+  width: 20%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 75, ../BO/css/input/_mixin.scss */
+section input[type="submit"]:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+/* line 53, ../BO/css/input/styleResaRoomBO.scss */
+section p {
+  /* message d'echec quand on trouve pas le client */
+  color: red;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* line 58, ../BO/css/input/styleResaRoomBO.scss */
+section form#formReservation {
+  /* style générale du formulaire*/
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem 3rem;
+  border-radius: 0 0 .5rem .5rem;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* line 62, ../BO/css/input/styleResaRoomBO.scss */
+section form#formReservation input, section form#formReservation textarea {
+  /* style spécial des élémets input du formulaire*/
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #BCA474;
+  font-size: 1rem;
+  color: #495057;
+  width: 90%;
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+/* line 65, ../BO/css/input/styleResaRoomBO.scss */
+section form#formReservation select {
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #BCA474;
+  font-size: 1rem;
+  color: #495057;
+  width: 96%;
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  margin-bottom: 10px;
+}
+
+/* line 69, ../BO/css/input/styleResaRoomBO.scss */
+section form#formReservation input[type='submit'] {
+  margin-top: 1rem;
+  /* Style général des bouttons */
+  padding: 0.5rem 0;
+  border-radius: .25rem;
+  width: 45%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 75, ../BO/css/input/_mixin.scss */
+section form#formReservation input[type='submit']:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+/* line 74, ../BO/css/input/styleResaRoomBO.scss */
+section form#formReservation span {
+  /* Les message d'erreurs declanché par js */
+  color: red;
 }
 
 /*# sourceMappingURL=styleResaRoomBO.css.map */

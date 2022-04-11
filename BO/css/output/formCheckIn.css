@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 3, ../css/input/formCheckIn.scss */
+/* line 3, ../BO/css/input/formCheckIn.scss */
 #checkIn {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-/* line 7, ../css/input/formCheckIn.scss */
+/* line 7, ../BO/css/input/formCheckIn.scss */
 #checkIn h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -19,12 +19,12 @@
   margin-bottom: 2rem;
 }
 
-/* line 11, ../css/input/formCheckIn.scss */
+/* line 11, ../BO/css/input/formCheckIn.scss */
 #checkIn h2 span {
   color: #BCA474;
 }
 
-/* line 17, ../css/input/formCheckIn.scss */
+/* line 17, ../BO/css/input/formCheckIn.scss */
 #checkIn form input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -39,7 +39,7 @@
   width: calc(90%/2);
 }
 
-/* line 20, ../css/input/formCheckIn.scss */
+/* line 20, ../BO/css/input/formCheckIn.scss */
 #checkIn form select {
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -52,12 +52,12 @@
   text-align: center;
 }
 
-/* line 23, ../css/input/formCheckIn.scss */
+/* line 23, ../BO/css/input/formCheckIn.scss */
 #checkIn form select option:hover {
   background-color: #BCA474;
 }
 
-/* line 27, ../css/input/formCheckIn.scss */
+/* line 27, ../BO/css/input/formCheckIn.scss */
 #checkIn form input[type="submit"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -75,14 +75,14 @@
   margin-top: 1rem;
 }
 
-/* line 75, ../css/input/_mixin.scss */
+/* line 75, ../BO/css/input/_mixin.scss */
 #checkIn form input[type="submit"]:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/* line 39, ../css/input/formCheckIn.scss */
+/* line 39, ../BO/css/input/formCheckIn.scss */
 #checkIn p {
   color: red;
   text-align: center;

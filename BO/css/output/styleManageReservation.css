@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-/* line 4, ../css/input/_baseBO.scss */
+/* line 4, ../BO/css/input/_baseBO.scss */
 a {
   text-decoration: none;
 }
 
-/* line 7, ../css/input/_baseBO.scss */
+/* line 7, ../BO/css/input/_baseBO.scss */
 body {
   display: grid;
   grid-template-columns: 1.5fr 5fr;
@@ -15,20 +15,20 @@ body {
   height: 100vh;
 }
 
-/* line 14, ../css/input/_baseBO.scss */
+/* line 14, ../BO/css/input/_baseBO.scss */
 body header {
   grid-area: 1 / 1 / 2 / 6;
   background-color: black;
 }
 
-/* line 17, ../css/input/_baseBO.scss */
+/* line 17, ../BO/css/input/_baseBO.scss */
 body header nav {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
 }
 
-/* line 21, ../css/input/_baseBO.scss */
+/* line 21, ../BO/css/input/_baseBO.scss */
 body header nav p, body header nav a {
   color: white;
   /* style générale des h2 */
@@ -37,25 +37,25 @@ body header nav p, body header nav a {
   font-weight: 500;
 }
 
-/* line 27, ../css/input/_baseBO.scss */
+/* line 27, ../BO/css/input/_baseBO.scss */
 body #mainMenu {
   grid-area: 2 / 1 / 7 / 2;
   background-color: #DCDCDC;
   padding: 3rem 1rem;
 }
 
-/* line 31, ../css/input/_baseBO.scss */
+/* line 31, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul {
   display: flex;
   flex-direction: column;
 }
 
-/* line 34, ../css/input/_baseBO.scss */
+/* line 34, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li {
   margin-bottom: 2.5rem;
 }
 
-/* line 36, ../css/input/_baseBO.scss */
+/* line 36, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a {
   /* style générale des h2 */
   font-size: 1.2rem;
@@ -65,52 +65,52 @@ body #mainMenu ul li a {
   color: #0066CC;
 }
 
-/* line 40, ../css/input/_baseBO.scss */
+/* line 40, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:active {
   color: black;
 }
 
-/* line 43, ../css/input/_baseBO.scss */
+/* line 43, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:hover {
   color: #BCA474;
 }
 
-/* line 50, ../css/input/_baseBO.scss */
+/* line 50, ../BO/css/input/_baseBO.scss */
 body main {
   padding: 2rem 1rem;
   grid-area: 2 / 2 / 7 / 6;
 }
 
-/* line 4, ../css/input/styleManageReservation.scss */
+/* line 4, ../BO/css/input/styleManageReservation.scss */
 body main table, body main td, body main th {
   border: 1px solid #BCA474;
 }
 
-/* line 7, ../css/input/styleManageReservation.scss */
+/* line 7, ../BO/css/input/styleManageReservation.scss */
 body main table {
   width: 90%;
   margin: 3rem auto;
 }
 
-/* line 10, ../css/input/styleManageReservation.scss */
+/* line 10, ../BO/css/input/styleManageReservation.scss */
 body main table thead {
   font-weight: bold;
 }
 
-/* line 13, ../css/input/styleManageReservation.scss */
+/* line 13, ../BO/css/input/styleManageReservation.scss */
 body main table th, body main table td {
   padding: .5rem 1rem;
   text-align: center;
   vertical-align: middle;
 }
 
-/* line 17, ../css/input/styleManageReservation.scss */
+/* line 17, ../BO/css/input/styleManageReservation.scss */
 body main table th i, body main table td i {
   font-size: 2rem;
   color: red;
 }
 
-/* line 24, ../css/input/styleManageReservation.scss */
+/* line 24, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
@@ -120,7 +120,7 @@ body main #checkIn {
   margin: 2rem auto;
 }
 
-/* line 28, ../css/input/styleManageReservation.scss */
+/* line 28, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -130,19 +130,19 @@ body main #checkIn h2 {
   margin-bottom: 2rem;
 }
 
-/* line 32, ../css/input/styleManageReservation.scss */
+/* line 32, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn h2 span {
   color: #BCA474;
 }
 
-/* line 36, ../css/input/styleManageReservation.scss */
+/* line 36, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn h3 {
   color: red;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* line 42, ../css/input/styleManageReservation.scss */
+/* line 42, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn form input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -157,12 +157,12 @@ body main #checkIn form input {
   width: calc(80%/2);
 }
 
-/* line 45, ../css/input/styleManageReservation.scss */
+/* line 45, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn form input:first-child {
   margin-right: 2rem;
 }
 
-/* line 48, ../css/input/styleManageReservation.scss */
+/* line 48, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn form button {
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -180,21 +180,21 @@ body main #checkIn form button {
   margin-top: 1rem;
 }
 
-/* line 75, ../css/input/_mixin.scss */
+/* line 75, ../BO/css/input/_mixin.scss */
 body main #checkIn form button:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/* line 55, ../css/input/styleManageReservation.scss */
+/* line 55, ../BO/css/input/styleManageReservation.scss */
 body main #updateResa {
   /* Message de succès après modification d'une réservation */
   color: green;
   text-align: center;
 }
 
-/* line 59, ../css/input/styleManageReservation.scss */
+/* line 59, ../BO/css/input/styleManageReservation.scss */
 body main #room {
   width: 70%;
   margin: 2rem auto;

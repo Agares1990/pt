@@ -2,7 +2,6 @@
 {% block contenu %}
 <section>
   <form id="recherch">
-
     <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
     <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
     <input type="hidden" name="nbDay" value="{{nbDay}}">
@@ -11,7 +10,7 @@
     <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
     <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
     <input type="hidden" id="idChambre" name="idChambre" value="{{idRoom}}">
-    <input type="hidden" name="totalToPay" value="{{totalToPay}}">  
+    <input type="hidden" name="totalToPay" value="{{totalToPay}} €">
     <label for="search">Recherche client</label><br>
     <input type="search" id="search" name="recherche" value="" placeholder="exemple@gmail.com"><br>
     <input type="submit" name="search" value="Rechercher Client">
@@ -22,4 +21,5 @@
 
   </article>
 </section>
+<p>{{fieldError}}</p>
 {% endblock %}

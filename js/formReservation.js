@@ -1,5 +1,3 @@
-$( document ).ready( function ()
-	{
 $( "input[name= 'submit']" ).click( function()
 {
 // Expression régulière des champs (nom/prenom/message/payes).
@@ -59,4 +57,3 @@ $( "input[name= 'submit']" ).click( function()
 	  }
 
   });
-});

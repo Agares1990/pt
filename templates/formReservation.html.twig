@@ -18,11 +18,7 @@
     </article>
     <p>{{fieldError}}</p>
     <form id="formReservation" action="recapReservation.php" method="post">
-      <!-- <select class="" name="" value="Vue de la chambre">
-        <option value="1">Normal</option>
-        <option value="2">Vue jardin</option>
-        <option value="3">Vue mer</option>
-      </select> -->
+
          <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
          <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
          <input type="hidden" id="nbDay" name="nbDay" value="{{nbDay}}">
@@ -292,7 +288,6 @@
          <label for="breakfast">Non</label>
          <input type="radio" name="breakfast" value="Non"> -->
 
-        <input type="reset" value="Annuler">
         <input id="submit" type="submit" name="submit" class="button" value="Réserver">
 
     </form>

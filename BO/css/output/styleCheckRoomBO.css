@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-/* line 4, ../css/input/_baseBO.scss */
+/* line 4, ../BO/css/input/_baseBO.scss */
 a {
   text-decoration: none;
 }
 
-/* line 7, ../css/input/_baseBO.scss */
+/* line 7, ../BO/css/input/_baseBO.scss */
 body {
   display: grid;
   grid-template-columns: 1.5fr 5fr;
@@ -15,20 +15,20 @@ body {
   height: 100vh;
 }
 
-/* line 14, ../css/input/_baseBO.scss */
+/* line 14, ../BO/css/input/_baseBO.scss */
 body header {
   grid-area: 1 / 1 / 2 / 6;
   background-color: black;
 }
 
-/* line 17, ../css/input/_baseBO.scss */
+/* line 17, ../BO/css/input/_baseBO.scss */
 body header nav {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
 }
 
-/* line 21, ../css/input/_baseBO.scss */
+/* line 21, ../BO/css/input/_baseBO.scss */
 body header nav p, body header nav a {
   color: white;
   /* style générale des h2 */
@@ -37,25 +37,25 @@ body header nav p, body header nav a {
   font-weight: 500;
 }
 
-/* line 27, ../css/input/_baseBO.scss */
+/* line 27, ../BO/css/input/_baseBO.scss */
 body #mainMenu {
   grid-area: 2 / 1 / 7 / 2;
   background-color: #DCDCDC;
   padding: 3rem 1rem;
 }
 
-/* line 31, ../css/input/_baseBO.scss */
+/* line 31, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul {
   display: flex;
   flex-direction: column;
 }
 
-/* line 34, ../css/input/_baseBO.scss */
+/* line 34, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li {
   margin-bottom: 2.5rem;
 }
 
-/* line 36, ../css/input/_baseBO.scss */
+/* line 36, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a {
   /* style générale des h2 */
   font-size: 1.2rem;
@@ -65,23 +65,23 @@ body #mainMenu ul li a {
   color: #0066CC;
 }
 
-/* line 40, ../css/input/_baseBO.scss */
+/* line 40, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:active {
   color: black;
 }
 
-/* line 43, ../css/input/_baseBO.scss */
+/* line 43, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:hover {
   color: #BCA474;
 }
 
-/* line 50, ../css/input/_baseBO.scss */
+/* line 50, ../BO/css/input/_baseBO.scss */
 body main {
   padding: 2rem 1rem;
   grid-area: 2 / 2 / 7 / 6;
 }
 
-/* line 3, ../css/input/formCheckIn.scss */
+/* line 3, ../BO/css/input/formCheckIn.scss */
 #checkIn {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
@@ -91,7 +91,7 @@ body main {
   margin: 0 auto;
 }
 
-/* line 7, ../css/input/formCheckIn.scss */
+/* line 7, ../BO/css/input/formCheckIn.scss */
 #checkIn h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -101,12 +101,12 @@ body main {
   margin-bottom: 2rem;
 }
 
-/* line 11, ../css/input/formCheckIn.scss */
+/* line 11, ../BO/css/input/formCheckIn.scss */
 #checkIn h2 span {
   color: #BCA474;
 }
 
-/* line 17, ../css/input/formCheckIn.scss */
+/* line 17, ../BO/css/input/formCheckIn.scss */
 #checkIn form input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -121,7 +121,7 @@ body main {
   width: calc(90%/2);
 }
 
-/* line 20, ../css/input/formCheckIn.scss */
+/* line 20, ../BO/css/input/formCheckIn.scss */
 #checkIn form select {
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -134,12 +134,12 @@ body main {
   text-align: center;
 }
 
-/* line 23, ../css/input/formCheckIn.scss */
+/* line 23, ../BO/css/input/formCheckIn.scss */
 #checkIn form select option:hover {
   background-color: #BCA474;
 }
 
-/* line 27, ../css/input/formCheckIn.scss */
+/* line 27, ../BO/css/input/formCheckIn.scss */
 #checkIn form input[type="submit"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -157,32 +157,32 @@ body main {
   margin-top: 1rem;
 }
 
-/* line 75, ../css/input/_mixin.scss */
+/* line 75, ../BO/css/input/_mixin.scss */
 #checkIn form input[type="submit"]:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/* line 39, ../css/input/formCheckIn.scss */
+/* line 39, ../BO/css/input/formCheckIn.scss */
 #checkIn p {
   color: red;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* line 3, ../css/input/styleCheckRoomBO.scss */
+/* line 3, ../BO/css/input/styleCheckRoomBO.scss */
 section {
   width: 90%;
   margin: 1rem auto;
 }
 
-/* line 6, ../css/input/styleCheckRoomBO.scss */
+/* line 6, ../BO/css/input/styleCheckRoomBO.scss */
 section article {
   margin-bottom: 8rem;
 }
 
-/* line 9, ../css/input/styleCheckRoomBO.scss */
+/* line 9, ../BO/css/input/styleCheckRoomBO.scss */
 section article .imageChambre {
   max-width: 384px;
   max-height: 257px;
@@ -190,12 +190,12 @@ section article .imageChambre {
   margin-right: 1rem;
 }
 
-/* line 15, ../css/input/styleCheckRoomBO.scss */
+/* line 15, ../BO/css/input/styleCheckRoomBO.scss */
 section article article {
   position: relative;
 }
 
-/* line 17, ../css/input/styleCheckRoomBO.scss */
+/* line 17, ../BO/css/input/styleCheckRoomBO.scss */
 section article article h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -204,17 +204,17 @@ section article article h2 {
   margin-bottom: 1rem;
 }
 
-/* line 21, ../css/input/styleCheckRoomBO.scss */
+/* line 21, ../BO/css/input/styleCheckRoomBO.scss */
 section article article p {
   margin-bottom: 1rem;
 }
 
-/* line 23, ../css/input/styleCheckRoomBO.scss */
+/* line 23, ../BO/css/input/styleCheckRoomBO.scss */
 section article article p span {
   color: #BCA474;
 }
 
-/* line 27, ../css/input/styleCheckRoomBO.scss */
+/* line 27, ../BO/css/input/styleCheckRoomBO.scss */
 section article article input[type='submit'] {
   position: absolute;
   bottom: 0;
@@ -234,7 +234,7 @@ section article article input[type='submit'] {
   cursor: pointer;
 }
 
-/* line 75, ../css/input/_mixin.scss */
+/* line 75, ../BO/css/input/_mixin.scss */
 section article article input[type='submit']:hover {
   background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);

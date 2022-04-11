@@ -49,22 +49,18 @@ section{
       @include inputSelectForm(96%);
       margin-bottom: 10px;
     }
-    input[type='radio']{
-    width: 30%;
-    margin: 1rem auto 3rem auto;
-    }
     input[type='submit']{
-
+      text-align: center;
       @include button(45%, .5rem 0);
       @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
-      display: inline-block;
+      //display: inline-block;
     }
-    input[type='reset']{
-
-      @include button(45%, .5rem 0);
-      @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
-      display: inline-block;
-    }
+    // input[type='reset']{
+    //
+    //   @include button(45%, .5rem 0);
+    //   @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+    //   display: inline-block;
+    // }
     span{ /* Les message d'erreurs declanché par js */
       color: red;
     }
