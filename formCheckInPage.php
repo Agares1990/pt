@@ -66,6 +66,7 @@ if(isset($_POST['submit'])){
        }
      }
   }
+  var_dump($rooms);
   if (isset($_POST['otherRoom'])) {
     $fromDate = $_POST["CheckIn"];
     $toDate = $_POST["CheckOut"];

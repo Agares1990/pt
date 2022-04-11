@@ -23,7 +23,7 @@ if(isset($_POST['submit'])){
 }
 if (isset($_POST['search'])) {
   $email = $_POST['recherche'];
-  $searchClient = searchClientMail($pdo, $email);
+
   $fromDate = $_POST["CheckIn"];
   $toDate = $_POST["CheckOut"];
   $nbPerson = $_POST["nbPerson"];
@@ -33,17 +33,24 @@ if (isset($_POST['search'])) {
   $idCategorieChambre = $_POST["idCategorieChambre"];
   $nbDay = $_POST["nbDay"];
   $totalToPay = $_POST["totalToPay"];
-  if ($searchClient) {
+
+  $searchClient = searchClientMail($pdo, $email);
+  // if ($searchClient) {
     $idClient = $searchClient['idClient'];
     $nom = $searchClient['nom'];
     $prenom = $searchClient['prenom'];
     $email = $searchClient['email'];
 
-    $response = [ 'idClient' => @$idClient, 'nom' => @$nom, 'prenom' => @$prenom, 'email' => @$email, 'fromDate' => @$fromDate, 'toDate' => @$toDate, 'nbPerson' => @$nbPerson, 'nbChild' =>
+    $response = [ 'totalToPay' => $totalToPay, 'roomType' => $roomType, 'nbDay' => $nbDay, 'idClient' => @$idClient, 'nom' => @$nom, 'prenom' => @$prenom, 'email' => @$email, 'fromDate' => @$fromDate, 'toDate' => @$toDate, 'nbPerson' => @$nbPerson, 'nbChild' =>
     @$nbChild, 'idCategorieChambre' => @$idCategorieChambre, 'idRoom' => @$idRoom];
     echo json_encode($response);
     exit; // Arrêter l'execution de la scripte
-  }
+  // }
+  // else {
+  //   echo json_encode([ 'totalToPay' => $totalToPay, 'roomType' => $roomType, 'nbDay' => $nbDay, 'fromDate' => @$fromDate, 'toDate' => @$toDate, 'nbPerson' => @$nbPerson, 'nbChild' =>
+  //   @$nbChild, 'idCategorieChambre' => @$idCategorieChambre, 'idRoom' => @$idRoom ]);
+  //   exit;
+  // }
 }
 // var_dump($otherRooms);
 echo $twig->render('resaRoomBO.html.twig',
@@ -57,6 +64,10 @@ echo $twig->render('resaRoomBO.html.twig',
             'roomType' => @$roomType,
             'idRoom' => @$idRoom,
             'idCategorieChambre' => @$idCategorieChambre,
-            'totalToPay' => @$totalToPay
+            'totalToPay' => @$totalToPay,
+            'nom' => @$nom,
+            'prenom' => @$prenom,
+            'email' => @$email,
+            'tel' => @$tel
   				));
 ?>
