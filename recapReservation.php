@@ -7,8 +7,10 @@ session_start();
 $css = "styleRecapReservation";
 $script = "recapReservation";
 $pdo = getPDO();
-
-
+@$email = $_SESSION['email'];
+if (!isset($_SESSION['email'])) { // rediriger l'utilisateur vers la page d'accueil s'il n'est pas connecté
+  header('Location: index.php');
+}
 
 if(isset($_POST['submit'])){
 

@@ -10,15 +10,17 @@ $pdo = getPDO();
 session_start();
 $email = $_SESSION['email'];
 @$prenomUser = $_SESSION["prenom"];
-if (!isset($_SESSION['email'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
-  header('Location: connexionBO.php');
+if (!isset($_SESSION['prenom'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
+  header('Location: indexBO.php');
 }
+
 else {
   @$idReservation = $_POST['idReservation'];
   @$idCategorieChambre = $_POST['idCategorieChambre'];
   @$modification = $_POST['modification'];
 
-  $utilisateur = $pdo->query("SELECT * FROM user WHERE email =  '$email'")->fetch();
+  //$utilisateur = $pdo->query("SELECT * FROM user WHERE email =  '$email'")->fetch();
+  $utilisateur = searchClientMail($pdo, $email);
 
 //si on clique sur le bouton annuler
 if(isset($_POST['delete'])){

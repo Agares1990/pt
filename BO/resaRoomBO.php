@@ -9,6 +9,9 @@ $script = "resaRoomBO";
 $title = "Réserver chambre";
 $pdo = getPDO();
 @$prenomUser = $_SESSION["prenom"];
+if (!isset($_SESSION['prenom'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
+  header('Location: indexBO.php');
+}
 
 if(isset($_POST['submit'])){ // si je clique sur le submite de formulaire de recherche de chambre
   //Je récupère les données envoyès par le formulaire de recherch de chambre

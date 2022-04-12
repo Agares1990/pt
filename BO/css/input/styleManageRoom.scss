@@ -1,0 +1,49 @@
+@import"baseBO";
+main{
+  section{
+    margin-bottom: 2rem;
+  table, td, th{
+    border: 1px solid $colorOr;
+  }
+  table{
+    width: 90%;
+    margin: 1rem auto;
+    thead{
+      font-weight: bold;
+    }
+    th, td{
+      padding: .5rem 1rem;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  }
+  section{
+    .messageSucces{
+      color: green;
+      text-align: center;
+    }
+  #btnAddRoom{
+    @include button(25%, .63rem 0);
+    @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+    }
+    #addRoom, #updateRoom{
+
+        @include form(1rem 2rem);
+        margin: 0 auto;
+          input{
+            @include inputForm(35%);
+            display: block;
+            margin: 10px auto;
+          }
+          input[type="submit"]{
+            @include button(30%, .63rem 0);
+            @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+            margin-top: 1rem;
+          }
+
+
+      }
+  }
+}
+/* Les formulaire d'ajout et de modification de chambre */

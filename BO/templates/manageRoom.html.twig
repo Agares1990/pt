@@ -1,0 +1,72 @@
+{% extends "baseBO.html.twig" %}
+{% block contenu %}
+<section>
+  <button id="btnAddRoom" name="button">Ajouter une chambre</button>
+  <form id="addRoom"action="manageRoom.php" method="post">
+    <input type="text" name="numRoom" placeholder="Numéro de la chambre">
+    <input type="text" name="idRoomType" placeholder="Catégorie de la chambre">
+    <input type="text" name="image" placeholder="Image de la chambre">
+    <input type="text" name="nbPerson" placeholder="La capacité d'adulte de la chambre">
+    <input type="text" name="nbChild" placeholder="La capacité d'enfant de la chambre">
+    <input type="submit" name="addRoom" value="Valider">
+  </form>
+</section>
+
+<section>
+  <form id="updateRoom" action="manageRoom.php" method="post">
+    <input type="text" name="idRoomType" placeholder="Modifier la catégorie de la chambre">
+    <input type="text" name="image" placeholder="Modifier l'image de la chambre">
+    <input type="text" name="nbPerson" placeholder="Modifier La capacité d'adulte de la chambre">
+    <input type="text" name="nbChild" placeholder="Modifier La capacité d'enfant de la chambre">
+    <input type="submit" name="updateRoom" value="Valider">
+  </form>
+</section>
+
+<section>
+  <p class="messageSucces">{{messageSucces}}</p>
+  <table>
+    <thead>
+        <tr>
+            <th colspan="7">Gérer les Chambres</th>
+        </tr>
+        <tr>
+            <th>Numéro de la chambre</th>
+            <th>Catégorie de la chambre</th>
+            <th>Image</th>
+            <th>Capacité Adulte</th>
+            <th>Capacité Enfants</th>
+            <th>Modifier la chambre</th>
+            <th>Supprimer la chambre</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for getRoom in getRooms %}
+
+            <tr>
+                <td>{{getRoom.numChambre}}</td>
+                <td>{{getRoom.categorieChambreId}}</td>
+                <td>{{getRoom.imageChambre}}</td>
+                <td>{{getRoom.capaciteAdulte}}</td>
+                <td>{{getRoom.capaciteEnfant}}</td>
+                <td>
+                  <form class="" action="manageRoom.php" method="post">
+                    <input type="hidden" name="idChambre" value="{{getRoom.idChambre}}">
+                    <input type="hidden" name="modification" value="1">
+                    <input type="submit" value="Modifier la chambre">
+                  </form>
+                </td>
+                <td>
+                  <form class="" action="manageRoom.php" method="post">
+                    <input type="hidden" name="idChambre" value="{{getRoom.idChambre}}">
+                    <input type="hidden" name="delete" value="1">
+                    <input type="submit" name="delete" value="Supprimer" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette chambre ?'));"></td>
+                  </form>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+
+{% endblock %}
