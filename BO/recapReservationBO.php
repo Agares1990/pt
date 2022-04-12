@@ -8,7 +8,7 @@ $css = "styleRecapReservationBO";
 $script = "resaRoomBO";
 $pdo = getPDO();
 @$prenomUser = $_SESSION["prenom"];
-var_dump($_POST);
+
 if(isset($_POST['reserver'])){
 
   $fromDate = $_POST["CheckIn"];
@@ -75,10 +75,45 @@ if(isset($_POST['reserver'])){
     header("Location: resaRoomBO.php?message=$fieldError"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire et garder les champs remplis
   }
 
+// Si on trouve le client par le biais de la barre de recherche, on effectue la réservation directement quand on clique sur le button réserver (afficher par ajax)
+  // $client = searchClientMail($pdo, $email); // Récupérer les données du client trouvé
+  // $clientId = $client['idClient'];
+  if(isset($_POST['valideClientResa'])){
+    $clientId = $_POST["idClient"];
+    $fromDate = $_POST["CheckIn"];
+    $toDate = $_POST["CheckOut"];
+    $nbPerson = $_POST["nbPerson"];
+    $nbChild = $_POST["nbChild"];
+    $idRoom = $_POST["idChambre"];
+    $idCategorieChambre = $_POST["idCategorieChambre"];
+    $roomType = $_POST["roomType"];
+    $nbDay = $_POST["nbDay"];
+    $totalToPay = $_POST["totalToPay"];
+
+    $reservation = $pdo->prepare("INSERT INTO reservation_chambre(chambreId, categorieChambreId, clientId, dateArriver, dateDepart, nbPerson, nbChild, requeteSpeciale) VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
+    $reservation->bindParam(1, $idRoom, PDO::PARAM_STR);
+    $reservation->bindParam(2, $idCategorieChambre, PDO::PARAM_STR);
+    $reservation->bindParam(3, $clientId, PDO::PARAM_STR);
+    $reservation->bindParam(4, $fromDate, PDO::PARAM_STR);
+    $reservation->bindParam(5, $toDate, PDO::PARAM_STR);
+    $reservation->bindParam(6, $nbPerson, PDO::PARAM_STR);
+    $reservation->bindParam(7, $nbChild, PDO::PARAM_STR);
+    $reservation->bindParam(8, $message, PDO::PARAM_STR);
+    $reservation->execute();
+  }
+
 // var_dump($otherRooms);
 echo $twig->render('recapReservationBO.html.twig',
   	  array('css' => $css,
             'script' => $script,
-            'prenomUser' => $prenomUser
+            'prenomUser' => $prenomUser,
+            'fromDate' => @$fromDate,
+            'toDate' => @$toDate,
+            'roomType' => @$roomType,
+            'nbPerson' => @$nbPerson,
+            'nbChild' => @$nbChild,
+            'nbDay' => @$nbDay,
+            'totalToPay' => @$totalToPay,
+            'dateCancel' => @$dateCancel
   				));
 ?>

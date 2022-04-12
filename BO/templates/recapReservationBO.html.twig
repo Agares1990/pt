@@ -1,4 +1,22 @@
 {% extends "baseBO.html.twig" %}
 {% block contenu %}
+<section>
+  <h2>Réservation effectuée avec <span>succès</span></h2>
+  <article id="content">
+    <span>Récapitulatif de votre réservation:</span>
+    <ul>
+      <li>Arrivé le: <span>{{fromDate}}</span></li>
+      <li>Départ le: <span>{{toDate}}</span></li>
+      <li>Vous avez réservé pour  <span>{{nbPerson}}</span> adults et <span>{{nbChild}}</span> enfant</li>
+      <li>1 <span>{{roomType}}</span></li>
+      <li>Compris: 10% de TVA.</li>
+      <li>Non Compris: 0,66€ de taxe de séjour par personne et par nuit payable sur place</li>
+      <li>Totale Nuités: <span>{{nbDay}}</span></li>
+      <li>Totale à payer: <span>{{totalToPay}}</span></li>
+      <li>Annulation gratuite avant le: <span>{{dateCancel}}</span></li>
+    </ul>
 
+  </article>
+  <button onclick="javascript:demoFromHTML();">IMPRIMER</button>
+</section>
 {% endblock %}

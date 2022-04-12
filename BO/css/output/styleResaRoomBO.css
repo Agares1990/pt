@@ -205,14 +205,21 @@ section input[type="submit"]:hover {
 }
 
 /* line 53, ../BO/css/input/styleResaRoomBO.scss */
-section p {
+section p:first-child {
   /* message d'echec quand on trouve pas le client */
   color: red;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* line 58, ../BO/css/input/styleResaRoomBO.scss */
+section p:nth-child(2) {
+  /* message d'echec quand on trouve pas le client */
+  color: green;
+  text-align: center;
+}
+
+/* line 63, ../BO/css/input/styleResaRoomBO.scss */
 section form#formReservation {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
@@ -222,7 +229,7 @@ section form#formReservation {
   margin: 0 auto;
 }
 
-/* line 62, ../BO/css/input/styleResaRoomBO.scss */
+/* line 67, ../BO/css/input/styleResaRoomBO.scss */
 section form#formReservation input, section form#formReservation textarea {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -237,7 +244,7 @@ section form#formReservation input, section form#formReservation textarea {
   width: 90%;
 }
 
-/* line 65, ../BO/css/input/styleResaRoomBO.scss */
+/* line 70, ../BO/css/input/styleResaRoomBO.scss */
 section form#formReservation select {
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -250,7 +257,7 @@ section form#formReservation select {
   margin-bottom: 10px;
 }
 
-/* line 69, ../BO/css/input/styleResaRoomBO.scss */
+/* line 74, ../BO/css/input/styleResaRoomBO.scss */
 section form#formReservation input[type='submit'] {
   margin-top: 1rem;
   /* Style général des bouttons */
@@ -275,9 +282,16 @@ section form#formReservation input[type='submit']:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 74, ../BO/css/input/styleResaRoomBO.scss */
+/* line 79, ../BO/css/input/styleResaRoomBO.scss */
 section form#formReservation span {
-  /* Les message d'erreurs declanché par js */
+  /* Les message d'erreurs des champs de formulaire declanché par js */
+  color: red;
+}
+
+/* line 84, ../BO/css/input/styleResaRoomBO.scss */
+section + p {
+  /* Message d'erreurs des champs de formulaire declanché par php */
+  text-align: center;
   color: red;
 }
 

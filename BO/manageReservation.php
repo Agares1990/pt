@@ -5,6 +5,7 @@ require_once "../include/_functions.php";
 require_once "include/_functionsBO.php";
 $css = "styleManageReservation";
 $script = "manageReservation";
+$title = "Gérer les réservation";
 $pdo = getPDO();
 session_start();
 $email = $_SESSION['email'];
@@ -87,7 +88,8 @@ echo $twig->render('manageReservation.html.twig',
             'dateDepart' => @$toDate,
             'updateResa' => @$updateResa,
             'errorMessage' => @$errorMessage,
-            'prenomUser' => $prenomUser
+            'prenomUser' => $prenomUser,
+            'title' => $title
 
   				));
 ?>

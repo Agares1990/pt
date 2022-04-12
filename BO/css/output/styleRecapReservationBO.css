@@ -81,4 +81,84 @@ body main {
   grid-area: 2 / 2 / 7 / 6;
 }
 
+/* line 2, ../BO/css/input/styleRecapReservationBO.scss */
+section {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+/* line 5, ../BO/css/input/styleRecapReservationBO.scss */
+section h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  width: 46%;
+  margin: 1rem auto 3rem auto;
+}
+
+/* line 9, ../BO/css/input/styleRecapReservationBO.scss */
+section h2 span {
+  color: #BCA474;
+}
+
+/* line 13, ../BO/css/input/styleRecapReservationBO.scss */
+section article {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #BCA474;
+  width: 60%;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+/* line 20, ../BO/css/input/styleRecapReservationBO.scss */
+section article > span {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+/* line 24, ../BO/css/input/styleRecapReservationBO.scss */
+section article ul {
+  margin: 1rem auto;
+}
+
+/* line 27, ../BO/css/input/styleRecapReservationBO.scss */
+section article ul li {
+  margin: 1rem 1rem 1.5rem auto;
+}
+
+/* line 29, ../BO/css/input/styleRecapReservationBO.scss */
+section article ul li span {
+  color: #BCA474;
+  font-weight: bold;
+  margin-left: .5rem;
+}
+
+/* line 38, ../BO/css/input/styleRecapReservationBO.scss */
+section button {
+  /* Style général des bouttons */
+  padding: 0.63rem 0;
+  border-radius: .25rem;
+  width: 10rem;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+}
+
+/* line 75, ../BO/css/input/_mixin.scss */
+section button:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
 /*# sourceMappingURL=styleRecapReservationBO.css.map */

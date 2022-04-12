@@ -37,7 +37,8 @@ if(isset($_POST['submit'])){
     header("Location: profile.php");
   }
 }
-else if (isset($_SESSION['erreur'])){// S'il y a des erreurs
+//else if (isset($_SESSION['erreur'])){// S'il y a des erreurs
+if (isset($_SESSION['erreur'])){// S'il y a des erreurs
   //on récupère les données de la session qui viennent du traitement de formulaire dans la page recapReservation
 
   $fromDate = $_SESSION['erreur']["CheckIn"];
@@ -53,7 +54,7 @@ else if (isset($_SESSION['erreur'])){// S'il y a des erreurs
   unset($_SESSION['erreur']); // on vide la session
 }
 
-if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en javascript
+if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en php
     $fieldError =  "{$_GET['message']}";
     $nom =  "{$_GET['nom']}";
     $prenom =  "{$_GET['prenom']}";

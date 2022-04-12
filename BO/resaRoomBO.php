@@ -6,6 +6,7 @@ require_once "../include/_functions.php";
 
 $css = "styleResaRoomBO";
 $script = "resaRoomBO";
+$title = "Réserver chambre";
 $pdo = getPDO();
 @$prenomUser = $_SESSION["prenom"];
 
@@ -53,7 +54,7 @@ if (isset($_POST['search'])) { // si je clique sur le submite de formulaire de r
   //   exit;
   // }
 }
-if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en javascript
+if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en php
     $fieldError =  "{$_GET['message']}";
 }
 // var_dump($otherRooms);
@@ -74,6 +75,7 @@ echo $twig->render('resaRoomBO.html.twig',
             'prenom' => @$prenom,
             'email' => @$email,
             'tel' => @$tel,
-            'fieldError' => @$fieldError
+            'fieldError' => @$fieldError,
+            'title' => $title
   				));
 ?>

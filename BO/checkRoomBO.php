@@ -5,6 +5,7 @@ require_once "../include/_functions.php";
 require_once "include/_functionsBO.php";
 $css = "styleCheckRoomBO";
 $script = "checkRoomBO";
+$title = "Chercher une chambre disponible";
 $pdo = getPDO();
 session_start();
 @$prenomUser = $_SESSION["prenom"];
@@ -75,7 +76,8 @@ echo $twig->render('checkRoomBO.html.twig',
             'nbDay' => @$nbDay,
             'fromDate' => @$fromDate,
             'toDate' => @$toDate,
-            'messageCheck' => @$messageCheck
+            'messageCheck' => @$messageCheck,
+            'title' => $title
 
   				));
 ?>

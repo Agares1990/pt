@@ -83,8 +83,7 @@ $(document).ready(function(){
 
           function(data, status) {
             let json = JSON.parse(data);
-            console.log(verifyForm)
-            //console.log(json);
+
             if(json.email != null){ // Si il trouve l'email == le client existe
               //Alors on construit un tableau avec un formulaire pour valider la réservation
               $( "#reservation" ).html(
@@ -107,7 +106,7 @@ $(document).ready(function(){
                       </tr>
                   </tbody>
                   </table>
-                   <form class='' action='resaRoomBO.php' method='post'>
+                   <form class='' action='recapReservationBO.php' method='post'>
                      <input type='hidden' name='idClient' value='${json.idClient}'>
                      <input type='hidden' name='CheckIn' value='${json.fromDate}'>
                      <input type='hidden' name='CheckOut' value='${json.toDate}'>
@@ -115,13 +114,14 @@ $(document).ready(function(){
                      <input type='hidden' name='nbPerson' value='${json.nbPerson}'>
                      <input type='hidden' name='nbChild' value='${json.nbChild}'>
                      <input type='hidden' name='idCategorieChambre' value='${json.idCategorieChambre}'>
-                     <input type='hidden' name='idRoom' value='${json.idRoom}'>
+                     <input type="hidden" id="roomType" name="roomType" value='${json.roomType}'>
+                     <input type='hidden' name='idChambre' value='${json.idRoom}'>
+                     <input type="hidden" id="totalToPay" name="totalToPay" value='${json.totalToPay}'>
                      <input type='submit' name='valideClientResa' id='resa' value='Valider la réservation'>
                    </form>`
               )
               }
               else { // si il trouve pas l'email, alors on affiche le formulaire de réservation
-                console.log(verifyForm)
                 $( "#reservation" ).html(
                   `<p>Nous n'avons pas trouvé cet email</p>
                    <p>Veuillez remplir le formulaire de réservation</p>

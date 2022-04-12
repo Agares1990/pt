@@ -50,10 +50,15 @@ section{
   }
 
   /* styel formulaire de réservation construit lorsqu'on ne trouve pas le client */
-  p{/* message d'echec quand on trouve pas le client */
+  p:first-child{/* message d'echec quand on trouve pas le client */
     color: red;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+  p:nth-child(2){/* message d'echec quand on trouve pas le client */
+    color: green;
+    text-align: center;
+    // margin-bottom: 1rem;
   }
   form#formReservation{
     @include form(2rem 3rem);
@@ -71,8 +76,12 @@ section{
       @include button(45%, .5rem 0);
       @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
     }
-    span{ /* Les message d'erreurs declanché par js */
+    span{ /* Les message d'erreurs des champs de formulaire declanché par js */
       color: red;
     }
   }
+}
+section+p{ /* Message d'erreurs des champs de formulaire declanché par php */
+  text-align: center;
+  color: red;
 }

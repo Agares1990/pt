@@ -81,11 +81,6 @@ if(isset($_POST['submit'])){
 
     }
   }
-var_dump($checkMail);
-  // else {
-  //   $fieldErreur = "il manque des infos";
-  // }
-
 
 
   if (isset($fieldError)) {
