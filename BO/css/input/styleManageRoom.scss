@@ -1,5 +1,17 @@
 @import"baseBO";
 main{
+  p{
+    text-align: center;
+  }
+  section:first-child{
+    p:first-child{
+      color: green;
+    }
+    p:nth-child(2){
+      color: red;
+      margin-bottom: 1rem;
+    }
+  }
   section{
     margin-bottom: 2rem;
   table, td, th{
@@ -21,7 +33,6 @@ main{
   section{
     .messageSucces{
       color: green;
-      text-align: center;
     }
   #btnAddRoom{
     @include button(25%, .63rem 0);

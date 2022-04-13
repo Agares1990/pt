@@ -1,6 +1,8 @@
 {% extends "baseBO.html.twig" %}
 {% block contenu %}
 <section>
+  <p>{{succesMessageAddUpdateRoom}}</p>
+  <p>{{failedMessageAddUpdateRoom}}</p>
   <button id="btnAddRoom" name="button">Ajouter une chambre</button>
   <form id="addRoom"action="manageRoom.php" method="post">
     <input type="text" name="numRoom" placeholder="Numéro de la chambre">
@@ -11,17 +13,18 @@
     <input type="submit" name="addRoom" value="Valider">
   </form>
 </section>
-
-<section>
-  <form id="updateRoom" action="manageRoom.php" method="post">
-    <input type="text" name="idRoomType" placeholder="Modifier la catégorie de la chambre">
-    <input type="text" name="image" placeholder="Modifier l'image de la chambre">
-    <input type="text" name="nbPerson" placeholder="Modifier La capacité d'adulte de la chambre">
-    <input type="text" name="nbChild" placeholder="Modifier La capacité d'enfant de la chambre">
-    <input type="submit" name="updateRoom" value="Valider">
-  </form>
-</section>
-
+{# {% if update == 1 %} #}
+  <section>
+    <form id="updateRoom" action="manageRoom.php" method="post">
+      <input type="hidden" name="idChambre" value="{{getRoomInfo.idChambre}}">
+      <input type="text" name="idRoomType" value="{{getRoomInfo.categorieChambreId}}">
+      <input type="text" name="image" placeholder="Modifier l'image de la chambre"  value="{{getRoomInfo.imageChambre}}">
+      <input type="text" name="nbPerson" placeholder="Modifier La capacité d'adulte de la chambre" value="{{getRoomInfo.capaciteAdulte}}">
+      <input type="text" name="nbChild" placeholder="Modifier La capacité d'enfant de la chambre" value="{{getRoomInfo.capaciteEnfant}}">
+      <input type="submit" name="updateRoom" value="Valider">
+    </form>
+  </section>
+{# {% endif %} #}
 <section>
   <p class="messageSucces">{{messageSucces}}</p>
   <table>
@@ -51,14 +54,14 @@
                 <td>
                   <form class="" action="manageRoom.php" method="post">
                     <input type="hidden" name="idChambre" value="{{getRoom.idChambre}}">
-                    <input type="hidden" name="modification" value="1">
-                    <input type="submit" value="Modifier la chambre">
+                    <input type="hidden" name="update" value="1">
+                    <input type="submit" name="update" value="Modifier la chambre">
                   </form>
                 </td>
                 <td>
                   <form class="" action="manageRoom.php" method="post">
                     <input type="hidden" name="idChambre" value="{{getRoom.idChambre}}">
-                    <input type="hidden" name="delete" value="1">
+                    <!-- <input type="hidden" name="delete" value="1"> -->
                     <input type="submit" name="delete" value="Supprimer" onclick="return(confirm('Etes-vous sûr de vouloir supprimer cette chambre ?'));"></td>
                   </form>
             </tr>

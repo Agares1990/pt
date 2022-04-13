@@ -3,5 +3,4 @@ $(document).ready(function(){
   $("#btnAddRoom").click(function() {
     $("#btnAddRoom+form").show();
   })
-
 });
