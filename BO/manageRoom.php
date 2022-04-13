@@ -3,7 +3,7 @@ require "include/init_twig.php";
 require_once ("include/_connexion.php");
 require_once "../include/_functions.php";
 require_once "include/_functionsBO.php";
-$css = "stylemanageRoom";
+$css = "styleManageRoom";
 $script = "manageRoom";
 $title = "Gérer les chambres";
 $pdo = getPDO();

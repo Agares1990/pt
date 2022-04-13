@@ -81,9 +81,38 @@ body main {
   grid-area: 2 / 2 / 7 / 6;
 }
 
-/* line 2, ../BO/css/input/styleManageComment.scss */
-p {
-  color: green;
+/* line 4, ../BO/css/input/styleManageComment.scss */
+main section p {
+  text-align: center;
+}
+
+/* line 7, ../BO/css/input/styleManageComment.scss */
+main section table, main section td, main section th {
+  border: 1px solid #BCA474;
+}
+
+/* line 10, ../BO/css/input/styleManageComment.scss */
+main section table {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+/* line 13, ../BO/css/input/styleManageComment.scss */
+main section table thead {
+  font-weight: bold;
+}
+
+/* line 16, ../BO/css/input/styleManageComment.scss */
+main section table th, main section table td {
+  padding: .5rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+  word-break: break-all;
+}
+
+/* line 22, ../BO/css/input/styleManageComment.scss */
+main section table .comment {
+  width: 15%;
 }
 
 /*# sourceMappingURL=styleManageComment.css.map */

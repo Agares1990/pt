@@ -27,7 +27,11 @@ function cancelResa($pdo, $email, $idReservation){
   return $annulerReservation;
 }
 
-
+// Recherch client par email
+function searchClientMail($pdo, $email){
+  $checkMail = $pdo->query("SELECT * FROM client WHERE email = '$email'")->fetch();
+  return $checkMail;
+}
 
 // Fonction pour modifer réservation chambre
 function updateResa($pdo, $idReservation){
@@ -63,18 +67,6 @@ function getComments($pdo){
   return $comments;
 }
 
-// Génération des étoiles.
-	// function GenerateStars(int $count)
-	// {
-	// 	$html = "";
-  //
-	// 	for ($indice = 1; $indice <= $count; $indice++)
-	// 	{
-	// 		$html .= "<img class='star' src='../images/star.png' alt='Étoile' width='16' height='16' />";
-	// 	}
-  //
-	// 	return $html;
-	// }
 
   function isValidTelephoneNumber(string $telephone, int $minDigits = 9, int $maxDigits = 14): bool {
     if (preg_match('/^[+][0-9]/', $telephone)) { //is the first character + followed by a digit
@@ -96,7 +88,7 @@ function normalizeTelephoneNumber(string $telephone): string {
 }
 
 
-
+// Fonction pour l'espace de connexion front et back office
 function verifyConnection($pdo, $table, $page){
   if(!empty($_POST)){
     // Une fois on rempli et envoyé la formulaire, $_POST contient les information saisie sous forme d'un tableau associatif
@@ -126,7 +118,7 @@ function verifyConnection($pdo, $table, $page){
       else{
         if(!password_verify($mdp, $user['mdp']) || empty(trim($mdp))){
 
-          $errorConnection = "L'utilisateur et/ou le mot de passe est incorrect";
+        $errorConnection = "L'utilisateur et/ou le mot de passe est incorrect";
         }
         else {
 
@@ -136,7 +128,7 @@ function verifyConnection($pdo, $table, $page){
           session_start();
           // On stock dans $_SESSION les information de l'utilisateur
             $_SESSION["email"] = $email;
-           // var_dump($_SESSION);
+            $_SESSION["prenom"] = $user['prenom'];
           // On redirige vers la page de profile
           header("Location: $page");
         }
@@ -150,4 +142,11 @@ function verifyConnection($pdo, $table, $page){
   }
   return @$errorConnection;
 }
+
+function deleteRoom($pdo, $chambreId){
+  $deleteRoom = $pdo->query("DELETE FROM chambre
+                  WHERE idChambre = '$chambreId'");
+  return $deleteRoom;
+}
+
 ?>

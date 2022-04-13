@@ -17,4 +17,16 @@ function cancelResaBO($pdo, $idReservation){
   return $annulerReservation;
 }
 
+// Supprimer une chambre
+function deleteRoom($pdo, $chambreId){
+  $deleteRoom = $pdo->query("DELETE FROM chambre
+                  WHERE idChambre = '$chambreId'");
+}
+
+// Supprimer un commentaire
+function deleteComment($pdo, $idComment){
+  $deleteComment = $pdo->query("DELETE FROM commentaire WHERE idCommentaire = '$idComment'");
+  $messageSucces = "Le commentaire a été supprimer avec succès";
+  return $messageSucces;
+}
 ?>

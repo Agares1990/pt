@@ -1,0 +1,43 @@
+{% extends "baseBO.html.twig" %}
+{% block contenu %}
+<section>
+  <p>{{deleteComment}}</p>
+  <table>
+    <thead>
+        <tr>
+            <th colspan="8">Gérer les commentaires</th>
+        </tr>
+        <tr>
+            <th>Identifiant Client</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Note</th>
+            <th>Titre</th>
+            <th>Commentaire</th>
+            <th>Date</th>
+            <th>Supprimer le commentaire</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for getComment in getComments %}
+
+            <tr>
+                <td class="comment">{{getComment.idClient}}</td>
+                <td>{{getComment.nom}}</td>
+                <td>{{getComment.prenom}}</td>
+                <td>{{getComment.note}} étoile</td>
+                <td>{{getComment.titre}}</td>
+                <td class="comment">{{getComment.commentaire}}</td>
+                <td>{{getComment.dateComment}}</td>
+                <td class="comment">
+                  <form class="" action="manageComment.php" method="post">
+                    <input type="hidden" name="idComment" value="{{getComment.idCommentaire}}">
+                    <input type="submit" name="delete" value="Supprimer" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce commentaire ?'));"></td>
+                  </form>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
