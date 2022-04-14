@@ -102,7 +102,7 @@ if (isset($_POST['comment'])) {
         $title = htmlspecialchars($_POST['title']);
         $note = htmlspecialchars($_POST['note']);
         $comment = htmlspecialchars($_POST['comment']);
-        $dateComment = date('Y-m-d');;
+        $dateComment = date('Y-m-d');
         leaveComment($pdo, $clientId, $note, $title, $comment, $dateComment);
         echo json_encode(['messageComment' => "Votre commentaire a été bien ajouté", 'messageStyle' => 'messagePositive']);
         exit();

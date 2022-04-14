@@ -29,4 +29,17 @@ function deleteComment($pdo, $idComment){
   $messageSucces = "Le commentaire a été supprimer avec succès";
   return $messageSucces;
 }
+
+// Récupérer les messages envoyés par les clients
+function getMessages($pdo){
+  $messages = $pdo->query("SELECT * FROM message");
+  return $messages;
+}
+
+// Supprimer un message
+function deleteMessage($pdo, $idMessage){
+  $deleteMessage = $pdo->query("DELETE FROM message WHERE idMessage = '$idMessage'");
+  $messageSucces = "Le message a été supprimer avec succès";
+  return $messageSucces;
+}
 ?>

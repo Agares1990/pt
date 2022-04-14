@@ -23,12 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {// S'execute uniquement lors d'une re
 
 
 if (domain_exists($mail)) {
-    $msg = $pdo->prepare("INSERT INTO message(nom, email, sujet, message) VALUES (?,?,?,?)");
-    $msg->execute([$name, $mail, $subject, $message]);
+    $dateMessage = date('Y-m-d');
+    $msg = $pdo->prepare("INSERT INTO message(nom, email, sujet, message, dateMessage) VALUES (?,?,?,?,?)");
+    $msg->execute([$name, $mail, $subject, $message, $dateMessage]);
       echo "Passed";
   }
   else
-      echo "Failed";
+      echo "Erreur adresse mail";
 }
 
 

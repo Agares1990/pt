@@ -3,9 +3,8 @@ require "include/init_twig.php";
 require_once ("include/_connexion.php");
 require_once "../include/_functions.php";
 require_once "include/_functionsBO.php";
-$css = "styleManageComment";
-$script = "manageComment";
-$title = "Gérer les commentaires";
+$css = "styleManageMessage";
+$title = "Gérer les messages reçus";
 $pdo = getPDO();
 session_start();
 @$prenomUser = $_SESSION["prenom"];
@@ -13,22 +12,19 @@ if (!isset($_SESSION['prenom'])) { // rediriger l'utilisateur vers la page de co
   header('Location: indexBO.php');
 }
 
-// Supprimer un commentaire
+// Supprimer un message
 if (isset($_POST['delete'])) {
-  $idComment = $_POST['idComment'];
-  $deleteComment = deleteComment($pdo, $idComment);
+  $idMessage = $_POST['idMessage'];
+  $deleteMessage = deleteMessage($pdo, $idMessage);
 }
 
+// Récupérer les messages
+$getMessages = getMessages($pdo);
 
-// Récupérer les commentaires
-$getComments = getComments($pdo);
-
-echo $twig->render('manageComment.html.twig',
+echo $twig->render('manageMessage.html.twig',
   	  array('css' => $css,
-            'script' => $script,
             'prenomUser' => $prenomUser,
-            'title' => $title,
-            'getComments' => $getComments,
-            'deleteComment' => @$deleteComment
+            'getMessages' => $getMessages,
+            'deleteMessage' => @$deleteMessage
   				));
 ?>

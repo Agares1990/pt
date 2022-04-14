@@ -1,0 +1,40 @@
+{% extends "baseBO.html.twig" %}
+{% block contenu %}
+<section>
+  <h2>Messages Reçus</h2>
+  <p>{{deleteMessage}}</p>
+  <table>
+    <thead>
+        <tr>
+            <th colspan="8">Messages Reçus</th>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Sujet</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Supprimer le message</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for getMessage in getMessages %}
+
+            <tr>
+                <td>{{getMessage.nom}}</td>
+                <td>{{getMessage.email}} étoile</td>
+                <td>{{getMessage.sujet}}</td>
+                <td class="message">{{getMessage.message}}</td>
+                <td>{{getMessage.dateMessage}}</td>
+                <td class="message">
+                  <form class="" action="manageMessage.php" method="post">
+                    <input type="hidden" name="idMessage" value="{{getMessage.idMessage}}">
+                    <input type="submit" name="delete" value="Supprimer" onclick="return(confirm('Etes-vous sûr de vouloir supprimer ce message ?'));"></td>
+                  </form>
+            </tr>
+
+        {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

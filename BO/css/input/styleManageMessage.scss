@@ -1,0 +1,33 @@
+@import"baseBO";
+main{
+  section{
+    h2{
+      @include h2;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    p{
+      color: green;
+      text-align: center;
+    }
+    table, td, th{
+      border: 1px solid $colorOr;
+    }
+    table{
+      width: 95%;
+      margin: 1rem auto;
+      thead{
+        font-weight: bold;
+      }
+      th, td{
+        padding: .5rem 1rem;
+        text-align: center;
+        vertical-align: middle;
+        word-break: break-all;
+      }
+      .comment{
+        width: 15%;
+      }
+    }
+  }
+}
