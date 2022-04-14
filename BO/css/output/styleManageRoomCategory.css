@@ -81,97 +81,64 @@ body main {
   grid-area: 2 / 2 / 7 / 6;
 }
 
-/* line 3, ../BO/css/input/styleManageRoom.scss */
-main p {
-  text-align: center;
-}
-
-/* line 6, ../BO/css/input/styleManageRoom.scss */
-main section:first-child {
-  /* Message de succès php */
-}
-
-/* line 7, ../BO/css/input/styleManageRoom.scss */
-main section:first-child p:first-child {
-  color: green;
-}
-
-/* line 10, ../BO/css/input/styleManageRoom.scss */
-main section:first-child p:nth-child(2) {
-  /* Message d'erreur php */
-  color: red;
-  margin-bottom: 1rem;
-}
-
-/* line 15, ../BO/css/input/styleManageRoom.scss */
-main section {
-  margin-bottom: 2rem;
-}
-
-/* line 17, ../BO/css/input/styleManageRoom.scss */
-main section table, main section td, main section th {
-  border: 1px solid #BCA474;
-}
-
-/* line 20, ../BO/css/input/styleManageRoom.scss */
-main section table {
-  width: 90%;
-  margin: 1rem auto;
-}
-
-/* line 23, ../BO/css/input/styleManageRoom.scss */
-main section table thead {
-  font-weight: bold;
-}
-
-/* line 26, ../BO/css/input/styleManageRoom.scss */
-main section table th, main section table td {
-  padding: .5rem 1rem;
-  text-align: center;
-  vertical-align: middle;
-}
-
-/* line 33, ../BO/css/input/styleManageRoom.scss */
-main h2 {
+/* line 4, ../BO/css/input/styleManageRoomCategory.scss */
+main section h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
-/* line 38, ../BO/css/input/styleManageRoom.scss */
+/* line 9, ../BO/css/input/styleManageRoomCategory.scss */
+main section p:first-child {
+  color: green;
+  text-align: center;
+}
+
+/* line 13, ../BO/css/input/styleManageRoomCategory.scss */
+main section p:nth-child(2) {
+  color: red;
+  text-align: center;
+}
+
+/* line 17, ../BO/css/input/styleManageRoomCategory.scss */
+main section table, main section td, main section th {
+  border: 1px solid #BCA474;
+}
+
+/* line 20, ../BO/css/input/styleManageRoomCategory.scss */
+main section table {
+  width: 95%;
+  margin: 1rem auto;
+}
+
+/* line 23, ../BO/css/input/styleManageRoomCategory.scss */
+main section table thead {
+  font-weight: bold;
+}
+
+/* line 26, ../BO/css/input/styleManageRoomCategory.scss */
+main section table th, main section table td {
+  padding: .5rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+  word-break: break-all;
+}
+
+/* line 32, ../BO/css/input/styleManageRoomCategory.scss */
+main section table .cat {
+  width: 15%;
+}
+
+/* line 39, ../BO/css/input/styleManageRoomCategory.scss */
 main section .messageSucces {
   color: green;
 }
 
-/* line 41, ../BO/css/input/styleManageRoom.scss */
-main section #btnAddRoom {
-  margin-top: 1rem;
-  /* Style général des bouttons */
-  padding: 0.63rem 0;
-  border-radius: .25rem;
-  width: 25%;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  /* animation des bouttons */
-  font-size: 1.1rem;
-  background-color: rgba(191, 10, 53, 0.9);
-  border: solid 1px #BCA474;
-  color: white;
-  cursor: pointer;
-}
-
-/* line 75, ../BO/css/input/_mixin.scss */
-main section #btnAddRoom:hover {
-  background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
-  background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
-  background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
-}
-
-/* line 46, ../BO/css/input/styleManageRoom.scss */
-main section #addRoom, main section #updateRoom {
+/* line 42, ../BO/css/input/styleManageRoomCategory.scss */
+main section #updateRoomCategory {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
   padding: 1rem 2rem;
@@ -179,29 +146,29 @@ main section #addRoom, main section #updateRoom {
   margin: 0 auto;
 }
 
-/* line 50, ../BO/css/input/styleManageRoom.scss */
-main section #addRoom input, main section #updateRoom input {
+/* line 45, ../BO/css/input/styleManageRoomCategory.scss */
+main section #updateRoomCategory input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
   border: solid 1px #BCA474;
   font-size: 1rem;
   color: #495057;
-  width: 35%;
+  width: 30%;
   border-radius: .25rem;
   padding: .7rem 1rem;
   margin-bottom: 10px;
-  width: 35%;
+  width: 30%;
   display: block;
   margin: 10px auto;
 }
 
-/* line 55, ../BO/css/input/styleManageRoom.scss */
-main section #addRoom input[type="submit"], main section #updateRoom input[type="submit"] {
+/* line 50, ../BO/css/input/styleManageRoomCategory.scss */
+main section #updateRoomCategory input[type="submit"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;
   border-radius: .25rem;
-  width: 30%;
+  width: 25%;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -215,12 +182,10 @@ main section #addRoom input[type="submit"], main section #updateRoom input[type=
 }
 
 /* line 75, ../BO/css/input/_mixin.scss */
-main section #addRoom input[type="submit"]:hover, main section #updateRoom input[type="submit"]:hover {
+main section #updateRoomCategory input[type="submit"]:hover {
   background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* Les formulaire d'ajout et de modification de chambre */
-
-/*# sourceMappingURL=styleManageRoom.css.map */
+/*# sourceMappingURL=styleManageRoomCategory.css.map */

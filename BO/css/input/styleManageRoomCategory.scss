@@ -1,0 +1,57 @@
+@import"baseBO";
+main{
+  section{
+    h2{
+      @include h2;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    p:first-child{
+      color: green;
+      text-align: center;
+    }
+    p:nth-child(2){
+      color: red;
+      text-align: center;
+    }
+    table, td, th{
+      border: 1px solid $colorOr;
+    }
+    table{
+      width: 95%;
+      margin: 1rem auto;
+      thead{
+        font-weight: bold;
+      }
+      th, td{
+        padding: .5rem 1rem;
+        text-align: center;
+        vertical-align: middle;
+        word-break: break-all;
+      }
+      .cat{
+        width: 15%;
+      }
+    }
+  }
+
+  section{
+    .messageSucces{
+      color: green;
+    }
+    #updateRoomCategory{
+      @include form(1rem 2rem);
+      margin: 0 auto;
+        input{
+          @include inputForm(30%);
+          display: block;
+          margin: 10px auto;
+        }
+        input[type="submit"]{
+          @include button(25%, .63rem 0);
+          @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+          margin-top: 1rem;
+        }
+    }
+  }
+}

@@ -3,11 +3,11 @@ main{
   p{
     text-align: center;
   }
-  section:first-child{
+  section:first-child{/* Message de succès php */
     p:first-child{
       color: green;
     }
-    p:nth-child(2){
+    p:nth-child(2){/* Message d'erreur php */
       color: red;
       margin-bottom: 1rem;
     }
@@ -30,11 +30,16 @@ main{
     }
   }
   }
+  h2{
+    @include h2;
+    text-align: center;
+  }
   section{
     .messageSucces{
       color: green;
     }
   #btnAddRoom{
+    margin-top: 1rem;
     @include button(25%, .63rem 0);
     @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
     }

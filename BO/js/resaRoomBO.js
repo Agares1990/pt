@@ -61,7 +61,6 @@ $(document).ready(function(){
         }
   }
 
-  console.log(verifyForm)
   $( "#recherch input[type = 'submit']" ).click( function(event)
   {
       event.preventDefault();

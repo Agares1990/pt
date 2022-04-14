@@ -1,9 +1,14 @@
 {% extends "baseBO.html.twig" %}
 {% block contenu %}
+
 <section>
   <p>{{succesMessageAddUpdateRoom}}</p>
   <p>{{failedMessageAddUpdateRoom}}</p>
+  <p id="ErrorJS"></p>
+  <!-- On cache le formulaire d'ajout d'une chambre quand on click sur modifier une chambre -->
+{% if update == 0 %}
   <button id="btnAddRoom" name="button">Ajouter une chambre</button>
+
   <form id="addRoom"action="manageRoom.php" method="post">
     <input type="text" name="numRoom" placeholder="Numéro de la chambre">
     <input type="text" name="idRoomType" placeholder="Catégorie de la chambre">
@@ -13,18 +18,20 @@
     <input type="submit" name="addRoom" value="Valider">
   </form>
 </section>
-{# {% if update == 1 %} #}
+{% endif %}
+{% if update == 1 %}
+  <h2>Modifier la chambre</h2>
   <section>
     <form id="updateRoom" action="manageRoom.php" method="post">
       <input type="hidden" name="idChambre" value="{{getRoomInfo.idChambre}}">
-      <input type="text" name="idRoomType" value="{{getRoomInfo.categorieChambreId}}">
-      <input type="text" name="image" placeholder="Modifier l'image de la chambre"  value="{{getRoomInfo.imageChambre}}">
-      <input type="text" name="nbPerson" placeholder="Modifier La capacité d'adulte de la chambre" value="{{getRoomInfo.capaciteAdulte}}">
-      <input type="text" name="nbChild" placeholder="Modifier La capacité d'enfant de la chambre" value="{{getRoomInfo.capaciteEnfant}}">
+      <input type="text" id="idRoomType" name="idRoomType" value="{{getRoomInfo.categorieChambreId}}">
+      <input type="text" id="image" name="image" placeholder="Modifier l'image de la chambre"  value="{{getRoomInfo.imageChambre}}">
+      <input type="text" id="nbPerson" name="nbPerson" placeholder="Modifier La capacité d'adulte de la chambre" value="{{getRoomInfo.capaciteAdulte}}">
+      <input type="text" id="nbChild" name="nbChild" placeholder="Modifier La capacité d'enfant de la chambre" value="{{getRoomInfo.capaciteEnfant}}">
       <input type="submit" name="updateRoom" value="Valider">
     </form>
   </section>
-{# {% endif %} #}
+{% endif %}
 <section>
   <p class="messageSucces">{{messageSucces}}</p>
   <table>
@@ -54,7 +61,7 @@
                 <td>
                   <form class="" action="manageRoom.php" method="post">
                     <input type="hidden" name="idChambre" value="{{getRoom.idChambre}}">
-                    <input type="hidden" name="update" value="1">
+                    <input type="hidden" name="update">
                     <input type="submit" name="update" value="Modifier la chambre">
                   </form>
                 </td>

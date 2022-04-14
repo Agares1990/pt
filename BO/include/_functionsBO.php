@@ -42,4 +42,11 @@ function deleteMessage($pdo, $idMessage){
   $messageSucces = "Le message a été supprimer avec succès";
   return $messageSucces;
 }
+
+// Récupérer les catégories de chambre
+function getCategories($pdo){
+  $getCategories = $pdo->query("SELECT * FROM categorie_chambre
+  LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre GROUP BY categorie_chambre.idCategorieChambre");
+  return $getCategories;
+}
 ?>

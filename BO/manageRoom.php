@@ -86,6 +86,12 @@ if (isset($_POST['updateRoom'])) {
   }
 }
 
+// Pour gérer l'apparition du formulaire de modification de chambre
+$update = 0;
+if (isset($_POST['update'])) {
+  $update = 1;
+}
+
 // Afficher toutes les chambre
 $getRooms = $pdo->query("SELECT * FROM chambre");
 
@@ -98,7 +104,8 @@ echo $twig->render('manageRoom.html.twig',
             'messageSucces' => @$messageSucces,
             'succesMessageAddUpdateRoom' => @$succesMessageAddUpdateRoom,
             'failedMessageAddUpdateRoom' => @$failedMessageAddUpdateRoom,
-            'getRoomInfo' => @$getRoomInfo
+            'getRoomInfo' => @$getRoomInfo,
+            'update' => $update
 
 
   				));

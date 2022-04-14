@@ -32,6 +32,7 @@ else {
       $messageSucces = "Votre réservation a bien été annuler";
     }
     // Afficher les réservation d'un client donné
+    $dateNow = date('Y-m-d');
     $reservationsClient = getClientResa($pdo, $email, $lang);
 
     // Vérifier la disponibilité quand on veut modifier une réservation
