@@ -1,6 +1,5 @@
 @import"base";
-@import "valeurs-globales";
-@import "mixin";
+
 #checkIn{
   @include form(1rem 2rem);
   width: 55%;

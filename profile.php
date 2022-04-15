@@ -8,6 +8,7 @@ session_start();
 $css = "styleProfile";
 $script = "profile";
 $pdo = getPDO();
+$class_reservation = new Reservations();
 
 $connection = getConnectionText();
 $email = $_SESSION['email'];
@@ -26,14 +27,14 @@ else {
     if(isset($_POST['delete'])){
 
       //On annule la réservation
-      cancelResa($pdo, $email, $idReservation);
+      $class_reservation->cancelResa($pdo, $email, $idReservation);
 
       // Afficher un message de success d'annulation réservation
       $messageSucces = "Votre réservation a bien été annuler";
     }
     // Afficher les réservation d'un client donné
-    $dateNow = date('Y-m-d');
-    $reservationsClient = getClientResa($pdo, $email, $lang);
+    //$dateNow = date('Y-m-d');
+    $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
 
     // Vérifier la disponibilité quand on veut modifier une réservation
     if (isset($_POST['verify'])) {
@@ -63,8 +64,8 @@ else {
       exit(); // Arrêter l'execution de la scripte
     }
 
-    // Fonction pour modifier reservation
-    $updateResa = updateResa($pdo, $idReservation);
+    // Appel de la fonction modifier reservation dans la classe Reservation
+    $updateResa = $class_reservation->updateResa($pdo, $idReservation);
 }
 
 // if (isset($_POST['verify']) && $_POST['verify'] == 1) {
@@ -110,8 +111,8 @@ if (isset($_POST['comment'])) {
       }
     }
 }
-
-$reservationsClient = getClientResa($pdo, $email, $lang);
+// Appel de la fonction récupérer les reservations dans la classe Reservation
+$reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
 
   echo $twig->render('profile.html.twig',
         array('css' => $css,

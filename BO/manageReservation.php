@@ -10,6 +10,8 @@ $pdo = getPDO();
 session_start();
 $email = $_SESSION['email'];
 @$prenomUser = $_SESSION["prenom"];
+// Appel à la class Reservation
+$class_reservation = new Reservations();
 if (!isset($_SESSION['prenom'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
   header('Location: indexBO.php');
 }
@@ -59,8 +61,8 @@ if (isset($_POST['verify'])) {
   exit(); // Arrêter l'execution de la scripte
 
 }
-  // Fonction pour modifier reservation
-  $updateResa = updateResa($pdo, $idReservation);
+// Appel de la fonction modifier reservation dans la classe Reservation
+$updateResa = $class_reservation->updateResa($pdo, $idReservation);
   // if (updateResa($pdo, $idReservation)) {
   //   $updateResaSuccess = "La réservation à été midifier avec succès";
   // }

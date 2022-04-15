@@ -1,6 +1,4 @@
 @import"base";
-@import "valeurs-globales";
-@import "mixin";
 
 #imgBackground{
   @include backgroundImage(url("../../images/backgroundComment.jpg"), 100%, 100vh);
