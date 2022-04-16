@@ -11,7 +11,7 @@
   $title = "Nice ONE Resort & SPA";
   $connection = getConnectionText();
   $getTextTrad = getTextTrad($pdo, $lang);
-//var_dump($getTextTrad);
+
   // Pour afficher l'heure et la témpérature
   date_default_timezone_set('Europe/Paris');
   $date = date("H:i");
@@ -24,7 +24,6 @@
       $errorCheck =  "{$_GET['message']}";
   }
   $idImages = ["standardRoom", "familyRoom", "luxuryRoom", "suite"];
-  $connection = getConnectionText();
   echo $twig->render('index.html.twig',
     	  array('css' => $css,
               'script' => $script,

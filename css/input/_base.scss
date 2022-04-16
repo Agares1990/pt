@@ -93,37 +93,47 @@ footer{
     margin: 2rem 0;
     li{
       margin-bottom: 1rem;
-      span{
-        color: $colorOr;
-      }
       a{
         text-decoration: none;
         color: white;
       }
     }
-    ul li{
-      display: inline-block;
-      .carre {
-        font-size: 1.4rem;
-        padding: .1rem 0.4rem;
-        margin: 0 2rem 0 0;
-        box-shadow: 0 0 0 3px $colorOr;
-        transition: all 500ms ease;
-        &:hover{
-          background-color: $colorOr;
-          color: black;
-          box-shadow: 0 0 0 3px #af9654;
-          transition: all 500ms ease;
+  }
+  div{
+    ul{
+      li{
+        display: inline-block;
+        span{
+          color: $colorOr;
         }
-        i{
-          color: white;
+        .carre {
+          font-size: 1.4rem;
+          padding: .1rem 0.4rem;
+          margin: 0 2rem 0 0;
+          box-shadow: 0 0 0 3px $colorOr;
+          transition: all 500ms ease;
           &:hover{
+            background-color: $colorOr;
             color: black;
+            box-shadow: 0 0 0 3px #af9654;
+            transition: all 500ms ease;
+          }
+          i{
+            color: white;
+            &:hover{
+              color: black;
+            }
           }
         }
       }
-
+    }
+    ul:first-child li{
+      margin-right: 1rem;
+      padding-right: 1rem;
+      border-right: 1px solid $colorOr;
+    }
+    ul:nth-child(2){
+      text-align: center;
     }
   }
-
 }
