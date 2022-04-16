@@ -28,12 +28,12 @@
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
-    /** Pour changer la langue **/
-    if ( isset ($_GET['lang'] ) )
-    $lang = $_GET['lang'];
-    else {
-      $lang = 'fr';
-    }
+    // /** Pour changer la langue **/
+    // if ( isset ($_GET['lang'] ) )
+    // $lang = $_GET['lang'];
+    // else {
+    //   $lang = 'fr';
+    // }
 
 
 ?>

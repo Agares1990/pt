@@ -1,52 +1,75 @@
 <?php
+/** Pour changer la langue **/
+function getLang(){
+  if ( isset ($_GET['lang'] ) )
+  $lang = $_GET['lang'];
+  else {
+  $lang = 'fr';
+  }
+  return $lang;
+}
 // Fonction pour savoir si l'utilisateur est connecté ou pas
 function getConnectionText(){
-  if(isset($_SESSION['email'])){
+  if(isset($_SESSION['email']) && @$lang == 'fr'){
     $connection = "Deconnexion";
+  }elseif (isset($_SESSION['email']) && @$lang == 'en') {
+    $connection = "Logout";
+  }
+  elseif (!isset($_SESSION['email']) && @$lang == 'fr') {
+    $connection = "Connexion";
   }
   else{
-    $connection = "Connexion";
+    $connection = "Connection";
   }
   return $connection;
 }
 
-// Fonction pour afficher les réservations dans l'espace client
-function getClientResa($pdo, $email, $lang){
-  $reservations = $pdo->query("SELECT * FROM reservation_chambre
-                    LEFT JOIN nom_categorie_chambre ON reservation_chambre.categorieChambreId = nom_categorie_chambre.categorieChambreId
-                    LEFT JOIN client ON reservation_chambre.clientId = client.idClient
-                    WHERE email = '$email' && langueId = '$lang'");
-  return $reservations;
+// Récupérer du texte de la bdd selon la langue
+function getTextTrad($pdo, $lang){
+  $getTextTrad = $pdo->query("SELECT * FROM texte WHERE langueId = '$lang'")->fetch();
+  return $getTextTrad;
 }
 
-// Fonction pour Annuler une réservation
-function cancelResa($pdo, $email, $idReservation){
-  $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
-                  WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_chambre) AS reserv INNER JOIN client ON reservation_chambre.clientId = client.idClient
-                  WHERE email = '$email' && idReservationChambre = '$idReservation')");
-  return $annulerReservation;
+class Reservations
+{
+  // Fonction pour afficher les réservations dans l'espace client
+  public function getClientResa($pdo, $email, $lang){
+    $reservations = $pdo->query("SELECT * FROM reservation_chambre
+                      LEFT JOIN nom_categorie_chambre ON reservation_chambre.categorieChambreId = nom_categorie_chambre.categorieChambreId
+                      LEFT JOIN client ON reservation_chambre.clientId = client.idClient
+                      WHERE email = '$email' && langueId = '$lang'");
+    return $reservations;
+  }
+
+  // Fonction pour Annuler une réservation
+  public function cancelResa($pdo, $email, $idReservation){
+    $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
+                    WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_chambre) AS reserv INNER JOIN client ON reservation_chambre.clientId = client.idClient
+                    WHERE email = '$email' && idReservationChambre = '$idReservation')");
+    return $annulerReservation;
+  }
+
+  // Fonction pour modifer réservation chambre
+  public function updateResa($pdo, $idReservation){
+    if (isset($_POST['updateResa'])) {
+      $idChambre = $_POST['idChambre'];
+      $CheckIn = $_POST['CheckIn'];
+      $CheckOut = $_POST['CheckOut'];
+      $req = $pdo->prepare("UPDATE reservation_chambre SET chambreId = :chambreId, dateArriver = :dateArriver, dateDepart = :dateDepart WHERE idReservationChambre = $idReservation");
+      $req->bindParam(':chambreId', $idChambre, PDO::PARAM_INT);
+      $req->bindParam(':dateArriver', $CheckIn, PDO::PARAM_INT);
+      $req->bindParam(':dateDepart', $CheckOut, PDO::PARAM_INT);
+      $req->execute();
+      $updateResaSuccess = "La réservation à été modifier avec succès";
+    }
+    return @$updateResaSuccess;
+  }
 }
 
 // Recherch client par email
 function searchClientMail($pdo, $email){
   $checkMail = $pdo->query("SELECT * FROM client WHERE email = '$email'")->fetch();
   return $checkMail;
-}
-
-// Fonction pour modifer réservation chambre
-function updateResa($pdo, $idReservation){
-  if (isset($_POST['updateResa'])) {
-    $idChambre = $_POST['idChambre'];
-    $CheckIn = $_POST['CheckIn'];
-    $CheckOut = $_POST['CheckOut'];
-    $req = $pdo->prepare("UPDATE reservation_chambre SET chambreId = :chambreId, dateArriver = :dateArriver, dateDepart = :dateDepart WHERE idReservationChambre = $idReservation");
-    $req->bindParam(':chambreId', $idChambre, PDO::PARAM_INT);
-    $req->bindParam(':dateArriver', $CheckIn, PDO::PARAM_INT);
-    $req->bindParam(':dateDepart', $CheckOut, PDO::PARAM_INT);
-    $req->execute();
-    $updateResaSuccess = "La réservation à été modifier avec succès";
-  }
-  return @$updateResaSuccess;
 }
 
 // insérer commentaire
@@ -104,8 +127,6 @@ function verifyConnection($pdo, $table, $page){
       $mdp =   strip_tags($_POST['mdp']);
 
       // On se connecte à la bdd
-    //  $userExist = $db->query("SELECT * FROM users WHERE email =  '$email'")->fetch();
-
       $userExist = $pdo->prepare("SELECT * FROM $table WHERE email = :email");
       $userExist->bindValue(":email", $email, PDO::PARAM_STR);
       $userExist->execute();
@@ -133,20 +154,32 @@ function verifyConnection($pdo, $table, $page){
           header("Location: $page");
         }
       }
-
-      // Ici on a un user existant, on vérifie son mote de passe
-      // if(!password_verify($mdp, $userExist['pass'])){
-      //   die ("Florian et Cindy sont passés par là");
-       }
+    }
 
   }
   return @$errorConnection;
 }
 
-function deleteRoom($pdo, $chambreId){
-  $deleteRoom = $pdo->query("DELETE FROM chambre
-                  WHERE idChambre = '$chambreId'");
-  return $deleteRoom;
+// Fonction pour modifier le mot de passe
+function editPassword($pdo, $email, $table, $oldPassword, $newPassword, $repeatNewPassword){
+  // On récupérer le mot de passe d'utilisateur courant
+  $getPassword = $pdo->query("SELECT * FROM $table WHERE email = '$email'")->fetch();
+
+  // On vérifie les données saisies par l'utilisateur
+  if (password_verify($oldPassword, $getPassword['mdp'])  && !empty($oldPassword) && !empty($repeatNewPassword) && trim($newPassword) == trim($repeatNewPassword)) {
+    // Si les données sont correctes, alors on prépare la réquête
+    $editPassword = $pdo->prepare("UPDATE $table SET mdp = :mdp");
+    $editPassword->bindParam(':mdp', password_hash($newPassword, PASSWORD_DEFAULT), PDO::PARAM_INT);
+    $editPassword->execute();
+    // Et on affiche un message de succès de modification de mot de passe
+    $sucessUpdateMessage = "Le mot de passe à été modifier avec succès";
+  }
+  else {
+    // Sinon on affiche un message d'échec de modification de mot de passe
+    $sucessUpdateMessage = "Erreur dans les valeurs entrées";
+  }
+
+  return $sucessUpdateMessage;
 }
 
 ?>
