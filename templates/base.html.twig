@@ -34,9 +34,9 @@
         <p id="icone">
           <span class='iconeLangue'><a href='?lang=fr'><img src='images/flags/fr.gif' alt='Fran&ccedil;ais'>Fr</a></span>
           <span class='iconeLangue'><a href='?lang=en'><img src='images/flags/uk.gif' alt='Anglais'>En</a></span>
-          <span class='iconeLangue'><a href='?lang=it'><img src='images/flags/it.gif' alt='Anglais'>It</a></span>
+          <!-- <span class='iconeLangue'><a href='?lang=it'><img src='images/flags/it.gif' alt='Italie'>It</a></span> -->
         </p>
-        <a class="profile" href="profile.php"><i class="fa-solid fa-user"></i> Mon Compte</a>
+        <a class="profile" href="profile.php"><i class="fa-solid fa-user"></i> {{profil}}</a>
         <a class="connexion" href="connexion.php">{{connection}}</a>
 
       </div>
@@ -46,13 +46,13 @@
       <nav id="outer">
 
         <ul id="bar">
-          <a href="#" class="toggleLeft"><i class="fa-solid fa-chevron-left"></i></a>
-            <li><a href="room.php">CHAMBRES & SUITES</a></li>
-            <li><a href="restaurant.php">RESTAURANT</a></li>
-            <li><a href="event.php">EVENEMENT</a></li>
-            <li><a href="commentaire.php">AVIS</a></li>
-            <li><a href="contact.php">CONTACT</a></li>
-          <a href="#" class="toggleRight"><i class="fa-solid fa-chevron-right"></i></a>
+          <div id="toggleLeft"><i class="fa-solid fa-chevron-left"></i></div>
+            <li id="item1"><a href="room.php">{{nav1}}</a></li>
+            <li id="item2"><a href="restaurant.php">{{nav2}}</a></li>
+            <li id="item3"><a href="event.php">{{nav3}}</a></li>
+            <li id="item4"><a href="commentaire.php">{{nav4}}</a></li>
+            <li id="item5"><a href="contact.php">{{nav5}}</a></li>
+          <div id="toggleRight"><i class="fa-solid fa-chevron-right"></i></div>
         </ul>
 
       </nav>

@@ -5,6 +5,9 @@ main{
       @include h2;
       text-align: center;
       margin-bottom: 2rem;
+      span{
+        color: $colorOr;
+      }
     }
     p:first-child{
       color: green;
@@ -16,6 +19,10 @@ main{
     }
     table, td, th{
       border: 1px solid $colorOr;
+    }
+    th{
+      background-color: #59d5ff;
+      font-size: 1.1rem;
     }
     table{
       width: 95%;

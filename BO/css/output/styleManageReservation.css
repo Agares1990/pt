@@ -82,29 +82,50 @@ body main {
 }
 
 /* line 4, ../BO/css/input/styleManageReservation.scss */
+body main h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* line 8, ../BO/css/input/styleManageReservation.scss */
+body main h2 span {
+  color: #BCA474;
+}
+
+/* line 12, ../BO/css/input/styleManageReservation.scss */
 body main table, body main td, body main th {
   border: 1px solid #BCA474;
 }
 
-/* line 7, ../BO/css/input/styleManageReservation.scss */
+/* line 15, ../BO/css/input/styleManageReservation.scss */
+body main th {
+  background-color: #59d5ff;
+  font-size: 1.1rem;
+}
+
+/* line 19, ../BO/css/input/styleManageReservation.scss */
 body main table {
   width: 90%;
   margin: 3rem auto;
 }
 
-/* line 10, ../BO/css/input/styleManageReservation.scss */
+/* line 22, ../BO/css/input/styleManageReservation.scss */
 body main table thead {
   font-weight: bold;
 }
 
-/* line 13, ../BO/css/input/styleManageReservation.scss */
+/* line 25, ../BO/css/input/styleManageReservation.scss */
 body main table th, body main table td {
   padding: .5rem 1rem;
   text-align: center;
   vertical-align: middle;
 }
 
-/* line 20, ../BO/css/input/styleManageReservation.scss */
+/* line 32, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
@@ -114,29 +135,14 @@ body main #checkIn {
   margin: 2rem auto;
 }
 
-/* line 24, ../BO/css/input/styleManageReservation.scss */
-body main #checkIn h2 {
-  /* style générale des h2 */
-  font-size: 1.6rem;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-/* line 28, ../BO/css/input/styleManageReservation.scss */
-body main #checkIn h2 span {
-  color: #BCA474;
-}
-
-/* line 32, ../BO/css/input/styleManageReservation.scss */
+/* line 37, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn h3 {
   color: red;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* line 38, ../BO/css/input/styleManageReservation.scss */
+/* line 43, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn form input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -151,12 +157,12 @@ body main #checkIn form input {
   width: calc(80%/2);
 }
 
-/* line 41, ../BO/css/input/styleManageReservation.scss */
+/* line 46, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn form input:first-child {
   margin-right: 2rem;
 }
 
-/* line 44, ../BO/css/input/styleManageReservation.scss */
+/* line 49, ../BO/css/input/styleManageReservation.scss */
 body main #checkIn form button {
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -181,14 +187,14 @@ body main #checkIn form button:hover {
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/* line 51, ../BO/css/input/styleManageReservation.scss */
+/* line 56, ../BO/css/input/styleManageReservation.scss */
 body main #updateResa {
   /* Message de succès après modification d'une réservation */
   color: green;
   text-align: center;
 }
 
-/* line 55, ../BO/css/input/styleManageReservation.scss */
+/* line 60, ../BO/css/input/styleManageReservation.scss */
 body main #room {
   width: 70%;
   margin: 2rem auto;

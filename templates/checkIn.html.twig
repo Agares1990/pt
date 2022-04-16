@@ -50,17 +50,17 @@ $( "#submit" ).click( function()
 <article id="checkIn">
 
     <!-- formulaire de recherche de chambre dispo -->
-    <h2 onclick="cacherFormCheck()";>Réserver une <span>chambre</span></h2>
+    <h2 onclick="cacherFormCheck()">{{reserver}} <span>{{chambre}}</span></h2>
     <p>{{errorCheck}}</p>
-  <form id="formChek" action="formCheckInPage.php" method="POST">
-      <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
+  <form id="formChek" action="formCheckInPage.php?lang={{lang}}" method="POST">
+      <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
       <span id="erreurFromDate"></span>
 
-      <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
+      <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
       <span id="erreurToDate"></span>
 
      <select name="nbPerson" id="nbPerson">
-       <option value="">--Nombre de personne--</option>
+       <option value="">--{{nbPersonPlaceholder}}--</option>
        <option class="option" value="1">1</option>
        <option class="option" value="2">2</option>
        <option class="option" value="3">3</option>
@@ -70,7 +70,7 @@ $( "#submit" ).click( function()
      <span id="erreurNbPerson"></span>
 
      <select name="nbChild" id="nbChild">
-       <option value="">--Nombre d'enfant--</option>
+       <option value="">--{{nbChildPlaceholder}}--</option>
        <option class="option" value="1">1</option>
        <option class="option" value="2">2</option>
        <option class="option" value="3">3</option>
@@ -80,14 +80,14 @@ $( "#submit" ).click( function()
      <span id="erreurNbChild"></span>
 
      <select name="roomType" id="roomType">
-       <option value="">--Choix de Chambre--</option>
+       <option value="">--{{choixChambre}}--</option>
        <option class="option" value="1">Chambre Standard</option>
        <option class="option" value="2">Chambre Familiale</option>
        <option class="option" value="3">Suite Senior</option>
      </select>
 
 
-        <input id="submit" type="submit" name="submit" value="Vérifie disponibilité">
+        <input id="submit" type="submit" name="submit" value="{{btnCheck}}">
 
   </form>
 </article>

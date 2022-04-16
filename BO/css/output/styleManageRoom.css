@@ -82,56 +82,6 @@ body main {
 }
 
 /* line 3, ../BO/css/input/styleManageRoom.scss */
-main p {
-  text-align: center;
-}
-
-/* line 6, ../BO/css/input/styleManageRoom.scss */
-main section:first-child {
-  /* Message de succès php */
-}
-
-/* line 7, ../BO/css/input/styleManageRoom.scss */
-main section:first-child p:first-child {
-  color: green;
-}
-
-/* line 10, ../BO/css/input/styleManageRoom.scss */
-main section:first-child p:nth-child(2) {
-  /* Message d'erreur php */
-  color: red;
-  margin-bottom: 1rem;
-}
-
-/* line 15, ../BO/css/input/styleManageRoom.scss */
-main section {
-  margin-bottom: 2rem;
-}
-
-/* line 17, ../BO/css/input/styleManageRoom.scss */
-main section table, main section td, main section th {
-  border: 1px solid #BCA474;
-}
-
-/* line 20, ../BO/css/input/styleManageRoom.scss */
-main section table {
-  width: 90%;
-  margin: 1rem auto;
-}
-
-/* line 23, ../BO/css/input/styleManageRoom.scss */
-main section table thead {
-  font-weight: bold;
-}
-
-/* line 26, ../BO/css/input/styleManageRoom.scss */
-main section table th, main section table td {
-  padding: .5rem 1rem;
-  text-align: center;
-  vertical-align: middle;
-}
-
-/* line 33, ../BO/css/input/styleManageRoom.scss */
 main h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -140,12 +90,73 @@ main h2 {
   text-align: center;
 }
 
-/* line 38, ../BO/css/input/styleManageRoom.scss */
+/* line 6, ../BO/css/input/styleManageRoom.scss */
+main h2 span {
+  color: #BCA474;
+}
+
+/* line 10, ../BO/css/input/styleManageRoom.scss */
+main p {
+  text-align: center;
+}
+
+/* line 13, ../BO/css/input/styleManageRoom.scss */
+main section:first-child {
+  /* Message de succès php */
+}
+
+/* line 14, ../BO/css/input/styleManageRoom.scss */
+main section:first-child p:first-child {
+  color: green;
+}
+
+/* line 17, ../BO/css/input/styleManageRoom.scss */
+main section:first-child p:nth-child(2) {
+  /* Message d'erreur php */
+  color: red;
+  margin-bottom: 1rem;
+}
+
+/* line 22, ../BO/css/input/styleManageRoom.scss */
+main section {
+  margin-bottom: 2rem;
+}
+
+/* line 24, ../BO/css/input/styleManageRoom.scss */
+main section table, main section td, main section th {
+  border: 1px solid #BCA474;
+}
+
+/* line 27, ../BO/css/input/styleManageRoom.scss */
+main section th {
+  background-color: #59d5ff;
+  font-size: 1.1rem;
+}
+
+/* line 31, ../BO/css/input/styleManageRoom.scss */
+main section table {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+/* line 34, ../BO/css/input/styleManageRoom.scss */
+main section table thead {
+  font-weight: bold;
+}
+
+/* line 37, ../BO/css/input/styleManageRoom.scss */
+main section table th, main section table td {
+  padding: .5rem 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* line 45, ../BO/css/input/styleManageRoom.scss */
 main section .messageSucces {
   color: green;
 }
 
-/* line 41, ../BO/css/input/styleManageRoom.scss */
+/* line 48, ../BO/css/input/styleManageRoom.scss */
 main section #btnAddRoom {
   margin-top: 1rem;
   /* Style général des bouttons */
@@ -170,7 +181,7 @@ main section #btnAddRoom:hover {
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/* line 46, ../BO/css/input/styleManageRoom.scss */
+/* line 53, ../BO/css/input/styleManageRoom.scss */
 main section #addRoom, main section #updateRoom {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
@@ -179,7 +190,7 @@ main section #addRoom, main section #updateRoom {
   margin: 0 auto;
 }
 
-/* line 50, ../BO/css/input/styleManageRoom.scss */
+/* line 57, ../BO/css/input/styleManageRoom.scss */
 main section #addRoom input, main section #updateRoom input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -196,7 +207,7 @@ main section #addRoom input, main section #updateRoom input {
   margin: 10px auto;
 }
 
-/* line 55, ../BO/css/input/styleManageRoom.scss */
+/* line 62, ../BO/css/input/styleManageRoom.scss */
 main section #addRoom input[type="submit"], main section #updateRoom input[type="submit"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;

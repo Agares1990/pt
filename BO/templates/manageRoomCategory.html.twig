@@ -3,6 +3,7 @@
 
 {% if updateCat == 1 %}
   <section>
+    <h2>Modifier cette Catégorie</h2>
     <p id="ErrorJS"></p>
     <form id="updateRoomCategory" action="manageRoomCategory.php" method="post">
       <input type="hidden" name="idCategorieChambre" value="{{getCategoryInfo.idCategorieChambre}}">
@@ -15,11 +16,9 @@
 <section>
   <p>{{succesMessageAddUpdateRoom}}</p>
   <p>{{failedMessageAddUpdateRoom}}</p>
+  <h2>Gérer les <span>catégories de chambre</span></h2>
   <table>
     <thead>
-        <tr>
-            <th colspan="8">Gérer les catégories de chambre</th>
-        </tr>
         <tr>
             <th>Identifiant Catégorie</th>
             <th>Nom Catégorie</th>

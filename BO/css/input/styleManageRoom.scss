@@ -1,5 +1,12 @@
 @import"baseBO";
 main{
+  h2{
+    @include h2;
+    text-align: center;
+    span{
+      color: $colorOr;
+    }
+  }
   p{
     text-align: center;
   }
@@ -17,6 +24,10 @@ main{
   table, td, th{
     border: 1px solid $colorOr;
   }
+  th{
+    background-color: #59d5ff;
+    font-size: 1.1rem;
+  }
   table{
     width: 90%;
     margin: 1rem auto;
@@ -29,10 +40,6 @@ main{
       vertical-align: middle;
     }
   }
-  }
-  h2{
-    @include h2;
-    text-align: center;
   }
   section{
     .messageSucces{

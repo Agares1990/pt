@@ -7,6 +7,8 @@ require_once "include/_functions.php";
 
 $css = "styleFormCheckInPage";
 $script = "formCheckInPage";
+$lang = getLang();
+$title = @$traductions[$lang]["btnCheck"]; // Afficher Vérifier la disponibilité comme titre de cette page
 
 $pdo = getPDO();
 $connection = getConnectionText();
@@ -113,6 +115,23 @@ if(isset($_POST['submit'])){
 echo $twig->render('formCheckInPage.html.twig',
   	  array('css' => $css,
             'script' => $script,
+            'title' => $title,
+            'lang' => $lang,
+            'nav1' => @$traductions[$lang]["nav1"],
+            'nav2' => @$traductions[$lang]["nav2"],
+            'nav3' => @$traductions[$lang]["nav3"],
+            'nav4' => @$traductions[$lang]["nav4"],
+            'nav5' => @$traductions[$lang]["nav5"],
+            'profil' => @$traductions[$lang]["profil"],
+            'connection' => $connection,
+            'reserver' => @$traductions[$lang]["reserver"],
+            'chambre' => @$traductions[$lang]["chambre"],
+            'dateA' => @$traductions[$lang]["dateA"],
+            'dateD' => @$traductions[$lang]["dateD"],
+            'nbPersonPlaceholder' => @$traductions[$lang]["nbPerson"],
+            'nbChildPlaceholder' => @$traductions[$lang]["nbChild"],
+            'choixChambre' => @$traductions[$lang]["choixChambre"],
+            'btnCheck' => @$traductions[$lang]["btnCheck"],
             'rooms' => @$rooms,
             'nbPerson' => $nbPerson,
             'nbChild' => $nbChild,

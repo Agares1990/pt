@@ -59,3 +59,32 @@ $( function() {
     return date;
   }
 } );
+
+let num = 1;
+const duration = 1000;
+const nombreMenu = 5;
+
+// Si on clique sur la flèche "toggleRight"
+$("#toggleRight").click(function () {
+
+    // On fait disparaitre le item actuel
+
+    // On fait apparaitre le item toggleRight (num + 1)
+    num = num + 1;
+    // Si le numéro est supérieur au nombre de items alors le numéro est égal à 1
+    if (num > nombreMenu) {
+        num = 1;
+    }
+
+});
+
+// Si on clique sur la flèche "toggleLeft"
+$("#toggleLeft").click(function () {
+
+    // On fait apparaitre le item précédent (num - 1)
+    num = num - 1;
+    // Si le numéro est inférieur à 0 alors le numéro est égal au nombre de item
+    if (num < 1) {
+        num = nombreMenu;
+    }
+});

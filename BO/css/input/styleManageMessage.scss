@@ -1,17 +1,24 @@
 @import"baseBO";
 main{
-  section{
-    h2{
-      @include h2;
-      text-align: center;
-      margin-bottom: 2rem;
+  h2{
+    @include h2;
+    text-align: center;
+    margin-bottom: 2rem;
+    span{
+      color: $colorOr;
     }
+  }
+  section{
     p{
       color: green;
       text-align: center;
     }
     table, td, th{
       border: 1px solid $colorOr;
+    }
+    th{
+      background-color: #59d5ff;
+      font-size: 1.1rem;
     }
     table{
       width: 95%;

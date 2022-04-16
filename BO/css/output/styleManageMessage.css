@@ -81,8 +81,8 @@ body main {
   grid-area: 2 / 2 / 7 / 6;
 }
 
-/* line 4, ../BO/css/input/styleManageMessage.scss */
-main section h2 {
+/* line 3, ../BO/css/input/styleManageMessage.scss */
+main h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
@@ -91,29 +91,40 @@ main section h2 {
   margin-bottom: 2rem;
 }
 
-/* line 9, ../BO/css/input/styleManageMessage.scss */
+/* line 7, ../BO/css/input/styleManageMessage.scss */
+main h2 span {
+  color: #BCA474;
+}
+
+/* line 12, ../BO/css/input/styleManageMessage.scss */
 main section p {
   color: green;
   text-align: center;
 }
 
-/* line 13, ../BO/css/input/styleManageMessage.scss */
+/* line 16, ../BO/css/input/styleManageMessage.scss */
 main section table, main section td, main section th {
   border: 1px solid #BCA474;
 }
 
-/* line 16, ../BO/css/input/styleManageMessage.scss */
+/* line 19, ../BO/css/input/styleManageMessage.scss */
+main section th {
+  background-color: #59d5ff;
+  font-size: 1.1rem;
+}
+
+/* line 23, ../BO/css/input/styleManageMessage.scss */
 main section table {
   width: 95%;
   margin: 1rem auto;
 }
 
-/* line 19, ../BO/css/input/styleManageMessage.scss */
+/* line 26, ../BO/css/input/styleManageMessage.scss */
 main section table thead {
   font-weight: bold;
 }
 
-/* line 22, ../BO/css/input/styleManageMessage.scss */
+/* line 29, ../BO/css/input/styleManageMessage.scss */
 main section table th, main section table td {
   padding: .5rem 1rem;
   text-align: center;
@@ -121,7 +132,7 @@ main section table th, main section table td {
   word-break: break-all;
 }
 
-/* line 28, ../BO/css/input/styleManageMessage.scss */
+/* line 35, ../BO/css/input/styleManageMessage.scss */
 main section table .comment {
   width: 15%;
 }
