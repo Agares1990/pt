@@ -8,13 +8,14 @@ session_start();
 $css = "styleProfile";
 $script = "profile";
 $pdo = getPDO();
+$lang = getLang();
 $class_reservation = new Reservations();
 
-$connection = getConnectionText();
 $email = $_SESSION['email'];
+$connection = getConnectionText($lang);
 
 if (!isset($_SESSION['email'])) {
-  header('Location: connexion.php');
+  header("Location: connexion.php?lang=$lang");
 }
 else {
   @$idReservation = $_POST['idReservation'];
@@ -117,6 +118,7 @@ $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
   echo $twig->render('profile.html.twig',
         array('css' => $css,
               'script' => $script,
+              'lang' => $lang,
               'reservations'=> $reservationsClient,
               'client' => $client,
               'messageSucces' => @$messageSucces,
@@ -131,7 +133,37 @@ $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
               'dateDepart' => @$toDate,
               'dateComment' => @$dateComment,
               'errorMessage' => @$errorMessage,
-              'updateResa' => @$updateResa
+              'updateResa' => @$updateResa,
+              //Pour la traduction
+              'nav1' => @$traductions[$lang]["nav1"],
+              'nav2' => @$traductions[$lang]["nav2"],
+              'nav3' => @$traductions[$lang]["nav3"],
+              'nav4' => @$traductions[$lang]["nav4"],
+              'nav5' => @$traductions[$lang]["nav5"],
+              'profil' => @$traductions[$lang]["profil"],
+              'connection' => $connection,
+              'bienvenue' => @$traductions[$lang]["bienvenue"],
+              'vosReservation' => @$traductions[$lang]["vosReservation"],
+              'chambre' => @$traductions[$lang]["chambre"],
+              'dateA' => @$traductions[$lang]["dateA"],
+              'dateD' => @$traductions[$lang]["dateD"],
+              'nbPersonPlaceholder' => @$traductions[$lang]["nbPerson"],
+              'nbChildPlaceholder' => @$traductions[$lang]["nbChild"],
+              'updateReservation' => @$traductions[$lang]["updateReservation"],
+              'cancelReservation' => @$traductions[$lang]["cancelReservation"],
+              'updateYour' => @$traductions[$lang]["updateYour"],
+              'btnCheck' => @$traductions[$lang]["btnCheck"],
+              'ttPay' => @$traductions[$lang]["ttPay"],
+              'confirmUpdate' => @$traductions[$lang]["confirmUpdate"],
+              'addComment' => @$traductions[$lang]["addComment"],
+              'updatePwd' => @$traductions[$lang]["updatePwd"],
+              'title' => @$traductions[$lang]["title"],
+              'commentMessage' => @$traductions[$lang]["commentMessage"],
+              'Mentions' => @$traductions[$lang]["Mentions"],
+              'politic' => @$traductions[$lang]["politic"],
+              'condition' => @$traductions[$lang]["condition"],
+              'adress' => @$traductions[$lang]["adress"]
+
             ));
 
 

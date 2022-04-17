@@ -10,11 +10,14 @@ session_start();
 session_unset();
 session_destroy();
 session_start();
-$verifyConnection = verifyConnection($pdo, 'client', 'profile.php');
+$verifyConnection = verifyConnection($pdo, 'client', 'profile.php', $lang);
 
-$connection = getConnectionText();
+$connection = getConnectionText($lang);
 echo $twig->render('connexion.html.twig',
   	  array('css' => $css,
+            'lang' => $lang,
+            'verifyConnection' => @$verifyConnection,
+            //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],
             'nav3' => @$traductions[$lang]["nav3"],
@@ -22,6 +25,14 @@ echo $twig->render('connexion.html.twig',
             'nav5' => @$traductions[$lang]["nav5"],
             'profil' => @$traductions[$lang]["profil"],
             'connection' => $connection,
-            'verifyConnection' => @$verifyConnection
+            'cnx' => @$traductions[$lang]["cnx"],
+            'bienvenue' => @$traductions[$lang]["bienvenue"],
+            'pwd' => @$traductions[$lang]["pwd"],
+            'logIn' => @$traductions[$lang]["logIn"],
+            'Mentions' => @$traductions[$lang]["Mentions"],
+            'politic' => @$traductions[$lang]["politic"],
+            'condition' => @$traductions[$lang]["condition"],
+            'adress' => @$traductions[$lang]["adress"]
+
   				));
 ?>

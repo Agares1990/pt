@@ -6,14 +6,15 @@ $(document).ready(function(){
   //  accomplie.
   $("#room").hide();
   $("#room table").hide();
-  const checkIn = $( "input[name = 'CheckIn']" ).val();
-  const checkOut = $( "input[name = 'CheckOut']" ).val();
+
 
   function sendVerif(e) {
+    const checkIn = $( "input[name = 'CheckIn']" ).val();
+    const checkOut = $( "input[name = 'CheckOut']" ).val();
       e.preventDefault();
          $.post( "manageReservation.php",
-                 { CheckIn: $("#fromDate").val(),
-                   CheckOut: $("#toDate").val(),
+                 { CheckIn: checkIn,
+                   CheckOut: checkOut,
                    idCategorieChambre: $("#idCategorieChambre").val(),
                    idReservation: $("#idReservation").val(),
                    idChambre: $("#idChambre").val(),

@@ -1,21 +1,21 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
-  <button id="btnPwd" type="button" name="button"> <a href="editPasswordClient.php">Modifier mon mot de passe</a> </button>
-  <h1>Bienvenue <span>{{client.prenom}}<span></h1>
+  <button id="btnPwd" type="button" name="button"> <a href="editPasswordClient.php?lang={{lang}}">{{updatePwd}}</a> </button>
+  <h1>{{bienvenue}} <span>{{client.prenom}}<span></h1>
   <p id="updateResa">{{updateResa}}</p>
   <table>
     <thead>
         <tr>
-            <th colspan="7">Votre (vos) réservation(s)</th>
+            <th colspan="7">{{vosReservation}}</th>
         </tr>
         <tr>
-            <th>Chambre</th>
-            <th>Date d'arrivée</th>
-            <th>Daté de départ</th>
-            <th>Nombre de personnes</th>
-            <th>Nombre d'enfants</th>
-            <th>Modifier la réservation</th>
-            <th>Annuler la réservation</th>
+            <th>{{chambre}}</th>
+            <th>{{dateA}}</th>
+            <th>{{dateD}}</th>
+            <th>{{nbPersonPlaceholder}}</th>
+            <th>{{nbChildPlaceholder}}</th>
+            <th>{{updateReservation}}</th>
+            <th>{{cancelReservation}}</th>
         </tr>
     </thead>
     <tbody>
@@ -28,17 +28,17 @@
                 <td>{{reservation.nbPerson}}</td>
                 <td>{{reservation.nbChild}}</td>
                 <td>
-                  <form class="" action="profile.php#sectCheckIn" method="post">
+                  <form class="" action="profile.php?lang={{lang}}#sectCheckIn" method="post">
                     <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
                     <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
                     <input type="hidden" name="chambreId" value="{{reservation.chambreId}}">
                     <input type="hidden" name="modification" value="1">
-                    <input type="submit" id="update" value="Modifier la date">
+                    <input type="submit" id="update" value="{{updateReservation}}">
                   </form>
                 </td>
                 <td>
-                  <form class="" action="profile.php" method="post">
-                    <input type="submit" name="delete" value="Annuler" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                  <form class="" action="profile.php?lang={{lang}}" method="post">
+                    <input type="submit" name="delete" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
                     <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
                     <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
                     <input type="hidden" name="delete" value="1">
@@ -61,17 +61,17 @@
   <article id="checkIn">
 
       <!-- formulaire de recherche de chambre dispo -->
-      <h2>Modifier votre <span>réservation</span></h2>
+      <h2>{{updateYour}} <span>reservation</span></h2>
       <h3></h3>
     <!-- <form id="formChek" action="profile.php" method="POST"> -->
     <form id="formChek" action="" method="post">
-        <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="Date d'arriver" value="">
-        <input type="text" id="toDate" name="CheckOut" required="required" placeholder="Date de départ" value="">
+        <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
+        <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
         <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
         <input type="hidden" id="idReservation" name="idReservation" value="{{idReservation}}">
         <input type="hidden" id="idChambre" name="idChambre" value="{{roomsCheck.idChambre}}">
         <input type="hidden" id="verify" name="verify" value="1">
-        <button id="verifier" value="">Vérifie disponibilité</button>
+        <button id="verifier" value="">{{btnCheck}}</button>
 
     </form>
   </article>
@@ -82,13 +82,13 @@
             <table>
               <thead>
                   <tr>
-                      <th colspan="5">Confirmer votre modification</th>
+                      <th colspan="5">{{confirmUpdate}}</th>
                   </tr>
                   <tr>
-                      <th>Date d'arrivée</th>
-                      <th>Daté de départ</th>
-                      <th>Total à payer</th>
-                      <th>Modifier la réservation</th>
+                      <th>{{dateA}}</th>
+                      <th>{{dateD}}</th>
+                      <th>{{ttPay}}</th>
+                      <th>{{updateYour}} reservation</th>
                   </tr>
               </thead>
               <tbody id="tabBody">
@@ -100,23 +100,23 @@
 
 </section>
 <section>
-  <h2>Ajouter un commentaire</h2>
+  <h2>{{addComment}}</h2>
   <form id="comments">
          <!-- <div id="success">
            <span id="successMessage"></span>
            <i id="closebtn">x</i>
          </div> -->
          <input type="hidden" name="dateComment" value="{{dateComment}}">
-         <input type="text" name="title" id="title" placeholder="Titre">
+         <input type="text" name="title" id="title" placeholder="{{title}}">
          <span id="errorTitle"></span>
 
          <input type="number" name="note" id="note" placeholder="Note" min="1" max="5">
          <span id="errorNote"></span>
 
-         <textarea name="comment" id="comment" placeholder="Commentaire" rows="8" cols="40"></textarea>
+         <textarea name="comment" id="comment" placeholder="{{commentMessage}}" rows="8" cols="40"></textarea>
          <span id="errorComment"></span>
 
-         <button id="publish">Publier votre commentaire</button>
+         <button id="publish">{{addComment}}</button>
 
    </form>
 

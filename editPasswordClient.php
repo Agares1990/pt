@@ -1,14 +1,16 @@
 <?php
 require "include/init_twig.php";
+require "include/_traduction.php";
 require_once ("include/_connexion.php");
 require_once "include/_functions.php";
 $css = "styleEditPasswordClient";
 $title = "Modifier le mot de passe";
 $pdo = getPDO();
+$lang = getLang();
 session_start();
-$connection = getConnectionText();
-$email = $_SESSION['email'];
 
+$email = $_SESSION['email'];
+$connection = getConnectionText($lang);
 if (isset($_GET['message'])) {// On récupére le message d'erreur en php
     $errorForm =  "{$_GET['message']}";
 }
@@ -17,7 +19,21 @@ if (isset($_GET['message'])) {// On récupére le message d'erreur en php
 echo $twig->render('editPasswordClient.html.twig',
   	  array('css' => $css,
             'title' => $title,
+            'lang' => $lang,
+            'connection' => $connection,
             'errorForm' => @$errorForm,
-            'connection' => $connection
+            'connection' => $connection,
+            //Pour la traduction
+            'nav1' => @$traductions[$lang]["nav1"],
+            'nav2' => @$traductions[$lang]["nav2"],
+            'nav3' => @$traductions[$lang]["nav3"],
+            'nav4' => @$traductions[$lang]["nav4"],
+            'nav5' => @$traductions[$lang]["nav5"],
+            'profil' => @$traductions[$lang]["profil"],
+            'Mentions' => @$traductions[$lang]["Mentions"],
+            'politic' => @$traductions[$lang]["politic"],
+            'condition' => @$traductions[$lang]["condition"],
+            'adress' => @$traductions[$lang]["adress"]
+
   				));
 ?>

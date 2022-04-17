@@ -36,8 +36,8 @@
           <span class='iconeLangue'><a href='?lang=en'><img src='images/flags/uk.gif' alt='Anglais'>En</a></span>
           <!-- <span class='iconeLangue'><a href='?lang=it'><img src='images/flags/it.gif' alt='Italie'>It</a></span> -->
         </p>
-        <a class="profile" href="profile.php"><i class="fa-solid fa-user"></i> {{profil}}</a>
-        <a class="connexion" href="connexion.php">{{connection}}</a>
+        <a class="profile" href="profile.php?lang={{lang}}"><i class="fa-solid fa-user"></i> {{profil}}</a>
+        <a class="connexion" href="connexion.php?lang={{lang}}">{{connection}}</a>
 
       </div>
 
@@ -64,15 +64,15 @@
 
     <footer>
       <ul>
-        <li><a href="#">Mentions légales</a></li>
-        <li><a href="politiqueConfidentialite.php">Politique de confidentialité</a></li>
-        <li><a href="#">Conditions de vente</a></li>
+        <li><a href="#">{{Mentions}}</a></li>
+        <li><a href="politiqueConfidentialite.php">{{politic}}</a></li>
+        <li><a href="#">{{condition}}</a></li>
       </ul>
       <div>
         <ul>
-          <li><span>Adresse: </span> Campus Carlone - 06200, Nice</li>
+          <li><span>{{adress}}: </span> Campus Carlone - 06200, Nice</li>
           <li><span>Mail: </span> info@niceone.com</li>
-          <li><span>Tél: </span> +33 6 00 00 00 00</li>
+          <li><span>Tel: </span> +33 6 00 00 00 00</li>
         </ul>
         <ul id="socialNetwork">
             <li><a href=""><span class="carre"><i class="fab fa-facebook"></i></span></a></li>

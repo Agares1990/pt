@@ -9,7 +9,7 @@
   $pdo = getPDO();
   $lang = getLang();
   $title = "Nice ONE Resort & SPA";
-  $connection = getConnectionText();
+  $connection = getConnectionText($lang);
   $getTextTrad = getTextTrad($pdo, $lang);
 
   // Pour afficher l'heure et la témpérature
@@ -29,6 +29,12 @@
               'script' => $script,
               'title' => $title,
               'lang' => $lang,
+              'temperature' => " $temperature °C",
+              'connection' => $connection,
+              'getTextTrad' => $getTextTrad,
+              'date' => $date,
+              'errorCheck' => @$errorCheck,
+              //Pour la traduction
               'nav1' => @$traductions[$lang]["nav1"],
               'nav2' => @$traductions[$lang]["nav2"],
               'nav3' => @$traductions[$lang]["nav3"],
@@ -45,13 +51,11 @@
               'choixChambre' => @$traductions[$lang]["choixChambre"],
               'btnCheck' => @$traductions[$lang]["btnCheck"],
               'welcome' => @$traductions[$lang]["welcome"],
-              'temperature' => " $temperature °C",
-              'connection' => $connection,
-              'getTextTrad' => $getTextTrad,
               'heure' => @$traductions[$lang]["heure"],
-              'date' => $date,
-              'errorCheck' => @$errorCheck
-
+              'Mentions' => @$traductions[$lang]["Mentions"],
+              'politic' => @$traductions[$lang]["politic"],
+              'condition' => @$traductions[$lang]["condition"],
+              'adress' => @$traductions[$lang]["adress"],
     				));
 
 ?>

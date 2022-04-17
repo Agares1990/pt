@@ -1,18 +1,18 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
 <section>
-  <h2>Connexion</h2>
+  <h2>{{cnx}}</h2>
   <hr>
-      <h3>Bienvenue</h3>
+      <h3>{{bienvenue}}</h3>
       <!-- Message d'erreur en cas d'echec de connexion -->
       <p>{{verifyConnection}}</p>
-      <form action="connexion.php" method="post">
+      <form action="connexion.php?lang={{lang}}" method="post">
         <label for="email"><i class="bi bi-person-fill"></i> Email :</label>
         <input type="text" id="email" name="email">
-        <label for="mdp"><i class="bi bi-lock-fill"></i> Mot de passe :</label>
+        <label for="mdp"><i class="bi bi-lock-fill"></i> {{pwd}} :</label>
         <input type="password" id="mdp" name="mdp">
         <hr>
-        <input type="submit" value="Se Connecter">
+        <input type="submit" value="{{logIn}}">
       </form>
 </section>
 {% endblock %}
