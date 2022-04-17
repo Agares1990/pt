@@ -7,8 +7,9 @@
   $css = "styleContact";
   $script = "contactForm";
   $pdo = getPDO();
-
-  $connection = getConnectionText();
+  $lang = getLang();
+  @$email = $_SESSION['email'];
+  $connection = getConnectionText($lang);
 
   function domain_exists($mail, $record = 'MX'){
         list($user, $domain) = explode('@', $mail);
@@ -35,12 +36,25 @@ if (domain_exists($mail)) {
 
   echo $twig->render('contact.html.twig',
     	  array('css' => $css,
+              'script' => $script,
+              'connection' => $connection,
               'lang' => $lang,
+              //Pour la traduction
+              'nav1' => @$traductions[$lang]["nav1"],
+              'nav2' => @$traductions[$lang]["nav2"],
+              'nav3' => @$traductions[$lang]["nav3"],
+              'nav4' => @$traductions[$lang]["nav4"],
+              'nav5' => @$traductions[$lang]["nav5"],
+              'profil' => @$traductions[$lang]["profil"],
+              'connection' => $connection,
               'name' => $traductions[$lang]["inputName"],
               'mail' => $traductions[$lang]["inputMail"],
               'subject' => $traductions[$lang]["inputSubject"],
               'submit' => $traductions[$lang]["inputSubmit"],
-              'script' => $script,
-              'connection' => $connection
+              'Mentions' => @$traductions[$lang]["Mentions"],
+              'politic' => @$traductions[$lang]["politic"],
+              'condition' => @$traductions[$lang]["condition"],
+              'adress' => @$traductions[$lang]["adress"]
+
     				));
 ?>

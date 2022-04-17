@@ -2,14 +2,13 @@
 {% block contenu %}
   <div id="imgBackground">
   </div>
-  <p id="bienvenue">Bienvenue au Nice ONE Resort & SPA</p>
-  <h1 id="titrePage">Vos Avis</h1>
+  <p id="bienvenue">{{welcome}} Nice ONE Resort & SPA</p>
+  <h1 id="titrePage">{{YrRevieuw}}</h1>
   <section>
-    <h2>Avis clients</h2>
-    <h3>UN HÔTEL UNIQUE À DÉCOUVRIR</h3>
+    <h2>{{clientReviews}}</h2>
+    <h3>{{titlePage}}</h3>
     <hr></hr>
-    <p>Nos clients sont les mieux placés pour vous parler de leur expérience au Nice ONE.<br>
-      Découvrez leur avis et leurs commentaires au cours de leur séjour à Nice.</p>
+    <p>{{getTextTrad['texte2']}}.</p>
     {% for comment in comments %}
       <article>
         <span>{{comment['dateComment']}}</span>  -  <span>{{comment['prenom']}}</span> <span>{% for i in 0..comment['note']%}

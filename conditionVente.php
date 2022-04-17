@@ -3,12 +3,12 @@
   require "include/init_twig.php";
   require "include/_traduction.php";
   require_once "include/_functions.php";
-  $css = "stylePolitiqueConfidentialite";
+  $css = "styleConditionVente";
   $lang = getLang();
-  $title = "Politique de confidentialité";
+  $title = "Nos conditions de vente";
 
   $connection = getConnectionText($lang);
-  echo $twig->render('politiqueConfidentialite.html.twig',
+  echo $twig->render('conditionVente.html.twig',
     	  array('css' => $css,
               'title' => $title,
               'lang' => $lang,

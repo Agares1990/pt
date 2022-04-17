@@ -11,7 +11,7 @@ $lang = getLang();
 $title = @$traductions[$lang]["btnCheck"]; // Afficher Vérifier la disponibilité comme titre de cette page
 
 $pdo = getPDO();
-$connection = getConnectionText();
+$connection = getConnectionText($lang);
 //$rooms = '';
 if(isset($_POST['submit'])){
 
@@ -118,11 +118,11 @@ echo $twig->render('formCheckInPage.html.twig',
             'title' => $title,
             'lang' => $lang,
             'rooms' => @$rooms,
-            'nbPerson' => $nbPerson,
-            'nbChild' => $nbChild,
-            'nbDay' => $nbDay,
-            'fromDate' => $fromDate,
-            'toDate' => $toDate,
+            'nbPerson' => @$nbPerson,
+            'nbChild' => @$nbChild,
+            'nbDay' => @$nbDay,
+            'fromDate' => @$fromDate,
+            'toDate' => @$toDate,
             'connection' => $connection,
             'messageCheck' => @$messageCheck,
             'otherRooms' => @$otherRooms,
