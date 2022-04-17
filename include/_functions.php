@@ -9,7 +9,7 @@ function getLang(){
   return $lang;
 }
 // Fonction pour savoir si l'utilisateur est connecté ou pas
-function getConnectionText(){
+function getConnectionText($lang){
   if(isset($_SESSION['email']) && @$lang == 'fr'){
     $connection = "Deconnexion";
   }elseif (isset($_SESSION['email']) && @$lang == 'en') {
@@ -112,7 +112,7 @@ function normalizeTelephoneNumber(string $telephone): string {
 
 
 // Fonction pour l'espace de connexion front et back office
-function verifyConnection($pdo, $table, $page){
+function verifyConnection($pdo, $table, $page, $lang){
   if(!empty($_POST)){
     // Une fois on rempli et envoyé la formulaire, $_POST contient les information saisie sous forme d'un tableau associatif
     // Le formulaire à été envoyé
@@ -127,6 +127,8 @@ function verifyConnection($pdo, $table, $page){
       $mdp =   strip_tags($_POST['mdp']);
 
       // On se connecte à la bdd
+    //  $userExist = $db->query("SELECT * FROM users WHERE email =  '$email'")->fetch();
+
       $userExist = $pdo->prepare("SELECT * FROM $table WHERE email = :email");
       $userExist->bindValue(":email", $email, PDO::PARAM_STR);
       $userExist->execute();
@@ -139,7 +141,7 @@ function verifyConnection($pdo, $table, $page){
       else{
         if(!password_verify($mdp, $user['mdp']) || empty(trim($mdp))){
 
-        $errorConnection = "L'utilisateur et/ou le mot de passe est incorrect";
+          $errorConnection = "L'utilisateur et/ou le mot de passe est incorrect";
         }
         else {
 
@@ -150,11 +152,16 @@ function verifyConnection($pdo, $table, $page){
           // On stock dans $_SESSION les information de l'utilisateur
             $_SESSION["email"] = $email;
             $_SESSION["prenom"] = $user['prenom'];
+           // var_dump($_SESSION);
           // On redirige vers la page de profile
-          header("Location: $page");
+          header("Location: $page?lang=$lang");
         }
       }
-    }
+
+      // Ici on a un user existant, on vérifie son mote de passe
+      // if(!password_verify($mdp, $userExist['pass'])){
+      //   die ("Florian et Cindy sont passés par là");
+       }
 
   }
   return @$errorConnection;
@@ -168,8 +175,9 @@ function editPassword($pdo, $email, $table, $oldPassword, $newPassword, $repeatN
   // On vérifie les données saisies par l'utilisateur
   if (password_verify($oldPassword, $getPassword['mdp'])  && !empty($oldPassword) && !empty($repeatNewPassword) && trim($newPassword) == trim($repeatNewPassword)) {
     // Si les données sont correctes, alors on prépare la réquête
-    $editPassword = $pdo->prepare("UPDATE $table SET mdp = :mdp");
+    $editPassword = $pdo->prepare("UPDATE $table SET mdp = :mdp WHERE email = :email");
     $editPassword->bindParam(':mdp', password_hash($newPassword, PASSWORD_DEFAULT), PDO::PARAM_INT);
+    $editPassword->bindParam(':email', $email, PDO::PARAM_INT);
     $editPassword->execute();
     // Et on affiche un message de succès de modification de mot de passe
     $sucessUpdateMessage = "Le mot de passe à été modifier avec succès";
