@@ -16,6 +16,7 @@ echo $twig->render('room.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
             'getRooms' => $getRooms,
+            'lang' => $lang,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

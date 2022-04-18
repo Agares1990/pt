@@ -18,6 +18,7 @@ echo $twig->render('commentaire.html.twig',
             'connection' => $connection,
             'comments' => $comments,
             'getTextTrad' => $getTextTrad,
+            'lang' => $lang,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

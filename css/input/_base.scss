@@ -16,6 +16,11 @@ body{
 header{
   background-color: #fff;
   padding: 1rem 1rem 0 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
   div{
     display: flex;
     justify-content: space-between;
@@ -33,14 +38,19 @@ header{
         margin-right: .2rem;
         margin-top: .6rem;
       }
+
+    }
+    div{
       i{
         font-size: 2rem;
         color: $colorOr;
       }
+      .profil{
+        @include h3;
+        margin-top: .5rem;
+      }
     }
-    .profile{
-      @include h3;
-    }
+
     .connexion{
       height: 1.2rem;
       padding: .5rem 1rem;
@@ -50,35 +60,51 @@ header{
     }
   }
 
+  nav{
+    clear: both;
 
-}
-nav{
-  clear: both;
-
-  font-family: $fontPoppins;
-  text-align: center;
-  padding: 0.5rem 0 0.5rem 0;
-  ul{
-    margin-top: -3rem;
-    li{
-      //position: relative;
-      display: inline-block;
-      a{
-        text-decoration: none;
-        padding: 0px 1.1rem;
-        font-size: 1.1rem;
-        margin: 0px;
-        line-height: 2.25;
-        -webkit-transition: .5s;
-        color: #202020;
-        z-index: 0;
-        &:hover{
-          color: #BCA474;
+    font-family: $fontPoppins;
+    text-align: center;
+    padding: 0.5rem 0 0.5rem 0;
+    input[type="checkbox"]{
+      display: none;
+    }
+    ul{
+      margin-top: -3rem;
+      li{
+        //position: relative;
+        display: inline-block;
+        a{
+          text-decoration: none;
+          padding: 0px 1.1rem;
+          font-size: 1.1rem;
+          margin: 0px;
+          line-height: 2.25;
+          -webkit-transition: .5s;
+          color: #202020;
+          z-index: 0;
+          &:hover{
+            color: #BCA474;
+          }
         }
       }
     }
   }
 }
+/* Menu de navigation au scroll */
+header.scroll{
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+  padding: .5rem 1rem 0 1rem;
+  .logo{
+    width: 9rem;
+    height: 6.3rem;
+  }
+  nav{
+    padding: 0.3rem 0 0 0;
+  }
+}
+
 
 footer{
   // position: absolute;
@@ -134,6 +160,132 @@ footer{
     }
     ul:nth-child(2){
       text-align: center;
+    }
+  }
+}
+
+
+/** STYLE TABLETTE **/
+
+@media(max-width: 1024px){
+  header{
+    div{
+      .logo{
+        width: 9rem;
+        height: 6.3rem;
+      }
+        .profil{
+          font-size: 1rem;
+        }
+      a{
+        i{
+          font-size: 1.7rem;
+        }
+      }
+      .connexion{
+        padding: .4rem .9rem;
+        font-size: 1rem;
+      }
+    }
+    nav{
+      text-align: right;
+      margin-right: 4rem;
+      padding: 0.3rem 0 0 0;
+     ul li a{
+       font-size: 1rem;
+     }
+    }
+  }
+
+  footer{
+    div{
+      ul:first-child{
+        li{
+          display: block;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+/** STYLE SMARTPHONE **/
+@media(max-width: 840px){
+  .profil{
+    display: none;
+  }
+  nav{
+    input:checked {
+      + label > span {
+        transform: rotate(45deg);
+        &::before {
+          top: 0;
+          transform: rotate(0deg);
+        }
+        &::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+      ~ ul {
+        right: 0 !important;
+      }
+    }
+
+    label {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      z-index: 1;
+      > span, ::before, ::after{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #616161;
+        transition-duration: .25s;
+      }
+      > span::before {
+        content: '';
+        top: -8px;
+      }
+      > span::after {
+        content: '';
+        top: 8px;
+      }
+    }
+
+    ul{
+      opacity: 0.95;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 15.5rem;
+      height: 50%;
+      margin: 0;
+      padding: 5rem 0;
+      list-style: none;
+      background-color: #ECEFF1;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+      transition-duration: .25s;
+      li a{
+        display: block;
+        padding: 12px 24px;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition-duration: .25s;
+
+      }
     }
   }
 }

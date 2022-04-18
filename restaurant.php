@@ -13,6 +13,7 @@ $connection = getConnectionText($lang);
 echo $twig->render('restaurant.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
+            'lang' => $lang,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

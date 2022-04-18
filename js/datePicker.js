@@ -1,3 +1,19 @@
+let toTop = document.querySelector(".to-top");
+const navScroll = document.querySelector("header");
+
+// Faire apparaitre le bouton remonter en haut de page et changer le designe du menu après 100px
+$(window).scroll(function() {
+	if (window.scrollY > 100) {
+    navScroll.classList.add("scroll");
+  } else {
+    navScroll.classList.remove("scroll");
+  }
+
+});
+
+
+
+// Date picker
 $( function() {
     let from = $( "#fromDate" )
       .datepicker({

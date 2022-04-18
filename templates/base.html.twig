@@ -34,25 +34,33 @@
         <p id="icone">
           <span class='iconeLangue'><a href='?lang=fr'><img src='images/flags/fr.gif' alt='Fran&ccedil;ais'>Fr</a></span>
           <span class='iconeLangue'><a href='?lang=en'><img src='images/flags/uk.gif' alt='Anglais'>En</a></span>
-          <!-- <span class='iconeLangue'><a href='?lang=it'><img src='images/flags/it.gif' alt='Italie'>It</a></span> -->
         </p>
-        <a class="profile" href="profile.php?lang={{lang}}"><i class="fa-solid fa-user"></i> {{profil}}</a>
+
+        <div>
+          <a href="profile.php?lang={{lang}}"><i class="fa-solid fa-user"></i></a>
+          <a class="profil" href="profile.php?lang={{lang}}">{{profil}}</a>
+        </div>
+
         <a class="connexion" href="connexion.php?lang={{lang}}">{{connection}}</a>
 
       </div>
 
       <!-- Menu de navigation -->
 
-      <nav id="outer">
+      <nav>
+        <input id="menu__toggle" type="checkbox" />
+        <label for="menu__toggle">
+          <span></span>
+        </label>
 
-        <ul id="bar">
-          <div id="toggleLeft"><i class="fa-solid fa-chevron-left"></i></div>
-            <li id="item1"><a href="room.php?lang={{lang}}">{{nav1}}</a></li>
-            <li id="item2"><a href="restaurant.php?lang={{lang}}">{{nav2}}</a></li>
-            <li id="item3"><a href="event.php?lang={{lang}}">{{nav3}}</a></li>
-            <li id="item4"><a href="commentaire.php?lang={{lang}}">{{nav4}}</a></li>
-            <li id="item5"><a href="contact.php?lang={{lang}}">{{nav5}}</a></li>
-          <div id="toggleRight"><i class="fa-solid fa-chevron-right"></i></div>
+        <ul>
+          <!-- <div id="toggleLeft"><i class="fa-solid fa-chevron-left"></i></div> -->
+            <li><a href="room.php?lang={{lang}}">{{nav1}}</a></li>
+            <li><a href="restaurant.php?lang={{lang}}">{{nav2}}</a></li>
+            <li><a href="event.php?lang={{lang}}">{{nav3}}</a></li>
+            <li><a href="commentaire.php?lang={{lang}}">{{nav4}}</a></li>
+            <li><a href="contact.php?lang={{lang}}">{{nav5}}</a></li>
+          <!-- <div id="toggleRight"><i class="fa-solid fa-chevron-right"></i></div> -->
         </ul>
 
       </nav>

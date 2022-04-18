@@ -10,9 +10,11 @@ $pdo = getPDO();
 $lang = getLang();
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
+
 echo $twig->render('event.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
+            'lang' => $lang,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

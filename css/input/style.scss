@@ -46,9 +46,6 @@
     select{ /* style spécial pour les selects */
         @include inputSelectForm(102%);
         text-indent: -2px;
-        option:hover{
-          background-color: #BCA474;
-        }
     }
     input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
       width: 102%;
@@ -226,4 +223,11 @@
       }
     }
   }
+}
+
+
+/** STYLE TABLETTE **/
+
+@media(max-width: 1240px){
+
 }
