@@ -189,5 +189,15 @@ function editPassword($pdo, $email, $table, $oldPassword, $newPassword, $repeatN
 
   return $sucessUpdateMessage;
 }
+// Fonction pour afficher les chambre
+function getRooms($pdo, $lang, $where){
+  $getRooms = $pdo->query("SELECT * FROM chambre
+  LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
+  LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
+  && nom_categorie_chambre.langueId = '$lang'
+  LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
+  LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang' WHERE $where GROUP BY chambre.categorieChambreId");
+  return $getRooms;
+}
 
 ?>
