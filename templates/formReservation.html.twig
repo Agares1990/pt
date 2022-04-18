@@ -17,7 +17,7 @@
       </ul>
     </article>
     <p>{{fieldError}}</p>
-    <form id="formReservation" action="recapReservation.php" method="post">
+    <form id="formReservation" action="recapReservation.php?lang={{lang}}" method="post">
 
          <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
          <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">

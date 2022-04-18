@@ -7,8 +7,11 @@ session_start();
 $css = "styleFormReservation";
 $script = "formReservation";
 $pdo = getPDO();
-$connection = getConnectionText();
+$lang = getLang();
+
 @$email = $_SESSION['email'];
+$connection = getConnectionText($lang);
+
 
 //récupérer l'utilisateur actuel s'il est  déjà connecté
 $client = $pdo->query("SELECT * FROM client WHERE email =  '$email'")->fetch();
@@ -66,6 +69,8 @@ if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à trave
 echo $twig->render('formReservation.html.twig',
   	  array('css' => $css,
             'script' => $script,
+            'lang' => $lang,
+            'connection' => $connection,
             'fromDate' => @$fromDate,
             'toDate' => @$toDate,
             'nbPerson' => @$nbPerson,
@@ -80,7 +85,19 @@ echo $twig->render('formReservation.html.twig',
             'nom' => @$nom,
             'prenom' => @$prenom,
             'email' => @$email,
-            'tel' => @$tel
+            'tel' => @$tel,
+            //Pour la traduction
+            'nav1' => @$traductions[$lang]["nav1"],
+            'nav2' => @$traductions[$lang]["nav2"],
+            'nav3' => @$traductions[$lang]["nav3"],
+            'nav4' => @$traductions[$lang]["nav4"],
+            'nav5' => @$traductions[$lang]["nav5"],
+            'profil' => @$traductions[$lang]["profil"],
+            'connection' => $connection,
+            'Mentions' => @$traductions[$lang]["Mentions"],
+            'politic' => @$traductions[$lang]["politic"],
+            'condition' => @$traductions[$lang]["condition"],
+            'adress' => @$traductions[$lang]["adress"],
   				));
 
 ?>

@@ -7,7 +7,10 @@ session_start();
 $css = "styleRecapReservation";
 $script = "recapReservation";
 $pdo = getPDO();
+$lang = getLang();
+
 @$email = $_SESSION['email'];
+$connection = getConnectionText($lang);
 
 if(isset($_POST['submit'])){
 
@@ -27,7 +30,7 @@ if(isset($_POST['submit'])){
   $email = $_POST["email"];
   $mdp = $_POST["mdp"];
   $tel = $_POST["tel"];
-  $pays = $_POST["pays"];
+  @$pays = $_POST["pays"];
   $message = $_POST["message"];
 
 
@@ -84,15 +87,15 @@ if(isset($_POST['submit'])){
 
   if (isset($fieldError)) {
     $_SESSION['erreur'] = $_POST; //on ouvre la session pour sauvegarder les données en cas d'erreur et les afficher dans la page formReservation
-    header("Location: formReservation.php?message=$fieldError&nom=$nom&prenom=$prenom&email=$email&tel=$tel"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire et garder les champs remplis
+    header("Location: formReservation.php?lang=$lang&message=$fieldError&nom=$nom&prenom=$prenom&email=$email&tel=$tel"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire et garder les champs remplis
   }
 // }
-  $connection = getConnectionText();
 
 
 echo $twig->render('recapReservation.html.twig',
   	  array('css' => $css,
             'script' => $script,
+            'lang' => $lang,
             'connection' => $connection,
             'prenom' => $prenom,
             'fromDate' => $fromDate,
@@ -102,7 +105,19 @@ echo $twig->render('recapReservation.html.twig',
             'nbChild' => $nbChild,
             'nbDay' => $nbDay,
             'totalToPay' => $totalToPay,
-            'dateCancel' => $dateCancel
+            'dateCancel' => $dateCancel,
+            //Pour la traduction
+            'nav1' => @$traductions[$lang]["nav1"],
+            'nav2' => @$traductions[$lang]["nav2"],
+            'nav3' => @$traductions[$lang]["nav3"],
+            'nav4' => @$traductions[$lang]["nav4"],
+            'nav5' => @$traductions[$lang]["nav5"],
+            'profil' => @$traductions[$lang]["profil"],
+            'connection' => $connection,
+            'Mentions' => @$traductions[$lang]["Mentions"],
+            'politic' => @$traductions[$lang]["politic"],
+            'condition' => @$traductions[$lang]["condition"],
+            'adress' => @$traductions[$lang]["adress"],
 
   				));
 ?>

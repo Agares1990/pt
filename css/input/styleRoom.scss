@@ -49,12 +49,17 @@
     h2{ /* titre de chaque bloc */
       @include h2;
     }
-    a{
-      text-decoration: none;
-      button[type="submit"]{
-        @include button(40%, .5rem 0);
-        @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+    h4{
+      span{
+        color: $colorOr;
+        font-weight: bold;
       }
     }
+    input[type="submit"]{
+      @include button(40%, .5rem 0);
+      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+      margin: 1rem auto;
+    }
+
   }
 }

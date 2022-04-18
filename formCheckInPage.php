@@ -54,14 +54,8 @@ if(isset($_POST['submit'])){
       $where .= " && capaciteEnfant >= " . $nbChild ;
       $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
 
-       $query = "SELECT * FROM chambre
-       LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-       LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-       && nom_categorie_chambre.langueId = '$lang'
-       LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
-       LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
-       WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
-       $rooms = $pdo->query($query);
+      // Récupérer les chambres dispo
+       $rooms = getRooms($pdo, $lang, $where);
 
        if ($rooms->rowCount() == 0) {
          $messageCheck = "Désolé, il n'y a pas de disponibilité pour cette date";
@@ -86,20 +80,13 @@ if(isset($_POST['submit'])){
     $toDate = $toDate->format('Y-m-d');
     var_dump($roomType);
     if ($roomType != 0) {// si on choisit une catégorie de chambre dans le formulaire
-      //On affiche les autres chambres dispo
+      //On affiche les autres chambres dispo quand on clique sur le boutton afficher d'autres chambres...
       $where = "chambre.categorieChambreId != " .$roomType;
       $where .= " && capaciteAdulte >= " .$nbPerson;
       $where .= " && capaciteEnfant >= " . $nbChild ;
       $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
 
-       $query = "SELECT * FROM chambre
-       LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-       LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-       && nom_categorie_chambre.langueId = '$lang'
-       LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
-       LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
-       WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
-       $otherRooms = $pdo->query($query);
+       $otherRooms = getRooms($pdo, $lang, $where);
     }
     else {
       $messageOtherRooms = "Désolé, il n'y a pas d'autres chambres disponible dans ces dates, veuillez choisir une autre date";
