@@ -41,6 +41,7 @@ header{
 
     }
     div{
+      margin-right: 25rem;
       i{
         font-size: 2rem;
         color: $colorOr;
@@ -49,14 +50,6 @@ header{
         @include h3;
         margin-top: .5rem;
       }
-    }
-
-    .connexion{
-      height: 1.2rem;
-      padding: .5rem 1rem;
-      font-weight: bold;
-      font-family: $fontRaelway;
-      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
     }
   }
 
@@ -85,6 +78,20 @@ header{
           z-index: 0;
           &:hover{
             color: #BCA474;
+          }
+        }
+        /* Boutton connexion */
+        .connexion{
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          font-weight: bold;
+          font-family: $fontRaelway;
+          @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+          color: white;
+          transition: none;
+          &:hover{
+            color: white;
           }
         }
       }
@@ -186,6 +193,9 @@ footer{
         padding: .4rem .9rem;
         font-size: 1rem;
       }
+      div{
+        margin-right: 15rem;
+      }
     }
     nav{
       text-align: right;
@@ -211,80 +221,117 @@ footer{
 
 /** STYLE SMARTPHONE **/
 @media(max-width: 840px){
-  .profil{
-    display: none;
+  header{
+    div{
+      p{
+        margin-left: -3rem;
+      }
+      div{
+        margin-right: 5rem;
+      }
+      .profil{
+        display: none;
+      }
+    }
+    nav{
+      input:checked {
+        + label > span {
+          transform: rotate(45deg);
+          &::before {
+            top: 0;
+            transform: rotate(0deg);
+          }
+          &::after {
+            top: 0;
+            transform: rotate(90deg);
+          }
+        }
+        ~ ul {
+          right: 0 !important;
+        }
+      }
+
+      label {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+        > span, ::before, ::after{
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: #616161;
+          transition-duration: .25s;
+        }
+        > span::before {
+          content: '';
+          top: -8px;
+        }
+        > span::after {
+          content: '';
+          top: 8px;
+        }
+      }
+      /* Bloc menu burger */
+      ul{
+        opacity: 0.95;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 15.5rem;
+        height: 50%;
+        margin: 0;
+        padding: 5rem 0;
+        list-style: none;
+        background-color: #ECEFF1;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+        li{
+          a{
+            display: block;
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition-duration: .25s;
+
+          }
+          .connexion{
+            position: static;
+            background-color: inherit;
+            border: none;
+            color: inherit;
+            font-size: 1rem;
+            text-transform: uppercase;
+            -webkit-transition: .5s;
+            &:hover{ /* Pour supprimer l'animation qui a été sur le button connexion */
+              background: inherit;
+              color: $colorOr;
+
+            }
+          }
+        }
+      }
+    }
   }
-  nav{
-    input:checked {
-      + label > span {
-        transform: rotate(45deg);
-        &::before {
-          top: 0;
-          transform: rotate(0deg);
-        }
-        &::after {
-          top: 0;
-          transform: rotate(90deg);
-        }
-      }
-      ~ ul {
-        right: 0 !important;
-      }
+
+  footer{
+    font-size: .8rem;
+    > ul{
+      margin-right: 2rem;
+      margin-left: 1rem;
     }
-
-    label {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      width: 26px;
-      height: 26px;
-      cursor: pointer;
-      z-index: 1;
-      > span, ::before, ::after{
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background-color: #616161;
-        transition-duration: .25s;
-      }
-      > span::before {
-        content: '';
-        top: -8px;
-      }
-      > span::after {
-        content: '';
-        top: 8px;
-      }
-    }
-
-    ul{
-      opacity: 0.95;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 15.5rem;
-      height: 50%;
-      margin: 0;
-      padding: 5rem 0;
-      list-style: none;
-      background-color: #ECEFF1;
-      box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
-      transition-duration: .25s;
-      li a{
-        display: block;
-        padding: 12px 24px;
-        color: #333;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition-duration: .25s;
-
+    div{
+      width: 50%;
+      ul:last-child{
+        display: none;
       }
     }
   }
