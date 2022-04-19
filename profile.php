@@ -34,8 +34,8 @@ else {
       $messageSucces = "Votre réservation a bien été annuler";
     }
     // Afficher les réservation d'un client donné
-    //$dateNow = date('Y-m-d');
-    $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
+
+    // $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
 
     // Vérifier la disponibilité quand on veut modifier une réservation
     if (isset($_POST['verify'])) {
@@ -68,12 +68,6 @@ else {
     // Appel de la fonction modifier reservation dans la classe Reservation
     $updateResa = $class_reservation->updateResa($pdo, $idReservation);
 }
-
-// if (isset($_POST['verify']) && $_POST['verify'] == 1) {
-//   echo json_encode([ 'dateArriver' => $fromDate, 'dateDepart' => $toDate, 'price' => $roomsCheck['tarifCategorieChambre']*$nbDay,'idReservation' => $idReservation,'idChambre' => $roomsCheck['idChambre']]);
-//   exit(); // Arrêter l'execution de la scripte
-//
-// }
 
 
 /////////////////////////////////
@@ -112,8 +106,18 @@ if (isset($_POST['comment'])) {
       }
     }
 }
+$dateNow = date('Y-m-d');
 // Appel de la fonction récupérer les reservations dans la classe Reservation
 $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
+//print_r($reservationsClient[1]['dateArriver']);
+// $reservationsClient['dateArriver'];
+
+$afficher = 0;
+for ($i=0; $i < count($reservationsClient) ; $i++) {
+  if ($dateNow < $reservationsClient[$i]['dateArriver']) {
+    $afficher = 1;
+  }
+}
 
   echo $twig->render('profile.html.twig',
         array('css' => $css,
@@ -134,6 +138,7 @@ $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
               'dateComment' => @$dateComment,
               'errorMessage' => @$errorMessage,
               'updateResa' => @$updateResa,
+              'dateNow' => @$dateNow,
               //Pour la traduction
               'nav1' => @$traductions[$lang]["nav1"],
               'nav2' => @$traductions[$lang]["nav2"],

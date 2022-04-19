@@ -15,11 +15,13 @@ function cacherFormCheck() {
 window.addEventListener("scroll", () => {
     if (clicked)
       return;
-    if (window.scrollY > 200) { // Si on scroll plus de 200px
-      formCheck.style.display = "none";
-    }
-    else {
-      formCheck.style.display = "block";
+    if (window.innerWidth > 1024){
+      if (window.scrollY > 200) { // Si on scroll plus de 200px
+        formCheck.style.display = "none";
+      }
+      else {
+        formCheck.style.display = "block";
+      }
     }
 });
 

@@ -23,7 +23,8 @@
   if (isset($_GET['message'])) {// message d'erreur  du formulaire de vérification de disponibilité
       $errorCheck =  "{$_GET['message']}";
   }
-  $idImages = ["standardRoom", "familyRoom", "luxuryRoom", "suite"];
+  // $where = "idCategorieChambre = 1 && idCategorieChambre = 2 && idCategorieChambre = 3 && idCategorieChambre = 4";
+  $getRooms = getRooms($pdo, $lang, 1);
   echo $twig->render('index.html.twig',
     	  array('css' => $css,
               'script' => $script,
@@ -34,6 +35,7 @@
               'getTextTrad' => $getTextTrad,
               'date' => $date,
               'errorCheck' => @$errorCheck,
+              'getRooms' => $getRooms,
               //Pour la traduction
               'nav1' => @$traductions[$lang]["nav1"],
               'nav2' => @$traductions[$lang]["nav2"],

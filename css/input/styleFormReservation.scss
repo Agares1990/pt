@@ -1,68 +1,78 @@
 @import"base";
-section{
-  width: 60%;
-  margin: 1rem auto;
-  h2{
-    @include h2;
-    width: 50%;
-    margin: 1rem auto 3rem auto;
-  }
-  article{
-    width: 50%;
+main{
+  margin-top: 11rem;
+  section{
+    width: 60%;
     margin: 1rem auto;
-    h3{
-      margin: 1rem auto;
-      font-size: 1.2rem;
-      font-family:$fontRaelway;
-      font-weight: 600;;
+    h2{
+      @include h2;
+      width: 50%;
+      margin: 1rem auto 3rem auto;
     }
-
-    ul{
+    article{
+      width: 50%;
       margin: 1rem auto;
-      border: 1px solid $colorOr;
-      text-align: center;
-      li{
-        margin: 1rem 1rem .5rem auto;
-        display: inline-block;
-        span{
+      h3{
+        margin: 1rem auto;
+        font-size: 1.2rem;
+        font-family:$fontRaelway;
+        font-weight: 600;;
+      }
+      a{
+        text-decoration: none;
+        color: black;
+        transition: 0.25s;
+        &:hover{
           color: $colorOr;
-          font-weight: bold;
-          margin-left: .5rem;
         }
+      }
+      ul{
+        margin: 1rem auto;
+        border: 1px solid $colorOr;
+        text-align: center;
+        li{
+          margin: 1rem 1rem .5rem auto;
+          display: inline-block;
+          span{
+            color: $colorOr;
+            font-weight: bold;
+            margin-left: .5rem;
+          }
 
+        }
       }
     }
-  }
-  p{// message d'erreur php
-    color: red;
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  form{
-    @include form(2rem 3rem);
-    width: 60%;
-    margin: 0 auto;
-    input, textarea{
-      @include inputForm(90%);
-    }
-    select{
-      @include inputSelectForm(96%);
-      margin-bottom: 10px;
-    }
-    input[type='submit']{
-      text-align: center;
-      @include button(45%, .5rem 0);
-      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
-      //display: inline-block;
-    }
-    // input[type='reset']{
-    //
-    //   @include button(45%, .5rem 0);
-    //   @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
-    //   display: inline-block;
-    // }
-    span{ /* Les message d'erreurs declanché par js */
+    p{// message d'erreur php
       color: red;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    form{
+      @include form(2rem 3rem);
+      width: 60%;
+      margin: 0 auto;
+      input, textarea{
+        @include inputForm(90%);
+      }
+      select{
+        @include inputSelectForm(96%);
+        margin-bottom: 10px;
+      }
+      input[type='submit']{
+        text-align: center;
+        @include button(45%, .5rem 0);
+        @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+        //display: inline-block;
+      }
+      // input[type='reset']{
+      //
+      //   @include button(45%, .5rem 0);
+      //   @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+      //   display: inline-block;
+      // }
+      span{ /* Les message d'erreurs declanché par js */
+        color: red;
+      }
     }
   }
 }

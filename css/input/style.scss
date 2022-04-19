@@ -1,5 +1,6 @@
 @import"base";
 #section1{
+  margin-top: 9rem;
   position: relative;
   h1{ /* titre principale de la page (sur le caroussel) */
     @include h1;/* style général h1 */
@@ -90,19 +91,24 @@
 
 /* Section catégories chambres */
 .theContainer{ /* Les différentes chambres de l'hôtel */
-  clear: both;
+  // clear: both;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
   section{ /* Style du bloc qui contient tous les élément de chaque type de chambres */
-    margin: 3rem 0 4em 3.5rem;
+    //order: 4;
+    margin: 3rem 0 4em 0;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
-    width:20%;
+    width:20.1%;
     border: 1px solid $colorOr;
     // margin-left: ;
-    display: inline-block;
+    //display: inline-block;
     .container {/* Conteneur de l'image et du titre de chaque catégorie de chambre */
       position: relative;
       overflow: hidden;
       /* Les images dess chambres */
-      @include backgroundImageEach((standardRoom, familyRoom, luxuryRoom, suite)){
+      @include backgroundImageEach((standardRoom, standardRoomMer, standardRoomJardin, familyRoom, luxuryRoomGarden, luxuryRoomSea, JuniorSuite, Seniorsuite)){
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -147,6 +153,12 @@
         border-top: 1px solid $colorOr !important;
       }
     }
+  }
+  .forMobile{
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+    display: none;
   }
 }
 
@@ -228,6 +240,140 @@
 
 /** STYLE TABLETTE **/
 
-@media(max-width: 1240px){
+@media(max-width: 1024px){
+  #section1{
+    margin-top: 7rem;
+    h1{ /* titre principale de la page (sur le caroussel) */
+      font-size: 2.5rem;
+      span{ /* 2ème ligne du titre principale */
+        font-size: 2rem,
+      }
+    }
+  }
+  #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
 
+    position: static;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 10;
+    h2{ /* titre du formulaire */
+      @include h3;
+    }
+    form{
+      @include form(1rem 1rem); /* style général du formulaire */
+      input{ /* style général des inputs et des selects */
+        width: 40%;
+        margin-left: 1rem;
+      }
+      select{ /* style spécial pour les selects */
+          width: calc((100% - 1.3rem)/3);
+      }
+      input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
+        @include button(calc((100% - 1rem)/3), .63rem 0);
+        }
+    }
+  }
+  .theContainer{
+    section{ /* Style du bloc qui contient tous les élément de chaque type de chambres */
+      width:30%;
+    }
+  }
+  #restauEvent{ /* Bloc parent */
+    margin: 2em 5% 4em 5%;
+    .restauEvent{ /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
+      #restaurant{/* L'image du Restaurant */
+        margin-right: .5rem;
+      }
+      h2{ // Titre de chaque bloc
+        font-size: 1.3rem;
+        padding: .5rem;
+      }
+      p{ // Description
+        font-size: .9rem;
+        margin-left: .5rem;
+        a{// Lien en savoir plus
+          margin-top: .5rem;
+        }
+      }
+    }
+  }
+}
+
+/** STYLE SMARTPHONE **/
+@media(max-width: 840px){
+  #section1{
+    h1{ /* titre principale de la page (sur le caroussel) */
+      font-size: 2rem;
+      span{ /* 2ème ligne du titre principale */
+        font-size: 1.5rem,
+      }
+    }
+  }
+  #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
+    form{
+      input{ /* style général des inputs et des selects */
+        width: 90%;
+        margin-left: 0;
+      }
+      select{ /* style spécial pour les selects */
+          width: 100%;
+      }
+      input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
+          width: 100%;
+        }
+    }
+  }
+  /* SECTION DESCRIPTION DE L'HOTEL */
+  .descHotel{ /* Conteneur des élémenets de la section description */
+    margin: 4em 5% 0 2%;
+    .hotelImage{ /* l'image de l'hôtel */
+      width: 45%;
+      height: 30vh;
+      margin-right: 1rem;
+    }
+    h2{ /* titre de la section description */
+      @include h3;
+    }
+    p{
+      font-size: .8rem;
+    }
+    ul{
+      li{ /* infos et cordonnées de l'hôtel */
+        margin:0 .5rem 1rem 0;
+        font-size: .8rem;
+      }
+    }
+  }
+  .theContainer{
+    section{ /* Style du bloc qui contient tous les élément de chaque type de chambres */
+      width:45%;
+    }
+    .blocDessous{ /*Bloc qui contient les icones*/
+      ul{
+        li{
+         margin: 0 .5rem 0 0;
+         font-size: .8rem;
+         img{
+           font-size: .8rem;
+         }
+       }
+     }
+    }
+    .forMobile{
+      display: block;
+    }
+  }
+  #restauEvent{ /* Bloc parent */
+
+    .restauEvent{ /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
+
+      h2{ // Titre de chaque bloc
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      p{ // Description
+        font-size: .7rem;
+      }
+    }
+  }
 }

@@ -2,18 +2,17 @@
 {% block contenu %}
 <main>
   <section>
-    <h2>Remplir le formulaire de réservation</h2>
+    <h2>{{fillForm}}</h2>
 
     <article>
-      <h3>catégorie de chambre choisie</h3>
-      <span>Votre séjour:</span>
-      <span>Modifier</span>
+      <!-- <h3>catégorie de chambre choisie</h3> -->
+      <span>{{yrStay}}:</span>
+      <span> <a href="formCheckInPage.php?lang={{lang}}">{{modifier}}</a> </span>
       <ul>
-        <li>Arrivé le: <span>{{fromDate}}</span></li>
-        <li>Déparet le: <span>{{toDate}}</span></li>
-        <li>Totale Nuités: <span>{{nbDay}}</span></li>
-        <!-- <li>Totale Nuités: <span>{{nbDay}}</span></li> -->
-        <li>Totale à payer: <span>{{totalToPay}}</span></li>
+        <li>{{dateA}}: <span>{{fromDate}}</span></li>
+        <li>{{dateD}}: <span>{{toDate}}</span></li>
+        <li>{{ttNight}}: <span>{{nbDay}}</span></li>
+        <li>{{ttPay}}: <span>{{totalToPay}}</span></li>
       </ul>
     </article>
     <p>{{fieldError}}</p>
@@ -30,19 +29,19 @@
          <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
 
 
-         <input type="text" name="nom" id="nom" placeholder="Votre nom:" value="{{nom}}">
+         <input type="text" name="nom" id="nom" placeholder="{{yrLstName}}:" value="{{nom}}">
          <span id="errorNom"></span>
 
-         <input type="text" name="prenom" id="prenom" placeholder="Votre prénom:" value="{{prenom}}">
+         <input type="text" name="prenom" id="prenom" placeholder="{{yrFstName}}:" value="{{prenom}}">
          <span id="errorPrenom"></span>
 
-         <input type="text" name="email" id="email" placeholder="Votre email" maxlength="100" value="{{email}}">
+         <input type="text" name="email" id="email" placeholder="{{yrEmail}}" maxlength="100" value="{{email}}">
          <span id="errorMail"></span>
 
-         <input type="password" name="mdp" id="mdp" placeholder="Votre mot de passe:">
+         <input type="password" name="mdp" id="mdp" placeholder="{{yrPwd}}:">
          <span id="errorPass"></span>
 
-         <input type="tel" name="tel" id="tel" placeholder="Votre numéro de téléphone" value="{{tel}}">
+         <input type="tel" name="tel" id="tel" placeholder="{{yrNumber}}" value="{{tel}}">
          <span id="errorTel"></span>
 
          <!-- <input type="text" name="pays" id="pays" placeholder="Votre pays:"> -->
@@ -277,18 +276,12 @@
             <option value="Zambie">Zambie </option>
             <option value="Zimbabwe">Zimbabwe </option>
         </select>
-         <span id="errorPays"></span>
+        <span id="errorPays"></span>
 
-          <textarea name="message" id="message" placeholder="Requête spéciale" rows="8" cols="40"></textarea>
-          <span id="errorMessage"></span>
+        <textarea name="message" id="message" placeholder="{{specReq}}" rows="8" cols="40"></textarea>
+        <span id="errorMessage"></span>
 
-         <!-- <p>Souhaitez-vous réserver un petit-déjouner ?  (+15€)</p>
-         <label for="breakfast">Oui</label>
-         <input type="radio" name="breakfast" value="Oui">
-         <label for="breakfast">Non</label>
-         <input type="radio" name="breakfast" value="Non"> -->
-
-        <input id="submit" type="submit" name="submit" class="button" value="Réserver">
+        <input id="submit" type="submit" name="submit" class="button" value="{{resa}}">
 
     </form>
   </section>

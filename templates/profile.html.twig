@@ -1,125 +1,131 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
-  <button id="btnPwd" type="button" name="button"> <a href="editPasswordClient.php?lang={{lang}}">{{updatePwd}}</a> </button>
-  <h1>{{bienvenue}} <span>{{client.prenom}}<span></h1>
-  <p id="updateResa">{{updateResa}}</p>
-  <table>
-    <thead>
-        <tr>
-            <th colspan="7">{{vosReservation}}</th>
-        </tr>
-        <tr>
-            <th>{{chambre}}</th>
-            <th>{{dateA}}</th>
-            <th>{{dateD}}</th>
-            <th>{{nbPersonPlaceholder}}</th>
-            <th>{{nbChildPlaceholder}}</th>
-            <th>{{updateReservation}}</th>
-            <th>{{cancelReservation}}</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for reservation in reservations %}
+  <main>
+    <button id="btnPwd" type="button" name="button"> <a href="editPasswordClient.php?lang={{lang}}">{{updatePwd}}</a> </button>
+    <h1>{{bienvenue}} <span>{{client.prenom}}<span></h1>
+    <p id="updateResa">{{updateResa}}</p>
+    <table>
+      <thead>
+          <tr>
+              <th colspan="7">{{vosReservation}}</th>
+          </tr>
+          <tr>
+              <th>{{chambre}}</th>
+              <th>{{dateA}}</th>
+              <th>{{dateD}}</th>
+              <th>{{nbPersonPlaceholder}}</th>
+              <th>{{nbChildPlaceholder}}</th>
+              <th>{{updateReservation}}</th>
+              <th>{{cancelReservation}}</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for reservation in reservations %}
 
-            <tr>
-                <td>{{reservation.nomCategorie}}</td>
-                <td>{{reservation.dateArriver}}</td>
-                <td>{{reservation.dateDepart}}</td>
-                <td>{{reservation.nbPerson}}</td>
-                <td>{{reservation.nbChild}}</td>
-                <td>
-                  <form class="" action="profile.php?lang={{lang}}#sectCheckIn" method="post">
-                    <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
-                    <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
-                    <input type="hidden" name="chambreId" value="{{reservation.chambreId}}">
-                    <input type="hidden" name="modification" value="1">
-                    <input type="submit" id="update" value="{{updateReservation}}">
-                  </form>
-                </td>
-                <td>
-                  <form class="" action="profile.php?lang={{lang}}" method="post">
-                    <input type="submit" name="delete" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
-                    <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
-                    <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
-                    <input type="hidden" name="delete" value="1">
-                  </form>
-            </tr>
+              <tr>
+                  <td>{{reservation.nomCategorie}}</td>
+                  <td>{{reservation.dateArriver}}</td>
+                  <td>{{reservation.dateDepart}}</td>
+                  <td>{{reservation.nbPerson}}</td>
+                  <td>{{reservation.nbChild}}</td>
+                  <td>
+                    {% if reservation.dateArriver >  dateNow %}
+                    <form class="" action="profile.php?lang={{lang}}#sectCheckIn" method="post">
+                      <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
+                      <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                      <input type="hidden" name="chambreId" value="{{reservation.chambreId}}">
+                      <input type="hidden" name="modification" value="1">
+                      <input type="submit" id="update" value="{{updateReservation}}">
+                    </form>
+                    {% endif %}
+                  </td>
+                  <td>
+                    {% if reservation.dateArriver >  dateNow %}
+                    <form class="" action="profile.php?lang={{lang}}" method="post">
+                      <input type="submit" name="delete" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                      <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
+                      <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
+                      <input type="hidden" name="delete" value="1">
+                    </form>
+                    {% endif %}
+              </tr>
 
-        {% endfor %}
-    </tbody>
-</table>
-<h2>{{messageSucces}}</h2>
+          {% endfor %}
+      </tbody>
+  </table>
+  <h2>{{messageSucces}}</h2>
 
-<!-- Formulaire de check-in -->
-{% if modification == 1 %}
+  <!-- Formulaire de check-in -->
+  {% if modification == 1 %}
 
-<!-- message d'erreur avec js -->
-<p id="errorDate"></p>
-<!-- message d'erreur avec js -->
-<p>{{errorMessage}}</p>
-<section id="sectCheckIn">
-  <article id="checkIn">
+  <!-- message d'erreur avec js -->
+  <p id="errorDate"></p>
+  <!-- message d'erreur avec js -->
+  <p>{{errorMessage}}</p>
+  <section id="sectCheckIn">
+    <article id="checkIn">
 
-      <!-- formulaire de recherche de chambre dispo -->
-      <h2>{{updateYour}} <span>reservation</span></h2>
-      <h3></h3>
-    <!-- <form id="formChek" action="profile.php" method="POST"> -->
-    <form id="formChek" action="" method="post">
-        <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
-        <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
-        <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
-        <input type="hidden" id="idReservation" name="idReservation" value="{{idReservation}}">
-        <input type="hidden" id="idChambre" name="idChambre" value="{{roomsCheck.idChambre}}">
-        <input type="hidden" id="verify" name="verify" value="1">
-        <button id="verifier" value="">{{btnCheck}}</button>
+        <!-- formulaire de recherche de chambre dispo -->
+        <h2>{{updateYour}} <span>reservation</span></h2>
+        <h3></h3>
+      <!-- <form id="formChek" action="profile.php" method="POST"> -->
+      <form id="formChek" action="" method="post">
+          <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
+          <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
+          <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{idCategorieChambre}}">
+          <input type="hidden" id="idReservation" name="idReservation" value="{{idReservation}}">
+          <input type="hidden" id="idChambre" name="idChambre" value="{{roomsCheck.idChambre}}">
+          <input type="hidden" id="verify" name="verify" value="1">
+          <button id="verifier" value="">{{btnCheck}}</button>
 
-    </form>
-  </article>
-</section>
-{% endif %}
-<section id="room">
-        <article>
-            <table>
-              <thead>
-                  <tr>
-                      <th colspan="5">{{confirmUpdate}}</th>
-                  </tr>
-                  <tr>
-                      <th>{{dateA}}</th>
-                      <th>{{dateD}}</th>
-                      <th>{{ttPay}}</th>
-                      <th>{{updateYour}} reservation</th>
-                  </tr>
-              </thead>
-              <tbody id="tabBody">
-              </tbody>
-          </table>
+      </form>
+    </article>
+  </section>
+  {% endif %}
+  <section id="room">
+          <article>
+              <table>
+                <thead>
+                    <tr>
+                        <th colspan="5">{{confirmUpdate}}</th>
+                    </tr>
+                    <tr>
+                        <th>{{dateA}}</th>
+                        <th>{{dateD}}</th>
+                        <th>{{ttPay}}</th>
+                        <th>{{updateYour}} reservation</th>
+                    </tr>
+                </thead>
+                <tbody id="tabBody">
+                </tbody>
+            </table>
 
-        </article>
-        <p>{{message}}</p>
+          </article>
+          <p>{{message}}</p>
 
-</section>
-<section>
-  <h2>{{addComment}}</h2>
-  <form id="comments">
-         <!-- <div id="success">
-           <span id="successMessage"></span>
-           <i id="closebtn">x</i>
-         </div> -->
-         <input type="hidden" name="dateComment" value="{{dateComment}}">
-         <input type="text" name="title" id="title" placeholder="{{title}}">
-         <span id="errorTitle"></span>
+  </section>
+  <section>
+    <h2>{{addComment}}</h2>
+    <form id="comments">
+           <!-- <div id="success">
+             <span id="successMessage"></span>
+             <i id="closebtn">x</i>
+           </div> -->
+           <input type="hidden" name="dateComment" value="{{dateComment}}">
+           <input type="text" name="title" id="title" placeholder="{{title}}">
+           <span id="errorTitle"></span>
 
-         <input type="number" name="note" id="note" placeholder="Note" min="1" max="5">
-         <span id="errorNote"></span>
+           <input type="number" name="note" id="note" placeholder="Note" min="1" max="5">
+           <span id="errorNote"></span>
 
-         <textarea name="comment" id="comment" placeholder="{{commentMessage}}" rows="8" cols="40"></textarea>
-         <span id="errorComment"></span>
+           <textarea name="comment" id="comment" placeholder="{{commentMessage}}" rows="8" cols="40"></textarea>
+           <span id="errorComment"></span>
 
-         <button id="publish">{{addComment}}</button>
+           <button id="publish">{{addComment}}</button>
 
-   </form>
+     </form>
 
-</section>
-<!-- <p>{{messageComment}}</p> -->
+  </section>
+  <!-- <p>{{messageComment}}</p> -->
+  </main>
 {% endblock %}

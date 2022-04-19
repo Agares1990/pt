@@ -54,7 +54,7 @@
           <article>
             <img class="imageChambre" src="{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
             <article class="desc">
-              <form class="" action="formReservation.php" method="post">
+              <form class="" action="formReservation.php?lang={{lang}}" method="post">
 
                 <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
                 <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
@@ -86,7 +86,7 @@
     {% endfor %}
 
 </section>
-  <form class="" action="formCheckInPage.php" method="post">
+  <form class="" action="formCheckInPage.php?lang={{lang}}" method="post">
     <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
     <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
     <input type="hidden" name="nbDay" value="{{nbDay}}">
@@ -108,7 +108,7 @@
         <article>
           <img class="imageChambre" src="{{otherRoom.image1}}" alt="{{'image ' ~ otherRoom.nomCategorie}}">
           <article class="desc">
-            <form class="" action="formReservation.php" method="post">
+            <form class="" action="formReservation.php?lang={{lang}}" method="post">
 
               <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
               <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">

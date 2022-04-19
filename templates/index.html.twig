@@ -35,12 +35,13 @@
 
     <!-- Les différentes chambres de l'hôtel -->
     <section class="theContainer">
+        {% for getRoom in getRooms %}
         <section>
           <article class="container">
-            <div class="img" id="standardRoom"></div>
+            <div class="img" id="{{getRoom.idImage}}"></div>
             <div class="overlay border-or">
               <h4 class="text">
-                Chambre Standard
+                {{getRoom.nomCategorie}}
               </h4>
             </div>
           </article>
@@ -69,115 +70,9 @@
                 </li>
             </ul>
           </article>
+          <h4 class="forMobile">{{getRoom.nomCategorie}}</h4>
         </section>
-        <section>
-          <article class="container">
-            <div class="img" id="familyRoom"></div>
-            <div class="overlay border border-or">
-              <h4 class="text">
-                Chambre Familiale
-              </h4>
-            </div>
-          </article>
-          <article class="blocDessous">
-            <ul>
-                <li>
-                    <img src="images/icones/bed.png" alt="icone Lit">
-                    <img src="images/icones/bed.png" alt="icone Lit">Bed
-                </li>
-                <li>
-                    <img src="images/icones/air-conditioner.png" alt="icone Climatisation">
-                    AC
-                </li>
-                <li>
-                    <img src="images/icones/tv.png" alt="Television">TV
-                </li>
-              </ul>
-              <ul>
-                <li>
-                    <img src="images/icones/gym.png" alt="Gym">GYM
-                </li>
-                <li>
-                    <img src="images/icones/wifi.png" alt="Wifi">Wi-fi
-                </li>
-                <li>
-                    <img src="images/icones/parking.png" alt="Parking">Parking
-                </li>
-            </ul>
-          </article>
-        </section>
-
-        <section>
-          <article class="container">
-            <div class="img" id="luxuryRoom"></div>
-            <div class="overlay border border-or">
-              <h4 class="text">
-                Chambre de Luxe
-              </h4>
-            </div>
-          </article>
-          <article class="blocDessous">
-            <ul>
-                <li>
-                    <img src="images/icones/bed.png" alt="icone Lit">Bed
-                </li>
-                <li>
-                    <img src="images/icones/air-conditioner.png" alt="icone Climatisation">
-                    AC
-                </li>
-                <li>
-                    <img src="images/icones/tv.png" alt="Television">TV
-                </li>
-              </ul>
-              <ul>
-                <li>
-                    <img src="images/icones/gym.png" alt="Gym">GYM
-                </li>
-                <li>
-                    <img src="images/icones/wifi.png" alt="Wifi">Wi-fi
-                </li>
-                <li>
-                    <img src="images/icones/parking.png" alt="Parking">Parking
-                </li>
-            </ul>
-          </article>
-        </section>
-        <section>
-          <article class="container">
-            <div class="img" id="suite"></div>
-            <div class="overlay border border-or">
-              <h4 class="text">
-                Suite
-              </h4>
-            </div>
-          </article>
-          <article class="blocDessous">
-            <ul>
-                <li>
-                    <img src="images/icones/bed.png" alt="icone Lit">Bed
-                </li>
-                <li>
-                    <img src="images/icones/air-conditioner.png" alt="icone Climatisation">
-                    AC
-                </li>
-                <li>
-                    <img src="images/icones/tv.png" alt="Television">TV
-                </li>
-              </ul>
-              <ul>
-                <li>
-                    <img src="images/icones/gym.png" alt="Gym">GYM
-                </li>
-                <li>
-                    <img src="images/icones/wifi.png" alt="Wifi">Wi-fi
-                </li>
-                <li>
-                    <img src="images/icones/parking.png" alt="Parking">Parking
-                </li>
-            </ul>
-          </article>
-        </section>
-
+        {% endfor %}
 
     </section>
 

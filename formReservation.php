@@ -98,6 +98,20 @@ echo $twig->render('formReservation.html.twig',
             'politic' => @$traductions[$lang]["politic"],
             'condition' => @$traductions[$lang]["condition"],
             'adress' => @$traductions[$lang]["adress"],
+            'dateA' => @$traductions[$lang]["dateA"],
+            'dateD' => @$traductions[$lang]["dateD"],
+            'ttPay' => @$traductions[$lang]["ttPay"],
+            'ttNight' => @$traductions[$lang]["ttNight"],
+            'modifier' => @$traductions[$lang]["modifier"],
+            'yrStay' => @$traductions[$lang]["yrStay"],
+            'fillForm' => @$traductions[$lang]["fillForm"],
+            "yrFstName" => @$traductions[$lang]["yrFstName"],
+            "yrLstName" => @$traductions[$lang]["yrLstName"],
+            "yrEmail" => @$traductions[$lang]["yrEmail"],
+            "yrPwd" => @$traductions[$lang]["yrPwd"],
+            "yrNumber" => @$traductions[$lang]["yrNumber"],
+            "specReq" => @$traductions[$lang]["specReq"],
+            "resa" => @$traductions[$lang]["resa"]
   				));
 
 ?>
