@@ -108,7 +108,7 @@
       position: relative;
       overflow: hidden;
       /* Les images dess chambres */
-      @include backgroundImageEach((standardRoom, standardRoomMer, standardRoomJardin, familyRoom, luxuryRoomGarden, luxuryRoomSea, JuniorSuite, Seniorsuite)){
+      @include backgroundImageEach((standardRoom, familyRoom, luxuryRoomGarden, luxuryRoomSea, JuniorSuite, Seniorsuite)){
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -226,6 +226,10 @@
     h2{ // Titre de chaque bloc
       @include h2;
       padding: 1rem;
+      text-transform: lowercase;
+      &::first-letter{
+        text-transform: uppercase;
+      }
     }
     p{ // Description
       margin-left: 1rem;

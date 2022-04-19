@@ -2,7 +2,7 @@
 
 #checkIn{
   @include form(1rem 2rem);
-  width: 55%;
+  width: 65%;
   margin: 2rem auto;
   //z-index: 10;
   h2{
@@ -16,10 +16,13 @@
   form{
 
     input{
-      @include inputForm(calc(90%/2));
+      @include inputForm(30%);
+      margin-left: 6rem;
+
     }
     select{
-        @include inputSelectForm(calc((100% - 1.3rem)/3));
+        @include inputSelectForm(30%);
+        margin-left: 1rem;
         text-align: center;
         option:hover{
           background-color: #BCA474;
@@ -36,5 +39,28 @@
     color: red;
     text-align: center;
     margin-bottom: 1rem;
+  }
+}
+
+@media(max-width: 1024px){
+  #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
+    width: 80%;
+    h2{ /* titre du formulaire */
+      @include h3;
+    }
+    form{
+      @include form(1rem 1rem); /* style général du formulaire */
+      input{ /* style général des inputs et des selects */
+        width: 40%;
+        margin-left: 1rem;
+      }
+      select{ /* style spécial pour les selects */
+          width: calc((100% - 1.3rem)/3);
+          margin-left: 0;
+      }
+      input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
+        @include button(calc((100% - 1rem)/3), .63rem 0);
+        }
+    }
   }
 }

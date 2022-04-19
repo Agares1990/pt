@@ -7,6 +7,7 @@ $css = "styleManageRoom";
 $script = "manageRoom";
 $title = "Gérer les chambres";
 $pdo = getPDO();
+$lang = 'fr';
 session_start();
 @$prenomUser = $_SESSION["prenom"];
 if (!isset($_SESSION['prenom'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté

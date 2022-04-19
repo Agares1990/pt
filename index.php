@@ -58,6 +58,7 @@
               'politic' => @$traductions[$lang]["politic"],
               'condition' => @$traductions[$lang]["condition"],
               'adress' => @$traductions[$lang]["adress"],
+              'eventRoom' => @$traductions[$lang]["eventRoom"]
     				));
 
 ?>

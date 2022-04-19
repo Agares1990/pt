@@ -1,5 +1,6 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
+  <main>
     <section>
       <!-- Formulaire de check-in -->
       {{include("checkIn.html.twig")}}
@@ -23,5 +24,6 @@
       {% endfor %}
 
     </section>
+  </main>
 
 {% endblock %}

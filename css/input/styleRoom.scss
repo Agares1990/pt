@@ -1,65 +1,90 @@
 @import"base";
 @import"formCheckIn";
 
-
-/* La section chambres de l'hôtel */
-#rooms{
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  article{/* Bloc pour chaque chambre */
-    flex: 1 1 40%;
-    margin: 2rem;
-    border: 1px solid $colorOr;
-    // width: calc((100% / 2) - 5rem);
-    height: 100%;
-    div, h2, p, ul, button, h4{
-      margin-bottom: .5rem;
-    }
-    h2, p, ul, button, h4{
-      margin-right: 2rem;
-      margin-left: 2rem;
-    }
-    /* Les images de chaque chambre */
-    #standardRoom{
-      @include backgroundImage(url("../../images/standard/room1.jpg"), 100%, 45vh)
-    }
-    #standardRoomMer{
-      @include backgroundImage(url("../../images/standard/roomSea.jpeg"), 100%, 45vh)
-    }
-    #standardRoomJardin{
-      @include backgroundImage(url("../../images/standard/room3.jpg"), 100%, 45vh)
-    }
-    #familyRoom{
-      @include backgroundImage(url("../../images/familyRoom/familyRoom1.jpg"), 100%, 45vh)
-    }
-    #luxuryRoomGarden{
-      @include backgroundImage(url("../../images/luxuryRoom/luxuryGarden.jpg"), 100%, 45vh)
-    }
-    #luxuryRoomSea{
-      @include backgroundImage(url("../../images/luxuryRoom/luxurySea.jpg"), 100%, 45vh)
-    }
-    #JuniorSuite{
-      @include backgroundImage(url("../../images/suite/junior1.jpg"), 100%, 45vh)
-    }
-    #Seniorsuite{
-      @include backgroundImage(url("../../images/suite/suite1.jpg"), 100%, 45vh)
-    }
-    h2{ /* titre de chaque bloc */
-      @include h2;
-    }
-    h4{
-      span{
-        color: $colorOr;
-        font-weight: bold;
+main{
+  margin-top: 12rem;
+  /* La section chambres de l'hôtel */
+  #rooms{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    article{/* Bloc pour chaque chambre */
+      flex: 1 1 40%;
+      margin: 2rem;
+      border: 1px solid $colorOr;
+      // width: calc((100% / 2) - 5rem);
+      height: 100%;
+      div, h2, p, ul, button, h4{
+        margin-bottom: .5rem;
       }
-    }
-    input[type="submit"]{
-      @include button(40%, .5rem 0);
-      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
-      margin: 1rem auto;
-    }
+      h2, p, ul, button, h4{
+        margin-right: 2rem;
+        margin-left: 2rem;
+      }
+      /* Les images de chaque chambre */
+      #standardRoom{
+        @include backgroundImage(url("../../images/standard/room1.jpg"), 100%, 45vh)
+      }
+      #standardRoomMer{
+        @include backgroundImage(url("../../images/standard/roomSea.jpeg"), 100%, 45vh)
+      }
+      #standardRoomJardin{
+        @include backgroundImage(url("../../images/standard/room3.jpg"), 100%, 45vh)
+      }
+      #familyRoom{
+        @include backgroundImage(url("../../images/familyRoom/familyRoom1.jpg"), 100%, 45vh)
+      }
+      #luxuryRoomGarden{
+        @include backgroundImage(url("../../images/luxuryRoom/luxuryGarden.jpg"), 100%, 45vh)
+      }
+      #luxuryRoomSea{
+        @include backgroundImage(url("../../images/luxuryRoom/luxurySea.jpg"), 100%, 45vh)
+      }
+      #JuniorSuite{
+        @include backgroundImage(url("../../images/suite/junior1.jpg"), 100%, 45vh)
+      }
+      #Seniorsuite{
+        @include backgroundImage(url("../../images/suite/suite1.jpg"), 100%, 45vh)
+      }
+      h2{ /* titre de chaque bloc */
+        @include h2;
+      }
+      h4{
+        span{
+          color: $colorOr;
+          font-weight: bold;
+        }
+      }
+      input[type="submit"]{
+        @include button(40%, .5rem 0);
+        @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+        margin: 1rem auto;
+      }
 
+    }
   }
 }
+
+/** STYLE TABLETTE **/
+
+// @media(max-width: 1024px){
+//   #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
+//     h2{ /* titre du formulaire */
+//       @include h3;
+//     }
+//     form{
+//       @include form(1rem 1rem); /* style général du formulaire */
+//       input{ /* style général des inputs et des selects */
+//         width: 40%;
+//         margin-left: 1rem;
+//       }
+//       select{ /* style spécial pour les selects */
+//           width: calc((100% - 1.3rem)/3);
+//       }
+//       input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
+//         @include button(calc((100% - 1rem)/3), .63rem 0);
+//         }
+//     }
+//   }
+// }

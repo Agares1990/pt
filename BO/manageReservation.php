@@ -7,6 +7,7 @@ $css = "styleManageReservation";
 $script = "manageReservation";
 $title = "Gérer les réservation";
 $pdo = getPDO();
+// $lang = 'fr';
 session_start();
 $email = $_SESSION['email'];
 @$prenomUser = $_SESSION["prenom"];
@@ -73,15 +74,12 @@ $updateResa = $class_reservation->updateResa($pdo, $idReservation);
 //
 // }
 $reservations = getClientResaBO($pdo);
-$connection = getConnectionText();
 echo $twig->render('manageReservation.html.twig',
   	  array('css' => $css,
             'script' => $script,
-            'connection' => $connection,
             'reservations' => $reservations,
             'modification' => $modification,
             'messageSucces' => @$messageSucces,
-            'connection' => $connection,
             'roomsCheck' => @$roomsCheck,
             'idCategorieChambre' => $idCategorieChambre,
             'idReservation' => $idReservation,
