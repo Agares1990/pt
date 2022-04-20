@@ -15,7 +15,7 @@ $(document).ready(function(){
         $("#ErrorJS").text("Le numéro de la chambre est invalide ou laissé vide").css("color", "red");
         return false;
       }
-      if ( isNaN( idRoomType ) || idRoomType.trim().length == 0)
+      if (idRoomType.trim().length == 0)
       {
         $("#ErrorJS").text("La Catégorie de la chambre est invalide ou laissé vide").css("color", "red");
         return false;

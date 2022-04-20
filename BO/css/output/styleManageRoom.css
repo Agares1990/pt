@@ -209,6 +209,20 @@ main section #addRoom input, main section #updateRoom input {
 }
 
 /* line 62, ../BO/css/input/styleManageRoom.scss */
+main section #addRoom select, main section #updateRoom select {
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #BCA474;
+  font-size: 1rem;
+  color: #495057;
+  width: 38%;
+  border-radius: .25rem;
+  padding: .7rem 1rem;
+  display: block;
+  margin: 10px auto;
+}
+
+/* line 67, ../BO/css/input/styleManageRoom.scss */
 main section #addRoom input[type="submit"], main section #updateRoom input[type="submit"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;

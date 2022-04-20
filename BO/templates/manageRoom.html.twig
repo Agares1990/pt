@@ -11,7 +11,16 @@
 
   <form id="addRoom"action="manageRoom.php" method="post">
     <input type="text" name="numRoom" placeholder="Numéro de la chambre">
-    <input type="text" name="idRoomType" placeholder="Catégorie de la chambre">
+    <select name="idRoomType" id="roomType">
+      <option value="">--Catégorie de Chambre--</option>
+      <option class="option" value="1">Chambre Standard</option>
+      <option class="option" value="2">Chambre Familiale</option>
+      <option class="option" value="6">Chambre Deluxe Vue Jardin</option>
+      <option class="option" value="7">Chambre Deluxe Vue Mer</option>
+      <option class="option" value="8">Suite Junior</option>
+      <option class="option" value="3">Suite Senior</option>
+    </select>
+    <!-- <input type="text" name="idRoomType" placeholder="Catégorie de la chambre"> -->
     <input type="text" name="image" placeholder="Image de la chambre">
     <input type="text" name="nbPerson" placeholder="La capacité d'adulte de la chambre">
     <input type="text" name="nbChild" placeholder="La capacité d'enfant de la chambre">

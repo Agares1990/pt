@@ -94,7 +94,7 @@ if (isset($_POST['update'])) {
 }
 
 // Afficher toutes les chambre
-$getRooms = $pdo->query("SELECT * FROM chambre");
+$getRooms = $pdo->query("SELECT * FROM chambre ORDER BY numChambre");
 
 echo $twig->render('manageRoom.html.twig',
   	  array('css' => $css,

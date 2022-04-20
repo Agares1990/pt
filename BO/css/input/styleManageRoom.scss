@@ -59,6 +59,11 @@ main{
             display: block;
             margin: 10px auto;
           }
+          select{
+            @include inputSelectForm(38%);
+            display: block;
+            margin: 10px auto;
+          }
           input[type="submit"]{
             @include button(30%, .63rem 0);
             @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
