@@ -14,16 +14,26 @@ function getConnectionText($lang){
     $connection = "Deconnexion";
   }elseif (isset($_SESSION['email']) && @$lang == 'en') {
     $connection = "Logout";
+  }elseif (isset($_SESSION['email']) && @$lang == 'it') {
+    $connection = "Disconnettersi";
   }
   elseif (!isset($_SESSION['email']) && @$lang == 'fr') {
     $connection = "Connexion";
   }
+  elseif (!isset($_SESSION['email']) && @$lang == 'it') {
+    $connection = "Login";
+  }
   else{
-    $connection = "Connection";
+    $connection = "Login";
   }
   return $connection;
 }
 
+// Afficher les icones de langue
+function getIconLang($pdo){
+  $getIconLang = $pdo->query("SELECT * FROM langue");
+  return $getIconLang;
+}
 // Récupérer du texte de la bdd selon la langue
 function getTextTrad($pdo, $lang){
   $getTextTrad = $pdo->query("SELECT * FROM texte WHERE langueId = '$lang'")->fetch();
@@ -37,7 +47,7 @@ class Reservations
     $reservations = $pdo->query("SELECT * FROM reservation_chambre
                       LEFT JOIN nom_categorie_chambre ON reservation_chambre.categorieChambreId = nom_categorie_chambre.categorieChambreId
                       LEFT JOIN client ON reservation_chambre.clientId = client.idClient
-                      WHERE email = '$email' && langueId = '$lang'");
+                      WHERE email = '$email' && langueId = '$lang'")->fetchAll();
     return $reservations;
   }
 
@@ -195,7 +205,7 @@ function getRooms($pdo, $lang, $where){
   LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
   LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
   && nom_categorie_chambre.langueId = '$lang'
-  LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
+  LEFT JOIN description_chambre ON chambre.categorieChambreId = description_chambre.categorieChambreId && description_chambre.langueId = '$lang'
   LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang' WHERE $where GROUP BY chambre.categorieChambreId");
   return $getRooms;
 }
