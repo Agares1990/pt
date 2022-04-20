@@ -63,19 +63,20 @@ body #mainMenu ul li a {
   font-weight: 500;
   font-weight: 600;
   color: #0066CC;
+  transition: .25s;
 }
 
-/* line 40, ../BO/css/input/_baseBO.scss */
+/* line 41, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:active {
   color: black;
 }
 
-/* line 43, ../BO/css/input/_baseBO.scss */
+/* line 44, ../BO/css/input/_baseBO.scss */
 body #mainMenu ul li a:hover {
   color: #BCA474;
 }
 
-/* line 50, ../BO/css/input/_baseBO.scss */
+/* line 51, ../BO/css/input/_baseBO.scss */
 body main {
   padding: 2rem 1rem;
   grid-area: 2 / 2 / 7 / 6;

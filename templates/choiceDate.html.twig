@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+{% block contenu %}
+  <main>
+      <section id="formChek">
+        <h2>Réserver une <span>chambre</span></h2>
+        <!-- Formulaire de check-in -->
+        <form action="formCheckInPage.php?lang={{lang}}" method="POST">
+            <div class="">
+              <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
+              <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
+              <input type="hidden" name="nbPerson" value="{{nbPerson}}">
+              <input type="hidden" name="nbChild" value="{{nbChild}}">
+              <input type="hidden" name="roomType" value="{{roomType}}">
+              <input id="submit" type="submit" name="submit" value="{{btnCheck}}">
+            </div>
+        </form>
+      </section>
+  </main>
+{% endblock %}

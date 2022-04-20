@@ -24,6 +24,15 @@ header{
   div{
     display: flex;
     justify-content: space-between;
+    p{
+      margin-top: .5rem;
+      span{
+        img{
+          width: 24px;
+          height: 16px;
+        }
+      }
+    }
     .logo{
       width: 10rem;
       height: 7.3rem;
@@ -174,7 +183,7 @@ footer{
 
 /** STYLE TABLETTE **/
 
-@media(max-width: 1024px){
+@media (hover: none), (max-width: 1024px){
   header{
     div{
       .logo{
@@ -220,17 +229,17 @@ footer{
 }
 
 /** STYLE SMARTPHONE **/
-@media(max-width: 840px){
+@media (hover: none), (max-device-width: 840px){
   header{
     div{
       p{
         margin-left: -3rem;
       }
       div{
-        margin-right: 5rem;
-      }
-      .profil{
-        display: none;
+        margin-right: 3rem;
+        .profil{
+          display: none;
+        }
       }
     }
     nav{

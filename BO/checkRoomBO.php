@@ -54,14 +54,7 @@ if(isset($_POST['submit'])){
       $where .= " && capaciteEnfant >= " . $nbChild ;
       $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
 
-       $query = "SELECT * FROM chambre
-       LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-       LEFT JOIN nom_categorie_chambre ON nom_categorie_chambre.categorieChambreId = categorie_chambre.idCategorieChambre
-       && nom_categorie_chambre.langueId = '$lang'
-       LEFT JOIN description_chambre ON chambre.idChambre = description_chambre.chambreId && description_chambre.langueId = '$lang'
-       LEFT JOIN caracterestique_chambre ON categorie_chambre.idCategorieChambre = caracterestique_chambre.categorieChambreId && caracterestique_chambre.langueId = '$lang'
-       WHERE  $where GROUP BY chambre.categorieChambreId"; // requete pour récupérer les chambres dispo
-       $rooms = $pdo->query($query);
+      $rooms = getRooms($pdo, $lang, $where);
 
        if ($rooms->rowCount() == 0) {
          $messageCheck = "Désolé, il n'y a pas de disponibilité pour cette date";

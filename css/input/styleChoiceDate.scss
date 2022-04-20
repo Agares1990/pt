@@ -1,0 +1,36 @@
+@import"base";
+main{
+  margin-top: 12rem;
+  #formChek{
+    @include form(1rem 2rem);
+    width: 45%;
+    margin: 2rem auto;
+    h2{
+      @include h2;
+      text-align: center;
+      margin-bottom: 2rem;
+      span{
+        color: #BCA474;
+      }
+    }
+    form{
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      div{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        input{
+          @include inputForm(40%);
+          margin-right: 1.5rem;
+        }
+      }
+      input[type="submit"]{
+        @include button(calc((100% - 1rem)/3), .63rem 0);
+        @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+        }
+    }
+  }
+
+}

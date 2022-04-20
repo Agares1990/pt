@@ -37,6 +37,7 @@ body{
          @include h3;
          font-weight: 600;
          color: #0066CC;
+         transition: .25s;
          &:active{
            color: black;
          }

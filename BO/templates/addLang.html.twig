@@ -1,0 +1,12 @@
+{% extends "baseBO.html.twig" %}
+{% block contenu %}
+  <h2>Ajouter une langue</h2>
+  <p>{{sucessAddLang}}</p>
+  <form action="formAddLang" method="post">
+    <input type="text" name="idLang" placeholder="Entrez l'id de la langue">
+    <input type="text" name="nameLang" placeholder="Entrez le nom de la langue">
+    <input type="text" name="iconLang" placeholder="Entrez le chemin de l'image de la langue">
+    <input type="submit" name="addLang" value="Ajouter la langue">
+  </form>
+
+{% endblock %}

@@ -13,6 +13,6 @@ $pdo = getPDO();
     $editPassword = editPassword($pdo, $email, 'user', $oldPassword, $newPassword, $repeatNewPassword);
   }
   if (isset($editPassword)) {
-    header("Location: editPassword.php?message=$editPassword&vardump=$vardump"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire
+    header("Location: editPassword.php?message=$editPassword"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire
   }
 ?>

@@ -1,0 +1,28 @@
+@import"baseBO";
+main{
+    h2{
+      @include h2;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    p{
+      text-align: center;
+    }
+    form{
+      @include form(1rem 2rem);
+      margin: 0 auto ;
+      width: 30%;
+      label, input{
+        display: block;
+      }
+      input{
+        @include inputForm(90%);
+        margin: .3rem 0 1.3rem 0;
+      }
+      input[type="submit"]{
+        @include button(70%, .63rem 0);
+        @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+        margin: 1rem auto;
+      }
+    }
+}

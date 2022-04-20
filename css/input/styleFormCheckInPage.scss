@@ -1,8 +1,11 @@
 @import"base";
 @import"formCheckIn";
-#checkIn ~ p{
+#checkIn{
+  margin-top: 12rem;
+  p{
   text-align: center;
   color: red;
+  }
 }
 section{
   width: 70%;
