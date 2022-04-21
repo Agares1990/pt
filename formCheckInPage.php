@@ -40,10 +40,10 @@ if(isset($_POST['submit'])){
       $errorCheck = "Veuillez entrer une date de départ valide (année-mois-jour)";
     }
     elseif (!$nbPerson) {
-      $errorCheck = "Veuillez choisir le nombre d'adulte";
+      $errorCheck = "Veuillez choisir le nombre d'adulte svp";
     }
     elseif (!$nbChild) {
-      $errorCheck = "Veuillez choisir le nombre d'enfant";
+      $errorCheck = "Veuillez choisir le nombre d'enfant svp";
     }else {
       $where = "1 ";
       if ($roomType != 0) {// si on choisit une catégorie de chambre dans le formulaire
@@ -61,6 +61,12 @@ if(isset($_POST['submit'])){
          $messageCheck = "Désolé, il n'y a pas de disponibilité pour cette date";
        }
      }
+  }
+  if ($_POST['roomType']) {
+    $showBtnOtherRoom = 1;
+  }
+  else {
+    $showBtnOtherRoom = 0;
   }
   if (isset($_POST['otherRoom'])) {
     $fromDate = $_POST["CheckIn"];
@@ -116,6 +122,7 @@ echo $twig->render('formCheckInPage.html.twig',
             'roomType' => @$roomType,
             'checkRoom' =>@$checkRoom,
             'messageOtherRooms' => @$messageOtherRooms,
+            'showBtnOtherRoom' => $showBtnOtherRoom,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

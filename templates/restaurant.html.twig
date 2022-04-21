@@ -7,12 +7,40 @@
       <p>Notre Chef 4 Etoiles, Cindy Gomes a résolument fait d’Epicure le bastion par excellence de la gastronomie française.</p>
       <p>Certains viennent à Nice juste pour goûter sa cuisine: ses macaronis farcis, truffe noire, artichaut et foie gras de canard reflètent tout le génie et la passion de celui qui figure parmi les plus grands.</p>
       <ul>
-        <li> <span>Petit Déjeuner:</span> De 7h00 à 10h00 </li>
-        <li> <span>Déjouner:</span> De 11h30 à 14h00</li>
+        <!-- <li> <span>Petit Déjeuner:</span> De 7h00 à 10h00 </li> -->
+        <li> <span>Déjouner:</span> De 12H00 à 14h00</li>
         <li> <span>Diner</span> De 19h00 à 22h00</li>
       </ul>
     </article>
-    <h3>Formulaire de réservation</h3>
+  </section>
+  <section>
+    <p>{{messageCheck}}</p>
+    <p>{{errorCheck}}</p>
+    <form class="" action="checkDateResaRestaurant.php" method="post">
+      <input type="text" id="fromDate" name="CheckIn" value="Date">
+      <select name="hourResa" id="hourResa">
+        <option value="">--Horraire--</option>
+        <option class="option" value="1">12</option>
+        <option class="option" value="2">12h30</option>
+        <option class="option" value="3">13h00</option>
+        <option class="option" value="4">13h30</option>
+        <option class="option" value="5">19h00</option>
+        <option class="option" value="5">19h30</option>
+        <option class="option" value="5">20h00</option>
+        <option class="option" value="5">20h30</option>
+      </select>
+      <select name="nbPerson" id="nbPerson">
+        <option value="">--Nombre de personnes--</option>
+        <option class="option" value="1">1</option>
+        <option class="option" value="2">2</option>
+        <option class="option" value="3">3</option>
+        <option class="option" value="4">4</option>
+      </select>
+      <input type="submit" name="submit" value="{{btnCheck}}">
+    </form>
+  </section>
+
+    <!-- <h3>Formulaire de réservation</h3>
     <form>
 
          <input type="text" name="nom" id="nom" placeholder="Votre nom:">
@@ -42,5 +70,5 @@
          <input type="submit" name="send" class="button" value="Réserver">
 
     </form>
-  </section>
+  </section> -->
 {% endblock %}

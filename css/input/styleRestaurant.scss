@@ -1,5 +1,7 @@
 @import"base";
-
+body section:first-child{
+  margin-top: 12rem;
+}
 section{
   width: 70%;
   margin: 1rem auto;

@@ -1,0 +1,41 @@
+@import"base";
+
+section{
+  width: 90%;
+  margin: 12rem auto;
+  h2{
+  width: 35%;
+  margin: 4rem auto 2rem auto;
+  @include h2;
+  span{
+    color: $colorOr;
+  }
+  }
+  form{
+    @include form(2rem 3rem);
+    width: 50%;
+    margin: 0 auto 5rem auto;
+    input, textarea{
+      @include inputForm(90%);
+    }
+    #nom, #prenom{
+      width: 40%;
+    }
+    #nom{
+      margin-right: 1rem;
+    }
+    select{
+      @include inputSelectForm(95%);
+      margin-bottom: 10px;
+    }
+    #nom, #person, #date{
+      width: calc((90% - 2.5rem)/2);
+      display: inline-block;
+    }
+    input[type='submit']{
+      margin-top: 3rem;
+      @include button(45%, .7rem 0);
+      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+    }
+  }
+}
