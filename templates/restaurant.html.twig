@@ -16,7 +16,7 @@
   <section>
     <p>{{messageCheck}}</p>
     <p>{{errorCheck}}</p>
-    <form class="" action="checkDateResaRestaurant.php" method="post">
+    <form id="checkAvailability" action="checkDateResaRestaurant.php" method="post">
       <input type="text" id="fromDate" name="CheckIn" value="Date">
       <select name="hourResa" id="hourResa">
         <option value="">--Horraire--</option>
@@ -36,39 +36,21 @@
         <option class="option" value="3">3</option>
         <option class="option" value="4">4</option>
       </select>
+      <input type="hidden" name="check" value="1">
       <input type="submit" name="submit" value="{{btnCheck}}">
     </form>
-  </section>
-
-    <!-- <h3>Formulaire de réservation</h3>
-    <form>
-
-         <input type="text" name="nom" id="nom" placeholder="Votre nom:">
-         <span id="errorNom"></span>
-         <input type="number" name="person" id="person" value="" placeholder="Nombre de personne">
-         <span id="errorPerson"></span>
-
-         <input type="date" name="date" id="date" placeholder="Choisissez une date:">
-         <span id="errorDate"></span>
-         <select name="" id="repas">
-           <option value="">--Choisissez quel repas--</option>
-           <option class="option" value="1">Petir déjeuner</option>
-           <option class="option" value="2">Déjeuner</option>
-           <option class="option" value="3">Diner</option>
-         </select>
-         <span id="errorRepas"></span>
-
-         <input type="text" name="mail" id="mail" placeholder="Votre email" maxlength="100">
-         <span id="errorMail"></span>
-
-         <input type="tel" name="tel" id="tel" placeholder="Votre numéro de téléphone">
-         <span id="errorTel"></span>
-
-         <textarea name="message" id="message" placeholder="Requête spéciale" rows="8" cols="40"></textarea>
-         <span id="errorMessage"></span>
-
-         <input type="submit" name="send" class="button" value="Réserver">
-
-    </form>
-  </section> -->
+    </section>
+    {% if showBtnResaRestaurant == 1 %}
+    <section id="valideResa">
+      <h2>Valider votre réservation</h2>
+      <form action="valideResaRestaurant.php" method="post">
+        <input type="hidden" name="clientId" value="{{clientId}}">
+        <input type="hidden" name="fromDate" value="{{fromDate}}">
+        <input type="hidden" name="hourResa" value="{{hourResa}}">
+        <input type="hidden" name="nbPerson" value="{{nbPerson}}">
+        <input type="hidden" name="idTable" value="{{idTable}}">
+        <input type="submit" name="valideResa" value="valider la réservation">
+      </form>
+    </section>
+    {% endif %}
 {% endblock %}

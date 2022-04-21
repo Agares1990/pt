@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
     $errorCheck = "Veuillez choisir le nombre de personne svp";
   }
 
-  $checkResaRestau = $pdo->query("SELECT * FROM restaurant WHERE capacite >= '$nbPerson' && idTable NOT IN ( SELECT tableId FROM reservation_restaurant WHERE dateReseravation  = '$fromDate' && heureResa = '$hourResa')")->fetch();
+  $checkResaRestau = $pdo->query("SELECT * FROM restaurant WHERE capacite >= '$nbPerson' && idTable NOT IN ( SELECT tableId FROM reservation_restaurant WHERE dateReservation  = '$fromDate' && heureResa = '$hourResa')")->fetch();
   $idTable = $checkResaRestau['idTable'];
   if (isset($errorCheck)) {
     header("Location: restaurant.php?lang=$lang&errorForm=$errorCheck");
@@ -36,6 +36,16 @@ if (isset($_POST['submit'])) {
   }
   else {
     header("Location: formResaRestaurant.php?lang=$lang&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson");
+  }
+
+  //récupérer l'utilisateur actuel s'il est  déjà connecté
+  $client = $pdo->query("SELECT * FROM client WHERE email =  '$email'")->fetch();
+  if ($client) {
+    $clientId = $client['idClient'];
+    header("Location: restaurant.php?lang=$lang&clientId=$clientId&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson#valideResa");
+  }
+  else{
+    $showBtnResaRestaurant = 0;
   }
 }
 

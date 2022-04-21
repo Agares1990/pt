@@ -199,7 +199,7 @@ function editPassword($pdo, $email, $table, $oldPassword, $newPassword, $repeatN
 
   return $sucessUpdateMessage;
 }
-// Fonction pour afficher les chambre
+// Fonction pour récupérer les chambre
 function getRooms($pdo, $lang, $where){
   $getRooms = $pdo->query("SELECT * FROM chambre
   LEFT JOIN categorie_chambre ON chambre.categorieChambreId = categorie_chambre.idCategorieChambre

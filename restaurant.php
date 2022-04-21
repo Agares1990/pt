@@ -11,11 +11,20 @@ $lang = getLang();
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
 
+
 if (isset($_GET['errorForm'])) {
     $errorForm =  "{$_GET['errorForm']}";
 }
 elseif (isset($_GET['messageCheck'])) {
     $messageCheck =  "{$_GET['messageCheck']}";
+}
+elseif (isset($_GET['clientId'])) {
+    $clientId =  "{$_GET['clientId']}";
+    $idTable =  "{$_GET['idTable']}";
+    $fromDate =  "{$_GET['fromDate']}";
+    $hourResa =  "{$_GET['hourResa']}";
+    $nbPerson =  "{$_GET['nbPerson']}";
+    $showBtnResaRestaurant = 1;
 }
 
 
@@ -23,8 +32,15 @@ echo $twig->render('restaurant.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
             'lang' => $lang,
-            'messageCheck' => $messageCheck,
-            'errorCheck' => $errorCheck,
+            'messageCheck' => @$messageCheck,
+            'errorCheck' => @$errorCheck,
+            'clientId' => @$clientId,
+            'idTable' => @$idTable,
+            'fromDate' =>  @$fromDate,
+            'hourResa' =>  @$hourResa,
+            'nbPerson' =>  @$nbPerson,
+            'showBtnResaRestaurant' => @$showBtnResaRestaurant,
+
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

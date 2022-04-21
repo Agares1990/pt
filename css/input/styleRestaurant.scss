@@ -41,7 +41,7 @@ section{
     font-family:$fontRaelway;
     font-weight: 600;;
   }
-    form{
+    #checkAvailability{
       @include form(2rem 3rem);
       width: 60%;
       margin: 0 auto 5rem auto;
@@ -56,10 +56,10 @@ section{
         width: calc((90% - 2.5rem)/2);
         display: inline-block;
       }
-      input[type='submit']{
-        margin-top: 3rem;
-        @include button(45%, .7rem 0);
-        @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
-      }
+    }
+    input[type='submit']{
+      margin-top: 3rem;
+      @include button(45%, .7rem 0);
+      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
     }
 }

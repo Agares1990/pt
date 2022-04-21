@@ -2,8 +2,9 @@
 {% block contenu %}
 
   <section>
+    <p>{{fieldError}}</p>
     <h2>Formulaire de réservation <span>restaurant</span></h2>
-    <form id="formResaRestaurant" action="recapReservationRestaurant.php?lang={{lang}}" method="post">
+    <form id="formResaRestaurant" action="recapResaRestaurant.php?lang={{lang}}" method="post">
 
          <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
          <input type="hidden" id="CheckOut" name="hourResa" value="{{hourResa}}">

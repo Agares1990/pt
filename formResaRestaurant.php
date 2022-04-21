@@ -16,6 +16,25 @@ $hourResa = $_GET['hourResa'];
 $nbPerson = $_GET['nbPerson'];
 $idTable = $_GET['idTable'];
 
+if (isset($_SESSION['erreur'])){// S'il y a des erreurs
+  //on récupère les données de la session qui viennent du traitement de formulaire dans la page recapReservation
+
+  $fromDate = $_SESSION['erreur']["CheckIn"];
+  $hourResa = $_SESSION['erreur']["hourResa"];
+  $nbPerson = $_SESSION['erreur']["nbPerson"];
+  $idTable = $_SESSION['erreur']["idTable"];
+
+  unset($_SESSION['erreur']); // on vide la session
+}
+
+if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à travers de la formulaire de contact en php
+    $fieldError =  "{$_GET['message']}";
+    $nom =  "{$_GET['nom']}";
+    $prenom =  "{$_GET['prenom']}";
+    $email =  "{$_GET['email']}";
+    $tel =  "{$_GET['tel']}";
+    $pays =  "{$_GET['pays']}";
+}
 echo $twig->render('formResaRestaurant.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
@@ -24,6 +43,11 @@ echo $twig->render('formResaRestaurant.html.twig',
             'hourResa' => $hourResa,
             'nbPerson' => $nbPerson,
             'idTable' => $idTable,
+            'fieldError' => $fieldError,
+            'nom' => @$nom,
+            'prenom' => @$prenom,
+            'email' => @$email,
+            'tel' => @$tel,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],
