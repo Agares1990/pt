@@ -112,12 +112,6 @@ $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
 //print_r($reservationsClient[1]['dateArriver']);
 // $reservationsClient['dateArriver'];
 
-$afficher = 0;
-for ($i=0; $i < count($reservationsClient) ; $i++) {
-  if ($dateNow < $reservationsClient[$i]['dateArriver']) {
-    $afficher = 1;
-  }
-}
 
 // Récupérer les réservation restaurant
 $getResaRestaurants = getResaRestaurant($pdo, $email);

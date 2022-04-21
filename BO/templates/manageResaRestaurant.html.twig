@@ -1,0 +1,42 @@
+{% extends "baseBO.html.twig" %}
+{% block contenu %}
+<h2>Gérer les reservation <span>restaurant</span></h2>
+<section>
+  <p>{{deleteResa}}</p>
+  <table>
+    <thead>
+        <tr>
+            <th>Identifiant Client</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>Nombre de personnes</th>
+            <th>Annuler la reservation</th>
+        </tr>
+    </thead>
+    <tbody>
+      {% for getResaRestaurant in getResaRestaurants %}
+
+          <tr>
+              <td>{{getResaRestaurant.idClient}}</td>
+              <td>{{getResaRestaurant.nom}}</td>
+              <td>{{getResaRestaurant.prenom}}</td>
+              <td>{{getResaRestaurant.dateReservation}}</td>
+              <td>{{getResaRestaurant.heureResa}}</td>
+              <td>{{getResaRestaurant.nombrePersonne}} personnes</td>
+              <td>
+                {% if getResaRestaurant.dateReservation >  dateNow %}
+                <form class="" action="manageRestaurantResa.php?lang={{lang}}" method="post">
+                  <input type="submit" name="delete" value="Annuler la résrvation" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                  <input type="hidden" name="idReservation" value="{{getResaRestaurant.idReservationRestaurant}}">
+                  <input type="hidden" name="deleteResaRestaurant" value="1">
+                </form>
+                {% endif %}
+          </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
