@@ -91,7 +91,7 @@ $(document).ready(function(){
   		  const comment = $( "textarea[name = 'comment']" ).val();
   		  const note = $( "input[name = 'note']" ).val();
 
-  			if ( !regex1.test( title) || title.trim().length == 0)
+  			if ( title.trim().length == 0)
   			{
   				$("#errorTitle").text("Le titre est invalide ou laissé vide");
   				return false;

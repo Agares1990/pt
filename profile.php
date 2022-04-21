@@ -33,9 +33,6 @@ else {
       // Afficher un message de success d'annulation réservation
       $messageSucces = "Votre réservation a bien été annuler";
     }
-    // Afficher les réservation d'un client donné
-
-    // $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
 
     // Vérifier la disponibilité quand on veut modifier une réservation
     if (isset($_POST['verify'])) {
@@ -76,13 +73,16 @@ $clientId = $client['idClient'];
 if (isset($_POST['comment'])) {
   //if (!empty($_POST['title']) && !empty($_POST['note']) && !empty($_POST['comment'])) {// si les champnes ne sont pas vides
     // On va chercher les commentaires de l'utilisateur actuel
-    if(!preg_match("/^([a-zA-Z' ]+)$/",$_POST['title']) || empty(trim($_POST['title']))){
-      $fieldError = 'Le titre est invalide';
+    if(empty(trim($_POST['title']))){
+      echo 'Le titre est invalide';
+      exit();
     }
     elseif(is_int($_POST['note']) && $_POST['note'] > 5){
-      $fieldError = 'Veuillez entrer une note comprise entre 1 et 5';
+      echo 'Veuillez entrer une note comprise entre 1 et 5';
+      exit();
     }elseif (empty(trim($_POST['comment']))) {
-      $fieldError = 'Veuillez donner votre avis svp';
+      echo 'Veuillez donner votre avis svp';
+      exit();
     }
     else {
       $req = $pdo->prepare("SELECT * FROM commentaire WHERE clientId = :clientId");
@@ -119,6 +119,18 @@ for ($i=0; $i < count($reservationsClient) ; $i++) {
   }
 }
 
+// Récupérer les réservation restaurant
+$getResaRestaurants = getResaRestaurant($pdo, $email);
+
+//Afficher le tableau de réservation restaurant s'il y a des réservations
+if ($getResaRestaurants) {
+  $showTableResaRestaurant = 1;
+}
+
+// Message d'annulation de réservation restaurant
+if (isset($_GET['messageSucces'])) {
+    $messageSucces =  "{$_GET['messageSucces']}";
+}
   echo $twig->render('profile.html.twig',
         array('css' => $css,
               'script' => $script,
@@ -139,6 +151,8 @@ for ($i=0; $i < count($reservationsClient) ; $i++) {
               'errorMessage' => @$errorMessage,
               'updateResa' => @$updateResa,
               'dateNow' => @$dateNow,
+              'getResaRestaurants' => @$getResaRestaurants,
+              'showTableResaRestaurant' => @$showTableResaRestaurant,
               //Pour la traduction
               'nav1' => @$traductions[$lang]["nav1"],
               'nav2' => @$traductions[$lang]["nav2"],

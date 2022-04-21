@@ -210,4 +210,18 @@ function getRooms($pdo, $lang, $where){
   return $getRooms;
 }
 
+// Récupérer les réservations restaurant
+function getResaRestaurant($pdo, $email){
+  $getResaRestaurant = $pdo->query("SELECT * FROM reservation_restaurant
+                    JOIN client ON reservation_restaurant.clientId = client.idClient
+                    WHERE email = '$email'")->fetchAll();
+  return $getResaRestaurant;
+}
+// Annuler reservation restaurant
+function cancelResaRestaurant($pdo, $email, $idReservationRestaurant){
+  $annulerReservationRestaurant = $pdo->query("DELETE FROM reservation_restaurant
+                  WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_restaurant) AS reserv INNER JOIN client ON reservation_restaurant.clientId = client.idClient
+                  WHERE email = '$email' && idReservationRestaurant = '$idReservationRestaurant')");
+  return $annulerReservationRestaurant;
+}
 ?>

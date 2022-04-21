@@ -53,6 +53,42 @@
           {% endfor %}
       </tbody>
   </table>
+
+  <!-- Afficher le tableau de réservation restaurant s'il y a des réservations -->
+  {% if showTableResaRestaurant == 1 %}
+    <table id="resaRestaurant">
+      <thead>
+        <tr>
+            <th colspan="4">{{vosReservation}} restaurant</th>
+        </tr>
+        <tr>
+            <th>Date</th>
+            <th>Heure</th>
+            <th>Pour</th>
+            <th>{{cancelReservation}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for getResaRestaurant in getResaRestaurants %}
+
+            <tr>
+                <td>{{getResaRestaurant.dateReservation}}</td>
+                <td>{{getResaRestaurant.heureResa}}</td>
+                <td>{{getResaRestaurant.nombrePersonne}} personnes</td>
+                <td>
+                  {% if getResaRestaurant.dateReservation >  dateNow %}
+                  <form class="" action="manageRestaurantResa.php?lang={{lang}}" method="post">
+                    <input type="submit" name="delete" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                    <input type="hidden" name="idReservation" value="{{getResaRestaurant.idReservationRestaurant}}">
+                    <input type="hidden" name="deleteResaRestaurant" value="1">
+                  </form>
+                  {% endif %}
+            </tr>
+
+        {% endfor %}
+    </tbody>
+    </table>
+  {% endif %}
   <h2>{{messageSucces}}</h2>
 
   <!-- Formulaire de check-in -->
