@@ -24,7 +24,7 @@
   position: fixed;
   top: 20vh;
   right: 2rem;
-  width: 25%;
+  width: 20%;
   z-index: 10;
   h2{ /* titre du formulaire */
     margin-top: 1.5rem;
@@ -32,7 +32,7 @@
     background-color: rgba(191, 10, 53, .9);
     border-radius: .5rem .5rem 0 0;
     color: white;
-    padding: 1rem;
+    padding: .5rem;
     cursor: pointer;
     @include h2;
     span{ /* coleur dorée */
@@ -40,7 +40,7 @@
     }
   }
   form{
-    @include form(2rem 3rem); /* style général du formulaire */
+    @include form(1rem 2rem); /* style général du formulaire */
     input, select{ /* style général des inputs et des selects */
       @include inputForm(90%);
     }
