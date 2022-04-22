@@ -24,7 +24,7 @@
   position: fixed;
   top: 20vh;
   right: 2rem;
-  width: 20%;
+  width: 21%;
   z-index: 10;
   h2{ /* titre du formulaire */
     margin-top: 1.5rem;
@@ -51,6 +51,7 @@
     input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
       width: 102%;
       @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763); /* style général des Bouttons */
+      font-size: 1rem;
       }
     span{
       color: red;
@@ -91,7 +92,7 @@
 
 /* Section catégories chambres */
 .theContainer{ /* Les différentes chambres de l'hôtel */
-  // clear: both;
+  clear: both;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -316,7 +317,7 @@
   #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
     form{
       input{ /* style général des inputs et des selects */
-        width: 90%;
+        width: 95%;
         margin-left: 0;
       }
       select{ /* style spécial pour les selects */
