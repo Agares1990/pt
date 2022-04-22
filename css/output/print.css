@@ -1,1 +1,31 @@
-header{display:none}footer{display:none}section{width:100%}section h2{width:50%}section button{display:none}section article{width:80%}
+/* line 1, ../css/input/print.scss */
+header {
+  display: none;
+}
+
+/* line 4, ../css/input/print.scss */
+footer {
+  display: none;
+}
+
+/* line 8, ../css/input/print.scss */
+section {
+  width: 100%;
+}
+
+/* line 10, ../css/input/print.scss */
+section h2 {
+  width: 50%;
+}
+
+/* line 13, ../css/input/print.scss */
+section button {
+  display: none;
+}
+
+/* line 16, ../css/input/print.scss */
+section article {
+  width: 80%;
+}
+
+/*# sourceMappingURL=print.css.map */

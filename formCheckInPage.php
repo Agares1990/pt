@@ -84,7 +84,6 @@ if(isset($_POST['submit'])){
 
     $fromDate = $fromDate->format('Y-m-d');
     $toDate = $toDate->format('Y-m-d');
-    var_dump($roomType);
     if ($roomType != 0) {// si on choisit une catégorie de chambre dans le formulaire
       //On affiche les autres chambres dispo quand on clique sur le boutton afficher d'autres chambres...
       $where = "chambre.categorieChambreId != " .$roomType;

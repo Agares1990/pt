@@ -25,25 +25,25 @@ if(isset($_POST['submit'])){
   $nbDay = $_POST["nbDay"];
   @$dateCancel = date('Y-m-d', strtotime($fromDate. ' - 1 day'));
 
-  $nom = $_POST["nom"];
-  $prenom = $_POST["prenom"];
-  $email = $_POST["email"];
+  $nom = strip_tags($_POST["nom"]);
+  $prenom = strip_tags($_POST["prenom"]);
+  $email = strip_tags($_POST["email"]);
   $mdp = $_POST["mdp"];
-  $tel = $_POST["tel"];
-  @$pays = $_POST["pays"];
-  $message = $_POST["message"];
+  $tel = strip_tags($_POST["tel"]);
+  @$pays = strip_tags($_POST["pays"]);
+  $message = strip_tags($_POST["message"]);
 
 
 
-  // if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($mdp) && !empty($tel) && !empty($pays)) {
+
     $checkMail = $pdo->query("SELECT * FROM client WHERE email = '$email'")->fetch();// Pour vérifier si l'utilisateur existe déjà
     //Le nom ne doit pas etre vide et doit contenir que des alphabet muniscule et majiscule
-    if(!preg_match("/^([a-zA-Z' ]+)$/",$nom) || empty(trim($nom))){
-      $fieldError = 'Le Nom invalide';
+    if(empty(trim($nom))){
+      $fieldError = 'Le Nom invalide ou laissé vide';
     }
     //Le prenom ne doit pas etre vide et doit contenir que des alphabet muniscule et majiscule
-    elseif(!preg_match("/^([a-zA-Z' ]+)$/",$prenom) || empty(trim($prenom))){
-      $fieldError = 'Le Prénom invalide';
+    elseif(empty(trim($prenom))){
+      $fieldError = 'Le Prénom invalide ou laissé vide';
     }
     elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) || empty(trim($email))) {
       $fieldError = "L'email entré est invalide";

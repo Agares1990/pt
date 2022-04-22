@@ -24,7 +24,7 @@
   position: fixed;
   top: 20vh;
   right: 2rem;
-  width: 21%;
+  width: 300px;
   z-index: 10;
   h2{ /* titre du formulaire */
     margin-top: 1.5rem;
@@ -41,15 +41,18 @@
   }
   form{
     @include form(1rem 2rem); /* style général du formulaire */
-    input, select{ /* style général des inputs et des selects */
-      @include inputForm(91%);
+    input{ /* style général des inputs et des selects */
+      @include inputForm(85%);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     select{ /* style spécial pour les selects */
-        @include inputSelectForm(102%);
+        @include inputForm(100%);
         text-indent: -2px;
     }
     input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
-      width: 102%;
+      width: 100%;
       @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763); /* style général des Bouttons */
       font-size: 1rem;
       }
@@ -242,6 +245,11 @@
   }
 }
 
+// @media (min-width: 1024px){
+//   #checkIn{
+//     width: 255px;
+//   }
+// }
 
 /** STYLE TABLETTE **/
 

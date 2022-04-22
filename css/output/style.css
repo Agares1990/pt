@@ -1,1 +1,1096 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");html{min-height:100%;height:100%;max-height:100%}body{background-color:#F0F0F0;font-family:"Poppins",Arial,sans-serif;min-height:100%;height:100%;max-height:100%}header{background-color:#fff;padding:1rem 1rem 0 1rem;position:fixed;top:0;left:0;right:0;z-index:9999}header div{display:flex;justify-content:space-between}header div p{margin-top:.5rem}header div p span img{width:24px;height:16px}header div .logo{width:10rem;height:7.3rem;float:left;margin-right:2rem}header div a{margin-right:1rem;text-decoration:none;color:black}header div a .iconeLangue{margin-right:.2rem;margin-top:.6rem}header div div{margin-right:25rem}header div div i{font-size:2rem;color:#BCA474}header div div .profil{font-size:1.2rem;font-family:"Raleway",sans-serif;font-weight:500;margin-top:.5rem}header nav{clear:both;font-family:"Poppins",Arial,sans-serif;text-align:center;padding:0.5rem 0 0.5rem 0}header nav input[type="checkbox"]{display:none}header nav ul{margin-top:-3rem}header nav ul li{display:inline-block}header nav ul li a{text-decoration:none;padding:0px 1.1rem;font-size:1.1rem;margin:0px;line-height:2.25;-webkit-transition:.5s;color:#202020;z-index:0}header nav ul li a:hover{color:#BCA474}header nav ul li .connexion{position:absolute;top:1rem;right:1rem;font-weight:bold;font-family:"Raleway",sans-serif;font-size:1.1rem;background-color:#BCA474;border:solid 1px #BCA474;color:white;cursor:pointer;color:white;transition:none}header nav ul li .connexion:hover{background:-webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);background:-o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);background:linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%)}header nav ul li .connexion:hover{color:white}header.scroll{background-color:white;box-shadow:rgba(0,0,0,0.5) 0px 3px 8px;padding:.5rem 1rem 0 1rem}header.scroll .logo{width:9rem;height:6.3rem}header.scroll nav{padding:0.3rem 0 0 0}footer{background-color:black;color:white;display:flex;justify-content:space-around}footer ul{margin:2rem 0}footer ul li{margin-bottom:1rem}footer ul li a{text-decoration:none;color:white}footer div ul li{display:inline-block}footer div ul li span{color:#BCA474}footer div ul li .carre{font-size:1.4rem;padding:.1rem 0.4rem;margin:0 2rem 0 0;box-shadow:0 0 0 3px #BCA474;transition:all 500ms ease}footer div ul li .carre:hover{background-color:#BCA474;color:black;box-shadow:0 0 0 3px #af9654;transition:all 500ms ease}footer div ul li .carre i{color:white}footer div ul li .carre i:hover{color:black}footer div ul:first-child li{margin-right:1rem;padding-right:1rem;border-right:1px solid #BCA474}footer div ul:nth-child(2){text-align:center}@media (max-width: 1024px){header div .logo{width:9rem;height:6.3rem}header div .profil{font-size:1rem}header div a i{font-size:1.7rem}header div .connexion{padding:.4rem .9rem;font-size:1rem}header div div{margin-right:15rem}header nav{text-align:right;margin-right:4rem;padding:0.3rem 0 0 0}header nav ul li a{font-size:1rem}footer div ul:first-child li{display:block;border:none}}@media (hover: none), (max-width: 840px){header div p{margin-left:-5rem}header div p span img{width:20px;height:14px}header div div{margin-right:3rem}header div div .profil{display:none}header nav input:checked+label>span{transform:rotate(45deg)}header nav input:checked+label>span::before{top:0;transform:rotate(0deg)}header nav input:checked+label>span::after{top:0;transform:rotate(90deg)}header nav input:checked ~ ul{right:0 !important}header nav label{position:fixed;top:20px;right:20px;width:26px;height:26px;cursor:pointer;z-index:1}header nav label>span,header nav label ::before,header nav label ::after{display:block;position:absolute;width:100%;height:2px;background-color:#616161;transition-duration:.25s}header nav label>span::before{content:'';top:-8px}header nav label>span::after{content:'';top:8px}header nav ul{opacity:0.95;display:flex;flex-direction:column;justify-content:space-around;align-items:center;position:fixed;top:0;right:-100%;width:15.5rem;height:50%;margin:0;padding:5rem 0;list-style:none;background-color:#ECEFF1;box-shadow:2px 2px 6px rgba(0,0,0,0.4);transition-duration:.25s}header nav ul li a{display:block;color:#333;font-size:1.1rem;font-weight:600;transition-duration:.25s}header nav ul li .connexion{position:static;background-color:inherit;border:none;color:inherit;font-size:1rem;text-transform:uppercase;-webkit-transition:.5s}header nav ul li .connexion:hover{background:inherit;color:#BCA474}footer{font-size:.8rem}footer>ul{margin-right:2rem;margin-left:1rem}footer div{width:50%}footer div ul:last-child{display:none}}#section1{margin-top:9rem;position:relative}#section1 h1{font-size:3.2rem;font-family:"Raleway",sans-serif;font-weight:bold;position:absolute;right:0;bottom:5rem;left:0;color:white;text-shadow:1px 1px 4px rgba(0,0,0,0.78);text-align:center;text-transform:uppercase;z-index:10}#section1 h1 span{font-size:1.6rem;font-family:"Raleway",sans-serif;font-weight:500;display:block;text-align:center}#checkIn{position:fixed;top:20vh;right:2rem;width:21%;z-index:10}#checkIn h2{margin-top:1.5rem;text-align:center;background-color:rgba(191,10,53,0.9);border-radius:.5rem .5rem 0 0;color:white;padding:.7rem;cursor:pointer;font-size:1.6rem;font-family:"Raleway",sans-serif;font-weight:500}#checkIn h2 span{color:#BCA474}#checkIn form{background-color:rgba(255,255,255,0.9);padding:1rem 2rem;border-radius:0 0 .5rem .5rem}#checkIn form input,#checkIn form select{background:#eef1f6;border:solid 1px #BCA474;font-size:1rem;color:#495057;width:91%;border-radius:.25rem;padding:.6rem .8rem;margin-bottom:10px;width:91%}#checkIn form select{background:#eef1f6;border:solid 1px #BCA474;font-size:1rem;color:#495057;width:102%;border-radius:.25rem;padding:.6rem .8rem;text-indent:-2px}#checkIn form input[type="submit"]{width:102%;font-size:1.1rem;background-color:rgba(191,10,53,0.9);border:solid 1px #BCA474;color:white;cursor:pointer;font-size:1rem}#checkIn form input[type="submit"]:hover{background:-webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);background:-o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);background:linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%)}#checkIn form span{color:red}.descHotel{margin:4em 13% 12em 13%}.descHotel .hotelImage{background-image:url("../../images/hotel.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:45%;height:50vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px;float:left;margin-right:2rem}.descHotel h2{font-size:1.6rem;font-family:"Raleway",sans-serif;font-weight:500;margin-bottom:1rem}.descHotel h2 span{color:#BCA474;font-weight:bold}.descHotel p{font-size:1rem;font-family:"Poppins",Arial,sans-serif;margin-bottom:1rem}.descHotel ul li{display:inline-block;margin:0 1rem 1rem 0;font-size:1.1rem}.descHotel ul li span{color:#BCA474}.theContainer{clear:both;display:flex;justify-content:space-around;flex-wrap:wrap}.theContainer section{margin:3rem 0 4em 0;box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);width:20.1%;border:1px solid #BCA474}.theContainer section .container{position:relative;overflow:hidden}.theContainer section .container #standardRoom{background-image:url("../../images/index/standardRoom.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;height:35vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px}.theContainer section .container #familyRoom{background-image:url("../../images/index/familyRoom.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;height:35vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px}.theContainer section .container #luxuryRoomGarden{background-image:url("../../images/index/luxuryRoomGarden.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;height:35vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px}.theContainer section .container #luxuryRoomSea{background-image:url("../../images/index/luxuryRoomSea.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;height:35vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px}.theContainer section .container #JuniorSuite{background-image:url("../../images/index/JuniorSuite.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;height:35vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px}.theContainer section .container #Seniorsuite{background-image:url("../../images/index/Seniorsuite.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:100%;height:35vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px}.theContainer section .container .img{transition:all 3s ease-in-out;overflow:hidden;border-style:none}.theContainer section .container .img:hover{cursor:pointer;transform:scale(1.4, 1.4)}.theContainer section .container div+div{position:absolute;bottom:0;left:0;right:0;background-color:white;overflow:hidden;width:100%;height:0;transition:.5s ease}.theContainer section .container .border-or{border-top:1px solid #BCA474 !important}.theContainer .forMobile{padding:1rem;text-align:center;font-weight:bold;display:none}.container:hover .overlay{height:25%;bottom:-13%;left:-5%;transform:rotate(10deg);width:120%}.container:hover .text{left:8%;font-size:20px;transition-delay:.3s}.text{transform:rotate(-9deg);color:black;font-size:.625rem;position:absolute;overflow:hidden;top:22%;left:5%;transition:all 3s cubic-bezier(0.6, 0.1, 0.3, 0.8)}.blocDessous{border:1px solid #BCA474;background-color:white}.blocDessous ul{padding:1rem;text-align:center}.blocDessous ul li{display:inline-block;margin-right:1.5rem}.blocDessous ul li img{font-size:1rem;margin-right:3px}#restauEvent{margin:4em 20% 8em 20%;border:1px solid #BCA474;height:50vh;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px}#restauEvent .restauEvent{height:50%;overflow:hidden}#restauEvent .restauEvent #restaurant{background-image:url("../../images/restaurant/restau1.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:50%;height:100%;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px;float:left;margin-right:1.5rem;transition:all 3s ease-in-out}#restauEvent .restauEvent #restaurant:hover{transform:scale(1.4, 1.4)}#restauEvent .restauEvent #salleEvent{background-image:url("../../images/event/salleEvent1.jpg");background-position:center;background-repeat:no-repeat;background-size:cover;width:50%;height:100%;box-shadow:rgba(0,0,0,0.24) 0px 3px 8px;float:right}#restauEvent .restauEvent h2{font-size:1.6rem;font-family:"Raleway",sans-serif;font-weight:500;padding:1rem;text-transform:lowercase}#restauEvent .restauEvent h2::first-letter{text-transform:uppercase}#restauEvent .restauEvent p{margin-left:1rem}#restauEvent .restauEvent p a{margin-top:1rem;display:block}@media (max-width: 1024px){#section1{margin-top:7rem}#section1 h1{font-size:2.5rem}#section1 h1 span{font-size:2rem}#checkIn{position:static;width:80%;margin:0 auto;z-index:10}#checkIn h2{font-size:1.2rem;font-family:"Raleway",sans-serif;font-weight:500}#checkIn form{background-color:rgba(255,255,255,0.9);padding:1rem 1rem;border-radius:0 0 .5rem .5rem}#checkIn form input{width:40%;margin-left:1.2rem}#checkIn form select{width:calc((100% - 1.3rem)/3)}#checkIn form input[type="submit"]{padding:0.63rem 0;border-radius:.25rem;width:calc((100% - 1rem)/3);display:block;margin-right:auto;margin-left:auto}.theContainer section{width:30%}#restauEvent{margin:2em 5% 4em 5%}#restauEvent .restauEvent #restaurant{margin-right:.5rem}#restauEvent .restauEvent h2{font-size:1.3rem;padding:.5rem}#restauEvent .restauEvent p{font-size:.9rem;margin-left:.5rem}#restauEvent .restauEvent p a{margin-top:.5rem}}@media (hover: none), (max-width: 840px){#section1 h1{font-size:2rem}#section1 h1 span{font-size:1.5rem}#checkIn form input{width:95%;margin-left:0}#checkIn form select{width:100%}#checkIn form input[type="submit"]{width:100%}.descHotel{margin:4em 5% 0 2%}.descHotel .hotelImage{width:45%;height:30vh;margin-right:1rem}.descHotel h2{font-size:1.2rem;font-family:"Raleway",sans-serif;font-weight:500}.descHotel p{font-size:.8rem}.descHotel ul li{margin:0 .5rem 1rem 0;font-size:.8rem}.theContainer section{width:45%}.theContainer .blocDessous ul li{margin:0 .5rem 0 0;font-size:.8rem}.theContainer .blocDessous ul li img{font-size:.8rem}.theContainer .forMobile{display:block}#restauEvent .restauEvent h2{font-size:1.1rem;font-weight:bold}#restauEvent .restauEvent p{font-size:.7rem}}
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+/* line 4, ../css/input/_base.scss */
+html {
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+/* line 9, ../css/input/_base.scss */
+body {
+  background-color: #F0F0F0;
+  font-family: "Poppins", Arial, sans-serif;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+/* line 16, ../css/input/_base.scss */
+header {
+  background-color: #fff;
+  padding: 1rem 1rem 0 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* line 24, ../css/input/_base.scss */
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 27, ../css/input/_base.scss */
+header div p {
+  margin-top: .5rem;
+}
+
+/* line 30, ../css/input/_base.scss */
+header div p span img {
+  width: 24px;
+  height: 16px;
+}
+
+/* line 36, ../css/input/_base.scss */
+header div .logo {
+  width: 10rem;
+  height: 7.3rem;
+  float: left;
+  margin-right: 2rem;
+}
+
+/* line 42, ../css/input/_base.scss */
+header div a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+/* line 46, ../css/input/_base.scss */
+header div a .iconeLangue {
+  margin-right: .2rem;
+  margin-top: .6rem;
+}
+
+/* line 52, ../css/input/_base.scss */
+header div div {
+  margin-right: 25rem;
+}
+
+/* line 54, ../css/input/_base.scss */
+header div div i {
+  font-size: 2rem;
+  color: #BCA474;
+}
+
+/* line 58, ../css/input/_base.scss */
+header div div .profil {
+  /* style générale des h2 */
+  font-size: 1.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  margin-top: .5rem;
+}
+
+/* line 65, ../css/input/_base.scss */
+header nav {
+  clear: both;
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+/* line 71, ../css/input/_base.scss */
+header nav input[type="checkbox"] {
+  display: none;
+}
+
+/* line 74, ../css/input/_base.scss */
+header nav ul {
+  margin-top: -3rem;
+}
+
+/* line 76, ../css/input/_base.scss */
+header nav ul li {
+  display: inline-block;
+  /* Boutton connexion */
+}
+
+/* line 79, ../css/input/_base.scss */
+header nav ul li a {
+  text-decoration: none;
+  padding: 0px 1.1rem;
+  font-size: 1.1rem;
+  margin: 0px;
+  line-height: 2.25;
+  -webkit-transition: .5s;
+  color: #202020;
+  z-index: 0;
+}
+
+/* line 88, ../css/input/_base.scss */
+header nav ul li a:hover {
+  color: #BCA474;
+}
+
+/* line 93, ../css/input/_base.scss */
+header nav ul li .connexion {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-weight: bold;
+  font-family: "Raleway", sans-serif;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: #BCA474;
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+  color: white;
+  transition: none;
+}
+
+/* line 75, ../css/input/_mixin.scss */
+header nav ul li .connexion:hover {
+  background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+  background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+/* line 102, ../css/input/_base.scss */
+header nav ul li .connexion:hover {
+  color: white;
+}
+
+/* Menu de navigation au scroll */
+/* line 111, ../css/input/_base.scss */
+header.scroll {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
+  padding: .5rem 1rem 0 1rem;
+}
+
+/* line 115, ../css/input/_base.scss */
+header.scroll .logo {
+  width: 9rem;
+  height: 6.3rem;
+}
+
+/* line 119, ../css/input/_base.scss */
+header.scroll nav {
+  padding: 0.3rem 0 0 0;
+}
+
+/* line 125, ../css/input/_base.scss */
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* line 134, ../css/input/_base.scss */
+footer ul {
+  margin: 2rem 0;
+}
+
+/* line 136, ../css/input/_base.scss */
+footer ul li {
+  margin-bottom: 1rem;
+}
+
+/* line 138, ../css/input/_base.scss */
+footer ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 146, ../css/input/_base.scss */
+footer div ul li {
+  display: inline-block;
+}
+
+/* line 148, ../css/input/_base.scss */
+footer div ul li span {
+  color: #BCA474;
+}
+
+/* line 151, ../css/input/_base.scss */
+footer div ul li .carre {
+  font-size: 1.4rem;
+  padding: .1rem 0.4rem;
+  margin: 0 2rem 0 0;
+  box-shadow: 0 0 0 3px #BCA474;
+  transition: all 500ms ease;
+}
+
+/* line 157, ../css/input/_base.scss */
+footer div ul li .carre:hover {
+  background-color: #BCA474;
+  color: black;
+  box-shadow: 0 0 0 3px #af9654;
+  transition: all 500ms ease;
+}
+
+/* line 163, ../css/input/_base.scss */
+footer div ul li .carre i {
+  color: white;
+}
+
+/* line 165, ../css/input/_base.scss */
+footer div ul li .carre i:hover {
+  color: black;
+}
+
+/* line 172, ../css/input/_base.scss */
+footer div ul:first-child li {
+  margin-right: 1rem;
+  padding-right: 1rem;
+  border-right: 1px solid #BCA474;
+}
+
+/* line 177, ../css/input/_base.scss */
+footer div ul:nth-child(2) {
+  text-align: center;
+}
+
+/** STYLE TABLETTE **/
+@media (max-width: 1024px) {
+  /* line 189, ../css/input/_base.scss */
+  header div .logo {
+    width: 9rem;
+    height: 6.3rem;
+  }
+  /* line 193, ../css/input/_base.scss */
+  header div .profil {
+    font-size: 1rem;
+  }
+  /* line 197, ../css/input/_base.scss */
+  header div a i {
+    font-size: 1.7rem;
+  }
+  /* line 201, ../css/input/_base.scss */
+  header div .connexion {
+    padding: .4rem .9rem;
+    font-size: 1rem;
+  }
+  /* line 205, ../css/input/_base.scss */
+  header div div {
+    margin-right: 15rem;
+  }
+  /* line 209, ../css/input/_base.scss */
+  header nav {
+    text-align: right;
+    margin-right: 4rem;
+    padding: 0.3rem 0 0 0;
+  }
+  /* line 213, ../css/input/_base.scss */
+  header nav ul li a {
+    font-size: 1rem;
+  }
+  /* line 222, ../css/input/_base.scss */
+  footer div ul:first-child li {
+    display: block;
+    border: none;
+  }
+}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px) {
+  /* line 235, ../css/input/_base.scss */
+  header div p {
+    margin-left: -5rem;
+  }
+  /* line 238, ../css/input/_base.scss */
+  header div p span img {
+    width: 20px;
+    height: 14px;
+  }
+  /* line 244, ../css/input/_base.scss */
+  header div div {
+    margin-right: 3rem;
+  }
+  /* line 246, ../css/input/_base.scss */
+  header div div .profil {
+    display: none;
+  }
+  /* line 251, ../css/input/_base.scss */
+  header nav {
+    /* Bloc menu burger */
+  }
+  /* line 253, ../css/input/_base.scss */
+  header nav input:checked + label > span {
+    transform: rotate(45deg);
+  }
+  /* line 255, ../css/input/_base.scss */
+  header nav input:checked + label > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  /* line 259, ../css/input/_base.scss */
+  header nav input:checked + label > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  /* line 264, ../css/input/_base.scss */
+  header nav input:checked ~ ul {
+    right: 0 !important;
+  }
+  /* line 269, ../css/input/_base.scss */
+  header nav label {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  /* line 277, ../css/input/_base.scss */
+  header nav label > span, header nav label ::before, header nav label ::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+  }
+  /* line 285, ../css/input/_base.scss */
+  header nav label > span::before {
+    content: '';
+    top: -8px;
+  }
+  /* line 289, ../css/input/_base.scss */
+  header nav label > span::after {
+    content: '';
+    top: 8px;
+  }
+  /* line 295, ../css/input/_base.scss */
+  header nav ul {
+    opacity: 0.95;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 15.5rem;
+    height: 50%;
+    margin: 0;
+    padding: 5rem 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition-duration: .25s;
+  }
+  /* line 313, ../css/input/_base.scss */
+  header nav ul li a {
+    display: block;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition-duration: .25s;
+  }
+  /* line 321, ../css/input/_base.scss */
+  header nav ul li .connexion {
+    position: static;
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    text-transform: uppercase;
+    -webkit-transition: .5s;
+  }
+  /* line 329, ../css/input/_base.scss */
+  header nav ul li .connexion:hover {
+    /* Pour supprimer l'animation qui a été sur le button connexion */
+    background: inherit;
+    color: #BCA474;
+  }
+  /* line 340, ../css/input/_base.scss */
+  footer {
+    font-size: .8rem;
+  }
+  /* line 342, ../css/input/_base.scss */
+  footer > ul {
+    margin-right: 2rem;
+    margin-left: 1rem;
+  }
+  /* line 346, ../css/input/_base.scss */
+  footer div {
+    width: 50%;
+  }
+  /* line 348, ../css/input/_base.scss */
+  footer div ul:last-child {
+    display: none;
+  }
+}
+
+/* line 2, ../css/input/style.scss */
+#section1 {
+  margin-top: 9rem;
+  position: relative;
+}
+
+/* line 5, ../css/input/style.scss */
+#section1 h1 {
+  /* titre principale de la page (sur le caroussel) */
+  /* style générale des h1 */
+  font-size: 3.2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  /* style général h1 */
+  position: absolute;
+  right: 0;
+  bottom: 5rem;
+  left: 0;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.78);
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+/* line 16, ../css/input/style.scss */
+#section1 h1 span {
+  /* 2ème ligne du titre principale */
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  /* style général h2 */
+  display: block;
+  text-align: center;
+}
+
+/* line 23, ../css/input/style.scss */
+#checkIn {
+  /* Le bloc conteneur du formulaire de check-in et son titre */
+  position: fixed;
+  top: 20vh;
+  right: 2rem;
+  width: 300px;
+  z-index: 10;
+}
+
+/* line 29, ../css/input/style.scss */
+#checkIn h2 {
+  /* titre du formulaire */
+  margin-top: 1.5rem;
+  text-align: center;
+  background-color: rgba(191, 10, 53, 0.9);
+  border-radius: .5rem .5rem 0 0;
+  color: white;
+  padding: .7rem;
+  cursor: pointer;
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+}
+
+/* line 38, ../css/input/style.scss */
+#checkIn h2 span {
+  /* coleur dorée */
+  color: #BCA474;
+}
+
+/* line 42, ../css/input/style.scss */
+#checkIn form {
+  /* style générale du formulaire*/
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem 2rem;
+  border-radius: 0 0 .5rem .5rem;
+  /* style général du formulaire */
+}
+
+/* line 44, ../css/input/style.scss */
+#checkIn form input {
+  /* style général des inputs et des selects */
+  /* style spécial des élémets input du formulaire*/
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #BCA474;
+  font-size: 1rem;
+  color: #495057;
+  width: 85%;
+  border-radius: .25rem;
+  padding: .6rem .8rem;
+  margin-bottom: 10px;
+  width: 85%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 50, ../css/input/style.scss */
+#checkIn form select {
+  /* style spécial pour les selects */
+  /* style spécial des élémets input du formulaire*/
+  /* style générale des élémets input et select du formulaire*/
+  background: #eef1f6;
+  border: solid 1px #BCA474;
+  font-size: 1rem;
+  color: #495057;
+  width: 100%;
+  border-radius: .25rem;
+  padding: .6rem .8rem;
+  margin-bottom: 10px;
+  width: 100%;
+  text-indent: -2px;
+}
+
+/* line 54, ../css/input/style.scss */
+#checkIn form input[type="submit"] {
+  /* Boutton vérifier disponibilité du formulaire de check-in */
+  width: 100%;
+  /* animation des bouttons */
+  font-size: 1.1rem;
+  background-color: rgba(191, 10, 53, 0.9);
+  border: solid 1px #BCA474;
+  color: white;
+  cursor: pointer;
+  /* style général des Bouttons */
+  font-size: 1rem;
+}
+
+/* line 75, ../css/input/_mixin.scss */
+#checkIn form input[type="submit"]:hover {
+  background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+  background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+  background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
+}
+
+/* line 59, ../css/input/style.scss */
+#checkIn form span {
+  color: red;
+}
+
+/* SECTION DESCRIPTION DE L'HOTEL */
+/* line 66, ../css/input/style.scss */
+.descHotel {
+  /* Conteneur des élémenets de la section description */
+  margin: 4em 13% 12em 13%;
+}
+
+/* line 68, ../css/input/style.scss */
+.descHotel .hotelImage {
+  /* l'image de l'hôtel */
+  /* pour défirnir une image en background */
+  background-image: url("../../images/hotel.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 45%;
+  height: 50vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  float: left;
+  margin-right: 2rem;
+}
+
+/* line 73, ../css/input/style.scss */
+.descHotel h2 {
+  /* titre de la section description */
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+/* line 76, ../css/input/style.scss */
+.descHotel h2 span {
+  color: #BCA474;
+  font-weight: bold;
+}
+
+/* line 81, ../css/input/style.scss */
+.descHotel p {
+  font-size: 1rem;
+  font-family: "Poppins", Arial, sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* line 86, ../css/input/style.scss */
+.descHotel ul li {
+  /* infos et cordonnées de l'hôtel */
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  font-size: 1.1rem;
+}
+
+/* line 90, ../css/input/style.scss */
+.descHotel ul li span {
+  color: #BCA474;
+}
+
+/* Section catégories chambres */
+/* line 97, ../css/input/style.scss */
+.theContainer {
+  /* Les différentes chambres de l'hôtel */
+  clear: both;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* line 103, ../css/input/style.scss */
+.theContainer section {
+  /* Style du bloc qui contient tous les élément de chaque type de chambres */
+  margin: 3rem 0 4em 0;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 20.1%;
+  border: 1px solid #BCA474;
+}
+
+/* line 111, ../css/input/style.scss */
+.theContainer section .container {
+  /* Conteneur de l'image et du titre de chaque catégorie de chambre */
+  position: relative;
+  overflow: hidden;
+  /* Les images dess chambres */
+  /* pour les images des catégories de chambre de la page d'accueil */
+}
+
+/* line 39, ../css/input/_mixin.scss */
+.theContainer section .container #standardRoom {
+  background-image: url("../../images/index/standardRoom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* line 39, ../css/input/_mixin.scss */
+.theContainer section .container #familyRoom {
+  background-image: url("../../images/index/familyRoom.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* line 39, ../css/input/_mixin.scss */
+.theContainer section .container #luxuryRoomGarden {
+  background-image: url("../../images/index/luxuryRoomGarden.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* line 39, ../css/input/_mixin.scss */
+.theContainer section .container #luxuryRoomSea {
+  background-image: url("../../images/index/luxuryRoomSea.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* line 39, ../css/input/_mixin.scss */
+.theContainer section .container #JuniorSuite {
+  background-image: url("../../images/index/JuniorSuite.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* line 39, ../css/input/_mixin.scss */
+.theContainer section .container #Seniorsuite {
+  background-image: url("../../images/index/Seniorsuite.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 35vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* line 136, ../css/input/style.scss */
+.theContainer section .container .img {
+  /* Style et Annimation des images */
+  transition: all 3s ease-in-out;
+  overflow: hidden;
+  border-style: none;
+}
+
+/* line 140, ../css/input/style.scss */
+.theContainer section .container .img:hover {
+  cursor: pointer;
+  transform: scale(1.4, 1.4);
+}
+
+/* line 145, ../css/input/style.scss */
+.theContainer section .container div + div {
+  /* div conteneur du h4 */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+/* line 156, ../css/input/style.scss */
+.theContainer section .container .border-or {
+  /* Bordure qui aaparait lors de l'animation au triangle qui contient le titre */
+  border-top: 1px solid #BCA474 !important;
+}
+
+/* line 161, ../css/input/style.scss */
+.theContainer .forMobile {
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+}
+
+/* line 169, ../css/input/style.scss */
+.container:hover .overlay {
+  /* Faire apparaitre la rotation du titre */
+  /* animation rotation */
+  height: 25%;
+  bottom: -13%;
+  left: -5%;
+  transform: rotate(10deg);
+  width: 120%;
+}
+
+/* line 173, ../css/input/style.scss */
+.container:hover .text {
+  /* transition */
+  /* la transition des animations */
+  left: 8%;
+  font-size: 20px;
+  transition-delay: .3s;
+}
+
+/* line 177, ../css/input/style.scss */
+.text {
+  /* rotation du titre*/
+  transform: rotate(-9deg);
+  color: black;
+  font-size: .625rem;
+  position: absolute;
+  overflow: hidden;
+  top: 22%;
+  left: 5%;
+  transition: all 3s cubic-bezier(0.6, 0.1, 0.3, 0.8);
+}
+
+/* line 189, ../css/input/style.scss */
+.blocDessous {
+  /*Bloc qui contient les icones*/
+  /* color: #fff !important;*/
+  border: 1px solid #BCA474;
+  background-color: white;
+}
+
+/* line 193, ../css/input/style.scss */
+.blocDessous ul {
+  padding: 1rem;
+  text-align: center;
+}
+
+/* line 196, ../css/input/style.scss */
+.blocDessous ul li {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
+
+/* line 199, ../css/input/style.scss */
+.blocDessous ul li img {
+  font-size: 1rem;
+  margin-right: 3px;
+}
+
+/*Fin de la partie catégorie des chambres*/
+/* Section Restaurant et Evènement*/
+/* line 209, ../css/input/style.scss */
+#restauEvent {
+  /* Bloc parent */
+  margin: 4em 20% 8em 20%;
+  border: 1px solid #BCA474;
+  height: 50vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* line 214, ../css/input/style.scss */
+#restauEvent .restauEvent {
+  /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
+  height: 50%;
+  overflow: hidden;
+}
+
+/* line 217, ../css/input/style.scss */
+#restauEvent .restauEvent #restaurant {
+  /* L'image du Restaurant */
+  /* pour défirnir une image en background */
+  background-image: url("../../images/restaurant/restau1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  float: left;
+  margin-right: 1.5rem;
+  transition: all 3s ease-in-out;
+}
+
+/* line 222, ../css/input/style.scss */
+#restauEvent .restauEvent #restaurant:hover {
+  transform: scale(1.4, 1.4);
+}
+
+/* line 226, ../css/input/style.scss */
+#restauEvent .restauEvent #salleEvent {
+  /* L'image de la salle d'évènement */
+  /* pour défirnir une image en background */
+  background-image: url("../../images/event/salleEvent1.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  float: right;
+}
+
+/* line 230, ../css/input/style.scss */
+#restauEvent .restauEvent h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  padding: 1rem;
+  text-transform: lowercase;
+}
+
+/* line 234, ../css/input/style.scss */
+#restauEvent .restauEvent h2::first-letter {
+  text-transform: uppercase;
+}
+
+/* line 238, ../css/input/style.scss */
+#restauEvent .restauEvent p {
+  margin-left: 1rem;
+}
+
+/* line 240, ../css/input/style.scss */
+#restauEvent .restauEvent p a {
+  margin-top: 1rem;
+  display: block;
+}
+
+/** STYLE TABLETTE **/
+@media (max-width: 1024px) {
+  /* line 257, ../css/input/style.scss */
+  #section1 {
+    margin-top: 7rem;
+  }
+  /* line 259, ../css/input/style.scss */
+  #section1 h1 {
+    /* titre principale de la page (sur le caroussel) */
+    font-size: 2.5rem;
+  }
+  /* line 261, ../css/input/style.scss */
+  #section1 h1 span {
+    /* 2ème ligne du titre principale */
+    font-size: 2rem;
+  }
+  /* line 266, ../css/input/style.scss */
+  #checkIn {
+    /* Le bloc conteneur du formulaire de check-in et son titre */
+    position: static;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 10;
+  }
+  /* line 272, ../css/input/style.scss */
+  #checkIn h2 {
+    /* titre du formulaire */
+    /* style générale des h2 */
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
+  /* line 275, ../css/input/style.scss */
+  #checkIn form {
+    /* style générale du formulaire*/
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1rem 1rem;
+    border-radius: 0 0 .5rem .5rem;
+    /* style général du formulaire */
+  }
+  /* line 277, ../css/input/style.scss */
+  #checkIn form input {
+    /* style général des inputs et des selects */
+    width: 40%;
+    margin-left: 1.2rem;
+  }
+  /* line 281, ../css/input/style.scss */
+  #checkIn form select {
+    /* style spécial pour les selects */
+    width: calc((100% - 1.3rem)/3);
+  }
+  /* line 284, ../css/input/style.scss */
+  #checkIn form input[type="submit"] {
+    /* Boutton vérifier disponibilité du formulaire de check-in */
+    /* Style général des bouttons */
+    padding: 0.63rem 0;
+    border-radius: .25rem;
+    width: calc((100% - 1rem)/3);
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  /* line 290, ../css/input/style.scss */
+  .theContainer section {
+    /* Style du bloc qui contient tous les élément de chaque type de chambres */
+    width: 30%;
+  }
+  /* line 294, ../css/input/style.scss */
+  #restauEvent {
+    /* Bloc parent */
+    margin: 2em 5% 4em 5%;
+  }
+  /* line 296, ../css/input/style.scss */
+  #restauEvent .restauEvent {
+    /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
+  }
+  /* line 297, ../css/input/style.scss */
+  #restauEvent .restauEvent #restaurant {
+    /* L'image du Restaurant */
+    margin-right: .5rem;
+  }
+  /* line 300, ../css/input/style.scss */
+  #restauEvent .restauEvent h2 {
+    font-size: 1.3rem;
+    padding: .5rem;
+  }
+  /* line 304, ../css/input/style.scss */
+  #restauEvent .restauEvent p {
+    font-size: .9rem;
+    margin-left: .5rem;
+  }
+  /* line 307, ../css/input/style.scss */
+  #restauEvent .restauEvent p a {
+    margin-top: .5rem;
+  }
+}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px) {
+  /* line 318, ../css/input/style.scss */
+  #section1 h1 {
+    /* titre principale de la page (sur le caroussel) */
+    font-size: 2rem;
+  }
+  /* line 320, ../css/input/style.scss */
+  #section1 h1 span {
+    /* 2ème ligne du titre principale */
+    font-size: 1.5rem;
+  }
+  /* line 325, ../css/input/style.scss */
+  #checkIn {
+    /* Le bloc conteneur du formulaire de check-in et son titre */
+  }
+  /* line 327, ../css/input/style.scss */
+  #checkIn form input {
+    /* style général des inputs et des selects */
+    width: 95%;
+    margin-left: 0;
+  }
+  /* line 331, ../css/input/style.scss */
+  #checkIn form select {
+    /* style spécial pour les selects */
+    width: 100%;
+  }
+  /* line 334, ../css/input/style.scss */
+  #checkIn form input[type="submit"] {
+    /* Boutton vérifier disponibilité du formulaire de check-in */
+    width: 100%;
+  }
+  /* SECTION DESCRIPTION DE L'HOTEL */
+  /* line 340, ../css/input/style.scss */
+  .descHotel {
+    /* Conteneur des élémenets de la section description */
+    margin: 4em 5% 0 2%;
+  }
+  /* line 342, ../css/input/style.scss */
+  .descHotel .hotelImage {
+    /* l'image de l'hôtel */
+    width: 45%;
+    height: 30vh;
+    margin-right: 1rem;
+  }
+  /* line 347, ../css/input/style.scss */
+  .descHotel h2 {
+    /* titre de la section description */
+    /* style générale des h2 */
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
+  /* line 350, ../css/input/style.scss */
+  .descHotel p {
+    font-size: .8rem;
+  }
+  /* line 354, ../css/input/style.scss */
+  .descHotel ul li {
+    /* infos et cordonnées de l'hôtel */
+    margin: 0 .5rem 1rem 0;
+    font-size: .8rem;
+  }
+  /* line 361, ../css/input/style.scss */
+  .theContainer section {
+    /* Style du bloc qui contient tous les élément de chaque type de chambres */
+    width: 45%;
+  }
+  /* line 364, ../css/input/style.scss */
+  .theContainer .blocDessous {
+    /*Bloc qui contient les icones*/
+  }
+  /* line 366, ../css/input/style.scss */
+  .theContainer .blocDessous ul li {
+    margin: 0 .5rem 0 0;
+    font-size: .8rem;
+  }
+  /* line 369, ../css/input/style.scss */
+  .theContainer .blocDessous ul li img {
+    font-size: .8rem;
+  }
+  /* line 375, ../css/input/style.scss */
+  .theContainer .forMobile {
+    display: block;
+  }
+  /* line 379, ../css/input/style.scss */
+  #restauEvent {
+    /* Bloc parent */
+  }
+  /* line 381, ../css/input/style.scss */
+  #restauEvent .restauEvent {
+    /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
+  }
+  /* line 383, ../css/input/style.scss */
+  #restauEvent .restauEvent h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  /* line 387, ../css/input/style.scss */
+  #restauEvent .restauEvent p {
+    font-size: .7rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

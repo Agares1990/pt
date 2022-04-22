@@ -70,6 +70,10 @@ main{
 @media (hover: none), (max-width: 840px){
   section{
     article{
+      h2, p, button, h4{
+        margin-right: .5rem;
+        margin-left: .5rem;
+      }
       h2{
         @include h3;
       }

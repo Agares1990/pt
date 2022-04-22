@@ -18,12 +18,14 @@ $( "input[name= 'submit']" ).click( function()
 	  const pays = $( "select[name = 'pays']" ).val();
 	  const message = $( "textarea[name = 'message']" ).val();
 		$( "#formReservation" ).prop( "disabled", true );
-	  if ( !regex1.test( nom ) || nom.trim().length == 0)
+	  // if ( !regex1.test( nom ) || nom.trim().length == 0)
+	  if (nom.trim().length == 0)
 	  {
 	    $("#errorNom").text("Votre nom est invalide ou laissé vide");
 	    return false;
 	  }
-	  if ( !regex1.test( prenom ) || prenom.trim().length == 0)
+	  //if ( !regex1.test( prenom ) || prenom.trim().length == 0)
+	  if ( prenom.trim().length == 0)
 	  {
 	    $("input+span").text("");
 	    $("#errorPrenom").text("Votre prenom est invalide ou laissé vide");
