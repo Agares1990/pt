@@ -956,72 +956,105 @@ footer div ul:nth-child(2) {
   /* line 53, ../css/input/formCheckIn.scss */
   #checkIn {
     /* Le bloc conteneur du formulaire de check-in et son titre */
+    width: 50%;
   }
   /* line 55, ../css/input/formCheckIn.scss */
+  #checkIn h2 {
+    /* style générale des h2 */
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
+  /* line 59, ../css/input/formCheckIn.scss */
   #checkIn form input, #checkIn form select {
     /* style général des inputs et des selects */
     display: block;
+    /* style spécial des élémets input du formulaire*/
+    /* style générale des élémets input et select du formulaire*/
+    background: #eef1f6;
+    border: solid 1px #BCA474;
+    font-size: 1rem;
+    color: #495057;
+    width: 85%;
+    border-radius: .25rem;
+    padding: .6rem .8rem;
+    margin-bottom: 10px;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 65, ../css/input/formCheckIn.scss */
+  #checkIn form input[type="submit"] {
+    font-size: .9rem;
+    width: 60%;
   }
 }
 
-/* line 6, ../css/input/styleFormCheckInPage.scss */
+/* line 3, ../css/input/styleFormCheckInPage.scss */
 #checkIn {
-  margin-top: 12rem;
+  margin-top: 8rem;
 }
 
-/* line 8, ../css/input/styleFormCheckInPage.scss */
+/* line 5, ../css/input/styleFormCheckInPage.scss */
 #checkIn p {
   text-align: center;
   color: red;
 }
 
-/* line 13, ../css/input/styleFormCheckInPage.scss */
+/* line 10, ../css/input/styleFormCheckInPage.scss */
 section {
   width: 70%;
   margin: 1rem auto;
 }
 
-/* line 16, ../css/input/styleFormCheckInPage.scss */
+/* line 13, ../css/input/styleFormCheckInPage.scss */
 section article {
+  position: relative;
   margin-bottom: 8rem;
 }
 
-/* line 19, ../css/input/styleFormCheckInPage.scss */
+/* line 16, ../css/input/styleFormCheckInPage.scss */
 section article .imageChambre {
-  max-width: 384px;
-  max-height: 257px;
+  max-width: 364px;
+  max-height: 242px;
   float: left;
   margin-right: 1rem;
 }
 
-/* line 25, ../css/input/styleFormCheckInPage.scss */
+/* line 22, ../css/input/styleFormCheckInPage.scss */
 section article article {
   position: relative;
 }
 
-/* line 27, ../css/input/styleFormCheckInPage.scss */
+/* line 24, ../css/input/styleFormCheckInPage.scss */
 section article article h2 {
   /* style générale des h2 */
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
-/* line 31, ../css/input/styleFormCheckInPage.scss */
+/* line 29, ../css/input/styleFormCheckInPage.scss */
 section article article p {
   margin-bottom: 1rem;
 }
 
-/* line 33, ../css/input/styleFormCheckInPage.scss */
+/* line 31, ../css/input/styleFormCheckInPage.scss */
 section article article p span {
   font-weight: bold;
 }
 
-/* line 40, ../css/input/styleFormCheckInPage.scss */
-section article article input[type='submit'] {
+/* line 35, ../css/input/styleFormCheckInPage.scss */
+section article article div {
+  position: relative;
+}
+
+/* line 37, ../css/input/styleFormCheckInPage.scss */
+section article article div input[type='submit'] {
   position: absolute;
-  bottom: 0;
+  bottom: 200;
   right: 0;
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -1039,13 +1072,23 @@ section article article input[type='submit'] {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-section article article input[type='submit']:hover {
+section article article div input[type='submit']:hover {
   background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 51, ../css/input/styleFormCheckInPage.scss */
+/* line 44, ../css/input/styleFormCheckInPage.scss */
+section article article div #flech {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* line 57, ../css/input/styleFormCheckInPage.scss */
 input[name="otherRoom"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -1068,5 +1111,31 @@ input[name="otherRoom"]:hover {
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
+
+/** STYLE TABLETTE **/
+@media (max-width: 1024px) {
+  /* line 65, ../css/input/styleFormCheckInPage.scss */
+  section {
+    width: 85%;
+  }
+  /* line 68, ../css/input/styleFormCheckInPage.scss */
+  section article .imageChambre {
+    max-width: 344px;
+    max-height: 229px;
+  }
+  /* line 72, ../css/input/styleFormCheckInPage.scss */
+  section article h2 {
+    /* style générale des h2 */
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
+  /* line 75, ../css/input/styleFormCheckInPage.scss */
+  section article p {
+    font-size: .9rem;
+  }
+}
+
+/** STYLE SMARTPHONE **/
 
 /*# sourceMappingURL=styleFormCheckInPage.css.map */

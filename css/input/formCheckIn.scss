@@ -51,9 +51,20 @@
 
 @media (hover: none), (max-width: 840px){
   #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
+    width: 50%;
+    h2{
+      @include h3;
+    }
     form{
       input, select{ /* style général des inputs et des selects */
         display: block;
+        @include inputForm(85%);
+        margin-left: auto;
+        margin-right: auto;
+      }
+      input[type="submit"]{
+        font-size: .9rem;
+        width: 60%;
       }
     }
   }
