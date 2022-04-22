@@ -1,146 +1,148 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
-<article id="checkIn">
-    <!-- formulaire de recherche de chambre dispo -->
-    <h2 onclick="cacherFormCheck()">{{reserver}} <span>{{chambre}}</span></h2>
-    <p id="erreur"></p>
-    <form id="formChek" action="formCheckInPage.php?lang={{lang}}" method="POST">
-        <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
+<main>
+  <article id="checkIn">
+      <!-- formulaire de recherche de chambre dispo -->
+      <h2 onclick="cacherFormCheck()">{{reserver}} <span>{{chambre}}</span></h2>
+      <p id="erreur"></p>
+      <form id="formChek" action="formCheckInPage.php?lang={{lang}}" method="POST">
+          <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
 
-        <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
+          <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
 
-       <select name="nbPerson" id="nbPerson">
-         <option value="">--{{nbPersonPlaceholder}}--</option>
-         <option class="option" value="1">1</option>
-         <option class="option" value="2">2</option>
-         <option class="option" value="3">3</option>
-         <option class="option" value="4">4</option>
-         <option class="option" value="5">5</option>
-       </select>
+         <select name="nbPerson" id="nbPerson">
+           <option value="">--{{nbPersonPlaceholder}}--</option>
+           <option class="option" value="1">1</option>
+           <option class="option" value="2">2</option>
+           <option class="option" value="3">3</option>
+           <option class="option" value="4">4</option>
+           <option class="option" value="5">5</option>
+         </select>
 
-       <select name="nbChild" id="nbChild">
-         <option value="">--{{nbChildPlaceholder}}--</option>
-         <option class="option" value="1">1</option>
-         <option class="option" value="2">2</option>
-         <option class="option" value="3">3</option>
-         <option class="option" value="4">4</option>
-         <option class="option" value="5">5</option>
-       </select>
+         <select name="nbChild" id="nbChild">
+           <option value="">--{{nbChildPlaceholder}}--</option>
+           <option class="option" value="1">1</option>
+           <option class="option" value="2">2</option>
+           <option class="option" value="3">3</option>
+           <option class="option" value="4">4</option>
+           <option class="option" value="5">5</option>
+         </select>
 
-       <select name="roomType" id="roomType">
-         <option value="0">--{{choixChambre}}--</option>
-         <option class="option" value="1">Chambre Standard</option>
-         <option class="option" value="2">Chambre Familiale</option>
-         <option class="option" value="3">Suite Senior</option>
-       </select>
+         <select name="roomType" id="roomType">
+           <option value="0">--{{choixChambre}}--</option>
+           <option class="option" value="1">Chambre Standard</option>
+           <option class="option" value="2">Chambre Familiale</option>
+           <option class="option" value="3">Suite Senior</option>
+         </select>
 
-       <input id="submit" type="submit" name="submit" value="{{btnCheck}}">
+         <input id="submit" type="submit" name="submit" value="{{btnCheck}}">
 
+      </form>
+  </article>
+    <!-- Message d'erreur s'il n'y a pas de chambre disponible dans une date précise  -->
+    <p id="complete">{{messageCheck}}</p>
+
+    <!-- Message d'erreur s'il n'y pas d'autres chambres disponible en cliquant sur le button afficher d'autres chambre... -->
+    <p id="errorOtherRooms">{{messageOtherRooms}}</p>
+    <!-- {% if messageOtherRooms|trim is not null %}
+      <script>
+        $("input[name='otherRoom']").hide();
+      </script>
+    {% endif %} -->
+  <section>
+
+      {% for room in rooms %}
+            <article>
+              <img class="imageChambre" src="{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
+              <article class="desc">
+                <form class="" action="formReservation.php?lang={{lang}}" method="post">
+
+                  <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
+                  <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
+                  <input type="hidden" name="nbDay" value="{{nbDay}}">
+                  <input type="hidden" id="roomType" name="roomType" value="{{room.nomCategorie}}">
+                  <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{room.idCategorieChambre}}">
+                  <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
+                  <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
+                  <input type="hidden" id="idChambre" name="idChambre" value="{{room.idChambre}}">
+                  <input type="hidden" name="totalToPay" value="{{room.tarifCategorieChambre * nbDay}} €">
+                  <input type="submit" name="submit" value="{{room.tarifCategorieChambre * nbDay}} €">
+                </form>
+
+                <h2>{{room.nomCategorie}}</h2>
+                <p><span>{{nbPerson}}</span> personne(s)</p>
+                <p><span>{{nbChild}}</span> enfant(s)</p>
+                <p>{{room.description}}</p>
+                <ul>
+                  <li>{{room.caracterestique1}}</li>
+                  <li>{{room.caracterestique2}}</li>
+                  <li>{{room.caracterestique3}}</li>
+                </ul>
+              </article>
+              <div>
+
+              </div>
+            </article>
+            <h2>{{message}}</h2>
+      {% endfor %}
+
+  </section>
+  {% if showBtnOtherRoom == 1 %}
+    <form class="" action="formCheckInPage.php?lang={{lang}}" method="post">
+      <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
+      <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
+      <input type="hidden" name="nbDay" value="{{nbDay}}">
+      <input type="hidden" id="roomType" name="roomType" value="{{roomType}}">
+
+      <!-- <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{roomType}}"> -->
+      <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
+      <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
+      <!-- <input type="hidden" id="idChambre" name="idChambre" value="{{rooms['idChambre']}}"> -->
+      <input type="submit" name="otherRoom" value="Afficher d'autres chambres disponible à cette date">
+      <input type="hidden" name="checkRoom" value="1">
     </form>
-</article>
-  <!-- Message d'erreur s'il n'y a pas de chambre disponible dans une date précise  -->
-  <p id="complete">{{messageCheck}}</p>
-
-  <!-- Message d'erreur s'il n'y pas d'autres chambres disponible en cliquant sur le button afficher d'autres chambre... -->
-  <p id="errorOtherRooms">{{messageOtherRooms}}</p>
-  <!-- {% if messageOtherRooms|trim is not null %}
+  {% endif %}
+  <section>
+    {% if checkRoom == 1 %}
+    {% for otherRoom in otherRooms %}
     <script>
       $("input[name='otherRoom']").hide();
     </script>
-  {% endif %} -->
-<section>
-
-    {% for room in rooms %}
           <article>
-            <img class="imageChambre" src="{{room.image1}}" alt="{{'image ' ~ room.nomCategorie}}">
+            <img class="imageChambre" src="{{otherRoom.image1}}" alt="{{'image ' ~ otherRoom.nomCategorie}}">
             <article class="desc">
               <form class="" action="formReservation.php?lang={{lang}}" method="post">
 
                 <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
                 <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
                 <input type="hidden" name="nbDay" value="{{nbDay}}">
-                <input type="hidden" id="roomType" name="roomType" value="{{room.nomCategorie}}">
-                <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{room.idCategorieChambre}}">
+                <input type="hidden" id="roomType" name="roomType" value="{{otherRoom.nomCategorie}}">
+                <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{otherRoom.idCategorieChambre}}">
                 <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
                 <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
-                <input type="hidden" id="idChambre" name="idChambre" value="{{room.idChambre}}">
-                <input type="hidden" name="totalToPay" value="{{room.tarifCategorieChambre * nbDay}} €">
-                <input type="submit" name="submit" value="{{room.tarifCategorieChambre * nbDay}} €">
+                <input type="hidden" id="idChambre" name="idChambre" value="{{otherRoom.idChambre}}">
+                <input type="hidden" name="totalToPay" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
+                <input type="submit" name="submit" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
               </form>
+              <div id="otherRoomsAvailable">
+                <h2>{{otherRoom.nomCategorie}}</h2>
+                <p><span>{{nbPerson}}</span> personne(s)</p>
+                <p><span>{{nbChild}}</span> enfant(s)</p>
+                <p>{{otherRoom.description}}</p>
+                <ul>
+                  <li>{{otherRoom.caracterestique1}}</li>
+                  <li>{{otherRoom.caracterestique2}}</li>
+                  <li>{{otherRoom.caracterestique3}}</li>
+                </ul>
+              </div>
 
-              <h2>{{room.nomCategorie}}</h2>
-              <p><span>{{nbPerson}}</span> personne(s)</p>
-              <p><span>{{nbChild}}</span> enfant(s)</p>
-              <p>{{room.description}}</p>
-              <ul>
-                <li>{{room.caracterestique1}}</li>
-                <li>{{room.caracterestique2}}</li>
-                <li>{{room.caracterestique3}}</li>
-              </ul>
             </article>
             <div>
 
             </div>
           </article>
-          <h2>{{message}}</h2>
     {% endfor %}
-
-</section>
-{% if showBtnOtherRoom == 1 %}
-  <form class="" action="formCheckInPage.php?lang={{lang}}" method="post">
-    <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
-    <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
-    <input type="hidden" name="nbDay" value="{{nbDay}}">
-    <input type="hidden" id="roomType" name="roomType" value="{{roomType}}">
-
-    <!-- <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{roomType}}"> -->
-    <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
-    <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
-    <!-- <input type="hidden" id="idChambre" name="idChambre" value="{{rooms['idChambre']}}"> -->
-    <input type="submit" name="otherRoom" value="Afficher d'autres chambres disponible à cette date">
-    <input type="hidden" name="checkRoom" value="1">
-  </form>
-{% endif %}
-<section>
-  {% if checkRoom == 1 %}
-  {% for otherRoom in otherRooms %}
-  <script>
-    $("input[name='otherRoom']").hide();
-  </script>
-        <article>
-          <img class="imageChambre" src="{{otherRoom.image1}}" alt="{{'image ' ~ otherRoom.nomCategorie}}">
-          <article class="desc">
-            <form class="" action="formReservation.php?lang={{lang}}" method="post">
-
-              <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
-              <input type="hidden" id="CheckOut" name="CheckOut" value="{{toDate}}">
-              <input type="hidden" name="nbDay" value="{{nbDay}}">
-              <input type="hidden" id="roomType" name="roomType" value="{{otherRoom.nomCategorie}}">
-              <input type="hidden" id="idCategorieChambre" name="idCategorieChambre" value="{{otherRoom.idCategorieChambre}}">
-              <input type="hidden" id="nbPerson" name="nbPerson" value="{{nbPerson}}">
-              <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
-              <input type="hidden" id="idChambre" name="idChambre" value="{{otherRoom.idChambre}}">
-              <input type="hidden" name="totalToPay" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
-              <input type="submit" name="submit" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
-            </form>
-            <div id="otherRoomsAvailable">
-              <h2>{{otherRoom.nomCategorie}}</h2>
-              <p><span>{{nbPerson}}</span> personne(s)</p>
-              <p><span>{{nbChild}}</span> enfant(s)</p>
-              <p>{{otherRoom.description}}</p>
-              <ul>
-                <li>{{otherRoom.caracterestique1}}</li>
-                <li>{{otherRoom.caracterestique2}}</li>
-                <li>{{otherRoom.caracterestique3}}</li>
-              </ul>
-            </div>
-
-          </article>
-          <div>
-
-          </div>
-        </article>
-  {% endfor %}
-  {% endif %}
-</section>
+    {% endif %}
+  </section>
+</main>
 {% endblock %}

@@ -75,26 +75,28 @@
     {% block contenu %}
   	{% endblock %}
 
-    <footer>
-      <ul>
-        <li><a href="mentionLegales.php">{{Mentions}}</a></li>
-        <li><a href="politiqueConfidentialite.php">{{politic}}</a></li>
-        <li><a href="conditionVente.php">{{condition}}</a></li>
-      </ul>
-      <div>
+    <div id="footerParent">
+      <footer>
         <ul>
-          <li><span>{{adress}}: </span> Campus Carlone - 06200, Nice</li>
-          <li><span>Mail: </span> info@niceone.com</li>
-          <li><span>Tel: </span> +33 6 00 00 00 00</li>
+          <li><a href="mentionLegales.php">{{Mentions}}</a></li>
+          <li><a href="politiqueConfidentialite.php">{{politic}}</a></li>
+          <li><a href="conditionVente.php">{{condition}}</a></li>
         </ul>
-        <ul>
-            <li><a href=""><span class="carre"><i class="fab fa-facebook"></i></span></a></li>
-            <li><a href=""><span class="carre"><i class="fab fa-instagram"></i></span></a></li>
-            <li><a href=""><span class="carre"><i class="fab fa-twitter"></i></span></a></li>
-            <li><a href=""><span class="carre"><i class="fab fa-linkedin-in"></i></span></a></li>
-        </ul>
-      </div>
+        <div>
+          <ul>
+            <li><span>{{adress}}: </span> Campus Carlone - 06200, Nice</li>
+            <li><span>Mail: </span> info@niceone.com</li>
+            <li><span>Tel: </span> +33 6 00 00 00 00</li>
+          </ul>
+          <ul>
+              <li><a href=""><span class="carre"><i class="fab fa-facebook"></i></span></a></li>
+              <li><a href=""><span class="carre"><i class="fab fa-instagram"></i></span></a></li>
+              <li><a href=""><span class="carre"><i class="fab fa-twitter"></i></span></a></li>
+              <li><a href=""><span class="carre"><i class="fab fa-linkedin-in"></i></span></a></li>
+          </ul>
+        </div>
 
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>

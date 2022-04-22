@@ -14,9 +14,9 @@
     }
   }
   form{
-
+    text-align: center;
     input{
-      @include inputForm(calc(90%/2));
+      @include inputForm(44%);
     }
     select{
         @include inputSelectForm(calc((100% - 1.3rem)/3));
@@ -36,5 +36,25 @@
     color: red;
     text-align: center;
     margin-bottom: 1rem;
+  }
+}
+
+/** STYLE TABLETTE **/
+
+@media (max-width: 1024px){
+  #checkIn{
+    width: 70%;
+  }
+}
+
+/** STYLE SMARTPHONE **/
+
+@media (hover: none), (max-width: 840px){
+  #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
+    form{
+      input, select{ /* style général des inputs et des selects */
+        display: block;
+      }
+    }
   }
 }

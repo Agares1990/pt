@@ -245,11 +245,6 @@
   }
 }
 
-// @media (min-width: 1024px){
-//   #checkIn{
-//     width: 255px;
-//   }
-// }
 
 /** STYLE TABLETTE **/
 
@@ -274,9 +269,10 @@
     }
     form{
       @include form(1rem 1rem); /* style général du formulaire */
+      text-align: center;
       input{ /* style général des inputs et des selects */
         width: 40%;
-        margin-left: 1.2rem;
+        display: inline-block;
       }
       select{ /* style spécial pour les selects */
           width: calc((100% - 1.3rem)/3);
@@ -325,8 +321,8 @@
   #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
     form{
       input{ /* style général des inputs et des selects */
-        width: 95%;
-        margin-left: 0;
+        width: 92%;
+
       }
       select{ /* style spécial pour les selects */
           width: 100%;
