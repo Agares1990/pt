@@ -183,7 +183,7 @@ footer{
 
 /** STYLE TABLETTE **/
 
-@media (hover: none), (max-width: 1024px){
+@media (max-width: 1024px){
   header{
     div{
       .logo{
@@ -229,7 +229,7 @@ footer{
 }
 
 /** STYLE SMARTPHONE **/
-@media (hover: none), (max-device-width: 840px){
+@media (hover: none), (max-width: 840px){
   header{
     div{
       p{
