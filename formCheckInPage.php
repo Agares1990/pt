@@ -103,6 +103,7 @@ if(isset($_POST['submit'])){
   if (isset($errorCheck)) {
     $_SESSION['erreur'] = $_POST; //on ouvre la session pour sauvegarder les données en cas d'erreur et les afficher dans la page formCheckInPage
     header("Location: index.php?message=$errorCheck"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire de CheckIn et garder les champs remplis
+    die();
   }
 // var_dump($otherRooms);
 echo $twig->render('formCheckInPage.html.twig',

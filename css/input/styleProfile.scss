@@ -1,4 +1,7 @@
 @import"base";
+html{
+  scroll-behavior: smooth;
+
 main{
   margin-top: 9rem;
   #btnPwd{
@@ -52,7 +55,7 @@ main{
   #checkIn{
     @include form(1rem 2rem);
     width: 50%;
-    margin: 2rem auto;
+    margin: 0 auto;
     h2{
       @include h2;
       text-align: center;
@@ -148,4 +151,5 @@ main{
   input+span, textarea+span{
     color: red;
   }
+}
 }

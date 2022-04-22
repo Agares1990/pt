@@ -54,8 +54,7 @@ class Reservations
   // Fonction pour Annuler une réservation
   public function cancelResa($pdo, $email, $idReservation){
     $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
-                    WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_chambre) AS reserv INNER JOIN client ON reservation_chambre.clientId = client.idClient
-                    WHERE email = '$email' && idReservationChambre = '$idReservation')");
+                    WHERE idReservationChambre = '$idReservation'");
     return $annulerReservation;
   }
 
@@ -214,14 +213,12 @@ function getRooms($pdo, $lang, $where){
 function getResaRestaurant($pdo, $email){
   $getResaRestaurant = $pdo->query("SELECT * FROM reservation_restaurant
                     JOIN client ON reservation_restaurant.clientId = client.idClient
-                    WHERE email = '$email'")->fetchAll();
+                    WHERE email = '$email'");
   return $getResaRestaurant;
 }
 // Annuler reservation restaurant
-function cancelResaRestaurant($pdo, $email, $idReservationRestaurant){
-  $annulerReservationRestaurant = $pdo->query("DELETE FROM reservation_restaurant
-                  WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_restaurant) AS reserv INNER JOIN client ON reservation_restaurant.clientId = client.idClient
-                  WHERE email = '$email' && idReservationRestaurant = '$idReservationRestaurant')");
+function cancelResaRestaurant($pdo, $idReservationRestaurant){
+  $annulerReservationRestaurant = $pdo->query("DELETE FROM reservation_restaurant WHERE  idReservationRestaurant = '$idReservationRestaurant'");
   return $annulerReservationRestaurant;
 }
 ?>

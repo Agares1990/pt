@@ -88,6 +88,7 @@ if(isset($_POST['submit'])){
   if (isset($fieldError)) {
     $_SESSION['erreur'] = $_POST; //on ouvre la session pour sauvegarder les données en cas d'erreur et les afficher dans la page formReservation
     header("Location: formReservation.php?lang=$lang&message=$fieldError&nom=$nom&prenom=$prenom&email=$email&tel=$tel"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire et garder les champs remplis
+    die();
   }
 // }
 

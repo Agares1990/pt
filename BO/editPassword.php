@@ -12,6 +12,7 @@ session_start();
 
 if (!isset($_SESSION['prenom'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
   header('Location: indexBO.php');
+  die();
 }
 
 if (isset($_GET['message'])) {// On récupére le message d'erreur en php

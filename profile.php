@@ -16,6 +16,7 @@ $connection = getConnectionText($lang);
 
 if (!isset($_SESSION['email'])) {
   header("Location: connexion.php?lang=$lang");
+  die();
 }
 else {
   @$idReservation = $_POST['idReservation'];

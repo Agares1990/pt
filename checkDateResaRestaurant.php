@@ -24,23 +24,28 @@ if (isset($_POST['submit'])) {
   elseif (!$nbPerson) {
     $errorCheck = "Veuillez choisir le nombre de personne svp";
   }
-  // Requête pour vérifier la disponibilité au restaurant
-  $checkResaRestau = $pdo->query("SELECT * FROM restaurant WHERE capacite >= '$nbPerson' && idTable NOT IN ( SELECT tableId FROM reservation_restaurant WHERE dateReservation  = '$fromDate' && heureResa = '$hourResa')")->fetch();
 
 
   // S'il y a des erreur dans le formulaire de recherche de disponibilité, on affiche le message adéquat
   if (isset($errorCheck)) {
     header("Location: restaurant.php?lang=$lang&errorForm=$errorCheck");
+    die();
   }
+
+  // Requête pour vérifier la disponibilité au restaurant
+  $checkResaRestau = $pdo->query("SELECT * FROM restaurant WHERE capacite >= $nbPerson && idTable NOT IN ( SELECT tableId FROM reservation_restaurant WHERE dateReservation  = '$fromDate' && heureResa = '$hourResa')")->fetch();
+
   // Si la requête renvoie 0 resultat, alors on affiche un message
-  elseif (!$checkResaRestau) {
+  if (!$checkResaRestau) {
     $messageCheck = "Désolé, il n'y a pas de disponibilité selon vos critères de recherche";
     header("Location: restaurant.php?lang=$lang&message=$messageCheck");
+    die();
   }
   // Sinon on affiche le formulaire de réservation
   else {
     $idTable = $checkResaRestau['idTable'];
     header("Location: formResaRestaurant.php?lang=$lang&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson");
+    die();
   }
 
   //récupérer l'utilisateur actuel s'il est  déjà connecté
@@ -51,6 +56,7 @@ if (isset($_POST['submit'])) {
   }
   else{
     $showBtnResaRestaurant = 0;
+    die();
   }
 }
 

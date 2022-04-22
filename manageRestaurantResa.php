@@ -11,11 +11,12 @@ $lang = getLang();
 // Annuler une réservation restaurant
 if (isset($_POST['deleteResaRestaurant'])) {
   $idReservationRestaurant = $_POST['idReservation'];
-  $cancelResaRestaurant = cancelResaRestaurant($pdo, $email, $idReservationRestaurant);
+  $cancelResaRestaurant = cancelResaRestaurant($pdo, $idReservationRestaurant);
 
   // Afficher un message de success d'annulation réservation
   $messageSucces = "Votre réservation a bien été annuler";
   header("Location: profile.php?lang=$lang&messageSucces=$messageSucces");
+  die();
 }
 
 ?>

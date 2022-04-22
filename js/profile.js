@@ -32,7 +32,6 @@ $(document).ready(function(){
 
                      // Si la date d'arrivée et/ou date de départ n'est pas remplis
                      // alors on affiche une message d'erreur
-                     console.log(checkIn);
                      if ( checkIn.trim().length == 0 || checkOut.trim().length == 0)
                      {
                        $("#checkIn h3").text("Veuillez entrez la date d'arrivée et la date de départ svp");

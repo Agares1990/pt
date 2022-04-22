@@ -15,5 +15,6 @@ $lang = getLang();
   }
   if (isset($editPassword)) {
     header("Location: editPasswordClient.php?message=$editPassword&lang=$lang"); //Afficher le message d'erreur adéquat si il y a un ou des erreurs lors d'envoie du formulaire
+    die();
   }
 ?>

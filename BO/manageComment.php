@@ -11,6 +11,7 @@ session_start();
 @$prenomUser = $_SESSION["prenom"];
 if (!isset($_SESSION['prenom'])) { // rediriger l'utilisateur vers la page de connexion s'il n'est pas connecté
   header('Location: indexBO.php');
+  die();
 }
 
 // Supprimer un commentaire

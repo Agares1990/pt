@@ -25,6 +25,7 @@ if (isset($_POST['valideResa'])) {
   $resaRestaurant->execute();
 
   header("Location: recapResaRestaurant.php?lang=$lang");
+  die();
 }
 
  ?>

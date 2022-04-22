@@ -27,7 +27,7 @@
               <td>{{getResaRestaurant.nombrePersonne}} personnes</td>
               <td>
                 {% if getResaRestaurant.dateReservation >  dateNow %}
-                <form class="" action="manageRestaurantResa.php?lang={{lang}}" method="post">
+                <form class="" action="manageResaRestaurant.php?lang={{lang}}" method="post">
                   <input type="submit" name="delete" value="Annuler la résrvation" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
                   <input type="hidden" name="idReservation" value="{{getResaRestaurant.idReservationRestaurant}}">
                   <input type="hidden" name="deleteResaRestaurant" value="1">

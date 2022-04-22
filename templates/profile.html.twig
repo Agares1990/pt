@@ -2,12 +2,12 @@
 {% block contenu %}
   <main>
     <button id="btnPwd" type="button" name="button"> <a href="editPasswordClient.php?lang={{lang}}">{{updatePwd}}</a> </button>
-    <h1>{{bienvenue}} <span>{{client.prenom}}<span></h1>
+    <h1>{{bienvenue}} <span>{{client.prenom}}</span></h1>
     <p id="updateResa">{{updateResa}}</p>
     <table>
       <thead>
           <tr>
-              <th colspan="7">{{vosReservation}}</th>
+              <th colspan="7">{{vosReservation}} {{chambre}}</th>
           </tr>
           <tr>
               <th>{{chambre}}</th>
@@ -42,12 +42,13 @@
                   <td>
                     {% if reservation.dateArriver >  dateNow %}
                     <form class="" action="profile.php?lang={{lang}}" method="post">
-                      <input type="submit" name="delete" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                      <input type="submit" name="delete" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));">
                       <input type="hidden" name="idReservation" value="{{reservation.idReservationChambre}}">
                       <input type="hidden" name="idCategorieChambre" value="{{reservation.categorieChambreId}}">
                       <input type="hidden" name="delete" value="1">
                     </form>
                     {% endif %}
+                  </td>
               </tr>
 
           {% endfor %}
@@ -78,11 +79,12 @@
                 <td>
                   {% if getResaRestaurant.dateReservation >  dateNow %}
                   <form class="" action="manageRestaurantResa.php?lang={{lang}}" method="post">
-                    <input type="submit" name="delete" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));"></td>
+                    <input type="submit" name="deleteResaRestaurant" value="{{cancelReservation}}" onclick="return(confirm('Etes-vous sûr de vouloir annuler cette réservation?'));">
                     <input type="hidden" name="idReservation" value="{{getResaRestaurant.idReservationRestaurant}}">
-                    <input type="hidden" name="deleteResaRestaurant" value="1">
+                    <!-- <input type="hidden" name="deleteResaRestaurant" value="1"> -->
                   </form>
                   {% endif %}
+                </td>
             </tr>
 
         {% endfor %}
@@ -104,7 +106,7 @@
         <!-- formulaire de recherche de chambre dispo -->
         <h2>{{updateYour}} <span>reservation</span></h2>
         <h3></h3>
-      <!-- <form id="formChek" action="profile.php" method="POST"> -->
+  
       <form id="formChek" action="" method="post">
           <input type="text" id="fromDate" name="CheckIn" required="required" placeholder="{{dateA}}" value="">
           <input type="text" id="toDate" name="CheckOut" required="required" placeholder="{{dateD}}" value="">
@@ -123,7 +125,7 @@
               <table>
                 <thead>
                     <tr>
-                        <th colspan="5">{{confirmUpdate}}</th>
+                        <th colspan="4">{{confirmUpdate}}</th>
                     </tr>
                     <tr>
                         <th>{{dateA}}</th>

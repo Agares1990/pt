@@ -15,8 +15,8 @@ $connection = getConnectionText($lang);
 if (isset($_GET['errorForm'])) {
     $errorForm =  "{$_GET['errorForm']}";
 }
-elseif (isset($_GET['messageCheck'])) {
-    $messageCheck =  "{$_GET['messageCheck']}";
+elseif (isset($_GET['message'])) {
+    $message =  "{$_GET['message']}";
 }
 elseif (isset($_GET['clientId'])) {
     $clientId =  "{$_GET['clientId']}";
@@ -32,7 +32,7 @@ echo $twig->render('restaurant.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
             'lang' => $lang,
-            'messageCheck' => @$messageCheck,
+            'message' => @$message,
             'errorCheck' => @$errorCheck,
             'clientId' => @$clientId,
             'idTable' => @$idTable,

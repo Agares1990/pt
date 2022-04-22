@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
-  <section>
+  <section id="presentation">
     <h2>Réserver une table au restaurant</h2>
     <article id="restaurant">
       <div id="img"></div>
@@ -13,21 +13,21 @@
       </ul>
     </article>
   </section>
-  <section>
-    <p>{{messageCheck}}</p>
+  <section id="checkAvailability">
+    <p>{{message}}</p>
     <p>{{errorCheck}}</p>
     <form id="checkAvailability" action="checkDateResaRestaurant.php" method="post">
       <input type="text" id="fromDate" name="CheckIn" value="Date">
       <select name="hourResa" id="hourResa">
         <option value="">--Horraire--</option>
-        <option class="option" value="1">12</option>
-        <option class="option" value="2">12h30</option>
-        <option class="option" value="3">13h00</option>
-        <option class="option" value="4">13h30</option>
-        <option class="option" value="5">19h00</option>
-        <option class="option" value="5">19h30</option>
-        <option class="option" value="5">20h00</option>
-        <option class="option" value="5">20h30</option>
+        <option class="option" value="12">12</option>
+        <option class="option" value="12:30">12h30</option>
+        <option class="option" value="13:00">13h00</option>
+        <option class="option" value="13h:30">13h30</option>
+        <option class="option" value="19:00">19h00</option>
+        <option class="option" value="19:30">19h30</option>
+        <option class="option" value="20:00">20h00</option>
+        <option class="option" value="20h30">20h30</option>
       </select>
       <select name="nbPerson" id="nbPerson">
         <option value="">--Nombre de personnes--</option>
@@ -42,7 +42,7 @@
     </section>
     {% if showBtnResaRestaurant == 1 %}
     <section id="valideResa">
-      <h2>Valider votre réservation</h2>
+      <h2>Valider votre <span>réservation</span></h2>
       <form action="valideResaRestaurant.php" method="post">
         <input type="hidden" name="clientId" value="{{clientId}}">
         <input type="hidden" name="fromDate" value="{{fromDate}}">
