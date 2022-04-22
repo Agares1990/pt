@@ -66,25 +66,19 @@ main{
   }
 }
 
-/** STYLE TABLETTE **/
-
-// @media(max-width: 1024px){
-//   #checkIn{ /* Le bloc conteneur du formulaire de check-in et son titre */
-//     h2{ /* titre du formulaire */
-//       @include h3;
-//     }
-//     form{
-//       @include form(1rem 1rem); /* style général du formulaire */
-//       input{ /* style général des inputs et des selects */
-//         width: 40%;
-//         margin-left: 1rem;
-//       }
-//       select{ /* style spécial pour les selects */
-//           width: calc((100% - 1.3rem)/3);
-//       }
-//       input[type="submit"]{ /* Boutton vérifier disponibilité du formulaire de check-in */
-//         @include button(calc((100% - 1rem)/3), .63rem 0);
-//         }
-//     }
-//   }
-// }
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px){
+  section{
+    article{
+      h2{
+        @include h3;
+      }
+      p{
+        font-size: .9rem;
+      }
+      ul{
+        display: none;
+      }
+    }
+  }
+}

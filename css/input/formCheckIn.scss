@@ -16,19 +16,25 @@
   form{
 
     input{
-      @include inputForm(calc(90%/2));
+      @include inputForm(45%);
+      min-width: 45%;
+      max-width: 45%;
     }
     select{
-        @include inputSelectForm(calc((100% - 1.3rem)/3));
+        @include inputSelectForm(45%);
+        min-width: 45%;
+        max-width: 45%;
         text-align: center;
         option:hover{
           background-color: #BCA474;
         }
     }
     input[type="submit"]{
-      @include button(calc((100% - 1rem)/3), .63rem 0);
+      @include button(45%, .63rem 0);
       @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
       margin-top: 1rem;
+      min-width: 45%;
+      max-width: 45%;
       }
 
   }

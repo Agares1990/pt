@@ -42,7 +42,7 @@
   form{
     @include form(1rem 2rem); /* style général du formulaire */
     input, select{ /* style général des inputs et des selects */
-      @include inputForm(90%);
+      @include inputForm(91%);
     }
     select{ /* style spécial pour les selects */
         @include inputSelectForm(102%);
@@ -268,7 +268,7 @@
       @include form(1rem 1rem); /* style général du formulaire */
       input{ /* style général des inputs et des selects */
         width: 40%;
-        margin-left: 1rem;
+        margin-left: 1.2rem;
       }
       select{ /* style spécial pour les selects */
           width: calc((100% - 1.3rem)/3);
