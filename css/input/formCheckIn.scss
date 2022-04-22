@@ -21,7 +21,7 @@
       max-width: 45%;
     }
     select{
-        @include inputSelectForm(45%);
+        @include inputForm(45%);
         min-width: 45%;
         max-width: 45%;
         text-align: center;
