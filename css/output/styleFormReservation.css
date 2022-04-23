@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 /* line 4, ../css/input/_base.scss */
 html {
-  min-height: 100%;
-  height: 100%;
   position: relative;
 }
 
@@ -12,7 +10,6 @@ body {
   position: relative;
   background-color: #F0F0F0;
   font-family: "Poppins", Arial, sans-serif;
-  min-height: 100%;
 }
 
 /* line 15, ../css/input/_base.scss */
@@ -442,15 +439,16 @@ main section h2 {
   font-weight: 500;
   width: 50%;
   margin: 1rem auto 3rem auto;
+  min-width: 432px;
 }
 
-/* line 12, ../css/input/styleFormReservation.scss */
+/* line 13, ../css/input/styleFormReservation.scss */
 main section article {
   width: 50%;
   margin: 1rem auto;
 }
 
-/* line 15, ../css/input/styleFormReservation.scss */
+/* line 16, ../css/input/styleFormReservation.scss */
 main section article h3 {
   margin: 1rem auto;
   font-size: 1.2rem;
@@ -458,56 +456,57 @@ main section article h3 {
   font-weight: 600;
 }
 
-/* line 21, ../css/input/styleFormReservation.scss */
+/* line 22, ../css/input/styleFormReservation.scss */
 main section article a {
   text-decoration: none;
   color: black;
   transition: 0.25s;
 }
 
-/* line 25, ../css/input/styleFormReservation.scss */
+/* line 26, ../css/input/styleFormReservation.scss */
 main section article a:hover {
   color: #BCA474;
 }
 
-/* line 29, ../css/input/styleFormReservation.scss */
+/* line 30, ../css/input/styleFormReservation.scss */
 main section article ul {
   margin: 1rem auto;
   border: 1px solid #BCA474;
   text-align: center;
 }
 
-/* line 33, ../css/input/styleFormReservation.scss */
+/* line 34, ../css/input/styleFormReservation.scss */
 main section article ul li {
   margin: 1rem 1rem .5rem auto;
   display: inline-block;
 }
 
-/* line 36, ../css/input/styleFormReservation.scss */
+/* line 37, ../css/input/styleFormReservation.scss */
 main section article ul li span {
   color: #BCA474;
   font-weight: bold;
   margin-left: .5rem;
 }
 
-/* line 45, ../css/input/styleFormReservation.scss */
+/* line 46, ../css/input/styleFormReservation.scss */
 main section p {
   color: red;
   text-align: center;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
-/* line 50, ../css/input/styleFormReservation.scss */
+/* line 52, ../css/input/styleFormReservation.scss */
 main section form {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
   padding: 2rem 3rem;
   border-radius: 0 0 .5rem .5rem;
-  width: 60%;
+  width: 535px;
   margin: 0 auto;
 }
 
-/* line 54, ../css/input/styleFormReservation.scss */
+/* line 56, ../css/input/styleFormReservation.scss */
 main section form input, main section form textarea {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -515,27 +514,27 @@ main section form input, main section form textarea {
   border: solid 1px #BCA474;
   font-size: 1rem;
   color: #495057;
-  width: 90%;
+  width: 506px;
   border-radius: .25rem;
   padding: .6rem .8rem;
   margin-bottom: 10px;
-  width: 90%;
+  width: 506px;
 }
 
-/* line 57, ../css/input/styleFormReservation.scss */
+/* line 60, ../css/input/styleFormReservation.scss */
 main section form select {
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
   border: solid 1px #BCA474;
   font-size: 1rem;
   color: #495057;
-  width: 96%;
+  width: 532px;
   border-radius: .25rem;
   padding: .6rem .8rem;
   margin-bottom: 10px;
 }
 
-/* line 61, ../css/input/styleFormReservation.scss */
+/* line 65, ../css/input/styleFormReservation.scss */
 main section form input[type='submit'] {
   text-align: center;
   /* Style général des bouttons */
@@ -560,10 +559,56 @@ main section form input[type='submit']:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 73, ../css/input/styleFormReservation.scss */
+/* line 71, ../css/input/styleFormReservation.scss */
 main section form span {
   /* Les message d'erreurs declanché par js */
   color: red;
+}
+
+/** STYLE TABLETTE **/
+@media (max-width: 1024px) {
+  /* line 80, ../css/input/styleFormReservation.scss */
+  main section {
+    width: 80%;
+  }
+  /* line 82, ../css/input/styleFormReservation.scss */
+  main section form {
+    margin-right: 3rem;
+  }
+  /* line 85, ../css/input/styleFormReservation.scss */
+  main section h2 {
+    /* style générale des h2 */
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    min-width: 350px;
+  }
+}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px) {
+  /* line 95, ../css/input/styleFormReservation.scss */
+  section {
+    width: 95%;
+    margin: 1rem auto;
+  }
+  /* line 99, ../css/input/styleFormReservation.scss */
+  section h2 {
+    font-size: 3.1rem;
+    font-weight: bold;
+  }
+  /* line 104, ../css/input/styleFormReservation.scss */
+  section form {
+    /* style générale du formulaire*/
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem 3rem;
+    border-radius: 0 0 .5rem .5rem;
+    width: 85%;
+  }
+  /* line 108, ../css/input/styleFormReservation.scss */
+  section form input, section form textarea {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=styleFormReservation.css.map */

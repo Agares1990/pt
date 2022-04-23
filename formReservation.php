@@ -8,6 +8,7 @@ $css = "styleFormReservation";
 $script = "formReservation";
 $pdo = getPDO();
 $lang = getLang();
+$langues = getIconLang($pdo);
 
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
@@ -70,6 +71,7 @@ echo $twig->render('formReservation.html.twig',
   	  array('css' => $css,
             'script' => $script,
             'lang' => $lang,
+            'langues' => $langues,
             'connection' => $connection,
             'fromDate' => @$fromDate,
             'toDate' => @$toDate,

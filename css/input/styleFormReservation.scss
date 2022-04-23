@@ -8,6 +8,7 @@ main{
       @include h2;
       width: 50%;
       margin: 1rem auto 3rem auto;
+      min-width: 432px;
     }
     article{
       width: 50%;
@@ -46,17 +47,20 @@ main{
       color: red;
       text-align: center;
       margin-bottom: 1rem;
+      text-align: center;
     }
     form{
       @include form(2rem 3rem);
-      width: 60%;
+      width: 535px;
       margin: 0 auto;
       input, textarea{
-        @include inputForm(90%);
+        @include inputForm(506px);
+        //min-width: 506px;
       }
       select{
-        @include inputSelectForm(96%);
+        @include inputSelectForm(532px);
         margin-bottom: 10px;
+        //min-width: 532px;
       }
       input[type='submit']{
         text-align: center;
@@ -64,14 +68,49 @@ main{
         @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
         //display: inline-block;
       }
-      // input[type='reset']{
-      //
-      //   @include button(45%, .5rem 0);
-      //   @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
-      //   display: inline-block;
-      // }
       span{ /* Les message d'erreurs declanché par js */
         color: red;
+      }
+    }
+  }
+}
+/** STYLE TABLETTE **/
+@media (max-width: 1024px){
+  main{
+    section{
+      width: 80%;
+      form{
+        margin-right: 3rem;
+      }
+      h2{
+        @include h3;
+        min-width: 350px;
+      }
+    }
+  }
+}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px){
+  section{
+    width: 95%;
+    margin: 1rem auto;
+
+    h2{
+      font-size: 3.1rem;
+      font-weight: bold;
+      //min-width: 390px;
+    }
+    form{
+      @include form(2rem 3rem);
+      width: 85%;
+
+      input, textarea{
+        width: 50%;
+      }
+      select{
+
+        //min-width: 503px;
       }
     }
   }

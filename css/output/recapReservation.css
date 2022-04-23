@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 /* line 4, ../css/input/_base.scss */
 html {
-  min-height: 100%;
-  height: 100%;
   position: relative;
 }
 
@@ -12,7 +10,6 @@ body {
   position: relative;
   background-color: #F0F0F0;
   font-family: "Poppins", Arial, sans-serif;
-  min-height: 100%;
 }
 
 /* line 15, ../css/input/_base.scss */

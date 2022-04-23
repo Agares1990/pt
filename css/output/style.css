@@ -2,8 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 /* line 4, ../css/input/_base.scss */
 html {
-  min-height: 100%;
-  height: 100%;
   position: relative;
 }
 
@@ -12,7 +10,6 @@ body {
   position: relative;
   background-color: #F0F0F0;
   font-family: "Poppins", Arial, sans-serif;
-  min-height: 100%;
 }
 
 /* line 15, ../css/input/_base.scss */
@@ -1017,12 +1014,12 @@ footer div ul:nth-child(2) {
   /* line 327, ../css/input/style.scss */
   #checkIn form select {
     /* style spécial pour les selects */
-    width: 100%;
+    width: 101%;
   }
   /* line 330, ../css/input/style.scss */
   #checkIn form input[type="submit"] {
     /* Boutton vérifier disponibilité du formulaire de check-in */
-    width: 100%;
+    width: 101%;
   }
   /* SECTION DESCRIPTION DE L'HOTEL */
   /* line 336, ../css/input/style.scss */
