@@ -10,6 +10,7 @@
   $lang = getLang();
   @$email = $_SESSION['email'];
   $connection = getConnectionText($lang);
+  $langues = getIconLang($pdo);
 
   function domain_exists($mail, $record = 'MX'){
         list($user, $domain) = explode('@', $mail);
@@ -39,6 +40,7 @@ if (domain_exists($mail)) {
               'script' => $script,
               'connection' => $connection,
               'lang' => $lang,
+              'langues' => $langues,
               //Pour la traduction
               'nav1' => @$traductions[$lang]["nav1"],
               'nav2' => @$traductions[$lang]["nav2"],

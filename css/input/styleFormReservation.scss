@@ -97,7 +97,7 @@ main{
     margin: 1rem auto;
 
     h2{
-      font-size: 3.1rem;
+      font-size: 1.1rem;
       font-weight: bold;
       //min-width: 390px;
     }
@@ -108,10 +108,10 @@ main{
       input, textarea{
         width: 50%;
       }
-      select{
-
-        //min-width: 503px;
-      }
+      // select{
+      //
+      //   //min-width: 503px;
+      // }
     }
   }
 }

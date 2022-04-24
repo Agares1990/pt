@@ -8,10 +8,13 @@
   $title = "Politique de confidentialité";
 
   $connection = getConnectionText($lang);
+  $langues = getIconLang($pdo);
+  
   echo $twig->render('politiqueConfidentialite.html.twig',
     	  array('css' => $css,
               'title' => $title,
               'lang' => $lang,
+              'langues' => $langues,
               'nav1' => @$traductions[$lang]["nav1"],
               'nav2' => @$traductions[$lang]["nav2"],
               'nav3' => @$traductions[$lang]["nav3"],

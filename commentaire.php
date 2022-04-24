@@ -9,6 +9,7 @@ $script = "commentaire";
 $pdo = getPDO();
 $lang = getLang();
 $connection = getConnectionText($lang);
+$langues = getIconLang($pdo);
 
 $comments = getComments($pdo);
 $getTextTrad = getTextTrad($pdo, $lang);
@@ -19,6 +20,7 @@ echo $twig->render('commentaire.html.twig',
             'comments' => $comments,
             'getTextTrad' => $getTextTrad,
             'lang' => $lang,
+            'langues' => $langues,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

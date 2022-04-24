@@ -10,6 +10,8 @@ $lang = getLang();
 
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
+$langues = getIconLang($pdo);
+
 
 if(isset($_POST['submit'])){
 
@@ -89,6 +91,7 @@ if(isset($_POST['submit'])){
 echo $twig->render('recapResaRestaurant.html.twig',
   	  array('css' => $css,
             'lang' => $lang,
+            'langues' => $langues,
             'connection' => $connection,
 
             //Pour la traduction

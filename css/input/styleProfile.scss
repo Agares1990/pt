@@ -1,7 +1,4 @@
 @import"base";
-html{
-  scroll-behavior: smooth;
-
 main{
   margin-top: 9rem;
   #btnPwd{
@@ -151,5 +148,4 @@ main{
   input+span, textarea+span{
     color: red;
   }
-}
 }

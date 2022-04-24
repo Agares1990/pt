@@ -10,7 +10,7 @@ $pdo = getPDO();
 $lang = getLang();
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
-
+$langues = getIconLang($pdo);
 
 if (isset($_GET['errorForm'])) {
     $errorForm =  "{$_GET['errorForm']}";
@@ -32,6 +32,7 @@ echo $twig->render('restaurant.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
             'lang' => $lang,
+            'langues' => $langues,
             'message' => @$message,
             'errorCheck' => @$errorCheck,
             'clientId' => @$clientId,

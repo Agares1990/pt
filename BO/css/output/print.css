@@ -1,1 +1,19 @@
-header,#mainMenu{display:none}section{width:100%}section h2{width:50%}section button{display:none}section article{width:80%}
+header, #mainMenu {
+  display: none;
+}
+
+section {
+  width: 100%;
+}
+
+section h2 {
+  width: 50%;
+}
+
+section button {
+  display: none;
+}
+
+section article {
+  width: 80%;
+}

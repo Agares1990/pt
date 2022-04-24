@@ -10,6 +10,7 @@ $pdo = getPDO();
 $lang = getLang();
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
+$langues = getIconLang($pdo);
 
 $getRooms = getRooms($pdo, $lang, 1);
 echo $twig->render('room.html.twig',
@@ -17,6 +18,7 @@ echo $twig->render('room.html.twig',
             'connection' => $connection,
             'getRooms' => $getRooms,
             'lang' => $lang,
+            'langues' => $langues,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

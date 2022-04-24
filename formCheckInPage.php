@@ -12,7 +12,8 @@ $title = @$traductions[$lang]["btnCheck"]; // Afficher Vérifier la disponibilit
 
 $pdo = getPDO();
 $connection = getConnectionText($lang);
-//$rooms = '';
+$langues = getIconLang($pdo);
+
 if(isset($_POST['submit'])){
 
   $fromDate = $_POST["CheckIn"];
@@ -110,6 +111,7 @@ echo $twig->render('formCheckInPage.html.twig',
             'script' => $script,
             'title' => $title,
             'lang' => $lang,
+            'langues' => $langues,
             'rooms' => @$rooms,
             'nbPerson' => @$nbPerson,
             'nbChild' => @$nbChild,

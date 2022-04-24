@@ -10,6 +10,7 @@ $pdo = getPDO();
 $lang = getLang();
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
+$langues = getIconLang($pdo);
 
 $fromDate = $_GET['fromDate'];
 $hourResa = $_GET['hourResa'];
@@ -39,6 +40,7 @@ echo $twig->render('formResaRestaurant.html.twig',
   	  array('css' => $css,
             'connection' => $connection,
             'lang' => $lang,
+            'langues' => $langues,
             'fromDate' => $fromDate,
             'hourResa' => $hourResa,
             'nbPerson' => $nbPerson,

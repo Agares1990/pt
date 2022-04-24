@@ -13,6 +13,7 @@ $class_reservation = new Reservations();
 
 $email = $_SESSION['email'];
 $connection = getConnectionText($lang);
+$langues = getIconLang($pdo);
 
 if (!isset($_SESSION['email'])) {
   header("Location: connexion.php?lang=$lang");
@@ -130,6 +131,7 @@ if (isset($_GET['messageSucces'])) {
         array('css' => $css,
               'script' => $script,
               'lang' => $lang,
+              'langues' => $langues,
               'reservations'=> $reservationsClient,
               'client' => $client,
               'messageSucces' => @$messageSucces,

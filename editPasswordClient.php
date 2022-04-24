@@ -11,6 +11,7 @@ session_start();
 
 $email = $_SESSION['email'];
 $connection = getConnectionText($lang);
+$langues = getIconLang($pdo);
 if (isset($_GET['message'])) {// On récupére le message d'erreur en php
     $errorForm =  "{$_GET['message']}";
 }
@@ -20,6 +21,7 @@ echo $twig->render('editPasswordClient.html.twig',
   	  array('css' => $css,
             'title' => $title,
             'lang' => $lang,
+            'langues' => $langues,
             'connection' => $connection,
             'errorForm' => @$errorForm,
             'connection' => $connection,

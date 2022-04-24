@@ -11,6 +11,7 @@ $lang = getLang();
 
 @$email = $_SESSION['email'];
 $connection = getConnectionText($lang);
+$langues = getIconLang($pdo);
 
 if(isset($_POST['submit'])){
 
@@ -97,6 +98,7 @@ echo $twig->render('recapReservation.html.twig',
   	  array('css' => $css,
             'script' => $script,
             'lang' => $lang,
+            'langues' => $langues,
             'connection' => $connection,
             'prenom' => $prenom,
             'fromDate' => $fromDate,

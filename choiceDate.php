@@ -10,6 +10,7 @@
   $lang = getLang();
   @$email = $_SESSION['email'];
   $connection = getConnectionText($lang);
+  $langues = getIconLang($pdo);
 
 if (isset($_POST['reserver'])) {
   $nbPerson = $_POST['nbPerson'];
@@ -23,6 +24,7 @@ if (isset($_POST['reserver'])) {
               'connection' => $connection,
               'lang' => $lang,
               'title' => $title,
+              'langues' => $langues,
               'nbPerson' => @$nbPerson,
               'nbChild' => @$nbChild,
               'roomType' => @$roomType,

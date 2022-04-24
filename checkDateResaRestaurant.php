@@ -7,6 +7,7 @@ require_once "include/_functions.php";
 
 $pdo = getPDO();
 $lang = getLang();
+$langues = getIconLang($pdo);
 @$email = $_SESSION['email'];
 
 
