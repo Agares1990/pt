@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "print.css",
+	"sources": [
+		"../input/print.scss"
+	],
+	"sourcesContent": [
+		"header{\r\n  display: none;\r\n}\r\nfooter{\r\n  display: none;\r\n}\r\n\r\nsection{\r\n  width: 100%;\r\n  h2{\r\n    width: 50%;\r\n  }\r\n  button{\r\n    display: none;\r\n  }\r\n  article{\r\n    width: 80%;\r\n  }\r\n}\r\n"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,MAAM,CAAA;EACJ,OAAO,EAAE,IAAI;CACd;;;AACD,AAAA,MAAM,CAAA;EACJ,OAAO,EAAE,IAAI;CACd;;;AAED,AAAA,OAAO,CAAA;EACL,KAAK,EAAE,IAAI;CAUZ;;;AAXD,AAEE,OAFK,CAEL,EAAE,CAAA;EACA,KAAK,EAAE,GAAG;CACX;;;AAJH,AAKE,OALK,CAKL,MAAM,CAAA;EACJ,OAAO,EAAE,IAAI;CACd;;;AAPH,AAQE,OARK,CAQL,OAAO,CAAA;EACL,KAAK,EAAE,GAAG;CACX"
+}
