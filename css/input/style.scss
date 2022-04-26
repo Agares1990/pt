@@ -209,7 +209,7 @@
 #restauEvent{ /* Bloc parent */
   margin: 4em 20% 8em 20%;
   border: 1px solid $colorOr;
-  height: 50vh;
+  min-height: 50vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   .restauEvent{ /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
     height: 50%;
@@ -218,10 +218,7 @@
       @include backgroundImage(url("../../images/restaurant/restau1.jpg"), 50%, 100%);
       float: left;
       margin-right: 1.5rem;
-      transition: all 3s ease-in-out;
-      &:hover{
-      transform: scale(1.4, 1.4);
-      }
+      //transition: all 3s ease-in-out;
     }
     #salleEvent{ /* L'image de la salle d'évènement */
       @include backgroundImage(url("../../images/event/salleEvent1.jpg"), 50%, 100%);

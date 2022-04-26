@@ -1062,7 +1062,6 @@ main section article article div {
 /* line 39, ../css/input/styleFormCheckInPage.scss */
 main section article article div input[type='submit'] {
   position: absolute;
-  bottom: 200;
   right: 0;
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -1096,7 +1095,13 @@ main section article article div #flech {
   color: white;
 }
 
-/* line 59, ../css/input/styleFormCheckInPage.scss */
+/* line 56, ../css/input/styleFormCheckInPage.scss */
+main section article p {
+  color: red;
+  text-align: center;
+}
+
+/* line 63, ../css/input/styleFormCheckInPage.scss */
 main input[name="otherRoom"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;
@@ -1111,6 +1116,7 @@ main input[name="otherRoom"] {
   border: solid 1px #BCA474;
   color: white;
   cursor: pointer;
+  min-width: 405px;
 }
 
 /* line 75, ../css/input/_mixin.scss */
@@ -1121,23 +1127,23 @@ main input[name="otherRoom"]:hover {
 }
 
 @media (max-width: 1024px) {
-  /* line 67, ../css/input/styleFormCheckInPage.scss */
+  /* line 72, ../css/input/styleFormCheckInPage.scss */
   main section {
     width: 85%;
   }
-  /* line 70, ../css/input/styleFormCheckInPage.scss */
+  /* line 75, ../css/input/styleFormCheckInPage.scss */
   main section article .imageChambre {
     max-width: 344px;
     max-height: 229px;
   }
-  /* line 74, ../css/input/styleFormCheckInPage.scss */
+  /* line 79, ../css/input/styleFormCheckInPage.scss */
   main section article h2 {
     /* style générale des h2 */
     font-size: 1.2rem;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
-  /* line 77, ../css/input/styleFormCheckInPage.scss */
+  /* line 82, ../css/input/styleFormCheckInPage.scss */
   main section article p {
     font-size: .9rem;
   }

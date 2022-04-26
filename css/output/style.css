@@ -824,7 +824,7 @@ footer div ul:nth-child(2) {
   /* Bloc parent */
   margin: 4em 20% 8em 20%;
   border: 1px solid #BCA474;
-  height: 50vh;
+  min-height: 50vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -848,15 +848,9 @@ footer div ul:nth-child(2) {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   float: left;
   margin-right: 1.5rem;
-  transition: all 3s ease-in-out;
 }
 
-/* line 222, ../css/input/style.scss */
-#restauEvent .restauEvent #restaurant:hover {
-  transform: scale(1.4, 1.4);
-}
-
-/* line 226, ../css/input/style.scss */
+/* line 223, ../css/input/style.scss */
 #restauEvent .restauEvent #salleEvent {
   /* L'image de la salle d'évènement */
   /* pour défirnir une image en background */
@@ -870,7 +864,7 @@ footer div ul:nth-child(2) {
   float: right;
 }
 
-/* line 230, ../css/input/style.scss */
+/* line 227, ../css/input/style.scss */
 #restauEvent .restauEvent h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -880,17 +874,17 @@ footer div ul:nth-child(2) {
   text-transform: lowercase;
 }
 
-/* line 234, ../css/input/style.scss */
+/* line 231, ../css/input/style.scss */
 #restauEvent .restauEvent h2::first-letter {
   text-transform: uppercase;
 }
 
-/* line 238, ../css/input/style.scss */
+/* line 235, ../css/input/style.scss */
 #restauEvent .restauEvent p {
   margin-left: 1rem;
 }
 
-/* line 240, ../css/input/style.scss */
+/* line 237, ../css/input/style.scss */
 #restauEvent .restauEvent p a {
   margin-top: 1rem;
   display: block;
@@ -898,21 +892,21 @@ footer div ul:nth-child(2) {
 
 /** STYLE TABLETTE **/
 @media (max-width: 1024px) {
-  /* line 252, ../css/input/style.scss */
+  /* line 249, ../css/input/style.scss */
   #section1 {
     margin-top: 7rem;
   }
-  /* line 254, ../css/input/style.scss */
+  /* line 251, ../css/input/style.scss */
   #section1 h1 {
     /* titre principale de la page (sur le caroussel) */
     font-size: 2.5rem;
   }
-  /* line 256, ../css/input/style.scss */
+  /* line 253, ../css/input/style.scss */
   #section1 h1 span {
     /* 2ème ligne du titre principale */
     font-size: 2rem;
   }
-  /* line 261, ../css/input/style.scss */
+  /* line 258, ../css/input/style.scss */
   #checkIn {
     /* Le bloc conteneur du formulaire de check-in et son titre */
     position: static;
@@ -920,7 +914,7 @@ footer div ul:nth-child(2) {
     margin: 0 auto;
     z-index: 10;
   }
-  /* line 267, ../css/input/style.scss */
+  /* line 264, ../css/input/style.scss */
   #checkIn h2 {
     /* titre du formulaire */
     /* style générale des h2 */
@@ -928,7 +922,7 @@ footer div ul:nth-child(2) {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
-  /* line 270, ../css/input/style.scss */
+  /* line 267, ../css/input/style.scss */
   #checkIn form {
     /* style générale du formulaire*/
     background-color: rgba(255, 255, 255, 0.9);
@@ -937,18 +931,18 @@ footer div ul:nth-child(2) {
     /* style général du formulaire */
     text-align: center;
   }
-  /* line 273, ../css/input/style.scss */
+  /* line 270, ../css/input/style.scss */
   #checkIn form input {
     /* style général des inputs et des selects */
     width: 40%;
     display: inline-block;
   }
-  /* line 277, ../css/input/style.scss */
+  /* line 274, ../css/input/style.scss */
   #checkIn form select {
     /* style spécial pour les selects */
     width: calc((100% - 1.3rem)/3);
   }
-  /* line 280, ../css/input/style.scss */
+  /* line 277, ../css/input/style.scss */
   #checkIn form input[type="submit"] {
     /* Boutton vérifier disponibilité du formulaire de check-in */
     /* Style général des bouttons */
@@ -959,36 +953,36 @@ footer div ul:nth-child(2) {
     margin-right: auto;
     margin-left: auto;
   }
-  /* line 286, ../css/input/style.scss */
+  /* line 283, ../css/input/style.scss */
   .theContainer section {
     /* Style du bloc qui contient tous les élément de chaque type de chambres */
     width: 30%;
   }
-  /* line 290, ../css/input/style.scss */
+  /* line 287, ../css/input/style.scss */
   #restauEvent {
     /* Bloc parent */
     margin: 2em 5% 4em 5%;
   }
-  /* line 292, ../css/input/style.scss */
+  /* line 289, ../css/input/style.scss */
   #restauEvent .restauEvent {
     /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
   }
-  /* line 293, ../css/input/style.scss */
+  /* line 290, ../css/input/style.scss */
   #restauEvent .restauEvent #restaurant {
     /* L'image du Restaurant */
     margin-right: .5rem;
   }
-  /* line 296, ../css/input/style.scss */
+  /* line 293, ../css/input/style.scss */
   #restauEvent .restauEvent h2 {
     font-size: 1.3rem;
     padding: .5rem;
   }
-  /* line 300, ../css/input/style.scss */
+  /* line 297, ../css/input/style.scss */
   #restauEvent .restauEvent p {
     font-size: .9rem;
     margin-left: .5rem;
   }
-  /* line 303, ../css/input/style.scss */
+  /* line 300, ../css/input/style.scss */
   #restauEvent .restauEvent p a {
     margin-top: .5rem;
   }
@@ -996,49 +990,49 @@ footer div ul:nth-child(2) {
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px) {
-  /* line 314, ../css/input/style.scss */
+  /* line 311, ../css/input/style.scss */
   #section1 h1 {
     /* titre principale de la page (sur le caroussel) */
     font-size: 2rem;
   }
-  /* line 316, ../css/input/style.scss */
+  /* line 313, ../css/input/style.scss */
   #section1 h1 span {
     /* 2ème ligne du titre principale */
     font-size: 1.5rem;
   }
-  /* line 321, ../css/input/style.scss */
+  /* line 318, ../css/input/style.scss */
   #checkIn {
     /* Le bloc conteneur du formulaire de check-in et son titre */
   }
-  /* line 323, ../css/input/style.scss */
+  /* line 320, ../css/input/style.scss */
   #checkIn form input {
     /* style général des inputs et des selects */
     width: 92%;
   }
-  /* line 327, ../css/input/style.scss */
+  /* line 324, ../css/input/style.scss */
   #checkIn form select {
     /* style spécial pour les selects */
     width: 101%;
   }
-  /* line 330, ../css/input/style.scss */
+  /* line 327, ../css/input/style.scss */
   #checkIn form input[type="submit"] {
     /* Boutton vérifier disponibilité du formulaire de check-in */
     width: 101%;
   }
   /* SECTION DESCRIPTION DE L'HOTEL */
-  /* line 336, ../css/input/style.scss */
+  /* line 333, ../css/input/style.scss */
   .descHotel {
     /* Conteneur des élémenets de la section description */
     margin: 4em 5% 0 2%;
   }
-  /* line 338, ../css/input/style.scss */
+  /* line 335, ../css/input/style.scss */
   .descHotel .hotelImage {
     /* l'image de l'hôtel */
     width: 45%;
     height: 30vh;
     margin-right: 1rem;
   }
-  /* line 343, ../css/input/style.scss */
+  /* line 340, ../css/input/style.scss */
   .descHotel h2 {
     /* titre de la section description */
     /* style générale des h2 */
@@ -1046,52 +1040,52 @@ footer div ul:nth-child(2) {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
-  /* line 346, ../css/input/style.scss */
+  /* line 343, ../css/input/style.scss */
   .descHotel p {
     font-size: .8rem;
   }
-  /* line 350, ../css/input/style.scss */
+  /* line 347, ../css/input/style.scss */
   .descHotel ul li {
     /* infos et cordonnées de l'hôtel */
     margin: 0 .5rem 1rem 0;
     font-size: .8rem;
   }
-  /* line 357, ../css/input/style.scss */
+  /* line 354, ../css/input/style.scss */
   .theContainer section {
     /* Style du bloc qui contient tous les élément de chaque type de chambres */
     width: 45%;
   }
-  /* line 360, ../css/input/style.scss */
+  /* line 357, ../css/input/style.scss */
   .theContainer .blocDessous {
     /*Bloc qui contient les icones*/
   }
-  /* line 362, ../css/input/style.scss */
+  /* line 359, ../css/input/style.scss */
   .theContainer .blocDessous ul li {
     margin: 0 .5rem 0 0;
     font-size: .8rem;
   }
-  /* line 365, ../css/input/style.scss */
+  /* line 362, ../css/input/style.scss */
   .theContainer .blocDessous ul li img {
     font-size: .8rem;
   }
-  /* line 371, ../css/input/style.scss */
+  /* line 368, ../css/input/style.scss */
   .theContainer .forMobile {
     display: block;
   }
-  /* line 375, ../css/input/style.scss */
+  /* line 372, ../css/input/style.scss */
   #restauEvent {
     /* Bloc parent */
   }
-  /* line 377, ../css/input/style.scss */
+  /* line 374, ../css/input/style.scss */
   #restauEvent .restauEvent {
     /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
   }
-  /* line 379, ../css/input/style.scss */
+  /* line 376, ../css/input/style.scss */
   #restauEvent .restauEvent h2 {
     font-size: 1.1rem;
     font-weight: bold;
   }
-  /* line 383, ../css/input/style.scss */
+  /* line 380, ../css/input/style.scss */
   #restauEvent .restauEvent p {
     font-size: .7rem;
   }

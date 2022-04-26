@@ -47,11 +47,7 @@
 
     <!-- Message d'erreur s'il n'y pas d'autres chambres disponible en cliquant sur le button afficher d'autres chambre... -->
     <p id="errorOtherRooms">{{messageOtherRooms}}</p>
-    <!-- {% if messageOtherRooms|trim is not null %}
-      <script>
-        $("input[name='otherRoom']").hide();
-      </script>
-    {% endif %} -->
+
   <section>
 
       {% for room in rooms %}
@@ -116,6 +112,15 @@
           <article>
             <img class="imageChambre" src="{{otherRoom.image1}}" alt="{{'image ' ~ otherRoom.nomCategorie}}">
             <article class="desc">
+              <h2>{{otherRoom.nomCategorie}}</h2>
+              <p><span>{{nbPerson}}</span> personne(s)</p>
+              <p><span>{{nbChild}}</span> enfant(s)</p>
+              <p>{{otherRoom.description}}</p>
+              <ul>
+                <li>{{otherRoom.caracterestique1}}</li>
+                <li>{{otherRoom.caracterestique2}}</li>
+                <li>{{otherRoom.caracterestique3}}</li>
+              </ul>
               <form class="" action="formReservation.php?lang={{lang}}" method="post">
 
                 <input type="hidden" id="CheckIn" name="CheckIn" value="{{fromDate}}">
@@ -127,20 +132,10 @@
                 <input type="hidden" id="nbChild" name="nbChild" value="{{nbChild}}">
                 <input type="hidden" id="idChambre" name="idChambre" value="{{otherRoom.idChambre}}">
                 <input type="hidden" name="totalToPay" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
-                <input type="submit" name="submit" value="{{otherRoom.tarifCategorieChambre * nbDay}} €">
+                <div>
+                  <input type="submit" name="submit" value="{{otherRoom.tarifCategorieChambre * nbDay}} €"><span id="flech">></span>
+                </div>
               </form>
-              <div id="otherRoomsAvailable">
-                <h2>{{otherRoom.nomCategorie}}</h2>
-                <p><span>{{nbPerson}}</span> personne(s)</p>
-                <p><span>{{nbChild}}</span> enfant(s)</p>
-                <p>{{otherRoom.description}}</p>
-                <ul>
-                  <li>{{otherRoom.caracterestique1}}</li>
-                  <li>{{otherRoom.caracterestique2}}</li>
-                  <li>{{otherRoom.caracterestique3}}</li>
-                </ul>
-              </div>
-
             </article>
             <div>
 

@@ -38,7 +38,7 @@ main{
             position: relative;
             input[type='submit']{
               position: absolute;
-              bottom: 200;
+              // bottom: 200px;
               right: 0;
               @include button(10rem, .63rem 0);
               @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
@@ -53,12 +53,17 @@ main{
             }
           }
         }
+        p{
+          color: red;
+          text-align: center;
+        }
     }
   }
 
   input[name="otherRoom"]{
     @include button(calc((100% - 1rem)/3), .63rem 0);
     @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+    min-width: 405px;
   }
 
   /** STYLE TABLETTE **/
