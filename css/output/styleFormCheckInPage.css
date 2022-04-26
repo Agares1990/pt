@@ -993,44 +993,49 @@ footer div ul:nth-child(2) {
 }
 
 /* line 3, ../css/input/styleFormCheckInPage.scss */
-#checkIn {
-  margin-top: 8rem;
+main {
+  margin-top: 12rem;
+  /** STYLE TABLETTE **/
 }
 
 /* line 5, ../css/input/styleFormCheckInPage.scss */
-#checkIn p {
+main #checkIn {
+  margin-bottom: 3rem;
+}
+
+/* line 7, ../css/input/styleFormCheckInPage.scss */
+main #checkIn p {
   text-align: center;
   color: red;
 }
 
-/* line 10, ../css/input/styleFormCheckInPage.scss */
-section {
+/* line 12, ../css/input/styleFormCheckInPage.scss */
+main section {
   width: 70%;
   margin: 1rem auto;
 }
 
-/* line 13, ../css/input/styleFormCheckInPage.scss */
-section article {
-  clear: both;
+/* line 15, ../css/input/styleFormCheckInPage.scss */
+main section article {
   position: relative;
   margin-bottom: 8rem;
 }
 
-/* line 17, ../css/input/styleFormCheckInPage.scss */
-section article .imageChambre {
+/* line 18, ../css/input/styleFormCheckInPage.scss */
+main section article .imageChambre {
   max-width: 364px;
   max-height: 242px;
   float: left;
   margin-right: 1rem;
 }
 
-/* line 23, ../css/input/styleFormCheckInPage.scss */
-section article article {
+/* line 24, ../css/input/styleFormCheckInPage.scss */
+main section article article {
   position: relative;
 }
 
-/* line 25, ../css/input/styleFormCheckInPage.scss */
-section article article h2 {
+/* line 26, ../css/input/styleFormCheckInPage.scss */
+main section article article h2 {
   /* style générale des h2 */
   font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
@@ -1039,23 +1044,23 @@ section article article h2 {
   margin-bottom: 1rem;
 }
 
-/* line 30, ../css/input/styleFormCheckInPage.scss */
-section article article p {
+/* line 31, ../css/input/styleFormCheckInPage.scss */
+main section article article p {
   margin-bottom: 1rem;
 }
 
-/* line 32, ../css/input/styleFormCheckInPage.scss */
-section article article p span {
+/* line 33, ../css/input/styleFormCheckInPage.scss */
+main section article article p span {
   font-weight: bold;
 }
 
-/* line 36, ../css/input/styleFormCheckInPage.scss */
-section article article div {
+/* line 37, ../css/input/styleFormCheckInPage.scss */
+main section article article div {
   position: relative;
 }
 
-/* line 38, ../css/input/styleFormCheckInPage.scss */
-section article article div input[type='submit'] {
+/* line 39, ../css/input/styleFormCheckInPage.scss */
+main section article article div input[type='submit'] {
   position: absolute;
   bottom: 200;
   right: 0;
@@ -1075,14 +1080,14 @@ section article article div input[type='submit'] {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-section article article div input[type='submit']:hover {
+main section article article div input[type='submit']:hover {
   background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 45, ../css/input/styleFormCheckInPage.scss */
-section article article div #flech {
+/* line 46, ../css/input/styleFormCheckInPage.scss */
+main section article article div #flech {
   position: absolute;
   top: 12px;
   right: 10px;
@@ -1091,8 +1096,8 @@ section article article div #flech {
   color: white;
 }
 
-/* line 58, ../css/input/styleFormCheckInPage.scss */
-input[name="otherRoom"] {
+/* line 59, ../css/input/styleFormCheckInPage.scss */
+main input[name="otherRoom"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;
   border-radius: .25rem;
@@ -1109,32 +1114,31 @@ input[name="otherRoom"] {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-input[name="otherRoom"]:hover {
+main input[name="otherRoom"]:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/** STYLE TABLETTE **/
 @media (max-width: 1024px) {
-  /* line 66, ../css/input/styleFormCheckInPage.scss */
-  section {
+  /* line 67, ../css/input/styleFormCheckInPage.scss */
+  main section {
     width: 85%;
   }
-  /* line 69, ../css/input/styleFormCheckInPage.scss */
-  section article .imageChambre {
+  /* line 70, ../css/input/styleFormCheckInPage.scss */
+  main section article .imageChambre {
     max-width: 344px;
     max-height: 229px;
   }
-  /* line 73, ../css/input/styleFormCheckInPage.scss */
-  section article h2 {
+  /* line 74, ../css/input/styleFormCheckInPage.scss */
+  main section article h2 {
     /* style générale des h2 */
     font-size: 1.2rem;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
-  /* line 76, ../css/input/styleFormCheckInPage.scss */
-  section article p {
+  /* line 77, ../css/input/styleFormCheckInPage.scss */
+  main section article p {
     font-size: .9rem;
   }
 }

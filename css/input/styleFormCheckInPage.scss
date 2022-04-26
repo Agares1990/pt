@@ -1,84 +1,86 @@
 @import"base";
 @import"formCheckIn";
-#checkIn{
-  margin-top: 8rem;
-  p{
-  text-align: center;
-  color: red;
+main{
+  margin-top: 12rem;
+  #checkIn{
+    margin-bottom: 3rem;
+    p{
+    text-align: center;
+    color: red;
+    }
   }
-}
-section{
-  width: 70%;
-  margin: 1rem auto;
-  article{
-    clear: both;
-    position: relative;
-    margin-bottom: 8rem;
-    .imageChambre{
-      max-width: 364px;
-      max-height: 242px;
-      float: left;
-      margin-right: 1rem;
-      }
-      article{
-        position: relative;
-        h2{
-          @include h3;
-          font-weight: bold;
-          margin-bottom: 1rem;
-        }
-        p{
-          margin-bottom: 1rem;
-          span{
-            font-weight: bold;
-          }
-        }
-        div{
-          position: relative;
-          input[type='submit']{
-            position: absolute;
-            bottom: 200;
-            right: 0;
-            @include button(10rem, .63rem 0);
-            @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
-          }
-          #flech{
-            position: absolute;
-            top: 12px;
-            right: 10px;
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: white;
-          }
-        }
-      }
-  }
-}
-
-input[name="otherRoom"]{
-  @include button(calc((100% - 1rem)/3), .63rem 0);
-  @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
-}
-
-/** STYLE TABLETTE **/
-
-@media (max-width: 1024px){
   section{
-    width: 85%;
+    width: 70%;
+    margin: 1rem auto;
     article{
+      position: relative;
+      margin-bottom: 8rem;
       .imageChambre{
-        max-width: 344px;
-        max-height: 229px;
-      }
-      h2{
-        @include h3;
-      }
-      p{
-        font-size: .9rem;
-      }
+        max-width: 364px;
+        max-height: 242px;
+        float: left;
+        margin-right: 1rem;
+        }
+        article{
+          position: relative;
+          h2{
+            @include h3;
+            font-weight: bold;
+            margin-bottom: 1rem;
+          }
+          p{
+            margin-bottom: 1rem;
+            span{
+              font-weight: bold;
+            }
+          }
+          div{
+            position: relative;
+            input[type='submit']{
+              position: absolute;
+              bottom: 200;
+              right: 0;
+              @include button(10rem, .63rem 0);
+              @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+            }
+            #flech{
+              position: absolute;
+              top: 12px;
+              right: 10px;
+              font-size: 1.4rem;
+              font-weight: bold;
+              color: white;
+            }
+          }
+        }
     }
   }
 
+  input[name="otherRoom"]{
+    @include button(calc((100% - 1rem)/3), .63rem 0);
+    @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
+  }
+
+  /** STYLE TABLETTE **/
+
+  @media (max-width: 1024px){
+    section{
+      width: 85%;
+      article{
+        .imageChambre{
+          max-width: 344px;
+          max-height: 229px;
+        }
+        h2{
+          @include h3;
+        }
+        p{
+          font-size: .9rem;
+        }
+      }
+    }
+
+  }
 }
 
 /** STYLE SMARTPHONE **/
