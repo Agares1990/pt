@@ -3,16 +3,17 @@
 /* line 4, ../css/input/_base.scss */
 html {
   position: relative;
+  scroll-behavior: smooth;
 }
 
-/* line 9, ../css/input/_base.scss */
+/* line 10, ../css/input/_base.scss */
 body {
   position: relative;
   background-color: #F0F0F0;
   font-family: "Poppins", Arial, sans-serif;
 }
 
-/* line 15, ../css/input/_base.scss */
+/* line 16, ../css/input/_base.scss */
 header {
   background-color: #fff;
   padding: 1rem 1rem 0 1rem;
@@ -23,24 +24,24 @@ header {
   z-index: 9999;
 }
 
-/* line 23, ../css/input/_base.scss */
+/* line 24, ../css/input/_base.scss */
 header div {
   display: flex;
   justify-content: space-between;
 }
 
-/* line 26, ../css/input/_base.scss */
+/* line 27, ../css/input/_base.scss */
 header div p {
   margin-top: .5rem;
 }
 
-/* line 29, ../css/input/_base.scss */
+/* line 30, ../css/input/_base.scss */
 header div p span img {
   width: 24px;
   height: 16px;
 }
 
-/* line 35, ../css/input/_base.scss */
+/* line 36, ../css/input/_base.scss */
 header div .logo {
   width: 10rem;
   height: 7.3rem;
@@ -48,31 +49,31 @@ header div .logo {
   margin-right: 2rem;
 }
 
-/* line 41, ../css/input/_base.scss */
+/* line 42, ../css/input/_base.scss */
 header div a {
   margin-right: 1rem;
   text-decoration: none;
   color: black;
 }
 
-/* line 45, ../css/input/_base.scss */
+/* line 46, ../css/input/_base.scss */
 header div a .iconeLangue {
   margin-right: .2rem;
   margin-top: .6rem;
 }
 
-/* line 51, ../css/input/_base.scss */
+/* line 52, ../css/input/_base.scss */
 header div div {
   margin-right: 25rem;
 }
 
-/* line 53, ../css/input/_base.scss */
+/* line 54, ../css/input/_base.scss */
 header div div i {
   font-size: 2rem;
   color: #BCA474;
 }
 
-/* line 57, ../css/input/_base.scss */
+/* line 58, ../css/input/_base.scss */
 header div div .profil {
   /* style générale des h2 */
   font-size: 1.2rem;
@@ -81,7 +82,7 @@ header div div .profil {
   margin-top: .5rem;
 }
 
-/* line 64, ../css/input/_base.scss */
+/* line 65, ../css/input/_base.scss */
 header nav {
   clear: both;
   font-family: "Poppins", Arial, sans-serif;
@@ -89,23 +90,23 @@ header nav {
   padding: 0.5rem 0 0.5rem 0;
 }
 
-/* line 70, ../css/input/_base.scss */
+/* line 71, ../css/input/_base.scss */
 header nav input[type="checkbox"] {
   display: none;
 }
 
-/* line 73, ../css/input/_base.scss */
+/* line 74, ../css/input/_base.scss */
 header nav ul {
   margin-top: -3rem;
 }
 
-/* line 75, ../css/input/_base.scss */
+/* line 76, ../css/input/_base.scss */
 header nav ul li {
   display: inline-block;
   /* Boutton connexion */
 }
 
-/* line 78, ../css/input/_base.scss */
+/* line 79, ../css/input/_base.scss */
 header nav ul li a {
   text-decoration: none;
   padding: 0px 1.1rem;
@@ -117,12 +118,12 @@ header nav ul li a {
   z-index: 0;
 }
 
-/* line 87, ../css/input/_base.scss */
+/* line 88, ../css/input/_base.scss */
 header nav ul li a:hover {
   color: #BCA474;
 }
 
-/* line 92, ../css/input/_base.scss */
+/* line 93, ../css/input/_base.scss */
 header nav ul li .connexion {
   position: absolute;
   top: 1rem;
@@ -146,31 +147,31 @@ header nav ul li .connexion:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 101, ../css/input/_base.scss */
+/* line 102, ../css/input/_base.scss */
 header nav ul li .connexion:hover {
   color: white;
 }
 
 /* Menu de navigation au scroll */
-/* line 110, ../css/input/_base.scss */
+/* line 111, ../css/input/_base.scss */
 header.scroll {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   padding: .5rem 1rem 0 1rem;
 }
 
-/* line 114, ../css/input/_base.scss */
+/* line 115, ../css/input/_base.scss */
 header.scroll .logo {
   width: 9rem;
   height: 6.3rem;
 }
 
-/* line 118, ../css/input/_base.scss */
+/* line 119, ../css/input/_base.scss */
 header.scroll nav {
   padding: 0.3rem 0 0 0;
 }
 
-/* line 124, ../css/input/_base.scss */
+/* line 125, ../css/input/_base.scss */
 footer {
   position: absolute;
   bottom: 0;
@@ -182,33 +183,33 @@ footer {
   justify-content: space-around;
 }
 
-/* line 133, ../css/input/_base.scss */
+/* line 134, ../css/input/_base.scss */
 footer ul {
   margin: 2rem 0;
 }
 
-/* line 135, ../css/input/_base.scss */
+/* line 136, ../css/input/_base.scss */
 footer ul li {
   margin-bottom: 1rem;
 }
 
-/* line 137, ../css/input/_base.scss */
+/* line 138, ../css/input/_base.scss */
 footer ul li a {
   text-decoration: none;
   color: white;
 }
 
-/* line 145, ../css/input/_base.scss */
+/* line 146, ../css/input/_base.scss */
 footer div ul li {
   display: inline-block;
 }
 
-/* line 147, ../css/input/_base.scss */
+/* line 148, ../css/input/_base.scss */
 footer div ul li span {
   color: #BCA474;
 }
 
-/* line 150, ../css/input/_base.scss */
+/* line 151, ../css/input/_base.scss */
 footer div ul li .carre {
   font-size: 1.4rem;
   padding: .1rem 0.4rem;
@@ -217,7 +218,7 @@ footer div ul li .carre {
   transition: all 500ms ease;
 }
 
-/* line 156, ../css/input/_base.scss */
+/* line 157, ../css/input/_base.scss */
 footer div ul li .carre:hover {
   background-color: #BCA474;
   color: black;
@@ -225,63 +226,63 @@ footer div ul li .carre:hover {
   transition: all 500ms ease;
 }
 
-/* line 162, ../css/input/_base.scss */
+/* line 163, ../css/input/_base.scss */
 footer div ul li .carre i {
   color: white;
 }
 
-/* line 164, ../css/input/_base.scss */
+/* line 165, ../css/input/_base.scss */
 footer div ul li .carre i:hover {
   color: black;
 }
 
-/* line 171, ../css/input/_base.scss */
+/* line 172, ../css/input/_base.scss */
 footer div ul:first-child li {
   margin-right: 1rem;
   padding-right: 1rem;
   border-right: 1px solid #BCA474;
 }
 
-/* line 176, ../css/input/_base.scss */
+/* line 177, ../css/input/_base.scss */
 footer div ul:nth-child(2) {
   text-align: center;
 }
 
 /** STYLE TABLETTE **/
 @media (max-width: 1024px) {
-  /* line 188, ../css/input/_base.scss */
+  /* line 189, ../css/input/_base.scss */
   header div .logo {
     width: 9rem;
     height: 6.3rem;
   }
-  /* line 192, ../css/input/_base.scss */
+  /* line 193, ../css/input/_base.scss */
   header div .profil {
     font-size: 1rem;
   }
-  /* line 196, ../css/input/_base.scss */
+  /* line 197, ../css/input/_base.scss */
   header div a i {
     font-size: 1.7rem;
   }
-  /* line 200, ../css/input/_base.scss */
+  /* line 201, ../css/input/_base.scss */
   header div .connexion {
     padding: .4rem .9rem;
     font-size: 1rem;
   }
-  /* line 204, ../css/input/_base.scss */
+  /* line 205, ../css/input/_base.scss */
   header div div {
     margin-right: 15rem;
   }
-  /* line 208, ../css/input/_base.scss */
+  /* line 209, ../css/input/_base.scss */
   header nav {
     text-align: right;
     margin-right: 4rem;
     padding: 0.3rem 0 0 0;
   }
-  /* line 212, ../css/input/_base.scss */
+  /* line 213, ../css/input/_base.scss */
   header nav ul li a {
     font-size: 1rem;
   }
-  /* line 221, ../css/input/_base.scss */
+  /* line 222, ../css/input/_base.scss */
   footer div ul:first-child li {
     display: block;
     border: none;
@@ -290,46 +291,46 @@ footer div ul:nth-child(2) {
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px) {
-  /* line 234, ../css/input/_base.scss */
+  /* line 235, ../css/input/_base.scss */
   header div p {
     margin-left: -5rem;
   }
-  /* line 237, ../css/input/_base.scss */
+  /* line 238, ../css/input/_base.scss */
   header div p span img {
     width: 20px;
     height: 14px;
   }
-  /* line 243, ../css/input/_base.scss */
+  /* line 244, ../css/input/_base.scss */
   header div div {
     margin-right: 3rem;
   }
-  /* line 245, ../css/input/_base.scss */
+  /* line 246, ../css/input/_base.scss */
   header div div .profil {
     display: none;
   }
-  /* line 250, ../css/input/_base.scss */
+  /* line 251, ../css/input/_base.scss */
   header nav {
     /* Bloc menu burger */
   }
-  /* line 252, ../css/input/_base.scss */
+  /* line 253, ../css/input/_base.scss */
   header nav input:checked + label > span {
     transform: rotate(45deg);
   }
-  /* line 254, ../css/input/_base.scss */
+  /* line 255, ../css/input/_base.scss */
   header nav input:checked + label > span::before {
     top: 0;
     transform: rotate(0deg);
   }
-  /* line 258, ../css/input/_base.scss */
+  /* line 259, ../css/input/_base.scss */
   header nav input:checked + label > span::after {
     top: 0;
     transform: rotate(90deg);
   }
-  /* line 263, ../css/input/_base.scss */
+  /* line 264, ../css/input/_base.scss */
   header nav input:checked ~ ul {
     right: 0 !important;
   }
-  /* line 268, ../css/input/_base.scss */
+  /* line 269, ../css/input/_base.scss */
   header nav label {
     position: fixed;
     top: 20px;
@@ -339,7 +340,7 @@ footer div ul:nth-child(2) {
     cursor: pointer;
     z-index: 1;
   }
-  /* line 276, ../css/input/_base.scss */
+  /* line 277, ../css/input/_base.scss */
   header nav label > span, header nav label ::before, header nav label ::after {
     display: block;
     position: absolute;
@@ -348,17 +349,17 @@ footer div ul:nth-child(2) {
     background-color: #616161;
     transition-duration: .25s;
   }
-  /* line 284, ../css/input/_base.scss */
+  /* line 285, ../css/input/_base.scss */
   header nav label > span::before {
     content: '';
     top: -8px;
   }
-  /* line 288, ../css/input/_base.scss */
+  /* line 289, ../css/input/_base.scss */
   header nav label > span::after {
     content: '';
     top: 8px;
   }
-  /* line 294, ../css/input/_base.scss */
+  /* line 295, ../css/input/_base.scss */
   header nav ul {
     opacity: 0.95;
     display: flex;
@@ -377,7 +378,7 @@ footer div ul:nth-child(2) {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     transition-duration: .25s;
   }
-  /* line 312, ../css/input/_base.scss */
+  /* line 313, ../css/input/_base.scss */
   header nav ul li a {
     display: block;
     color: #333;
@@ -385,7 +386,7 @@ footer div ul:nth-child(2) {
     font-weight: 600;
     transition-duration: .25s;
   }
-  /* line 320, ../css/input/_base.scss */
+  /* line 321, ../css/input/_base.scss */
   header nav ul li .connexion {
     position: static;
     background-color: inherit;
@@ -395,45 +396,40 @@ footer div ul:nth-child(2) {
     text-transform: uppercase;
     -webkit-transition: .5s;
   }
-  /* line 328, ../css/input/_base.scss */
+  /* line 329, ../css/input/_base.scss */
   header nav ul li .connexion:hover {
     /* Pour supprimer l'animation qui a été sur le button connexion */
     background: inherit;
     color: #BCA474;
   }
-  /* line 339, ../css/input/_base.scss */
+  /* line 340, ../css/input/_base.scss */
   footer {
     font-size: .8rem;
   }
-  /* line 341, ../css/input/_base.scss */
+  /* line 342, ../css/input/_base.scss */
   footer > ul {
     margin-right: 2rem;
     margin-left: 1rem;
   }
-  /* line 345, ../css/input/_base.scss */
+  /* line 346, ../css/input/_base.scss */
   footer div {
     width: 50%;
   }
-  /* line 347, ../css/input/_base.scss */
+  /* line 348, ../css/input/_base.scss */
   footer div ul:last-child {
     display: none;
   }
 }
 
 /* line 2, ../css/input/styleProfile.scss */
-html {
-  scroll-behavior: smooth;
-}
-
-/* line 5, ../css/input/styleProfile.scss */
-html main {
+main {
   margin-top: 9rem;
   /* Formulaire de modification de la date */
   /* Formulaire des commentaires */
 }
 
-/* line 7, ../css/input/styleProfile.scss */
-html main #btnPwd {
+/* line 4, ../css/input/styleProfile.scss */
+main #btnPwd {
   /* Style général des bouttons */
   padding: 0.63rem 0;
   border-radius: .25rem;
@@ -451,33 +447,33 @@ html main #btnPwd {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-html main #btnPwd:hover {
+main #btnPwd:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/* line 11, ../css/input/styleProfile.scss */
-html main #btnPwd a {
+/* line 8, ../css/input/styleProfile.scss */
+main #btnPwd a {
   text-decoration: none;
   color: white;
 }
 
-/* line 16, ../css/input/styleProfile.scss */
-html main table, html main td, html main th {
+/* line 13, ../css/input/styleProfile.scss */
+main table, main td, main th {
   border: 1px solid #BCA474;
 }
 
-/* line 19, ../css/input/styleProfile.scss */
-html main #updateResa {
+/* line 16, ../css/input/styleProfile.scss */
+main #updateResa {
   /* Message de succès après modification d'une réservation */
   color: green;
   text-align: center;
   margin-top: 1rem;
 }
 
-/* line 24, ../css/input/styleProfile.scss */
-html main h1 {
+/* line 21, ../css/input/styleProfile.scss */
+main h1 {
   margin-top: 3rem;
   text-align: center;
   /* style générale des h2 */
@@ -486,37 +482,37 @@ html main h1 {
   font-weight: 500;
 }
 
-/* line 28, ../css/input/styleProfile.scss */
-html main h1 span {
+/* line 25, ../css/input/styleProfile.scss */
+main h1 span {
   color: #BCA474;
 }
 
-/* line 32, ../css/input/styleProfile.scss */
-html main table {
+/* line 29, ../css/input/styleProfile.scss */
+main table {
   width: 70%;
   margin: 3rem auto;
 }
 
-/* line 35, ../css/input/styleProfile.scss */
-html main table thead {
+/* line 32, ../css/input/styleProfile.scss */
+main table thead {
   font-weight: bold;
 }
 
-/* line 38, ../css/input/styleProfile.scss */
-html main table th, html main table td {
+/* line 35, ../css/input/styleProfile.scss */
+main table th, main table td {
   padding: .5rem 1rem;
   text-align: center;
   vertical-align: middle;
 }
 
-/* line 42, ../css/input/styleProfile.scss */
-html main table th i, html main table td i {
+/* line 39, ../css/input/styleProfile.scss */
+main table th i, main table td i {
   font-size: 2rem;
   color: red;
 }
 
-/* line 48, ../css/input/styleProfile.scss */
-html main h2 {
+/* line 45, ../css/input/styleProfile.scss */
+main h2 {
   /* style générale des h2 */
   font-size: 1.2rem;
   font-family: "Raleway", sans-serif;
@@ -525,8 +521,8 @@ html main h2 {
   margin-bottom: 3rem;
 }
 
-/* line 55, ../css/input/styleProfile.scss */
-html main #checkIn {
+/* line 52, ../css/input/styleProfile.scss */
+main #checkIn {
   /* style générale du formulaire*/
   background-color: rgba(255, 255, 255, 0.9);
   padding: 1rem 2rem;
@@ -535,8 +531,8 @@ html main #checkIn {
   margin: 0 auto;
 }
 
-/* line 59, ../css/input/styleProfile.scss */
-html main #checkIn h2 {
+/* line 56, ../css/input/styleProfile.scss */
+main #checkIn h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
@@ -545,20 +541,20 @@ html main #checkIn h2 {
   margin-bottom: 2rem;
 }
 
-/* line 63, ../css/input/styleProfile.scss */
-html main #checkIn h2 span {
+/* line 60, ../css/input/styleProfile.scss */
+main #checkIn h2 span {
   color: #BCA474;
 }
 
-/* line 67, ../css/input/styleProfile.scss */
-html main #checkIn h3 {
+/* line 64, ../css/input/styleProfile.scss */
+main #checkIn h3 {
   color: red;
   text-align: center;
   margin-bottom: 1rem;
 }
 
-/* line 73, ../css/input/styleProfile.scss */
-html main #checkIn form input {
+/* line 70, ../css/input/styleProfile.scss */
+main #checkIn form input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -572,13 +568,13 @@ html main #checkIn form input {
   width: calc(80%/2);
 }
 
-/* line 76, ../css/input/styleProfile.scss */
-html main #checkIn form input:first-child {
+/* line 73, ../css/input/styleProfile.scss */
+main #checkIn form input:first-child {
   margin-right: 2rem;
 }
 
-/* line 79, ../css/input/styleProfile.scss */
-html main #checkIn form button {
+/* line 76, ../css/input/styleProfile.scss */
+main #checkIn form button {
   /* Style général des bouttons */
   padding: 0.63rem 0;
   border-radius: .25rem;
@@ -596,36 +592,36 @@ html main #checkIn form button {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-html main #checkIn form button:hover {
+main #checkIn form button:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
-/* line 90, ../css/input/styleProfile.scss */
-html main #room {
+/* line 87, ../css/input/styleProfile.scss */
+main #room {
   width: 70%;
   margin: 1rem auto;
 }
 
-/* line 93, ../css/input/styleProfile.scss */
-html main #room article {
+/* line 90, ../css/input/styleProfile.scss */
+main #room article {
   height: 35vh;
   margin-bottom: 4rem;
 }
 
-/* line 97, ../css/input/styleProfile.scss */
-html main #room article p span {
+/* line 94, ../css/input/styleProfile.scss */
+main #room article p span {
   color: #BCA474;
 }
 
-/* line 101, ../css/input/styleProfile.scss */
-html main #room article p:nth-child(3) {
+/* line 98, ../css/input/styleProfile.scss */
+main #room article p:nth-child(3) {
   margin-bottom: 2rem;
 }
 
-/* line 104, ../css/input/styleProfile.scss */
-html main #room article button {
+/* line 101, ../css/input/styleProfile.scss */
+main #room article button {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -645,14 +641,14 @@ html main #room article button {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-html main #room article button:hover {
+main #room article button:hover {
   background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 115, ../css/input/styleProfile.scss */
-html main section {
+/* line 112, ../css/input/styleProfile.scss */
+main section {
   width: 80%;
   margin: 2rem auto;
   /* style générale du formulaire*/
@@ -661,23 +657,23 @@ html main section {
   border-radius: 0 0 .5rem .5rem;
 }
 
-/* line 119, ../css/input/styleProfile.scss */
-html main section h2 {
+/* line 116, ../css/input/styleProfile.scss */
+main section h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
 }
 
-/* line 122, ../css/input/styleProfile.scss */
-html main section #comments {
+/* line 119, ../css/input/styleProfile.scss */
+main section #comments {
   width: 55%;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* line 126, ../css/input/styleProfile.scss */
-html main section #comments input {
+/* line 123, ../css/input/styleProfile.scss */
+main section #comments input {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -691,13 +687,13 @@ html main section #comments input {
   width: calc((100% - 6.5rem)/2);
 }
 
-/* line 130, ../css/input/styleProfile.scss */
-html main section #comments input[name="title"] {
+/* line 127, ../css/input/styleProfile.scss */
+main section #comments input[name="title"] {
   margin-right: 2rem;
 }
 
-/* line 133, ../css/input/styleProfile.scss */
-html main section #comments textarea {
+/* line 130, ../css/input/styleProfile.scss */
+main section #comments textarea {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -712,8 +708,8 @@ html main section #comments textarea {
   margin-bottom: 2rem;
 }
 
-/* line 137, ../css/input/styleProfile.scss */
-html main section #comments button {
+/* line 134, ../css/input/styleProfile.scss */
+main section #comments button {
   /* Style général des bouttons */
   padding: 0.7rem 0;
   border-radius: .25rem;
@@ -730,28 +726,28 @@ html main section #comments button {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-html main section #comments button:hover {
+main section #comments button:hover {
   background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 141, ../css/input/styleProfile.scss */
-html main section #comments .messagePositive {
+/* line 138, ../css/input/styleProfile.scss */
+main section #comments .messagePositive {
   /* message de succès d'ajout d'un commentaire générer par jquery*/
   color: green;
   text-align: center;
 }
 
-/* line 145, ../css/input/styleProfile.scss */
-html main section #comments .messageNegative {
+/* line 142, ../css/input/styleProfile.scss */
+main section #comments .messageNegative {
   /* message d'echec d'ajout d'un commentaire générer par jquery*/
   color: red;
   text-align: center;
 }
 
-/* line 151, ../css/input/styleProfile.scss */
-html main input + span, html main textarea + span {
+/* line 148, ../css/input/styleProfile.scss */
+main input + span, main textarea + span {
   color: red;
 }
 

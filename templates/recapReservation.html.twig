@@ -2,23 +2,23 @@
 {% block contenu %}
 <main>
   <section>
-    <h2>Merci pour votre <span>Réservation</span></h2>
+    <h2>{{thnxFor}} <span>{{reservation}}</span></h2>
     <article id="content">
-      <span>Récapitulatif de votre réservation:</span>
+      <span>{{recap}}</span>
       <ul>
-        <li>Arrivé le: <span>{{fromDate}}</span></li>
-        <li>Départ le: <span>{{toDate}}</span></li>
-        <li>Vous avez réservé pour  <span>{{nbPerson}}</span> adults et <span>{{nbChild}}</span> enfant</li>
+        <li>{{dateA}}: <span>{{fromDate}}</span></li>
+        <li>{{dateD}}: <span>{{toDate}}</span></li>
+        <li>{{recap1}}  <span>{{nbPerson}}</span> {{recap2}} <span>{{nbChild}}</span> {{recap3}}</li>
         <li>1 <span>{{roomType}}</span></li>
-        <li>Compris: 10% de TVA.</li>
-        <li>Non Compris: 0,66€ de taxe de séjour par personne et par nuit payable sur place</li>
-        <li>Totale Nuités: <span>{{nbDay}}</span></li>
-        <li>Totale à payer: <span>{{totalToPay}}</span></li>
-        <li>Annulation gratuite avant le: <span>{{dateCancel}}</span></li>
+        <li>{{recap4}}: 10% TVA.</li>
+        <li>{{recap5}}</li>
+        <li>{{ttNight}}: <span>{{nbDay}}</span></li>
+        <li>{{ttPay}}: <span>{{totalToPay}}</span></li>
+        <li>{{recap6}}: <span>{{dateCancel}}</span></li>
       </ul>
 
     </article>
-    <button onclick="window.print();">IMPRIMER</button>
+    <button onclick="window.print();">{{print}}</button>
   </section>
 </main>
 {% endblock %}

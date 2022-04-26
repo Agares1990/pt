@@ -53,7 +53,8 @@ echo $twig->render('restaurant.html.twig',
             'politic' => @$traductions[$lang]["politic"],
             'condition' => @$traductions[$lang]["condition"],
             'adress' => @$traductions[$lang]["adress"],
-            'btnCheck' => @$traductions[$lang]["btnCheck"]
+            'btnCheck' => @$traductions[$lang]["btnCheck"],
+            'resaRestaurant' => @$traductions[$lang]["resaRestaurant"]
 
   				));
 ?>

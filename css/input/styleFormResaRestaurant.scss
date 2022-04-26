@@ -4,7 +4,7 @@ section{
   width: 90%;
   margin: 12rem auto;
   h2{
-  width: 35%;
+  text-align: center;
   margin: 4rem auto 2rem auto;
   @include h2;
   span{
@@ -12,30 +12,43 @@ section{
   }
   }
   form{
+    text-align: center;
     @include form(2rem 3rem);
-    width: 50%;
+    width: 40%;
     margin: 0 auto 5rem auto;
     input, textarea{
       @include inputForm(90%);
     }
-    #nom, #prenom{
-      width: 40%;
-    }
-    #nom{
-      margin-right: 1rem;
-    }
     select{
-      @include inputSelectForm(95%);
+      @include inputSelectForm(90%);
       margin-bottom: 10px;
-    }
-    #nom, #person, #date{
-      width: calc((90% - 2.5rem)/2);
-      display: inline-block;
     }
     input[type='submit']{
       margin-top: 3rem;
       @include button(45%, .7rem 0);
       @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+    }
+  }
+}
+
+@media (max-width: 1024px){
+  section{
+    form{
+      padding: 1rem 1rem;
+      width: 70%;
+    }
+  }
+}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px){
+  section{
+    h2{
+      @include h3;
+    }
+    form{
+      padding: 1rem 1rem;
+      width: 80%;
     }
   }
 }

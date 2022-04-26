@@ -1,42 +1,63 @@
 @import"base";
-section{
-  width: 80%;
-  margin: 1rem auto;
-  h2{
-    @include h2;
-    width: 30%;
-    margin: 1rem auto 3rem auto;
-    span{
-      color: $colorOr;
-    }
-  }
-  article{
-    background-color: rgba(255, 255, 255, .9);
-    border: 1px solid $colorOr;
-    width: 60%;
+main{
+  margin-top: 12rem;
+  section{
+    width: 80%;
     margin: 1rem auto;
-    padding: 1rem 2rem;
-    text-align: center;
-    >span{
+    h2{
       @include h2;
-
-    }
-    ul{
-      margin: 1rem auto;
-
-      li{
-        margin: 1rem 1rem 1.5rem auto;
-        span{
-          color: $colorOr;
-          font-weight: bold;
-          margin-left: .5rem;
-        }
-
+      text-align: center;
+      margin: 1rem auto 3rem auto;
+      span{
+        color: $colorOr;
       }
     }
+    article{
+      background-color: rgba(255, 255, 255, .9);
+      border: 1px solid $colorOr;
+      width: 60%;
+      margin: 1rem auto;
+      padding: 1rem 2rem;
+      text-align: center;
+      >span{
+        @include h2;
+
+      }
+      ul{
+        margin: 1rem auto;
+
+        li{
+          margin: 1rem 1rem 1.5rem auto;
+          span{
+            color: $colorOr;
+            font-weight: bold;
+            margin-left: .5rem;
+          }
+
+        }
+      }
+    }
+    button{
+      @include button(10rem, .63rem 0);
+      @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+    }
   }
-  button{
-    @include button(10rem, .63rem 0);
-    @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
+}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px){
+  main{
+    section{
+      width: 95%;
+      margin: 1rem auto;
+      h2{
+        @include h3;
+      }
+      article{
+        span{
+          @include h3;
+        }
+      }
+    }
   }
 }

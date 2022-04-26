@@ -92,26 +92,32 @@ main{
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px){
-  section{
-    width: 95%;
-    margin: 1rem auto;
-
-    h2{
-      font-size: 1.1rem;
-      font-weight: bold;
-      //min-width: 390px;
-    }
-    form{
-      @include form(2rem 3rem);
-      width: 85%;
-
-      input, textarea{
-        width: 50%;
+  main{
+    section{
+      width: 95%;
+      margin: 1rem auto;
+      h2{
+        font-size: 1rem;
+        font-weight: bold;
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+        //min-width: 390px;
       }
-      // select{
-      //
-      //   //min-width: 503px;
-      // }
+      article{
+        font-size: 1em;
+      }
+      form{
+        @include form(2rem 3rem);
+        width: 300px;
+
+        input, textarea{
+          width: 280px;
+        }
+        select{
+          width: 305px;
+        }
+      }
     }
   }
 }

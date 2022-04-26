@@ -7,7 +7,7 @@ body{
     margin: 12rem auto 2rem auto;
     h2{
       @include h2;
-      width: 37%;
+      text-align: center;
       margin: 2rem auto 3rem auto;
     }
     #restaurant{
@@ -35,8 +35,10 @@ body{
   }
 
   #checkAvailability{
+    clear: both;
     margin: 3rem auto 0 auto;
-    #checkAvailability{
+    form{
+      text-align: center;
       @include form(2rem 3rem);
       width: 60%;
       margin: 0 auto 5rem auto;
@@ -59,19 +61,58 @@ body{
     }
   }
 
-#valideResa{
-  margin: 3rem auto 3rem auto;
-  h2{
-    @include h2;
-    text-align: center;
-    span{
-      color: $colorOr;
+  #valideResa{
+    margin: 3rem auto 3rem auto;
+    h2{
+      @include h2;
+      text-align: center;
+      span{
+        color: $colorOr;
+      }
+    }
+    input[type='submit']{
+    margin-top: 3rem;
+    @include button(25%, .7rem 0);
+    @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
     }
   }
-  input[type='submit']{
-  margin-top: 3rem;
-  @include button(25%, .7rem 0);
-  @include animButton($colorOr, #af9654, #c1a65c, #d4b565);
 }
-}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px){
+  body{
+    section{
+      width: 95%;
+    }
+    #presentation{
+      margin-bottom: 10rem;
+      h2{
+        @include h3;
+      }
+      #restaurant{
+        font-size: 1em;
+        width: 100%;
+        height: 30vh;
+
+        #img{
+          margin-right: .5rem;
+        }
+        p{
+          margin-bottom: .5rem;
+        }
+        ul{
+          margin-top: 1rem;
+        }
+      }
+    }
+    #checkAvailability{
+      form{
+        width: 70%;
+        padding: 1rem 2rem;
+        input, select{
+          font-size: 1em;
+        }
+      }
+    }
+  }
 }

@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
   <section id="presentation">
-    <h2>Réserver une table au restaurant</h2>
+    <h2>{{resaRestaurant}}</h2>
     <article id="restaurant">
       <div id="img"></div>
       <p>Notre Chef 4 Etoiles, Cindy Gomes a résolument fait d’Epicure le bastion par excellence de la gastronomie française.</p>
@@ -16,7 +16,7 @@
   <section id="checkAvailability">
     <p>{{message}}</p>
     <p>{{errorCheck}}</p>
-    <form id="checkAvailability" action="checkDateResaRestaurant.php" method="post">
+    <form action="checkDateResaRestaurant.php" method="post">
       <input type="text" id="fromDate" name="CheckIn" value="Date">
       <select name="hourResa" id="hourResa">
         <option value="">--Horraire--</option>
