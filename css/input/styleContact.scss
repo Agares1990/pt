@@ -9,8 +9,13 @@ section{
   flex-wrap: wrap;
   article{
     width: calc((100% - 2rem)/2);
+    h2{
+      @include h2;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
     form{
-      margin-right: 2rem;
+      text-align: center;
       input, textarea{
         @include inputForm(90%);
       }
@@ -24,10 +29,31 @@ section{
       }
     }
   }
+  #map{
+    margin-top: 6rem;
+  }
 }
 #success {
   @include success;
 }
 #closebtn {/** Boutton pour fermer le message de succès **/
   @include closebtn;
+}
+
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px){
+  section{
+    flex-direction: column;
+    article{
+      width: 70%;
+      margin: 3rem auto;
+      form{
+        input[type='submit']{
+          margin-top: 1rem;
+        }
+      }
+
+    }
+  }
 }

@@ -2,14 +2,15 @@
   session_start();
   require "include/init_twig.php";
   require "include/_traduction.php";
+  require_once ("include/_connexion.php");
   require_once "include/_functions.php";
   $css = "styleConditionVente";
-  $lang = getLang();
   $title = "Nos conditions de vente";
-
+  $pdo = getPDO();
+  $lang = getLang();
   $connection = getConnectionText($lang);
   $langues = getIconLang($pdo);
-  
+
   echo $twig->render('conditionVente.html.twig',
     	  array('css' => $css,
               'title' => $title,

@@ -54,6 +54,7 @@ if(isset($_POST['submit'])){
       $where .= " && capaciteAdulte >= " .$nbPerson;
       $where .= " && capaciteEnfant >= " . $nbChild ;
       $where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver BETWEEN '$fromDate' AND '$toDate' OR dateDepart BETWEEN '$fromDate' AND  '$toDate' )";
+      //$where .= " && idChambre NOT IN ( SELECT chambreId FROM reservation_chambre WHERE dateArriver <= $toDate AND dateArriver >= $fromDate  OR dateDepart >= $toDate AND dateDepart <= $fromDate)";
 
       // Récupérer les chambres dispo
        $rooms = getRooms($pdo, $lang, $where);

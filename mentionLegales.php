@@ -2,11 +2,12 @@
   session_start();
   require "include/init_twig.php";
   require "include/_traduction.php";
+  require_once ("include/_connexion.php");
   require_once "include/_functions.php";
   $css = "styleMentionLegales";
-  $lang = getLang();
   $title = "Mentions Légales & Copyright";
-
+  $pdo = getPDO();
+  $lang = getLang();
   $connection = getConnectionText($lang);
   $langues = getIconLang($pdo);
 

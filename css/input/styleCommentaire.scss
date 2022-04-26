@@ -1,60 +1,90 @@
 @import"base";
 
-#imgBackground{
-  @include backgroundImage(url("../../images/backgroundComment.jpg"), 100%, 100vh);
+body{
+  #imgBackground{
+    @include backgroundImage(url("../../images/backgroundComment.jpg"), 100%, 100vh);
+  }
+  #titrePage{ /* titre principale de la page (sur le caroussel) */
+    @include h1;/* style général h1 */
+    position: absolute;
+    right: 0;
+    bottom: 8rem;
+    left: 0;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.78);
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+  #bienvenue{
+    @include h2;/* style général h2 */
+    position: absolute;
+    right: 0;
+    bottom: 12rem;
+    left: 0;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.78);
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 10;
+  }
+  section{
+    margin: 4rem 10rem;
+    text-align: center;
+    h2, h3, hr{
+      margin-bottom: 1.5rem;
+    }
+    h2{
+      @include h2;
+      color: $colorOr;
+    }
+    h3{
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    hr{
+      width: 10%;
+      color: $colorOr;
+    }
+    >p{
+      margin-bottom: 3rem;
+    }
+    article{
+      text-align: left;
+      border: 1px solid $colorOr;
+      padding: 1rem 1rem 2rem 1rem;
+      margin-bottom: 2rem;
+      p{
+        margin-top: 1rem;
+      }
+    }
+  }
 }
-#titrePage{ /* titre principale de la page (sur le caroussel) */
-  @include h1;/* style général h1 */
-  position: absolute;
-  right: 0;
-  bottom: 8rem;
-  left: 0;
-  color: white;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.78);
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 10;
-}
-#bienvenue{
-  @include h2;/* style général h2 */
-  position: absolute;
-  right: 0;
-  bottom: 12rem;
-  left: 0;
-  color: white;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.78);
-  text-align: center;
-  text-transform: uppercase;
-  z-index: 10;
-}
-section{
-  margin: 4rem 10rem;
-  text-align: center;
-  h2, h3, hr{
-    margin-bottom: 1.5rem;
-  }
-  h2{
-    @include h2;
-    color: $colorOr;
-  }
-  h3{
-    font-size: 3rem;
-    font-weight: 600;
-  }
-  hr{
-    width: 10%;
-    color: $colorOr;
-  }
-  >p{
-    margin-bottom: 3rem;
-  }
-  article{
-    text-align: left;
-    border: 1px solid $colorOr;
-    padding: 1rem 1rem 2rem 1rem;
-    margin-bottom: 2rem;
-    p{
-      margin-top: 1rem;
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px){
+  body{
+    #titrePage{ /* titre principale de la page (sur le caroussel) */
+      @include h2;/* style général h1 */
+    }
+    #bienvenue{
+      @include h3;/* style général h2 */
+    }
+    section{
+      margin: 4rem 3rem;
+      text-align: center;
+      h2{
+        @include h3;
+      }
+      h3{
+        font-size: 1.6rem;
+      }
+      article{
+        padding: .5rem .5rem 1rem .5rem;
+        p{
+          margin-top: 1rem;
+        }
+      }
     }
   }
 }

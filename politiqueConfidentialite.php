@@ -2,14 +2,15 @@
   session_start();
   require "include/init_twig.php";
   require "include/_traduction.php";
+  require_once ("include/_connexion.php");
   require_once "include/_functions.php";
   $css = "stylePolitiqueConfidentialite";
-  $lang = getLang();
   $title = "Politique de confidentialité";
-
+  $pdo = getPDO();
+  $lang = getLang();
   $connection = getConnectionText($lang);
   $langues = getIconLang($pdo);
-  
+
   echo $twig->render('politiqueConfidentialite.html.twig',
     	  array('css' => $css,
               'title' => $title,

@@ -1,5 +1,12 @@
 @import"base";
-section{
-  width: 80%;
-  height: 80%;
+main{
+  section{
+    width: 80%;
+    margin: 17rem auto;
+    h2{
+      @include h2;
+      text-align: center;
+    }
+  }
+
 }

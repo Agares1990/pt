@@ -112,6 +112,9 @@ body{
         input, select{
           font-size: 1em;
         }
+        input[type='submit']{
+          font-size: .9em;
+        }
       }
     }
   }

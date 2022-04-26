@@ -2,18 +2,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 /* line 4, ../css/input/_base.scss */
 html {
-  position: relative;
+  min-height: 100%;
+  max-height: 100%;
+  height: 100%;
   scroll-behavior: smooth;
 }
 
-/* line 10, ../css/input/_base.scss */
+/* line 11, ../css/input/_base.scss */
 body {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: #F0F0F0;
   font-family: "Poppins", Arial, sans-serif;
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
 }
 
-/* line 16, ../css/input/_base.scss */
+/* line 21, ../css/input/_base.scss */
 header {
   background-color: #fff;
   padding: 1rem 1rem 0 1rem;
@@ -24,24 +30,24 @@ header {
   z-index: 9999;
 }
 
-/* line 24, ../css/input/_base.scss */
+/* line 29, ../css/input/_base.scss */
 header div {
   display: flex;
   justify-content: space-between;
 }
 
-/* line 27, ../css/input/_base.scss */
+/* line 32, ../css/input/_base.scss */
 header div p {
   margin-top: .5rem;
 }
 
-/* line 30, ../css/input/_base.scss */
+/* line 35, ../css/input/_base.scss */
 header div p span img {
   width: 24px;
   height: 16px;
 }
 
-/* line 36, ../css/input/_base.scss */
+/* line 41, ../css/input/_base.scss */
 header div .logo {
   width: 10rem;
   height: 7.3rem;
@@ -49,31 +55,31 @@ header div .logo {
   margin-right: 2rem;
 }
 
-/* line 42, ../css/input/_base.scss */
+/* line 47, ../css/input/_base.scss */
 header div a {
   margin-right: 1rem;
   text-decoration: none;
   color: black;
 }
 
-/* line 46, ../css/input/_base.scss */
+/* line 51, ../css/input/_base.scss */
 header div a .iconeLangue {
   margin-right: .2rem;
   margin-top: .6rem;
 }
 
-/* line 52, ../css/input/_base.scss */
+/* line 57, ../css/input/_base.scss */
 header div div {
   margin-right: 25rem;
 }
 
-/* line 54, ../css/input/_base.scss */
+/* line 59, ../css/input/_base.scss */
 header div div i {
   font-size: 2rem;
   color: #BCA474;
 }
 
-/* line 58, ../css/input/_base.scss */
+/* line 63, ../css/input/_base.scss */
 header div div .profil {
   /* style générale des h2 */
   font-size: 1.2rem;
@@ -82,7 +88,7 @@ header div div .profil {
   margin-top: .5rem;
 }
 
-/* line 65, ../css/input/_base.scss */
+/* line 70, ../css/input/_base.scss */
 header nav {
   clear: both;
   font-family: "Poppins", Arial, sans-serif;
@@ -90,23 +96,23 @@ header nav {
   padding: 0.5rem 0 0.5rem 0;
 }
 
-/* line 71, ../css/input/_base.scss */
+/* line 76, ../css/input/_base.scss */
 header nav input[type="checkbox"] {
   display: none;
 }
 
-/* line 74, ../css/input/_base.scss */
+/* line 79, ../css/input/_base.scss */
 header nav ul {
   margin-top: -3rem;
 }
 
-/* line 76, ../css/input/_base.scss */
+/* line 81, ../css/input/_base.scss */
 header nav ul li {
   display: inline-block;
   /* Boutton connexion */
 }
 
-/* line 79, ../css/input/_base.scss */
+/* line 84, ../css/input/_base.scss */
 header nav ul li a {
   text-decoration: none;
   padding: 0px 1.1rem;
@@ -118,12 +124,12 @@ header nav ul li a {
   z-index: 0;
 }
 
-/* line 88, ../css/input/_base.scss */
+/* line 93, ../css/input/_base.scss */
 header nav ul li a:hover {
   color: #BCA474;
 }
 
-/* line 93, ../css/input/_base.scss */
+/* line 98, ../css/input/_base.scss */
 header nav ul li .connexion {
   position: absolute;
   top: 1rem;
@@ -147,69 +153,66 @@ header nav ul li .connexion:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 102, ../css/input/_base.scss */
+/* line 107, ../css/input/_base.scss */
 header nav ul li .connexion:hover {
   color: white;
 }
 
 /* Menu de navigation au scroll */
-/* line 111, ../css/input/_base.scss */
+/* line 116, ../css/input/_base.scss */
 header.scroll {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 8px;
   padding: .5rem 1rem 0 1rem;
 }
 
-/* line 115, ../css/input/_base.scss */
+/* line 120, ../css/input/_base.scss */
 header.scroll .logo {
   width: 9rem;
   height: 6.3rem;
 }
 
-/* line 119, ../css/input/_base.scss */
+/* line 124, ../css/input/_base.scss */
 header.scroll nav {
   padding: 0.3rem 0 0 0;
 }
 
-/* line 125, ../css/input/_base.scss */
+/* line 130, ../css/input/_base.scss */
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  clear: both;
   background-color: black;
   color: white;
   display: flex;
   justify-content: space-around;
 }
 
-/* line 134, ../css/input/_base.scss */
+/* line 140, ../css/input/_base.scss */
 footer ul {
   margin: 2rem 0;
 }
 
-/* line 136, ../css/input/_base.scss */
+/* line 142, ../css/input/_base.scss */
 footer ul li {
   margin-bottom: 1rem;
 }
 
-/* line 138, ../css/input/_base.scss */
+/* line 144, ../css/input/_base.scss */
 footer ul li a {
   text-decoration: none;
   color: white;
 }
 
-/* line 146, ../css/input/_base.scss */
+/* line 152, ../css/input/_base.scss */
 footer div ul li {
   display: inline-block;
 }
 
-/* line 148, ../css/input/_base.scss */
+/* line 154, ../css/input/_base.scss */
 footer div ul li span {
   color: #BCA474;
 }
 
-/* line 151, ../css/input/_base.scss */
+/* line 157, ../css/input/_base.scss */
 footer div ul li .carre {
   font-size: 1.4rem;
   padding: .1rem 0.4rem;
@@ -218,7 +221,7 @@ footer div ul li .carre {
   transition: all 500ms ease;
 }
 
-/* line 157, ../css/input/_base.scss */
+/* line 163, ../css/input/_base.scss */
 footer div ul li .carre:hover {
   background-color: #BCA474;
   color: black;
@@ -226,63 +229,63 @@ footer div ul li .carre:hover {
   transition: all 500ms ease;
 }
 
-/* line 163, ../css/input/_base.scss */
+/* line 169, ../css/input/_base.scss */
 footer div ul li .carre i {
   color: white;
 }
 
-/* line 165, ../css/input/_base.scss */
+/* line 171, ../css/input/_base.scss */
 footer div ul li .carre i:hover {
   color: black;
 }
 
-/* line 172, ../css/input/_base.scss */
+/* line 178, ../css/input/_base.scss */
 footer div ul:first-child li {
   margin-right: 1rem;
   padding-right: 1rem;
   border-right: 1px solid #BCA474;
 }
 
-/* line 177, ../css/input/_base.scss */
+/* line 183, ../css/input/_base.scss */
 footer div ul:nth-child(2) {
   text-align: center;
 }
 
 /** STYLE TABLETTE **/
 @media (max-width: 1024px) {
-  /* line 189, ../css/input/_base.scss */
+  /* line 195, ../css/input/_base.scss */
   header div .logo {
     width: 9rem;
     height: 6.3rem;
   }
-  /* line 193, ../css/input/_base.scss */
+  /* line 199, ../css/input/_base.scss */
   header div .profil {
     font-size: 1rem;
   }
-  /* line 197, ../css/input/_base.scss */
+  /* line 203, ../css/input/_base.scss */
   header div a i {
     font-size: 1.7rem;
   }
-  /* line 201, ../css/input/_base.scss */
+  /* line 207, ../css/input/_base.scss */
   header div .connexion {
     padding: .4rem .9rem;
     font-size: 1rem;
   }
-  /* line 205, ../css/input/_base.scss */
+  /* line 211, ../css/input/_base.scss */
   header div div {
     margin-right: 15rem;
   }
-  /* line 209, ../css/input/_base.scss */
+  /* line 215, ../css/input/_base.scss */
   header nav {
     text-align: right;
     margin-right: 4rem;
     padding: 0.3rem 0 0 0;
   }
-  /* line 213, ../css/input/_base.scss */
+  /* line 219, ../css/input/_base.scss */
   header nav ul li a {
     font-size: 1rem;
   }
-  /* line 222, ../css/input/_base.scss */
+  /* line 228, ../css/input/_base.scss */
   footer div ul:first-child li {
     display: block;
     border: none;
@@ -291,46 +294,46 @@ footer div ul:nth-child(2) {
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px) {
-  /* line 235, ../css/input/_base.scss */
+  /* line 241, ../css/input/_base.scss */
   header div p {
     margin-left: -5rem;
   }
-  /* line 238, ../css/input/_base.scss */
+  /* line 244, ../css/input/_base.scss */
   header div p span img {
     width: 20px;
     height: 14px;
   }
-  /* line 244, ../css/input/_base.scss */
+  /* line 250, ../css/input/_base.scss */
   header div div {
     margin-right: 3rem;
   }
-  /* line 246, ../css/input/_base.scss */
+  /* line 252, ../css/input/_base.scss */
   header div div .profil {
     display: none;
   }
-  /* line 251, ../css/input/_base.scss */
+  /* line 257, ../css/input/_base.scss */
   header nav {
     /* Bloc menu burger */
   }
-  /* line 253, ../css/input/_base.scss */
+  /* line 259, ../css/input/_base.scss */
   header nav input:checked + label > span {
     transform: rotate(45deg);
   }
-  /* line 255, ../css/input/_base.scss */
+  /* line 261, ../css/input/_base.scss */
   header nav input:checked + label > span::before {
     top: 0;
     transform: rotate(0deg);
   }
-  /* line 259, ../css/input/_base.scss */
+  /* line 265, ../css/input/_base.scss */
   header nav input:checked + label > span::after {
     top: 0;
     transform: rotate(90deg);
   }
-  /* line 264, ../css/input/_base.scss */
+  /* line 270, ../css/input/_base.scss */
   header nav input:checked ~ ul {
     right: 0 !important;
   }
-  /* line 269, ../css/input/_base.scss */
+  /* line 275, ../css/input/_base.scss */
   header nav label {
     position: fixed;
     top: 20px;
@@ -340,7 +343,7 @@ footer div ul:nth-child(2) {
     cursor: pointer;
     z-index: 1;
   }
-  /* line 277, ../css/input/_base.scss */
+  /* line 283, ../css/input/_base.scss */
   header nav label > span, header nav label ::before, header nav label ::after {
     display: block;
     position: absolute;
@@ -349,17 +352,17 @@ footer div ul:nth-child(2) {
     background-color: #616161;
     transition-duration: .25s;
   }
-  /* line 285, ../css/input/_base.scss */
+  /* line 291, ../css/input/_base.scss */
   header nav label > span::before {
     content: '';
     top: -8px;
   }
-  /* line 289, ../css/input/_base.scss */
+  /* line 295, ../css/input/_base.scss */
   header nav label > span::after {
     content: '';
     top: 8px;
   }
-  /* line 295, ../css/input/_base.scss */
+  /* line 301, ../css/input/_base.scss */
   header nav ul {
     opacity: 0.95;
     display: flex;
@@ -378,7 +381,7 @@ footer div ul:nth-child(2) {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     transition-duration: .25s;
   }
-  /* line 313, ../css/input/_base.scss */
+  /* line 319, ../css/input/_base.scss */
   header nav ul li a {
     display: block;
     color: #333;
@@ -386,7 +389,7 @@ footer div ul:nth-child(2) {
     font-weight: 600;
     transition-duration: .25s;
   }
-  /* line 321, ../css/input/_base.scss */
+  /* line 327, ../css/input/_base.scss */
   header nav ul li .connexion {
     position: static;
     background-color: inherit;
@@ -396,35 +399,44 @@ footer div ul:nth-child(2) {
     text-transform: uppercase;
     -webkit-transition: .5s;
   }
-  /* line 329, ../css/input/_base.scss */
+  /* line 335, ../css/input/_base.scss */
   header nav ul li .connexion:hover {
     /* Pour supprimer l'animation qui a été sur le button connexion */
     background: inherit;
     color: #BCA474;
   }
-  /* line 340, ../css/input/_base.scss */
+  /* line 346, ../css/input/_base.scss */
   footer {
     font-size: .8rem;
   }
-  /* line 342, ../css/input/_base.scss */
+  /* line 348, ../css/input/_base.scss */
   footer > ul {
     margin-right: 2rem;
     margin-left: 1rem;
   }
-  /* line 346, ../css/input/_base.scss */
+  /* line 352, ../css/input/_base.scss */
   footer div {
     width: 50%;
   }
-  /* line 348, ../css/input/_base.scss */
+  /* line 354, ../css/input/_base.scss */
   footer div ul:last-child {
     display: none;
   }
 }
 
-/* line 2, ../css/input/styleRecapResaRestaurant.scss */
-section {
+/* line 3, ../css/input/styleRecapResaRestaurant.scss */
+main section {
   width: 80%;
-  height: 80%;
+  margin: 17rem auto;
+}
+
+/* line 6, ../css/input/styleRecapResaRestaurant.scss */
+main section h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styleRecapResaRestaurant.css.map */
