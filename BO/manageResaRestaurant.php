@@ -28,7 +28,6 @@ $getResaRestaurants = $pdo->query("SELECT * FROM reservation_restaurant
 
 echo $twig->render('manageResaRestaurant.html.twig',
   	  array('css' => $css,
-            'script' => $script,
             'prenomUser' => $prenomUser,
             'title' => $title,
             'getResaRestaurants' => $getResaRestaurants,

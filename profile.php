@@ -7,6 +7,7 @@ require_once "include/_functions.php";
 session_start();
 $css = "styleProfile";
 $script = "profile";
+$title = "Espace utilisateur";
 $pdo = getPDO();
 $lang = getLang();
 $class_reservation = new Reservations();
@@ -134,6 +135,7 @@ if (isset($_GET['messageSucces'])) {
   echo $twig->render('profile.html.twig',
         array('css' => $css,
               'script' => $script,
+              'title' => $title,
               'lang' => $lang,
               'langues' => $langues,
               'reservations'=> $reservationsClient,
