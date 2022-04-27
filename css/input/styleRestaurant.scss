@@ -37,6 +37,10 @@ body{
   #checkAvailability{
     clear: both;
     margin: 3rem auto 0 auto;
+    p{ /* Messages d'erreur au cas ou il n'y a pas de disponibilité ou une erreur dans le fromulaire de réservation*/
+      text-align: center;
+      color: red;
+    }
     form{
       text-align: center;
       @include form(2rem 3rem);

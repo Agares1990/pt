@@ -1,6 +1,7 @@
 @import"base";
 main{
   margin-top: 11rem;
+  margin-bottom: 6rem;
   section{
     width: 60%;
     margin: 1rem auto;
@@ -20,6 +21,7 @@ main{
         font-weight: 600;;
       }
       a{
+        margin-left: 5rem;
         text-decoration: none;
         color: black;
         transition: 0.25s;

@@ -492,6 +492,13 @@ body #checkAvailability {
 }
 
 /* line 40, ../css/input/styleRestaurant.scss */
+body #checkAvailability p {
+  /* Messages d'erreur au cas ou il n'y a pas de disponibilité ou une erreur dans le fromulaire de réservation*/
+  text-align: center;
+  color: red;
+}
+
+/* line 44, ../css/input/styleRestaurant.scss */
 body #checkAvailability form {
   text-align: center;
   /* style générale du formulaire*/
@@ -502,7 +509,7 @@ body #checkAvailability form {
   margin: 0 auto 5rem auto;
 }
 
-/* line 45, ../css/input/styleRestaurant.scss */
+/* line 49, ../css/input/styleRestaurant.scss */
 body #checkAvailability form input, body #checkAvailability form textarea {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -517,7 +524,7 @@ body #checkAvailability form input, body #checkAvailability form textarea {
   width: 90%;
 }
 
-/* line 48, ../css/input/styleRestaurant.scss */
+/* line 52, ../css/input/styleRestaurant.scss */
 body #checkAvailability form select {
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -530,7 +537,7 @@ body #checkAvailability form select {
   display: inline-block;
 }
 
-/* line 52, ../css/input/styleRestaurant.scss */
+/* line 56, ../css/input/styleRestaurant.scss */
 body #checkAvailability form input[type='submit'] {
   margin-top: 3rem;
   /* Style général des bouttons */
@@ -555,18 +562,18 @@ body #checkAvailability form input[type='submit']:hover {
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
 }
 
-/* line 57, ../css/input/styleRestaurant.scss */
+/* line 61, ../css/input/styleRestaurant.scss */
 body #checkAvailability form #nom, body #checkAvailability form #person, body #checkAvailability form #date {
   width: calc((90% - 2.5rem)/2);
   display: inline-block;
 }
 
-/* line 64, ../css/input/styleRestaurant.scss */
+/* line 68, ../css/input/styleRestaurant.scss */
 body #valideResa {
   margin: 3rem auto 3rem auto;
 }
 
-/* line 66, ../css/input/styleRestaurant.scss */
+/* line 70, ../css/input/styleRestaurant.scss */
 body #valideResa h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
@@ -575,12 +582,12 @@ body #valideResa h2 {
   text-align: center;
 }
 
-/* line 69, ../css/input/styleRestaurant.scss */
+/* line 73, ../css/input/styleRestaurant.scss */
 body #valideResa h2 span {
   color: #BCA474;
 }
 
-/* line 73, ../css/input/styleRestaurant.scss */
+/* line 77, ../css/input/styleRestaurant.scss */
 body #valideResa input[type='submit'] {
   margin-top: 3rem;
   /* Style général des bouttons */
@@ -607,49 +614,49 @@ body #valideResa input[type='submit']:hover {
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px) {
-  /* line 84, ../css/input/styleRestaurant.scss */
+  /* line 88, ../css/input/styleRestaurant.scss */
   body section {
     width: 95%;
   }
-  /* line 87, ../css/input/styleRestaurant.scss */
+  /* line 91, ../css/input/styleRestaurant.scss */
   body #presentation {
     margin-bottom: 10rem;
   }
-  /* line 89, ../css/input/styleRestaurant.scss */
+  /* line 93, ../css/input/styleRestaurant.scss */
   body #presentation h2 {
     /* style générale des h2 */
     font-size: 1.2rem;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
-  /* line 92, ../css/input/styleRestaurant.scss */
+  /* line 96, ../css/input/styleRestaurant.scss */
   body #presentation #restaurant {
     font-size: 1em;
     width: 100%;
     height: 30vh;
   }
-  /* line 97, ../css/input/styleRestaurant.scss */
+  /* line 101, ../css/input/styleRestaurant.scss */
   body #presentation #restaurant #img {
     margin-right: .5rem;
   }
-  /* line 100, ../css/input/styleRestaurant.scss */
+  /* line 104, ../css/input/styleRestaurant.scss */
   body #presentation #restaurant p {
     margin-bottom: .5rem;
   }
-  /* line 103, ../css/input/styleRestaurant.scss */
+  /* line 107, ../css/input/styleRestaurant.scss */
   body #presentation #restaurant ul {
     margin-top: 1rem;
   }
-  /* line 109, ../css/input/styleRestaurant.scss */
+  /* line 113, ../css/input/styleRestaurant.scss */
   body #checkAvailability form {
     width: 70%;
     padding: 1rem 2rem;
   }
-  /* line 112, ../css/input/styleRestaurant.scss */
+  /* line 116, ../css/input/styleRestaurant.scss */
   body #checkAvailability form input, body #checkAvailability form select {
     font-size: 1em;
   }
-  /* line 115, ../css/input/styleRestaurant.scss */
+  /* line 119, ../css/input/styleRestaurant.scss */
   body #checkAvailability form input[type='submit'] {
     font-size: .9em;
   }

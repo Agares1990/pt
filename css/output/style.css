@@ -824,7 +824,7 @@ footer div ul:nth-child(2) {
   /* Bloc parent */
   margin: 4em 20% 8em 20%;
   border: 1px solid #BCA474;
-  min-height: 50vh;
+  min-height: 60vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -979,7 +979,7 @@ footer div ul:nth-child(2) {
   }
   /* line 297, ../css/input/style.scss */
   #restauEvent .restauEvent p {
-    font-size: .9rem;
+    font-size: 1em;
     margin-left: .5rem;
   }
   /* line 300, ../css/input/style.scss */
@@ -1087,7 +1087,7 @@ footer div ul:nth-child(2) {
   }
   /* line 380, ../css/input/style.scss */
   #restauEvent .restauEvent p {
-    font-size: .7rem;
+    font-size: .9em;
   }
 }
 

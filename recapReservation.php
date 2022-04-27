@@ -50,7 +50,7 @@ if(isset($_POST['submit'])){
       $fieldError = "L'email entré est invalide";
     }
     elseif($checkMail){
-      $fieldError = "L'email saisi existe déjà";
+      $fieldError = "L'email saisi existe déjà, connectez vous pour effectué la réservation";
     }
     elseif (empty(trim($mdp))) {
       $fieldError = "Veuillez entrez un mot de passe svp";

@@ -431,6 +431,12 @@ section {
 }
 
 /* line 6, ../css/input/styleFormResaRestaurant.scss */
+section p {
+  text-align: center;
+  color: red;
+}
+
+/* line 10, ../css/input/styleFormResaRestaurant.scss */
 section h2 {
   text-align: center;
   margin: 4rem auto 2rem auto;
@@ -440,12 +446,12 @@ section h2 {
   font-weight: 500;
 }
 
-/* line 10, ../css/input/styleFormResaRestaurant.scss */
+/* line 14, ../css/input/styleFormResaRestaurant.scss */
 section h2 span {
   color: #BCA474;
 }
 
-/* line 14, ../css/input/styleFormResaRestaurant.scss */
+/* line 18, ../css/input/styleFormResaRestaurant.scss */
 section form {
   text-align: center;
   /* style générale du formulaire*/
@@ -456,7 +462,7 @@ section form {
   margin: 0 auto 5rem auto;
 }
 
-/* line 19, ../css/input/styleFormResaRestaurant.scss */
+/* line 23, ../css/input/styleFormResaRestaurant.scss */
 section form input, section form textarea {
   /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
@@ -471,7 +477,7 @@ section form input, section form textarea {
   width: 90%;
 }
 
-/* line 22, ../css/input/styleFormResaRestaurant.scss */
+/* line 26, ../css/input/styleFormResaRestaurant.scss */
 section form select {
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
@@ -484,7 +490,7 @@ section form select {
   margin-bottom: 10px;
 }
 
-/* line 26, ../css/input/styleFormResaRestaurant.scss */
+/* line 30, ../css/input/styleFormResaRestaurant.scss */
 section form input[type='submit'] {
   margin-top: 3rem;
   /* Style général des bouttons */
@@ -510,7 +516,7 @@ section form input[type='submit']:hover {
 }
 
 @media (max-width: 1024px) {
-  /* line 36, ../css/input/styleFormResaRestaurant.scss */
+  /* line 40, ../css/input/styleFormResaRestaurant.scss */
   section form {
     padding: 1rem 1rem;
     width: 70%;
@@ -519,14 +525,14 @@ section form input[type='submit']:hover {
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px) {
-  /* line 46, ../css/input/styleFormResaRestaurant.scss */
+  /* line 50, ../css/input/styleFormResaRestaurant.scss */
   section h2 {
     /* style générale des h2 */
     font-size: 1.2rem;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
-  /* line 49, ../css/input/styleFormResaRestaurant.scss */
+  /* line 53, ../css/input/styleFormResaRestaurant.scss */
   section form {
     padding: 1rem 1rem;
     width: 80%;

@@ -12,10 +12,10 @@ $lang = getLang();
 $connection = getConnectionText($lang);
 $langues = getIconLang($pdo);
 
-$fromDate = $_GET['fromDate'];
-$hourResa = $_GET['hourResa'];
-$nbPerson = $_GET['nbPerson'];
-$idTable = $_GET['idTable'];
+@$fromDate = $_GET['fromDate'];
+@$hourResa = $_GET['hourResa'];
+@$nbPerson = $_GET['nbPerson'];
+@$idTable = $_GET['idTable'];
 
 if (isset($_SESSION['erreur'])){// S'il y a des erreurs
   //on récupère les données de la session qui viennent du traitement de formulaire dans la page recapReservation
@@ -34,7 +34,6 @@ if (isset($_GET['message'])) {// message d'erreur d'envoie d'un message à trave
     $prenom =  "{$_GET['prenom']}";
     $email =  "{$_GET['email']}";
     $tel =  "{$_GET['tel']}";
-    $pays =  "{$_GET['pays']}";
 }
 echo $twig->render('formResaRestaurant.html.twig',
   	  array('css' => $css,
@@ -45,7 +44,7 @@ echo $twig->render('formResaRestaurant.html.twig',
             'hourResa' => $hourResa,
             'nbPerson' => $nbPerson,
             'idTable' => $idTable,
-            'fieldError' => $fieldError,
+            'fieldError' => @$fieldError,
             'nom' => @$nom,
             'prenom' => @$prenom,
             'email' => @$email,

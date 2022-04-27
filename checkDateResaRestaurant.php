@@ -42,23 +42,29 @@ if (isset($_POST['submit'])) {
     header("Location: restaurant.php?lang=$lang&message=$messageCheck");
     die();
   }
-  // Sinon on affiche le formulaire de réservation
-  else {
-    $idTable = $checkResaRestau['idTable'];
-    header("Location: formResaRestaurant.php?lang=$lang&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson");
-    die();
-  }
 
-  //récupérer l'utilisateur actuel s'il est  déjà connecté
-  $client = $pdo->query("SELECT * FROM client WHERE email =  '$email'")->fetch();
-  if ($client) {
-    $clientId = $client['idClient'];
-    header("Location: restaurant.php?lang=$lang&clientId=$clientId&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson#valideResa");
+    //récupérer l'utilisateur actuel s'il est  déjà connecté
+    $client = $pdo->query("SELECT * FROM client WHERE email =  '$email'")->fetch();
+    if ($client) {
+      $clientId = $client['idClient'];
+      header("Location: restaurant.php?lang=$lang&clientId=$clientId&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson#valideResa");
+      die();
+    }
+    else{
+      $showBtnResaRestaurant = 0;
+      $idTable = $checkResaRestau['idTable'];
+      header("Location: formResaRestaurant.php?lang=$lang&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson");
+      die();
+    }
   }
-  else{
-    $showBtnResaRestaurant = 0;
-    die();
-  }
-}
+  // Sinon on affiche le formulaire de réservation
+  // else {
+  //   $idTable = $checkResaRestau['idTable'];
+  //   header("Location: formResaRestaurant.php?lang=$lang&idTable=$idTable&fromDate=$fromDate&hourResa=$hourResa&nbPerson=$nbPerson");
+  //   die();
+  // }
+
+
+
 
 ?>

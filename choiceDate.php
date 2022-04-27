@@ -20,7 +20,6 @@ if (isset($_POST['reserver'])) {
 
   echo $twig->render('choiceDate.html.twig',
     	  array('css' => $css,
-              'script' => $script,
               'connection' => $connection,
               'lang' => $lang,
               'title' => $title,
@@ -40,6 +39,10 @@ if (isset($_POST['reserver'])) {
               'chambre' => @$traductions[$lang]["chambre"],
               'dateA' => @$traductions[$lang]["dateA"],
               'dateD' => @$traductions[$lang]["dateD"],
-              'btnCheck' => @$traductions[$lang]["btnCheck"]
+              'btnCheck' => @$traductions[$lang]["btnCheck"],
+              'Mentions' => @$traductions[$lang]["Mentions"],
+              'politic' => @$traductions[$lang]["politic"],
+              'condition' => @$traductions[$lang]["condition"],
+              'adress' => @$traductions[$lang]["adress"]
     				));
 ?>

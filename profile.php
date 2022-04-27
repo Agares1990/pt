@@ -119,9 +119,13 @@ $reservationsClient = $class_reservation->getClientResa($pdo, $email, $lang);
 $getResaRestaurants = getResaRestaurant($pdo, $email);
 
 //Afficher le tableau de réservation restaurant s'il y a des réservations
-if ($getResaRestaurants) {
+
+if ($getResaRestaurants->rowCount() == 0) {
+  $showTableResaRestaurant = 0;
+} else{
   $showTableResaRestaurant = 1;
 }
+
 
 // Message d'annulation de réservation restaurant
 if (isset($_GET['messageSucces'])) {

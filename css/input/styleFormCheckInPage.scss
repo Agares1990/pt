@@ -2,6 +2,10 @@
 @import"formCheckIn";
 main{
   margin-top: 12rem;
+  #complete, #errorOtherRooms{
+  text-align: center;
+  color: red;
+  }
   #checkIn{
     margin-bottom: 3rem;
     p{
@@ -53,10 +57,6 @@ main{
             }
           }
         }
-        p{
-          color: red;
-          text-align: center;
-        }
     }
   }
 
@@ -65,7 +65,7 @@ main{
     @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
     min-width: 405px;
   }
-
+}
   /** STYLE TABLETTE **/
 
   @media (max-width: 1024px){
@@ -84,8 +84,6 @@ main{
         }
       }
     }
-
-  }
 }
 
 /** STYLE SMARTPHONE **/

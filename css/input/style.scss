@@ -209,7 +209,7 @@
 #restauEvent{ /* Bloc parent */
   margin: 4em 20% 8em 20%;
   border: 1px solid $colorOr;
-  min-height: 50vh;
+  min-height: 60vh;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   .restauEvent{ /* Bloc qui cuontient l'image et la description pour le restaurant et la salle d'évènement */
     height: 50%;
@@ -295,7 +295,7 @@
         padding: .5rem;
       }
       p{ // Description
-        font-size: .9rem;
+        font-size: 1em;
         margin-left: .5rem;
         a{// Lien en savoir plus
           margin-top: .5rem;
@@ -378,7 +378,7 @@
         font-weight: bold;
       }
       p{ // Description
-        font-size: .7rem;
+        font-size: .9em;
       }
     }
   }
