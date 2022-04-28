@@ -128,7 +128,6 @@ $(document).ready(function(){
   	      e.preventDefault();
   				if ( checkForm() )
   				{
-            //alert("Ok");
   					// On envoie les données du formulaire via une
   					//	requête de type POST.
   					$.post( "profile.php",
@@ -157,9 +156,4 @@ $(document).ready(function(){
   				}
 
   		} );
-  		// // cacher le message du succès lorsqu'on clique sur X (#closebtn)
-  		// $("#closebtn").click(function cacherMessage()
-  		// {
-    	// 	$("#success").hide();
-  		// });
 });

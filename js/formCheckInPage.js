@@ -11,7 +11,6 @@ $(document).ready(function(){
     const toDate = $( "#toDate" ).val();
     const nbPerson = $( "#nbPerson" ).val();
     const nbChild = $( "#nbChild" ).val();
-    //const roomType = $( "#roomType" ).val();
 
     //$( "#formReservation" ).prop( "disabled", true );
     if ( !regex1.test( fromDate ) || fromDate.trim().length == 0)
@@ -37,11 +36,4 @@ $(document).ready(function(){
     }
 
     });
-
-    // $("#otherRoom").hide();
-    // $("input[name='otherRoom']").click(function() {
-    //   // e.preventDefault();
-    //   $("#otherRoom").show();
-    //   $(this).hide();
-    // })
   });

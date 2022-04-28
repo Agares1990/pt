@@ -12,7 +12,7 @@
   $connection = getConnectionText($lang);
   $getTextTrad = getTextTrad($pdo, $lang);
   $langues = getIconLang($pdo);
-  
+
   // Pour afficher l'heure et la témpérature
   date_default_timezone_set('Europe/Paris');
   $date = date("H:i");

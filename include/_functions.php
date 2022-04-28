@@ -161,7 +161,6 @@ function verifyConnection($pdo, $table, $page, $lang){
           // On stock dans $_SESSION les information de l'utilisateur
             $_SESSION["email"] = $email;
             $_SESSION["prenom"] = $user['prenom'];
-           // var_dump($_SESSION);
           // On redirige vers la page de profile
           header("Location: $page?lang=$lang");
         }
@@ -170,7 +169,7 @@ function verifyConnection($pdo, $table, $page, $lang){
       // Ici on a un user existant, on vérifie son mote de passe
       // if(!password_verify($mdp, $userExist['pass'])){
       //   die ("Florian et Cindy sont passés par là");
-       }
+    }
 
   }
   return @$errorConnection;
