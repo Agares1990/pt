@@ -1,7 +1,7 @@
 @import"base";
 main{
   margin-top: 9rem;
-  #btnPwd{
+  #btnPwd, input[name="deleteUser"]{
     @include button(15%, .63rem 0);
     @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
 

@@ -163,6 +163,11 @@
      </form>
 
   </section>
-  <!-- <p>{{messageComment}}</p> -->
+
+  <form action="deleteAccount.php?lang={{lang}}" method="post">
+    <input type="submit" name="deleteUser" value="Supprimer mon compte" onclick="return(confirm('Etes-vous sûr de vouloir Supprimer votre compte?'));">
+    <input type="hidden" name="idClient" value="{{client.idClient}}">
+  </form>
+
   </main>
 {% endblock %}

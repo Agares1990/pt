@@ -132,6 +132,8 @@ if ($getResaRestaurants->rowCount() == 0) {
 if (isset($_GET['messageSucces'])) {
     $messageSucces =  "{$_GET['messageSucces']}";
 }
+
+
   echo $twig->render('profile.html.twig',
         array('css' => $css,
               'script' => $script,

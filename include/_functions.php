@@ -220,4 +220,12 @@ function cancelResaRestaurant($pdo, $idReservationRestaurant){
   $annulerReservationRestaurant = $pdo->query("DELETE FROM reservation_restaurant WHERE  idReservationRestaurant = '$idReservationRestaurant'");
   return $annulerReservationRestaurant;
 }
+
+// Supprimer compte client
+
+function deletUser($pdo, $idClient){
+  $deletUser =  $pdo->prepare("DELETE FROM client WHERE idClient = ?");
+  $deletUser->execute([$idClient]);
+  return $deletUser;
+}
 ?>

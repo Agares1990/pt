@@ -14,12 +14,18 @@ $langues = getIconLang($pdo);
 
 $verifyConnection = verifyConnection($pdo, 'client', 'profile.php', $lang);
 
+// Message de suppression de compte utilisateur
+if (isset($_GET['successDelet'])) {
+    $successDelet =  "{$_GET['successDelet']}";
+}
+
 $connection = getConnectionText($lang);
 echo $twig->render('connexion.html.twig',
   	  array('css' => $css,
             'lang' => $lang,
             'verifyConnection' => @$verifyConnection,
             'langues' => $langues,
+            'successDelet' => @$successDelet,
             //Pour la traduction
             'nav1' => @$traductions[$lang]["nav1"],
             'nav2' => @$traductions[$lang]["nav2"],

@@ -432,7 +432,7 @@ main {
 }
 
 /* line 4, ../css/input/styleProfile.scss */
-main #btnPwd {
+main #btnPwd, main input[name="deleteUser"] {
   /* Style général des bouttons */
   padding: 0.63rem 0;
   border-radius: .25rem;
@@ -450,14 +450,14 @@ main #btnPwd {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-main #btnPwd:hover {
+main #btnPwd:hover, main input[name="deleteUser"]:hover {
   background: -webkit-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: -o-linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
   background: linear-gradient(#bf0a35 0%, #e31b4b 47%, #f03763 100%);
 }
 
 /* line 9, ../css/input/styleProfile.scss */
-main #btnPwd a {
+main #btnPwd a, main input[name="deleteUser"] a {
   text-decoration: none;
   color: white;
 }
