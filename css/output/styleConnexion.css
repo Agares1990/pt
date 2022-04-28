@@ -425,60 +425,63 @@ footer div ul:nth-child(2) {
   }
 }
 
-/* line 9, ../css/input/styleConnexion.scss */
-section {
+/* line 5, ../css/input/styleConnexion.scss */
+main section {
   margin: 12rem auto;
   width: 30vw;
   padding: 1em 2em;
   background: #fff;
 }
 
-/* line 14, ../css/input/styleConnexion.scss */
-section h2 {
-  font-size: 30px;
+/* line 10, ../css/input/styleConnexion.scss */
+main section h2 {
+  /* style générale des h2 */
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
   font-weight: bold;
 }
 
-/* line 18, ../css/input/styleConnexion.scss */
-section hr {
+/* line 14, ../css/input/styleConnexion.scss */
+main section hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
-/* line 23, ../css/input/styleConnexion.scss */
-section h3 {
+/* line 19, ../css/input/styleConnexion.scss */
+main section h3 {
   text-align: center;
 }
 
-/* line 26, ../css/input/styleConnexion.scss */
-section p {
+/* line 22, ../css/input/styleConnexion.scss */
+main section p {
   /* Message d'erreur de connexion */
   color: red;
   font-size: 1.1rem;
 }
 
-/* line 30, ../css/input/styleConnexion.scss */
-section input[type=text], section input[type=password] {
+/* line 27, ../css/input/styleConnexion.scss */
+main section form input[type=text], main section form input[type=password] {
   width: 100%;
-  padding: 1rem 0 1rem;
+  padding: 1rem 0 1rem 0;
   margin: .35rem 0 1.4rem 0;
   border: none;
   background: #f1f1f1;
 }
 
-/* line 36, ../css/input/styleConnexion.scss */
-section input[type=text]:focus, section input[type=password]:focus {
+/* line 33, ../css/input/styleConnexion.scss */
+main section form input[type=text]:focus, main section form input[type=password]:focus {
   background-color: #ddd;
   outline: inherit;
 }
 
-/* line 42, ../css/input/styleConnexion.scss */
-section input[type=submit] {
+/* line 39, ../css/input/styleConnexion.scss */
+main section form input[type=submit] {
   /* Style général des bouttons */
   padding: 0.7rem 1.1rem;
   border-radius: .25rem;
-  width: 45%;
+  width: auto;
   display: block;
   margin-right: auto;
   margin-left: auto;
@@ -491,10 +494,21 @@ section input[type=submit] {
 }
 
 /* line 75, ../css/input/_mixin.scss */
-section input[type=submit]:hover {
+main section form input[type=submit]:hover {
   background: -webkit-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: -o-linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
   background: linear-gradient(#af9654 0%, #c1a65c 47%, #d4b565 100%);
+}
+
+/** STYLE SMARTPHONE **/
+@media (hover: none), (max-width: 840px) {
+  /* line 49, ../css/input/styleConnexion.scss */
+  h2 {
+    /* style générale des h2 */
+    font-size: 1.2rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+  }
 }
 
 /*# sourceMappingURL=styleConnexion.css.map */

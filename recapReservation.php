@@ -133,6 +133,7 @@ echo $twig->render('recapReservation.html.twig',
             'print' => @$traductions[$lang]["print"],
             'thnxFor' => @$traductions[$lang]["thnxFor"],
             'reservation' => @$traductions[$lang]["reservation"],
-
+            'dateA' => @$traductions[$lang]["dateA"],
+            'dateD' => @$traductions[$lang]["dateD"]
   				));
 ?>

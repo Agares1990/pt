@@ -1,24 +1,26 @@
 {% extends "base.html.twig" %}
 {% block contenu %}
-  <div id="imgBackground">
-  </div>
-  <p id="bienvenue">{{welcome}} Nice ONE Resort & SPA</p>
-  <h1 id="titrePage">{{YrRevieuw}}</h1>
-  <section>
-    <h2>{{clientReviews}}</h2>
-    <h3>{{titlePage}}</h3>
-    <hr></hr>
+  <main>
+    <div id="imgBackground">
+    </div>
+    <p id="bienvenue">{{welcome}} Nice ONE Resort & SPA</p>
+    <h1 id="titrePage">{{YrRevieuw}}</h1>
+    <section>
+      <h2>{{clientReviews}}</h2>
+      <h3>{{titlePage}}</h3>
+      <hr></hr>
 
-    <p>{{getTextTrad['texte2'] | raw}}.</p>
+      <p>{{getTextTrad['texte2'] | raw}}.</p>
 
-    {% for comment in comments %}
-      <article>
-        <span>{{comment['dateComment']}}</span>  -  <span>{{comment['prenom']}}</span> <span>{% for i in 0..comment['note']%}
-        <img class='star' src='images/star.png' alt='Étoile' width='16' height='16' />
+      {% for comment in comments %}
+        <article>
+          <span>{{comment['dateComment']}}</span>  -  <span>{{comment['prenom']}}</span> <span>{% for i in 0..comment['note']%}
+          <img class='star' src='images/star.png' alt='Étoile' width='16' height='16' />
+        {% endfor %}
+          </span>
+          <p>{{comment['commentaire']}}</p>
+        </article>
       {% endfor %}
-        </span>
-        <p>{{comment['commentaire']}}</p>
-      </article>
-    {% endfor %}
-  </section>
+    </section>
+  </main>
 {% endblock %}

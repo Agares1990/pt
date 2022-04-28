@@ -78,8 +78,6 @@ $(document).ready(function(){
     $('#verifier').click(sendVerif);
 
       // Insérer Commentaire
-      // Expression régulière des deux premiers champs (titre/commentaire).
-  		const regex1 = /^[a-zA-Z ]{2,30}$/;
 
   		// si le formulaire est correct, retourne 'true'
   		// sinon affiche le message adéquat
@@ -101,10 +99,10 @@ $(document).ready(function(){
   				$("#errorNote").text("Veuillez saisir une note comprise entre 1 et 5");
   				return false;
   			}
-  			if ( !regex1.test( comment ) || comment.trim().length == 0)
+  			if ( comment.trim().length == 0)
   			{
   				$("#errorNote").text("");
-  				$("#errorComment").text("Veuillez donnez votre avis");
+  				$("#errorComment").text("L'avis est invalide ou laissé vide");
   				return false;
   			}
 

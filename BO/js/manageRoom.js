@@ -54,11 +54,7 @@ $(document).ready(function(){
     const nbPerson = $("#nbPerson").val()
     const nbChild = $("#nbChild").val()
 
-      if ( isNaN( idRoomType ) || idRoomType.trim().length == 0)
-      {
-        $("#ErrorJS").text("La Catégorie de la chambre est invalide ou laissé vide").css("color", "red");
-        return false;
-      }
+  
       if ( image.trim().length == 0)
       {
         $("#ErrorJS").text("L'image de la chambre est invalide ou laissé vide").css("color", "red");

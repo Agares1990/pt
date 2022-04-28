@@ -24,7 +24,7 @@ section{
       @include inputForm(90%);
     }
     select{
-      @include inputSelectForm(90%);
+      @include inputForm(90%);
       margin-bottom: 10px;
     }
     input[type='submit']{

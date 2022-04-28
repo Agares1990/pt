@@ -14,7 +14,7 @@ if (isset($_POST['deleteResaRestaurant'])) {
   $cancelResaRestaurant = cancelResaRestaurant($pdo, $idReservationRestaurant);
 
   // Afficher un message de success d'annulation réservation
-  $messageSucces = "Votre réservation a bien été annuler";
+  $messageSucces = "Votre réservation a bien été annulé";
   header("Location: profile.php?lang=$lang&messageSucces=$messageSucces");
   die();
 }

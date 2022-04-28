@@ -7,8 +7,10 @@
     <p id="ErrorJS"></p>
     <form id="updateRoomCategory" action="manageRoomCategory.php" method="post">
       <input type="hidden" name="idCategorieChambre" value="{{getCategoryInfo.idCategorieChambre}}">
-      <input type="text" name="tarifCategorieChambre" value="{{getCategoryInfo.tarifCategorieChambre}}">
-      <input type="text" name="image" value="{{getCategoryInfo.image1}}">
+      <label for="tarifCategorieChambre">Veuillez entrer le tarif la chambre svp</label>
+      <input type="text" id="tarifCategorieChambre" name="tarifCategorieChambre" value="{{getCategoryInfo.tarifCategorieChambre}}">
+      <label for="image">Veuillez entrer le lien de l'image de la chambre svp</label>
+      <input type="text" id="image" name="image" value="{{getCategoryInfo.image1}}">
       <input type="submit" name="updateRoomCategory" value="Valider">
     </form>
   </section>

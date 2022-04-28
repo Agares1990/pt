@@ -47,12 +47,14 @@ main{
       color: green;
     }
     #updateRoomCategory{
+      text-align: center;
       @include form(1rem 2rem);
       margin: 0 auto;
+
         input{
           @include inputForm(30%);
           display: block;
-          margin: 10px auto;
+          margin: 15px auto;
         }
         input[type="submit"]{
           @include button(25%, .63rem 0);

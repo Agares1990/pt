@@ -1,6 +1,6 @@
 @import"base";
 
-body{
+main{
   #imgBackground{
     @include backgroundImage(url("../../images/backgroundComment.jpg"), 100%, 100vh);
   }
@@ -63,7 +63,7 @@ body{
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px){
-  body{
+  main{
     #titrePage{ /* titre principale de la page (sur le caroussel) */
       @include h2;/* style général h1 */
     }

@@ -425,12 +425,12 @@ footer div ul:nth-child(2) {
 }
 
 /* line 2, ../css/input/styleConditionVente.scss */
-body {
-  margin-top: 12rem;
+main {
+  margin: 12rem 0 4rem 0;
 }
 
 /* line 4, ../css/input/styleConditionVente.scss */
-body h1 {
+main h1 {
   /* style générale des h2 */
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
@@ -440,13 +440,13 @@ body h1 {
 }
 
 /* line 9, ../css/input/styleConditionVente.scss */
-body section {
+main section {
   width: 70%;
   margin: 0 auto 3rem auto;
 }
 
 /* line 12, ../css/input/styleConditionVente.scss */
-body section h3 {
+main section h3 {
   font-size: 1.4rem;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
@@ -454,7 +454,7 @@ body section h3 {
 }
 
 /* line 18, ../css/input/styleConditionVente.scss */
-body section p {
+main section p {
   margin: 0 0 0.5rem 0;
 }
 

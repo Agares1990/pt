@@ -37,6 +37,12 @@ if (isset($_POST['addRoom'])) {
   if ($checkRoomNumber) {
     $failedMessageAddUpdateRoom = "Le numéro de chambre existe déja";
   }
+  elseif ($nbPerson > 5) {
+    $failedMessageAddUpdateRoom = "La capacité d'acceuil doit être comprise entre 1 et 5";
+  }
+  elseif ($nbChild > 5) {
+    $failedMessageAddUpdateRoom = "La capacité d'acceuil doit être comprise entre 0 et 5";
+  }
   // Si toutes les données sont correctes
   // Alors on ajoute la chambre
   elseif (is_int($numRoom) && is_int($idRoomType) && is_int($nbPerson) && is_int($nbChild) && !empty(trim($image))) {
@@ -65,15 +71,21 @@ if (isset($_POST['update'])) {
 
 if (isset($_POST['updateRoom'])) {
   $chambreId = $_POST['idChambre'];
-  $idRoomType = intval($_POST['idRoomType']);// Id de la categorie de la chambre
+  //$idRoomType = intval($_POST['idRoomType']);// Id de la categorie de la chambre
   $image = $_POST['image'];// Lien de l'image de la chambre
   $nbPerson = intval($_POST['nbPerson']); // Capacité d'adulte de la chambre
   $nbChild = intval($_POST['nbChild']); // Capacité d'enfant de la chambre
-  //var_dump($getRoomInfo);
-  if ( is_int($idRoomType) && is_int($nbPerson) && is_int($nbChild) && !empty(trim($image))) {
 
-    $updateRoom = $pdo->prepare("UPDATE chambre SET categorieChambreId = :categorieChambreId, imageChambre = :imageChambre, capaciteAdulte = :capaciteAdulte, capaciteEnfant = :capaciteEnfant WHERE idChambre = $chambreId");
-    $updateRoom->bindValue(':categorieChambreId', $idRoomType, PDO::PARAM_STR);
+  if ($nbPerson > 5) {
+    $failedMessageAddUpdateRoom = "La capacité d'acceuil doit être comprise entre 1 et 5";
+  }
+  elseif ($nbChild > 5) {
+    $failedMessageAddUpdateRoom = "La capacité d'acceuil doit être comprise entre 0 et 5";
+  }
+  elseif (  is_int($nbPerson) && is_int($nbChild) && !empty(trim($image))) {
+
+    $updateRoom = $pdo->prepare("UPDATE chambre SET  imageChambre = :imageChambre, capaciteAdulte = :capaciteAdulte, capaciteEnfant = :capaciteEnfant WHERE idChambre = $chambreId");
+
     $updateRoom->bindValue(':imageChambre', $image, PDO::PARAM_STR);
     $updateRoom->bindValue(':capaciteAdulte', $nbPerson, PDO::PARAM_STR);
     $updateRoom->bindValue(':capaciteEnfant', $nbChild, PDO::PARAM_STR);

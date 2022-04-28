@@ -51,7 +51,7 @@ main{
     @include animButton(rgba(191, 10, 53, .9), #bf0a35, #e31b4b, #f03763);
     }
     #addRoom, #updateRoom{
-
+        text-align: center;
         @include form(1rem 2rem);
         margin: 0 auto;
           input{

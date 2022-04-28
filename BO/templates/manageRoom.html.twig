@@ -10,8 +10,10 @@
   <button id="btnAddRoom" name="button">Ajouter une chambre</button>
 
   <form id="addRoom"action="manageRoom.php" method="post">
-    <input type="text" name="numRoom" placeholder="Numéro de la chambre">
-    <select name="idRoomType" id="roomType">
+    <label for="numRoom">Veuillez entrer le numéro de chambre svp</label>
+    <input id="numRoom" type="text" name="numRoom" placeholder="Numéro de la chambre">
+    <label for="idRoomType">Veuillez chosir la Catégorie de la chambre svp</label>
+    <select id="idRoomType" name="idRoomType" id="roomType">
       <option value="">--Catégorie de Chambre--</option>
       <option class="option" value="1">Chambre Standard</option>
       <option class="option" value="2">Chambre Familiale</option>
@@ -20,9 +22,11 @@
       <option class="option" value="8">Suite Junior</option>
       <option class="option" value="3">Suite Senior</option>
     </select>
-    <!-- <input type="text" name="idRoomType" placeholder="Catégorie de la chambre"> -->
-    <input type="text" name="image" placeholder="Image de la chambre">
-    <input type="text" name="nbPerson" placeholder="La capacité d'adulte de la chambre">
+    <label for="image">Veuillez entrer le lien de l'image de la chambre svp</label>
+    <input type="text" id="image" name="image" placeholder="Image de la chambre">
+    <label for="nbPerson">Veuillez entrer la capacité d'adulte de la chambre svp</label>
+    <input type="text" id="nbPerson" name="nbPerson" placeholder="La capacité d'adulte de la chambre">
+    <label for="nbChild">Veuillez entrer la capacité d'enfant de la chambre svp</label>
     <input type="text" name="nbChild" placeholder="La capacité d'enfant de la chambre">
     <input type="submit" name="addRoom" value="Valider">
   </form>
@@ -33,9 +37,11 @@
   <section>
     <form id="updateRoom" action="manageRoom.php" method="post">
       <input type="hidden" name="idChambre" value="{{getRoomInfo.idChambre}}">
-      <input type="text" id="idRoomType" name="idRoomType" value="{{getRoomInfo.categorieChambreId}}">
+      <label for="image">Veuillez entrer le lien de l'image de la chambre svp</label>
       <input type="text" id="image" name="image" placeholder="Modifier l'image de la chambre"  value="{{getRoomInfo.imageChambre}}">
+      <label for="nbPerson">Veuillez entrer la capacité d'adulte de la chambre svp</label>
       <input type="text" id="nbPerson" name="nbPerson" placeholder="Modifier La capacité d'adulte de la chambre" value="{{getRoomInfo.capaciteAdulte}}">
+      <label for="nbChild">Veuillez entrer la capacité d'enfant de la chambre svp</label>
       <input type="text" id="nbChild" name="nbChild" placeholder="Modifier La capacité d'enfant de la chambre" value="{{getRoomInfo.capaciteEnfant}}">
       <input type="submit" name="updateRoom" value="Valider">
     </form>

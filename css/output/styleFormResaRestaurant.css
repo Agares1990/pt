@@ -479,6 +479,7 @@ section form input, section form textarea {
 
 /* line 26, ../css/input/styleFormResaRestaurant.scss */
 section form select {
+  /* style spécial des élémets input du formulaire*/
   /* style générale des élémets input et select du formulaire*/
   background: #eef1f6;
   border: solid 1px #BCA474;
@@ -487,6 +488,8 @@ section form select {
   width: 90%;
   border-radius: .25rem;
   padding: .6rem .8rem;
+  margin-bottom: 10px;
+  width: 90%;
   margin-bottom: 10px;
 }
 

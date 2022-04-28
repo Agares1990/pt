@@ -52,7 +52,7 @@ class Reservations
   }
 
   // Fonction pour Annuler une réservation
-  public function cancelResa($pdo, $email, $idReservation){
+  public function cancelResa($pdo, $idReservation){
     $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
                     WHERE idReservationChambre = '$idReservation'");
     return $annulerReservation;
@@ -69,7 +69,7 @@ class Reservations
       $req->bindParam(':dateArriver', $CheckIn, PDO::PARAM_INT);
       $req->bindParam(':dateDepart', $CheckOut, PDO::PARAM_INT);
       $req->execute();
-      $updateResaSuccess = "La réservation à été modifier avec succès";
+      $updateResaSuccess = "La réservation à été modifié avec succès";
     }
     return @$updateResaSuccess;
   }
@@ -188,7 +188,7 @@ function editPassword($pdo, $email, $table, $oldPassword, $newPassword, $repeatN
     $editPassword->bindParam(':email', $email, PDO::PARAM_INT);
     $editPassword->execute();
     // Et on affiche un message de succès de modification de mot de passe
-    $sucessUpdateMessage = "Le mot de passe à été modifier avec succès";
+    $sucessUpdateMessage = "Le mot de passe à été modifié avec succès";
   }
   else {
     // Sinon on affiche un message d'échec de modification de mot de passe

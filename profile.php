@@ -31,10 +31,10 @@ else {
     if(isset($_POST['delete'])){
 
       //On annule la réservation
-      $class_reservation->cancelResa($pdo, $email, $idReservation);
+      $class_reservation->cancelResa($pdo, $idReservation);
 
       // Afficher un message de success d'annulation réservation
-      $messageSucces = "Votre réservation a bien été annuler";
+      $messageSucces = "Votre réservation a bien été annulé";
     }
 
     // Vérifier la disponibilité quand on veut modifier une réservation

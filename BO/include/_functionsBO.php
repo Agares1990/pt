@@ -9,13 +9,12 @@ function getClientResaBO($pdo){
   return $reservations;
 }
 
-// Annuler une réservation coté back office
-function cancelResaBO($pdo, $idReservation){
-  $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
-                  WHERE clientId IN(SELECT clientId FROM (SELECT * FROM reservation_chambre) AS reserv INNER JOIN client ON reservation_chambre.clientId = client.idClient
-                  WHERE idReservationChambre = '$idReservation')");
-  return $annulerReservation;
-}
+// // Annuler une réservation coté back office
+// function cancelResaBO($pdo, $idReservation){
+//   $annulerReservation = $pdo->query("DELETE FROM reservation_chambre
+//                   WHERE idReservationChambre = '$idReservation')");
+//   return $annulerReservation;
+// }
 
 // Supprimer une chambre
 function deleteRoom($pdo, $chambreId){

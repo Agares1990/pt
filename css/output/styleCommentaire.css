@@ -425,7 +425,7 @@ footer div ul:nth-child(2) {
 }
 
 /* line 4, ../css/input/styleCommentaire.scss */
-body #imgBackground {
+main #imgBackground {
   /* pour défirnir une image en background */
   background-image: url("../../images/backgroundComment.jpg");
   background-position: center;
@@ -437,7 +437,7 @@ body #imgBackground {
 }
 
 /* line 7, ../css/input/styleCommentaire.scss */
-body #titrePage {
+main #titrePage {
   /* titre principale de la page (sur le caroussel) */
   /* style générale des h1 */
   font-size: 3.2rem;
@@ -456,7 +456,7 @@ body #titrePage {
 }
 
 /* line 19, ../css/input/styleCommentaire.scss */
-body #bienvenue {
+main #bienvenue {
   /* style générale des h2 */
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
@@ -474,18 +474,18 @@ body #bienvenue {
 }
 
 /* line 31, ../css/input/styleCommentaire.scss */
-body section {
+main section {
   margin: 4rem 10rem;
   text-align: center;
 }
 
 /* line 34, ../css/input/styleCommentaire.scss */
-body section h2, body section h3, body section hr {
+main section h2, main section h3, main section hr {
   margin-bottom: 1.5rem;
 }
 
 /* line 37, ../css/input/styleCommentaire.scss */
-body section h2 {
+main section h2 {
   /* style générale des h2 */
   font-size: 1.6rem;
   font-family: "Raleway", sans-serif;
@@ -494,24 +494,24 @@ body section h2 {
 }
 
 /* line 41, ../css/input/styleCommentaire.scss */
-body section h3 {
+main section h3 {
   font-size: 3rem;
   font-weight: 600;
 }
 
 /* line 45, ../css/input/styleCommentaire.scss */
-body section hr {
+main section hr {
   width: 10%;
   color: #BCA474;
 }
 
 /* line 49, ../css/input/styleCommentaire.scss */
-body section > p {
+main section > p {
   margin-bottom: 3rem;
 }
 
 /* line 52, ../css/input/styleCommentaire.scss */
-body section article {
+main section article {
   text-align: left;
   border: 1px solid #BCA474;
   padding: 1rem 1rem 2rem 1rem;
@@ -519,14 +519,14 @@ body section article {
 }
 
 /* line 57, ../css/input/styleCommentaire.scss */
-body section article p {
+main section article p {
   margin-top: 1rem;
 }
 
 /** STYLE SMARTPHONE **/
 @media (hover: none), (max-width: 840px) {
   /* line 67, ../css/input/styleCommentaire.scss */
-  body #titrePage {
+  main #titrePage {
     /* titre principale de la page (sur le caroussel) */
     /* style générale des h2 */
     font-size: 1.6rem;
@@ -535,7 +535,7 @@ body section article p {
     /* style général h1 */
   }
   /* line 70, ../css/input/styleCommentaire.scss */
-  body #bienvenue {
+  main #bienvenue {
     /* style générale des h2 */
     font-size: 1.2rem;
     font-family: "Raleway", sans-serif;
@@ -543,27 +543,27 @@ body section article p {
     /* style général h2 */
   }
   /* line 73, ../css/input/styleCommentaire.scss */
-  body section {
+  main section {
     margin: 4rem 3rem;
     text-align: center;
   }
   /* line 76, ../css/input/styleCommentaire.scss */
-  body section h2 {
+  main section h2 {
     /* style générale des h2 */
     font-size: 1.2rem;
     font-family: "Raleway", sans-serif;
     font-weight: 500;
   }
   /* line 79, ../css/input/styleCommentaire.scss */
-  body section h3 {
+  main section h3 {
     font-size: 1.6rem;
   }
   /* line 82, ../css/input/styleCommentaire.scss */
-  body section article {
+  main section article {
     padding: .5rem .5rem 1rem .5rem;
   }
   /* line 84, ../css/input/styleCommentaire.scss */
-  body section article p {
+  main section article p {
     margin-top: 1rem;
   }
 }

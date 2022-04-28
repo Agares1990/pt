@@ -1,6 +1,11 @@
 @import"baseBO";
 body{
   main{
+    .success{
+      text-align: center;
+      color: green;
+      margin-bottom: 1rem;
+    }
     h2{
       @include h2;
       text-align: center;

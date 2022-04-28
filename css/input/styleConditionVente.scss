@@ -1,6 +1,6 @@
 @import"base";
-body{
-  margin-top: 12rem;
+main{
+  margin: 12rem 0 4rem 0;
   h1{
     @include h2;
     text-align: center;

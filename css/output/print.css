@@ -8,23 +8,23 @@ footer {
   display: none;
 }
 
-/* line 8, ../css/input/print.scss */
-section {
+/* line 9, ../css/input/print.scss */
+main section {
   width: 100%;
 }
 
-/* line 10, ../css/input/print.scss */
-section h2 {
+/* line 11, ../css/input/print.scss */
+main section h2 {
   width: 50%;
 }
 
-/* line 13, ../css/input/print.scss */
-section button {
+/* line 14, ../css/input/print.scss */
+main section button {
   display: none;
 }
 
-/* line 16, ../css/input/print.scss */
-section article {
+/* line 17, ../css/input/print.scss */
+main section article {
   width: 80%;
 }
 

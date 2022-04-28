@@ -12,7 +12,7 @@ if (isset($_POST['deleteUser'])) {
   $idClient = $_POST['idClient'];
 
   $deletUser = deletUser($pdo, $idClient);
-  $successDelet = "Votre compte a été supprimer avec succès";
+  $successDelet = "Votre compte a été supprimé avec succès";
 
   header("Location: connexion.php?lang=$lang&successDelet=$successDelet");
   die();
